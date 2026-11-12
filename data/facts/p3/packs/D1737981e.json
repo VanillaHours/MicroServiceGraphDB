@@ -1,0 +1,2255 @@
+{
+ "id": "D1737981e",
+ "label": "lib [34z/147y]",
+ "level": "L1",
+ "services": [
+  "svc:lib"
+ ],
+ "functionality": [
+  "lib is shared infrastructure: owns the northbound/YANG config models (frr-affinity-map, frr-backend, frr-filter, frr-host, frr-interface...), registers 147 NB callback tables, and hosts the zclient send wrappers (34 publish sites attributed to the wrapper layer)",
+  "northbound contracts: 147 YANG paths across 10 modules (frr-filter(41), frr-route-map(30), ietf-key-chain(26), frr-logging(21))"
+ ],
+ "roles": [
+  "shared-infra",
+  "zapi-client",
+  "zapi-publisher"
+ ],
+ "yang_modules": {
+  "frr-affinity-map": 2,
+  "frr-backend": 11,
+  "frr-filter": 41,
+  "frr-host": 1,
+  "frr-interface": 11,
+  "frr-logging": 21,
+  "frr-route-map": 30,
+  "frr-routing": 1,
+  "frr-vrf": 3,
+  "ietf-key-chain": 26
+ },
+ "zapi_msgs": [
+  "zapi:ZEBRA_CAPABILITIES",
+  "zapi:ZEBRA_ERROR",
+  "zapi:ZEBRA_GRE_GET",
+  "zapi:ZEBRA_HELLO",
+  "zapi:ZEBRA_INTERFACE_ADD",
+  "zapi:ZEBRA_INTERFACE_BFD_DEST_UPDATE",
+  "zapi:ZEBRA_INTERFACE_DELETE",
+  "zapi:ZEBRA_INTERFACE_DISABLE_RADV",
+  "zapi:ZEBRA_INTERFACE_DOWN",
+  "zapi:ZEBRA_INTERFACE_ENABLE_RADV",
+  "zapi:ZEBRA_INTERFACE_SET_ARP",
+  "zapi:ZEBRA_INTERFACE_SET_MASTER",
+  "zapi:ZEBRA_INTERFACE_SET_PROTODOWN",
+  "zapi:ZEBRA_INTERFACE_UP",
+  "zapi:ZEBRA_MLAG_CLIENT_REGISTER",
+  "zapi:ZEBRA_MLAG_CLIENT_UNREGISTER",
+  "zapi:ZEBRA_MLAG_FORWARD_MSG",
+  "zapi:ZEBRA_NEIGH_DISCOVER",
+  "zapi:ZEBRA_NEIGH_GET",
+  "zapi:ZEBRA_NEIGH_REGISTER",
+  "zapi:ZEBRA_NEIGH_UNREGISTER",
+  "zapi:ZEBRA_NEXTHOP_UPDATE",
+  "zapi:ZEBRA_OPAQUE_NOTIFY",
+  "zapi:ZEBRA_OPAQUE_REGISTER",
+  "zapi:ZEBRA_OPAQUE_UNREGISTER",
+  "zapi:ZEBRA_RELEASE_LABEL_CHUNK",
+  "zapi:ZEBRA_RELEASE_TABLE_CHUNK",
+  "zapi:ZEBRA_SRV6_MANAGER_GET_LOCATOR",
+  "zapi:ZEBRA_SRV6_MANAGER_GET_SRV6_SID",
+  "zapi:ZEBRA_SRV6_MANAGER_RELEASE_LOCATOR_CHUNK",
+  "zapi:ZEBRA_SRV6_MANAGER_RELEASE_SRV6_SID",
+  "zapi:ZEBRA_VRF_ADD",
+  "zapi:ZEBRA_VRF_DELETE",
+  "zapi:ZEBRA_VRF_LABEL"
+ ],
+ "boundary_edges": [
+  {
+   "to": "D4b2a9ab8",
+   "rels": {
+    "handles": 24,
+    "publishes": 14
+   }
+  },
+  {
+   "to": "Ded29f1c0",
+   "rels": {
+    "publishes": 4
+   }
+  }
+ ],
+ "children": [
+  "C1737981e"
+ ],
+ "findings": {
+  "dropped_on_wire": [
+   "zapi:ZEBRA_OPAQUE_NOTIFY",
+   "zapi:ZEBRA_OPAQUE_REGISTER",
+   "zapi:ZEBRA_OPAQUE_UNREGISTER"
+  ],
+  "orphan_handlers": [],
+  "dead_wiring": [
+   {
+    "svc": "svc:lib",
+    "nb": "nb:lib:frr-host:host/allow-reserved-ranges",
+    "table": "lib/host_cli.c:45"
+   },
+   {
+    "svc": "svc:lib",
+    "nb": "nb:lib:frr-host:host/allow-reserved-ranges",
+    "table": "lib/host_nb.c:30"
+   },
+   {
+    "svc": "svc:lib",
+    "nb": "nb:lib:frr-backend:clients/client/name",
+    "table": "lib/mgmt_be_client.c:1313"
+   },
+   {
+    "svc": "svc:lib",
+    "nb": "nb:lib:frr-backend:clients/client/state/notify-selectors",
+    "table": "lib/mgmt_be_client.c:1371"
+   }
+  ],
+  "cross_svc_flows": [
+   {
+    "msg": "zapi:ZEBRA_CAPABILITIES",
+    "from": "svc:zebra",
+    "to": "svc:lib"
+   },
+   {
+    "msg": "zapi:ZEBRA_ERROR",
+    "from": "svc:zebra",
+    "to": "svc:lib"
+   },
+   {
+    "msg": "zapi:ZEBRA_GRE_GET",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_HELLO",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_ADD",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_ADD",
+    "from": "svc:zebra",
+    "to": "svc:lib"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_BFD_DEST_UPDATE",
+    "from": "svc:zebra",
+    "to": "svc:lib"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_DELETE",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_DELETE",
+    "from": "svc:zebra",
+    "to": "svc:lib"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_DISABLE_RADV",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_DOWN",
+    "from": "svc:zebra",
+    "to": "svc:lib"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_ENABLE_RADV",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_SET_ARP",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_SET_MASTER",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_SET_PROTODOWN",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_UP",
+    "from": "svc:zebra",
+    "to": "svc:lib"
+   },
+   {
+    "msg": "zapi:ZEBRA_MLAG_CLIENT_REGISTER",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_MLAG_CLIENT_UNREGISTER",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_MLAG_FORWARD_MSG",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_NEIGH_DISCOVER",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_NEIGH_GET",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_NEIGH_REGISTER",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_NEIGH_UNREGISTER",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_NEXTHOP_UPDATE",
+    "from": "svc:zebra",
+    "to": "svc:lib"
+   },
+   {
+    "msg": "zapi:ZEBRA_RELEASE_LABEL_CHUNK",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_RELEASE_TABLE_CHUNK",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_SRV6_MANAGER_GET_LOCATOR",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_SRV6_MANAGER_GET_SRV6_SID",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_SRV6_MANAGER_RELEASE_LOCATOR_CHUNK",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_SRV6_MANAGER_RELEASE_SRV6_SID",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_VRF_ADD",
+    "from": "svc:zebra",
+    "to": "svc:lib"
+   },
+   {
+    "msg": "zapi:ZEBRA_VRF_DELETE",
+    "from": "svc:zebra",
+    "to": "svc:lib"
+   },
+   {
+    "msg": "zapi:ZEBRA_VRF_LABEL",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   }
+  ]
+ },
+ "modules": [
+  {
+   "id": "M14366098",
+   "label": "lib:unlinked",
+   "size": 3023,
+   "anchors": [],
+   "tags": [],
+   "note": "no intra-service call edges observed",
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M0b7896b1",
+   "label": "lib:nb",
+   "size": 663,
+   "anchors": [
+    {
+     "id": "code:lib::vty_out",
+     "file": "lib/vty.c"
+    },
+    {
+     "id": "code:lib::nb_cli_enqueue_change",
+     "file": "lib/northbound_cli.c"
+    },
+    {
+     "id": "code:lib::nb_cli_apply_changes",
+     "file": "lib/northbound_cli.c"
+    },
+    {
+     "id": "code:lib::yang_dnode_get_string",
+     "file": "lib/yang_wrappers.c"
+    },
+    {
+     "id": "code:lib::nb_running_get_entry",
+     "file": "lib/northbound.c"
+    },
+    {
+     "id": "code:lib::snprintfrr",
+     "file": "lib/printf/glue.c"
+    },
+    {
+     "id": "code:lib::acl_cisco_is_dup",
+     "file": "lib/filter_nb.c"
+    },
+    {
+     "id": "code:lib::yang_dnode_get_enum",
+     "file": "lib/yang_wrappers.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Me4dc81e5",
+   "label": "lib:zlog",
+   "size": 610,
+   "anchors": [
+    {
+     "id": "code:lib::zlog_ref",
+     "file": "lib/zlog.h"
+    },
+    {
+     "id": "code:lib::_zlog_assert_failed",
+     "file": "lib/zlog.c"
+    },
+    {
+     "id": "code:lib::safe_strerror",
+     "file": null
+    },
+    {
+     "id": "code:lib::zlog_backtrace",
+     "file": "lib/log.c"
+    },
+    {
+     "id": "code:lib::_darr__resize",
+     "file": "lib/darr.c"
+    },
+    {
+     "id": "code:lib::_walk",
+     "file": "lib/northbound_oper.c"
+    },
+    {
+     "id": "code:lib::event_cancel",
+     "file": "lib/event.c"
+    },
+    {
+     "id": "code:lib::nb_op_root_walk_branch_finished",
+     "file": "lib/northbound_oper.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Md41c76a1",
+   "label": "lib:list",
+   "size": 580,
+   "anchors": [
+    {
+     "id": "code:lib::qfree",
+     "file": "lib/memory.c"
+    },
+    {
+     "id": "code:lib::qcalloc",
+     "file": "lib/memory.c"
+    },
+    {
+     "id": "code:lib::qstrdup",
+     "file": "lib/memory.c"
+    },
+    {
+     "id": "code:lib::listgetdata",
+     "file": "lib/linklist.h"
+    },
+    {
+     "id": "code:lib::list_delete",
+     "file": "lib/linklist.c"
+    },
+    {
+     "id": "code:lib::list_new",
+     "file": "lib/linklist.c"
+    },
+    {
+     "id": "code:lib::listnode_add",
+     "file": "lib/linklist.c"
+    },
+    {
+     "id": "code:lib::qmalloc",
+     "file": "lib/memory.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M68604753",
+   "label": "lib:rb",
+   "size": 259,
+   "anchors": [
+    {
+     "id": "code:lib::vrf_lookup_by_id",
+     "file": "lib/vrf.c"
+    },
+    {
+     "id": "code:lib::_rb_insert",
+     "file": "lib/openbsd-tree.c"
+    },
+    {
+     "id": "code:lib::_rb_find",
+     "file": "lib/openbsd-tree.c"
+    },
+    {
+     "id": "code:lib::_rb_max",
+     "file": "lib/openbsd-tree.c"
+    },
+    {
+     "id": "code:lib::_rb_nfind",
+     "file": "lib/openbsd-tree.c"
+    },
+    {
+     "id": "code:lib::_rb_remove",
+     "file": "lib/openbsd-tree.c"
+    },
+    {
+     "id": "code:lib::_rb_root",
+     "file": "lib/openbsd-tree.c"
+    },
+    {
+     "id": "code:lib::if_name_head_RB_MIN",
+     "file": "lib/if.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M72ca1469",
+   "label": "lib:typed",
+   "size": 243,
+   "anchors": [
+    {
+     "id": "code:lib::typed_rb_remove",
+     "file": "lib/typerb.c"
+    },
+    {
+     "id": "code:lib::typed_rb_min",
+     "file": null
+    },
+    {
+     "id": "code:lib::typed_rb_next",
+     "file": null
+    },
+    {
+     "id": "code:lib::cspf_clean",
+     "file": "lib/cspf.c"
+    },
+    {
+     "id": "code:lib::ls_ted_del_all",
+     "file": "lib/link_state.c"
+    },
+    {
+     "id": "code:lib::typed_rb_insert",
+     "file": "lib/typerb.c"
+    },
+    {
+     "id": "code:lib::typed_rb_member",
+     "file": null
+    },
+    {
+     "id": "code:lib::compute_p2p_path",
+     "file": "lib/cspf.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mb6b71573",
+   "label": "lib:zlog",
+   "size": 207,
+   "anchors": [
+    {
+     "id": "code:lib::_frr_mtx_lock",
+     "file": null
+    },
+    {
+     "id": "code:lib::rcu_enqueue",
+     "file": "lib/frrcu.c"
+    },
+    {
+     "id": "code:lib::zlog_target_replace",
+     "file": "lib/zlog.c"
+    },
+    {
+     "id": "code:lib::atomptr_p",
+     "file": null
+    },
+    {
+     "id": "code:lib::zlog_tls_buffer_flush",
+     "file": "lib/zlog.c"
+    },
+    {
+     "id": "code:lib::atomlist_del_hint",
+     "file": "lib/atomlist.c"
+    },
+    {
+     "id": "code:lib::zlog_file_set_other",
+     "file": "lib/zlog_targets.c"
+    },
+    {
+     "id": "code:lib::zlog_syslog_set_prio_min",
+     "file": "lib/zlog_targets.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M57da9241",
+   "label": "lib:yang",
+   "size": 184,
+   "anchors": [
+    {
+     "id": "code:lib::__builtin_va_end",
+     "file": null
+    },
+    {
+     "id": "code:lib::__builtin_va_start",
+     "file": null
+    },
+    {
+     "id": "code:lib::yang_get_default_value",
+     "file": "lib/yang_wrappers.c"
+    },
+    {
+     "id": "code:lib::vbprintfrr",
+     "file": "lib/printf/vfprintf.c"
+    },
+    {
+     "id": "code:lib::_darr__in_vsprintf",
+     "file": "lib/darr.c"
+    },
+    {
+     "id": "code:lib::yang_dnode_get",
+     "file": "lib/yang.c"
+    },
+    {
+     "id": "code:lib::ptm_lib_init_msg",
+     "file": "lib/ptm_lib.c"
+    },
+    {
+     "id": "code:lib::yang_dnode_xpath_get_canon",
+     "file": "lib/yang_wrappers.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Me899b8ce",
+   "label": "lib:cmd",
+   "size": 155,
+   "anchors": [
+    {
+     "id": "code:lib::_install_element",
+     "file": "lib/command.c"
+    },
+    {
+     "id": "code:lib::frr_init",
+     "file": "lib/libfrr.c"
+    },
+    {
+     "id": "code:lib::install_node",
+     "file": "lib/command.c"
+    },
+    {
+     "id": "code:lib::cmd_yyparse",
+     "file": "lib/command_parse.c"
+    },
+    {
+     "id": "code:lib::cmd_init",
+     "file": "lib/command.c"
+    },
+    {
+     "id": "code:lib::cmd_merge_nodes",
+     "file": "lib/command_graph.c"
+    },
+    {
+     "id": "code:lib::_rb_init",
+     "file": null
+    },
+    {
+     "id": "code:lib::install_default",
+     "file": "lib/command.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M592f037c",
+   "label": "lib:debug",
+   "size": 151,
+   "anchors": [
+    {
+     "id": "code:lib::debug_mgmt_client_be_magic",
+     "file": "lib/mgmt_be_client.c"
+    },
+    {
+     "id": "code:lib::debug_mgmt_client_fe_magic",
+     "file": "lib/mgmt_fe_client.c"
+    },
+    {
+     "id": "code:lib::debug_nb_magic",
+     "file": "lib/northbound_cli.c"
+    },
+    {
+     "id": "code:lib::elfrelocs_next",
+     "file": "lib/elf_py.c"
+    },
+    {
+     "id": "code:lib::epoll_revent_list_prev",
+     "file": "lib/event.c"
+    },
+    {
+     "id": "code:lib::frr_inet_ntop",
+     "file": "lib/ntop.c"
+    },
+    {
+     "id": "code:lib::if_connected_prev",
+     "file": "lib/if.h"
+    },
+    {
+     "id": "code:lib::is_default_prefix",
+     "file": "lib/prefix.h"
+    }
+   ],
+   "tags": [],
+   "note": "misc (<4-func call fragments)",
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M300ac150",
+   "label": "lib:route",
+   "size": 146,
+   "anchors": [
+    {
+     "id": "code:lib::route_node_get",
+     "file": "lib/table.c"
+    },
+    {
+     "id": "code:lib::route_unlock_node",
+     "file": "lib/table.h"
+    },
+    {
+     "id": "code:lib::route_lock_node",
+     "file": null
+    },
+    {
+     "id": "code:lib::route_table_get_next_internal",
+     "file": "lib/table.c"
+    },
+    {
+     "id": "code:lib::agg_node_from_rnode",
+     "file": null
+    },
+    {
+     "id": "code:lib::typed_rb_find_gteq",
+     "file": null
+    },
+    {
+     "id": "code:lib::prefix_copy",
+     "file": "lib/prefix.c"
+    },
+    {
+     "id": "code:lib::srcdest_route_next",
+     "file": "lib/srcdest_table.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M7d03a570",
+   "label": "lib:event",
+   "size": 144,
+   "anchors": [
+    {
+     "id": "code:lib::typesafe_list_add",
+     "file": null
+    },
+    {
+     "id": "code:lib::event_fetch_inner_loop",
+     "file": "lib/event.c"
+    },
+    {
+     "id": "code:lib::cancel_arg_helper",
+     "file": "lib/event.c"
+    },
+    {
+     "id": "code:lib::thread_process_io_inner_loop",
+     "file": "lib/event.c"
+    },
+    {
+     "id": "code:lib::event_cancel_rw",
+     "file": "lib/event.c"
+    },
+    {
+     "id": "code:lib::jhash_1word",
+     "file": "lib/jhash.c"
+    },
+    {
+     "id": "code:lib::do_event_cancel",
+     "file": "lib/event.c"
+    },
+    {
+     "id": "code:lib::elffile_secbyidx",
+     "file": "lib/elf_py.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M8fa46568",
+   "label": "lib:stream",
+   "size": 132,
+   "anchors": [
+    {
+     "id": "code:lib::stream_getl2",
+     "file": "lib/stream.c"
+    },
+    {
+     "id": "code:lib::stream_get2",
+     "file": "lib/stream.c"
+    },
+    {
+     "id": "code:lib::stream_getc2",
+     "file": "lib/stream.c"
+    },
+    {
+     "id": "code:lib::stream_getw2",
+     "file": "lib/stream.c"
+    },
+    {
+     "id": "code:lib::typesafe_dlist_add",
+     "file": null
+    },
+    {
+     "id": "code:lib::link_params_set_value",
+     "file": "lib/zclient.c"
+    },
+    {
+     "id": "code:lib::zebra_interface_nbr_address_read",
+     "file": "lib/zclient.c"
+    },
+    {
+     "id": "code:lib::frr_opt",
+     "file": "lib/libfrr.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M2f028eca",
+   "label": "lib:zlog",
+   "size": 125,
+   "anchors": [
+    {
+     "id": "code:lib::bputs",
+     "file": null
+    },
+    {
+     "id": "code:lib::bprintfrr",
+     "file": "lib/printf/glue.c"
+    },
+    {
+     "id": "code:lib::yang_data_new",
+     "file": "lib/yang.c"
+    },
+    {
+     "id": "code:lib::bputch",
+     "file": null
+    },
+    {
+     "id": "code:lib::zlog_msg_text",
+     "file": "lib/zlog.c"
+    },
+    {
+     "id": "code:lib::zlog_5424_one",
+     "file": "lib/zlog_5424.c"
+    },
+    {
+     "id": "code:lib::zlog_journald_one",
+     "file": "lib/zlog_5424.c"
+    },
+    {
+     "id": "code:lib::zlog_3164_one",
+     "file": "lib/zlog_5424.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Ma3f65386",
+   "label": "lib:json",
+   "size": 117,
+   "anchors": [
+    {
+     "id": "code:lib::json_object_int_add",
+     "file": null
+    },
+    {
+     "id": "code:lib::json_object_string_add",
+     "file": null
+    },
+    {
+     "id": "code:lib::filter_show",
+     "file": "lib/filter.c"
+    },
+    {
+     "id": "code:lib::json_object_string_addf",
+     "file": "lib/json.h"
+    },
+    {
+     "id": "code:lib::nexthop_json_helper",
+     "file": "lib/nexthop.c"
+    },
+    {
+     "id": "code:lib::use_json",
+     "file": null
+    },
+    {
+     "id": "code:lib::json_object_boolean_add",
+     "file": null
+    },
+    {
+     "id": "code:lib::nexthop_vty_helper",
+     "file": "lib/nexthop.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M0b6f39b3",
+   "label": "lib:rb",
+   "size": 109,
+   "anchors": [
+    {
+     "id": "code:lib::_rb_check",
+     "file": "lib/openbsd-tree.c"
+    },
+    {
+     "id": "code:lib::_rb_left",
+     "file": "lib/openbsd-tree.c"
+    },
+    {
+     "id": "code:lib::_rb_parent",
+     "file": "lib/openbsd-tree.c"
+    },
+    {
+     "id": "code:lib::_rb_poison",
+     "file": "lib/openbsd-tree.c"
+    },
+    {
+     "id": "code:lib::_rb_prev",
+     "file": "lib/openbsd-tree.c"
+    },
+    {
+     "id": "code:lib::_rb_right",
+     "file": "lib/openbsd-tree.c"
+    },
+    {
+     "id": "code:lib::_rb_set_left",
+     "file": "lib/openbsd-tree.c"
+    },
+    {
+     "id": "code:lib::_rb_set_parent",
+     "file": "lib/openbsd-tree.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Me154c964",
+   "label": "lib:stream",
+   "size": 109,
+   "anchors": [
+    {
+     "id": "code:lib::stream_get_endp",
+     "file": "lib/stream.c"
+    },
+    {
+     "id": "code:lib::zclient_create_header",
+     "file": "lib/zclient.c"
+    },
+    {
+     "id": "code:lib::stream_reset",
+     "file": "lib/stream.c"
+    },
+    {
+     "id": "code:lib::stream_putw_at",
+     "file": "lib/stream.c"
+    },
+    {
+     "id": "code:lib::stream_putc",
+     "file": "lib/stream.c"
+    },
+    {
+     "id": "code:lib::stream_putl",
+     "file": "lib/stream.c"
+    },
+    {
+     "id": "code:lib::zclient_send_message",
+     "file": "lib/zclient.c"
+    },
+    {
+     "id": "code:lib::stream_putw",
+     "file": "lib/stream.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M61e322ec",
+   "label": "lib:nexthop",
+   "size": 88,
+   "anchors": [
+    {
+     "id": "code:lib::nexthop_new",
+     "file": "lib/nexthop.c"
+    },
+    {
+     "id": "code:lib::nexthop_free",
+     "file": "lib/nexthop.c"
+    },
+    {
+     "id": "code:lib::nexthop_group_interface_state_change",
+     "file": "lib/nexthop_group.c"
+    },
+    {
+     "id": "code:lib::nexthop_next",
+     "file": null
+    },
+    {
+     "id": "code:lib::ecmp_nexthops_magic",
+     "file": "lib/nexthop_group.c"
+    },
+    {
+     "id": "code:lib::nexthop_cmp_internal",
+     "file": "lib/nexthop.c"
+    },
+    {
+     "id": "code:lib::nexthop_copy_no_recurse",
+     "file": "lib/nexthop.c"
+    },
+    {
+     "id": "code:lib::nexthop_g_addr_cmp",
+     "file": null
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Md6d1376e",
+   "label": "lib:vty",
+   "size": 59,
+   "anchors": [
+    {
+     "id": "code:lib::vty_read",
+     "file": "lib/vty.c"
+    },
+    {
+     "id": "code:lib::vty_backward_char",
+     "file": "lib/vty.c"
+    },
+    {
+     "id": "code:lib::vty_write",
+     "file": "lib/vty.c"
+    },
+    {
+     "id": "code:lib::vty_prompt",
+     "file": "lib/vty.c"
+    },
+    {
+     "id": "code:lib::vty_terminate",
+     "file": "lib/vty.c"
+    },
+    {
+     "id": "code:lib::vty_complete_command",
+     "file": "lib/vty.c"
+    },
+    {
+     "id": "code:lib::buffer_reset",
+     "file": "lib/buffer.c"
+    },
+    {
+     "id": "code:lib::vty_delete_char",
+     "file": "lib/vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M2682dbc8",
+   "label": "lib:cmd",
+   "size": 52,
+   "anchors": [
+    {
+     "id": "code:lib::yy_fatal_error",
+     "file": null
+    },
+    {
+     "id": "code:lib::def_yylex",
+     "file": "lib/defun_lex.c"
+    },
+    {
+     "id": "code:lib::cmd_yylex",
+     "file": "lib/command_lex.c"
+    },
+    {
+     "id": "code:lib::cmd_yyensure_buffer_stack",
+     "file": "lib/command_lex.c"
+    },
+    {
+     "id": "code:lib::def_yyensure_buffer_stack",
+     "file": "lib/defun_lex.c"
+    },
+    {
+     "id": "code:lib::yy_get_next_buffer",
+     "file": "lib/command_lex.c"
+    },
+    {
+     "id": "code:lib::cmd_yy_load_buffer_state",
+     "file": null
+    },
+    {
+     "id": "code:lib::cmd_yyalloc",
+     "file": null
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M9453b57f",
+   "label": "lib:keychain",
+   "size": 42,
+   "anchors": [
+    {
+     "id": "code:lib::keychain_lookup",
+     "file": "lib/keychain.c"
+    },
+    {
+     "id": "code:lib::keychain_touch",
+     "file": null
+    },
+    {
+     "id": "code:lib::__dnode_get_key3",
+     "file": "lib/keychain_nb.c"
+    },
+    {
+     "id": "code:lib::__lifetime_create",
+     "file": "lib/keychain_nb.c"
+    },
+    {
+     "id": "code:lib::key_lookup",
+     "file": "lib/keychain.c"
+    },
+    {
+     "id": "code:lib::yang_dnode_get_uint64",
+     "file": "lib/yang_wrappers.c"
+    },
+    {
+     "id": "code:lib::hook_call_keychain_updated",
+     "file": null
+    },
+    {
+     "id": "code:lib::key_chains_key_chain_key_crypto_algorithm_modify",
+     "file": "lib/keychain_nb.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M5410146a",
+   "label": "lib:printreg",
+   "size": 30,
+   "anchors": [
+    {
+     "id": "code:lib::printfrr_ext_reg",
+     "file": null
+    },
+    {
+     "id": "code:lib::_printreg_printfrr_asdot",
+     "file": "lib/asn.c"
+    },
+    {
+     "id": "code:lib::_printreg_printfrr_asdotplus",
+     "file": "lib/asn.c"
+    },
+    {
+     "id": "code:lib::_printreg_printfrr_asplain",
+     "file": "lib/asn.c"
+    },
+    {
+     "id": "code:lib::_printreg_printfrr_ea",
+     "file": "lib/prefix.c"
+    },
+    {
+     "id": "code:lib::_printreg_printfrr_escape",
+     "file": "lib/strformat.c"
+    },
+    {
+     "id": "code:lib::_printreg_printfrr_fb",
+     "file": "lib/printf/glue.c"
+    },
+    {
+     "id": "code:lib::_printreg_printfrr_hexdstr",
+     "file": "lib/strformat.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M725bd943",
+   "label": "lib:plist",
+   "size": 19,
+   "anchors": [
+    {
+     "id": "code:lib::typed_rb_prev",
+     "file": null
+    },
+    {
+     "id": "code:lib::plist_const_prev",
+     "file": "lib/plist.c"
+    },
+    {
+     "id": "code:lib::processed_const_prev",
+     "file": "lib/cspf.h"
+    },
+    {
+     "id": "code:lib::targets_const_prev",
+     "file": "lib/zlog_5424_cli.c"
+    },
+    {
+     "id": "code:lib::vertices_const_prev",
+     "file": "lib/link_state.h"
+    },
+    {
+     "id": "code:lib::edges_prev_safe",
+     "file": "lib/link_state.h"
+    },
+    {
+     "id": "code:lib::plist_prev",
+     "file": "lib/plist.c"
+    },
+    {
+     "id": "code:lib::plist_prev_safe",
+     "file": "lib/plist.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mc990c405",
+   "label": "lib:asn",
+   "size": 15,
+   "anchors": [
+    {
+     "id": "code:lib::match_token",
+     "file": "lib/command_match.c"
+    },
+    {
+     "id": "code:lib::asn_str2asn_internal",
+     "file": null
+    },
+    {
+     "id": "code:lib::asn_str2asn_match",
+     "file": "lib/asn.c"
+    },
+    {
+     "id": "code:lib::disambiguate_tokens",
+     "file": "lib/command_match.c"
+    },
+    {
+     "id": "code:lib::asn_str2asn",
+     "file": "lib/asn.c"
+    },
+    {
+     "id": "code:lib::asn_str2asn_notation",
+     "file": "lib/asn.c"
+    },
+    {
+     "id": "code:lib::asn_str2asn_parse",
+     "file": "lib/asn.c"
+    },
+    {
+     "id": "code:lib::match_ipv4",
+     "file": null
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M6d451c09",
+   "label": "lib:lib",
+   "size": 15,
+   "anchors": [
+    {
+     "id": "code:lib::lib_route_map_entry_set_action_value_destroy",
+     "file": "lib/routemap_northbound.c"
+    },
+    {
+     "id": "code:lib::lib_route_map_entry_set_destroy",
+     "file": "lib/routemap_northbound.c"
+    },
+    {
+     "id": "code:lib::lib_route_map_entry_set_action_add_metric_destroy",
+     "file": "lib/routemap_northbound.c"
+    },
+    {
+     "id": "code:lib::lib_route_map_entry_set_action_add_round_trip_time_destroy",
+     "file": "lib/routemap_northbound.c"
+    },
+    {
+     "id": "code:lib::lib_route_map_entry_set_action_ipv4_address_destroy",
+     "file": "lib/routemap_northbound.c"
+    },
+    {
+     "id": "code:lib::lib_route_map_entry_set_action_ipv6_address_destroy",
+     "file": "lib/routemap_northbound.c"
+    },
+    {
+     "id": "code:lib::lib_route_map_entry_set_action_max_metric_destroy",
+     "file": "lib/routemap_northbound.c"
+    },
+    {
+     "id": "code:lib::lib_route_map_entry_set_action_min_metric_destroy",
+     "file": "lib/routemap_northbound.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M3cc888ae",
+   "label": "lib:distribute",
+   "size": 13,
+   "anchors": [
+    {
+     "id": "code:lib::distribute_list_leaf_update",
+     "file": "lib/distribute.c"
+    },
+    {
+     "id": "code:lib::distribute_direction",
+     "file": "lib/distribute.c"
+    },
+    {
+     "id": "code:lib::distribute_list_leaf_destroy",
+     "file": "lib/distribute.c"
+    },
+    {
+     "id": "code:lib::distribute_list_leaf_modify",
+     "file": "lib/distribute.c"
+    },
+    {
+     "id": "code:lib::distribute_list_no_parser",
+     "file": "lib/distribute.c"
+    },
+    {
+     "id": "code:lib::distribute_list_parser",
+     "file": "lib/distribute.c"
+    },
+    {
+     "id": "code:lib::__builtin_unreachable",
+     "file": null
+    },
+    {
+     "id": "code:lib::group_distribute_list_destroy",
+     "file": "lib/distribute.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M6aeae031",
+   "label": "lib:const",
+   "size": 13,
+   "anchors": [
+    {
+     "id": "code:lib::typed_rb_find_lt",
+     "file": null
+    },
+    {
+     "id": "code:lib::plist_const_find_lt",
+     "file": "lib/plist.c"
+    },
+    {
+     "id": "code:lib::processed_const_find_lt",
+     "file": "lib/cspf.h"
+    },
+    {
+     "id": "code:lib::subnets_const_find_lt",
+     "file": "lib/link_state.h"
+    },
+    {
+     "id": "code:lib::targets_const_find_lt",
+     "file": "lib/zlog_5424_cli.c"
+    },
+    {
+     "id": "code:lib::vertices_const_find_lt",
+     "file": "lib/link_state.h"
+    },
+    {
+     "id": "code:lib::visited_const_find_lt",
+     "file": "lib/cspf.h"
+    },
+    {
+     "id": "code:lib::plist_find_lt",
+     "file": "lib/plist.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M1901c505",
+   "label": "lib:const",
+   "size": 13,
+   "anchors": [
+    {
+     "id": "code:lib::typed_rb_max",
+     "file": null
+    },
+    {
+     "id": "code:lib::plist_const_last",
+     "file": "lib/plist.c"
+    },
+    {
+     "id": "code:lib::processed_const_last",
+     "file": "lib/cspf.h"
+    },
+    {
+     "id": "code:lib::subnets_const_last",
+     "file": "lib/link_state.h"
+    },
+    {
+     "id": "code:lib::targets_const_last",
+     "file": "lib/zlog_5424_cli.c"
+    },
+    {
+     "id": "code:lib::vertices_const_last",
+     "file": "lib/link_state.h"
+    },
+    {
+     "id": "code:lib::visited_const_last",
+     "file": "lib/cspf.h"
+    },
+    {
+     "id": "code:lib::plist_last",
+     "file": "lib/plist.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Ma5487adb",
+   "label": "lib:nb",
+   "size": 10,
+   "anchors": [
+    {
+     "id": "code:lib::yang_new_term_bin",
+     "file": null
+    },
+    {
+     "id": "code:lib::_adjust_ptr",
+     "file": "lib/northbound_oper.c"
+    },
+    {
+     "id": "code:lib::nb_oper_uint32_get",
+     "file": "lib/northbound_oper.c"
+    },
+    {
+     "id": "code:lib::nb_oper_uint64_get",
+     "file": "lib/northbound_oper.c"
+    },
+    {
+     "id": "code:lib::clients_client_state_candidate_config_version_get",
+     "file": "lib/mgmt_be_client.c"
+    },
+    {
+     "id": "code:lib::clients_client_state_running_config_version_get",
+     "file": "lib/mgmt_be_client.c"
+    },
+    {
+     "id": "code:lib::lib_interface_state_if_index_get",
+     "file": "lib/if.c"
+    },
+    {
+     "id": "code:lib::lib_interface_state_metric_get",
+     "file": "lib/if.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M7328a116",
+   "label": "lib:route",
+   "size": 8,
+   "anchors": [
+    {
+     "id": "code:lib::string_hash_make",
+     "file": null
+    },
+    {
+     "id": "code:lib::distribute_hash_make",
+     "file": "lib/distribute.c"
+    },
+    {
+     "id": "code:lib::if_rmap_hash_make",
+     "file": "lib/if_rmap.c"
+    },
+    {
+     "id": "code:lib::route_map_dep_data_hash_make_key",
+     "file": "lib/routemap.c"
+    },
+    {
+     "id": "code:lib::route_map_dep_hash_make_key",
+     "file": "lib/routemap.c"
+    },
+    {
+     "id": "code:lib::route_map_hash_key_make",
+     "file": "lib/routemap.c"
+    },
+    {
+     "id": "code:lib::running_config_entry_key_make",
+     "file": "lib/northbound.c"
+    },
+    {
+     "id": "code:lib::yang_mapping_hash_key",
+     "file": "lib/yang_translator.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mccb75c60",
+   "label": "lib:graph",
+   "size": 8,
+   "anchors": [
+    {
+     "id": "code:lib::graph_to_pyobj",
+     "file": "lib/command_py.c"
+    },
+    {
+     "id": "code:lib::graph_to_pyobj_idx",
+     "file": null
+    },
+    {
+     "id": "code:lib::graph_first",
+     "file": "lib/command_py.c"
+    },
+    {
+     "id": "code:lib::graph_item",
+     "file": "lib/command_py.c"
+    },
+    {
+     "id": "code:lib::graph_node_fork",
+     "file": "lib/command_py.c"
+    },
+    {
+     "id": "code:lib::graph_node_join",
+     "file": "lib/command_py.c"
+    },
+    {
+     "id": "code:lib::graph_node_next",
+     "file": "lib/command_py.c"
+    },
+    {
+     "id": "code:lib::graph_node_prev",
+     "file": "lib/command_py.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mcc3f49e2",
+   "label": "lib:list",
+   "size": 7,
+   "anchors": [
+    {
+     "id": "code:lib::typesafe_list_member",
+     "file": null
+    },
+    {
+     "id": "code:lib::debug_list_member",
+     "file": "lib/debug.c"
+    },
+    {
+     "id": "code:lib::event_list_member",
+     "file": "lib/event.c"
+    },
+    {
+     "id": "code:lib::mgmt_sessions_member",
+     "file": "lib/mgmt_fe_client.c"
+    },
+    {
+     "id": "code:lib::msg_server_list_member",
+     "file": "lib/mgmt_msg.c"
+    },
+    {
+     "id": "code:lib::nb_op_walks_member",
+     "file": "lib/northbound_oper.c"
+    },
+    {
+     "id": "code:lib::op_changes_queue_member",
+     "file": "lib/northbound_notif.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Ma2cc782e",
+   "label": "lib:typesafe",
+   "size": 7,
+   "anchors": [
+    {
+     "id": "code:lib::typesafe_dlist_member",
+     "file": null
+    },
+    {
+     "id": "code:lib::epoll_revent_list_member",
+     "file": "lib/event.c"
+    },
+    {
+     "id": "code:lib::if_connected_member",
+     "file": "lib/if.h"
+    },
+    {
+     "id": "code:lib::iso_address_list_member",
+     "file": "lib/iso.h"
+    },
+    {
+     "id": "code:lib::log_args_member",
+     "file": "lib/libfrr.h"
+    },
+    {
+     "id": "code:lib::vtys_member",
+     "file": "lib/vty.c"
+    },
+    {
+     "id": "code:lib::vtyservs_member",
+     "file": "lib/vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M9916a6f1",
+   "label": "lib:typesafe",
+   "size": 7,
+   "anchors": [
+    {
+     "id": "code:lib::typesafe_dlist_swap_all",
+     "file": null
+    },
+    {
+     "id": "code:lib::epoll_revent_list_swap_all",
+     "file": "lib/event.c"
+    },
+    {
+     "id": "code:lib::if_connected_swap_all",
+     "file": "lib/if.h"
+    },
+    {
+     "id": "code:lib::iso_address_list_swap_all",
+     "file": "lib/iso.h"
+    },
+    {
+     "id": "code:lib::log_args_swap_all",
+     "file": "lib/libfrr.h"
+    },
+    {
+     "id": "code:lib::vtys_swap_all",
+     "file": "lib/vty.c"
+    },
+    {
+     "id": "code:lib::vtyservs_swap_all",
+     "file": "lib/vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M21549386",
+   "label": "lib:lib",
+   "size": 7,
+   "anchors": [
+    {
+     "id": "code:lib::lib_route_map_entry_match_destroy",
+     "file": "lib/routemap_northbound.c"
+    },
+    {
+     "id": "code:lib::lib_route_map_entry_match_condition_interface_destroy",
+     "file": "lib/routemap_northbound.c"
+    },
+    {
+     "id": "code:lib::lib_route_map_entry_match_condition_ipv4_next_hop_type_destroy",
+     "file": "lib/routemap_northbound.c"
+    },
+    {
+     "id": "code:lib::lib_route_map_entry_match_condition_ipv6_next_hop_type_destroy",
+     "file": "lib/routemap_northbound.c"
+    },
+    {
+     "id": "code:lib::lib_route_map_entry_match_condition_list_name_destroy",
+     "file": "lib/routemap_northbound.c"
+    },
+    {
+     "id": "code:lib::lib_route_map_entry_match_condition_metric_destroy",
+     "file": "lib/routemap_northbound.c"
+    },
+    {
+     "id": "code:lib::lib_route_map_entry_match_condition_tag_destroy",
+     "file": "lib/routemap_northbound.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M50236acf",
+   "label": "lib:atomptr",
+   "size": 6,
+   "anchors": [
+    {
+     "id": "code:lib::atomptr_xx",
+     "file": null
+    },
+    {
+     "id": "code:lib::atomptr_copy_flags",
+     "file": "lib/atomptr.h"
+    },
+    {
+     "id": "code:lib::atomptr_is_00",
+     "file": "lib/atomptr.h"
+    },
+    {
+     "id": "code:lib::atomptr_is_0l",
+     "file": "lib/atomptr.h"
+    },
+    {
+     "id": "code:lib::atomptr_is_u0",
+     "file": "lib/atomptr.h"
+    },
+    {
+     "id": "code:lib::atomptr_is_ul",
+     "file": "lib/atomptr.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M50769398",
+   "label": "lib:md5",
+   "size": 6,
+   "anchors": [
+    {
+     "id": "code:lib::hmac_md5",
+     "file": "lib/md5.c"
+    },
+    {
+     "id": "code:lib::md5_calc",
+     "file": null
+    },
+    {
+     "id": "code:lib::md5_loop",
+     "file": "lib/md5.c"
+    },
+    {
+     "id": "code:lib::md5_pad",
+     "file": "lib/md5.c"
+    },
+    {
+     "id": "code:lib::md5_init",
+     "file": null
+    },
+    {
+     "id": "code:lib::md5_result",
+     "file": null
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M3f90e337",
+   "label": "lib:frr",
+   "size": 6,
+   "anchors": [
+    {
+     "id": "code:lib::frr_preinit",
+     "file": "lib/libfrr.c"
+    },
+    {
+     "id": "code:lib::opt_extend",
+     "file": null
+    },
+    {
+     "id": "code:lib::systemd_init_env",
+     "file": "lib/systemd.c"
+    },
+    {
+     "id": "code:lib::frr_opt_add",
+     "file": "lib/libfrr.c"
+    },
+    {
+     "id": "code:lib::getenv_int",
+     "file": null
+    },
+    {
+     "id": "code:lib::log_args_init",
+     "file": null
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Ma0ef335c",
+   "label": "lib:nl",
+   "size": 6,
+   "anchors": [
+    {
+     "id": "code:lib::nl_attr_put",
+     "file": "lib/netlink_parser.c"
+    },
+    {
+     "id": "code:lib::nl_attr_nest",
+     "file": "lib/netlink_parser.c"
+    },
+    {
+     "id": "code:lib::nl_attr_put16",
+     "file": "lib/netlink_parser.c"
+    },
+    {
+     "id": "code:lib::nl_attr_put32",
+     "file": "lib/netlink_parser.c"
+    },
+    {
+     "id": "code:lib::nl_attr_put64",
+     "file": "lib/netlink_parser.c"
+    },
+    {
+     "id": "code:lib::nl_attr_put8",
+     "file": "lib/netlink_parser.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M2625a98c",
+   "label": "lib:ringbuf",
+   "size": 6,
+   "anchors": [
+    {
+     "id": "code:lib::ringbuf_copy",
+     "file": "lib/ringbuf.c"
+    },
+    {
+     "id": "code:lib::ringbuf_remain",
+     "file": null
+    },
+    {
+     "id": "code:lib::ringbuf_space",
+     "file": "lib/ringbuf.c"
+    },
+    {
+     "id": "code:lib::ringbuf_peek",
+     "file": "lib/ringbuf.c"
+    },
+    {
+     "id": "code:lib::ringbuf_put",
+     "file": "lib/ringbuf.c"
+    },
+    {
+     "id": "code:lib::ringbuf_get",
+     "file": "lib/ringbuf.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mc21c028a",
+   "label": "lib:ip",
+   "size": 4,
+   "anchors": [
+    {
+     "id": "code:lib::__builtin_clz",
+     "file": null
+    },
+    {
+     "id": "code:lib::ip_masklen",
+     "file": "lib/prefix.c"
+    },
+    {
+     "id": "code:lib::ip6_masklen",
+     "file": "lib/prefix.c"
+    },
+    {
+     "id": "code:lib::netmask_str2prefix_str",
+     "file": "lib/prefix.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M40dcf1bf",
+   "label": "lib:exec",
+   "size": 4,
+   "anchors": [
+    {
+     "id": "code:lib::exec_timeout",
+     "file": "lib/vty.c"
+    },
+    {
+     "id": "code:lib::exec_timeout_min",
+     "file": "lib/vty.c"
+    },
+    {
+     "id": "code:lib::exec_timeout_sec",
+     "file": "lib/vty.c"
+    },
+    {
+     "id": "code:lib::no_exec_timeout",
+     "file": "lib/vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mb9582a18",
+   "label": "lib:in",
+   "size": 4,
+   "anchors": [
+    {
+     "id": "code:lib::in_cksumv",
+     "file": null
+    },
+    {
+     "id": "code:lib::in_cksum",
+     "file": "lib/checksum.h"
+    },
+    {
+     "id": "code:lib::in_cksum_with_ph4",
+     "file": "lib/checksum.h"
+    },
+    {
+     "id": "code:lib::in_cksum_with_ph6",
+     "file": "lib/checksum.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M67d71429",
+   "label": "lib:getsockopt",
+   "size": 4,
+   "anchors": [
+    {
+     "id": "code:lib::getsockopt_cmsg_data",
+     "file": null
+    },
+    {
+     "id": "code:lib::getsockopt_ifindex",
+     "file": "lib/sockopt.c"
+    },
+    {
+     "id": "code:lib::getsockopt_ipv4_ifindex",
+     "file": "lib/sockopt.c"
+    },
+    {
+     "id": "code:lib::getsockopt_ipv6_ifindex",
+     "file": "lib/sockopt.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Md8bd3bbe",
+   "label": "lib:nl",
+   "size": 4,
+   "anchors": [
+    {
+     "id": "code:lib::nl_rta_put",
+     "file": "lib/netlink_parser.c"
+    },
+    {
+     "id": "code:lib::nl_rta_nest",
+     "file": "lib/netlink_parser.c"
+    },
+    {
+     "id": "code:lib::nl_rta_put16",
+     "file": "lib/netlink_parser.c"
+    },
+    {
+     "id": "code:lib::nl_rta_put64",
+     "file": "lib/netlink_parser.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M182182ae",
+   "label": "lib:edges",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:lib::edges_const_find_lt",
+     "file": "lib/link_state.h"
+    },
+    {
+     "id": "code:lib::edges_find_lt",
+     "file": "lib/link_state.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M1763283c",
+   "label": "lib:pqueue",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:lib::pqueue_const_find_lt",
+     "file": "lib/cspf.h"
+    },
+    {
+     "id": "code:lib::pqueue_find_lt",
+     "file": "lib/cspf.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mc5286776",
+   "label": "lib:rn",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:lib::rn_tree_const_find_lt",
+     "file": "lib/table.c"
+    },
+    {
+     "id": "code:lib::rn_tree_find_lt",
+     "file": "lib/table.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M54f50859",
+   "label": "lib:xrefdata",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:lib::xrefdata_uid_const_find_lt",
+     "file": "lib/xref.h"
+    },
+    {
+     "id": "code:lib::xrefdata_uid_find_lt",
+     "file": "lib/xref.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M1a009633",
+   "label": "lib:edges",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:lib::edges_const_last",
+     "file": "lib/link_state.h"
+    },
+    {
+     "id": "code:lib::edges_last",
+     "file": "lib/link_state.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mec006962",
+   "label": "lib:pqueue",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:lib::pqueue_const_last",
+     "file": "lib/cspf.h"
+    },
+    {
+     "id": "code:lib::pqueue_last",
+     "file": "lib/cspf.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M68bd1548",
+   "label": "lib:rn",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:lib::rn_tree_const_last",
+     "file": "lib/table.c"
+    },
+    {
+     "id": "code:lib::rn_tree_last",
+     "file": "lib/table.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M69a86638",
+   "label": "lib:xrefdata",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:lib::xrefdata_uid_const_last",
+     "file": "lib/xref.h"
+    },
+    {
+     "id": "code:lib::xrefdata_uid_last",
+     "file": "lib/xref.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Me2d78d14",
+   "label": "lib:edges",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:lib::edges_const_prev",
+     "file": "lib/link_state.h"
+    },
+    {
+     "id": "code:lib::edges_prev",
+     "file": "lib/link_state.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M5f600e05",
+   "label": "lib:pqueue",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:lib::pqueue_const_prev",
+     "file": "lib/cspf.h"
+    },
+    {
+     "id": "code:lib::pqueue_prev",
+     "file": "lib/cspf.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Ma9efbd30",
+   "label": "lib:rn",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:lib::rn_tree_const_prev",
+     "file": "lib/table.c"
+    },
+    {
+     "id": "code:lib::rn_tree_prev",
+     "file": "lib/table.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mde240fb2",
+   "label": "lib:subnets",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:lib::subnets_const_prev",
+     "file": "lib/link_state.h"
+    },
+    {
+     "id": "code:lib::subnets_prev",
+     "file": "lib/link_state.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mf50c4e9d",
+   "label": "lib:visited",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:lib::visited_const_prev",
+     "file": "lib/cspf.h"
+    },
+    {
+     "id": "code:lib::visited_prev",
+     "file": "lib/cspf.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mb9b5534d",
+   "label": "lib:xrefdata",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:lib::xrefdata_uid_const_prev",
+     "file": "lib/xref.h"
+    },
+    {
+     "id": "code:lib::xrefdata_uid_prev",
+     "file": "lib/xref.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  }
+ ]
+}

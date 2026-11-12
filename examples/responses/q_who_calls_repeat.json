@@ -1,0 +1,193 @@
+{
+ "ok": true,
+ "question": "who calls zclient_route_send",
+ "intent": "callers",
+ "routed": {
+  "intent": "callers",
+  "confidence": 1.0,
+  "scores": {
+   "slice": 0,
+   "callers": 3,
+   "impact": 0,
+   "path": 0,
+   "docs": 0,
+   "explain": 0
+  },
+  "rules_fired": [
+   [
+    "callers",
+    "who calls"
+   ]
+  ]
+ },
+ "entities": [
+  {
+   "mention": "zclient_route_send",
+   "kind": "code",
+   "ids": [
+    "code:lib::zclient_route_send",
+    "code:lib::zclient::zclient_route_send"
+   ],
+   "n_ids": 2
+  }
+ ],
+ "meta": {
+  "latency_ms": 0.08,
+  "cache_hit": true,
+  "fingerprint": "db5d33a41bf1d576",
+  "cache_key": "6d48036e0fce290a1dfd6c62b35e4e1e653fabc9d1d9c385d31a939379b73eeb"
+ },
+ "answer": {
+  "intent": "callers",
+  "target": "code:lib::zclient_route_send",
+  "mode": "code",
+  "callers": [
+   {
+    "node": "code:lib::zclient_send_localsid",
+    "service": "svc:lib",
+    "src_ref": "lib/zclient.c:603"
+   },
+   {
+    "node": "code:ospfd::ospf_zebra_add",
+    "service": "svc:ospfd",
+    "src_ref": "ospfd/ospf_zebra.c:352"
+   },
+   {
+    "node": "code:ospfd::ospf_zebra_delete_discard",
+    "service": "svc:ospfd",
+    "src_ref": "ospfd/ospf_zebra.c:426"
+   },
+   {
+    "node": "code:bgpd::bgp_zebra_announce_actual",
+    "service": "svc:bgpd",
+    "src_ref": "bgpd/bgp_zebra.c:1741"
+   },
+   {
+    "node": "code:bgpd::bgp_zebra_announce_default",
+    "service": "svc:bgpd",
+    "src_ref": "bgpd/bgp_zebra.c:4892"
+   },
+   {
+    "node": "code:staticd::static_zebra_route_add",
+    "service": "svc:staticd",
+    "src_ref": "staticd/static_zebra.c:561"
+   },
+   {
+    "node": "code:bgpd::vnc_zebra_route_msg",
+    "service": "svc:bgpd",
+    "src_ref": "bgpd/rfapi/vnc_zebra.c:399"
+   },
+   {
+    "node": "code:ospfd::ospf_zebra_add_discard",
+    "service": "svc:ospfd",
+    "src_ref": "ospfd/ospf_zebra.c:400"
+   },
+   {
+    "node": "code:bgpd::bgp_zebra_withdraw_actual",
+    "service": "svc:bgpd",
+    "src_ref": "bgpd/bgp_zebra.c:1839"
+   },
+   {
+    "node": "code:ospfd::ospf_zebra_delete",
+    "service": "svc:ospfd",
+    "src_ref": "ospfd/ospf_zebra.c:378"
+   }
+  ],
+  "serves_messages": [],
+  "messages_from": {},
+  "nb_paths_served": [],
+  "evidence": [
+   {
+    "rel": "calls",
+    "dir": "in",
+    "peer": "code:lib::zclient_send_localsid",
+    "evidence": [
+     "DECLARED:code"
+    ],
+    "src_ref": "lib/zclient.c:603"
+   },
+   {
+    "rel": "calls",
+    "dir": "in",
+    "peer": "code:ospfd::ospf_zebra_add",
+    "evidence": [
+     "DECLARED:code"
+    ],
+    "src_ref": "ospfd/ospf_zebra.c:352"
+   },
+   {
+    "rel": "calls",
+    "dir": "in",
+    "peer": "code:ospfd::ospf_zebra_delete_discard",
+    "evidence": [
+     "DECLARED:code"
+    ],
+    "src_ref": "ospfd/ospf_zebra.c:426"
+   },
+   {
+    "rel": "calls",
+    "dir": "in",
+    "peer": "code:bgpd::bgp_zebra_announce_actual",
+    "evidence": [
+     "DECLARED:code"
+    ],
+    "src_ref": "bgpd/bgp_zebra.c:1741"
+   },
+   {
+    "rel": "calls",
+    "dir": "in",
+    "peer": "code:bgpd::bgp_zebra_announce_default",
+    "evidence": [
+     "DECLARED:code"
+    ],
+    "src_ref": "bgpd/bgp_zebra.c:4892"
+   },
+   {
+    "rel": "calls",
+    "dir": "in",
+    "peer": "code:staticd::static_zebra_route_add",
+    "evidence": [
+     "DECLARED:code"
+    ],
+    "src_ref": "staticd/static_zebra.c:561"
+   },
+   {
+    "rel": "calls",
+    "dir": "in",
+    "peer": "code:bgpd::vnc_zebra_route_msg",
+    "evidence": [
+     "DECLARED:code"
+    ],
+    "src_ref": "bgpd/rfapi/vnc_zebra.c:399"
+   },
+   {
+    "rel": "calls",
+    "dir": "in",
+    "peer": "code:ospfd::ospf_zebra_add_discard",
+    "evidence": [
+     "DECLARED:code"
+    ],
+    "src_ref": "ospfd/ospf_zebra.c:400"
+   },
+   {
+    "rel": "calls",
+    "dir": "in",
+    "peer": "code:bgpd::bgp_zebra_withdraw_actual",
+    "evidence": [
+     "DECLARED:code"
+    ],
+    "src_ref": "bgpd/bgp_zebra.c:1839"
+   },
+   {
+    "rel": "calls",
+    "dir": "in",
+    "peer": "code:ospfd::ospf_zebra_delete",
+    "evidence": [
+     "DECLARED:code"
+    ],
+    "src_ref": "ospfd/ospf_zebra.c:378"
+   }
+  ]
+ },
+ "text": "callers of code:lib::zclient_route_send  (mode: code)\n  callers (10):\n    code:lib::zclient_send_localsid  [svc:lib]  @lib/zclient.c:603\n    code:ospfd::ospf_zebra_add  [svc:ospfd]  @ospfd/ospf_zebra.c:352\n    code:ospfd::ospf_zebra_delete_discard  [svc:ospfd]  @ospfd/ospf_zebra.c:426\n    code:bgpd::bgp_zebra_announce_actual  [svc:bgpd]  @bgpd/bgp_zebra.c:1741\n    code:bgpd::bgp_zebra_announce_default  [svc:bgpd]  @bgpd/bgp_zebra.c:4892\n    code:staticd::static_zebra_route_add  [svc:staticd]  @staticd/static_zebra.c:561\n  evidence items: 10"
+}

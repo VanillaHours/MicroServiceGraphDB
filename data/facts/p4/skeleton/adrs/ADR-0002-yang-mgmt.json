@@ -1,0 +1,118 @@
+{
+ "atoms": [
+  {
+   "id": "a36ed344",
+   "refs": [
+    {
+     "k": "D",
+     "q": "management data is stored in YANG in compliance with a pre-defined set of YANG based schema",
+     "r": "doc/user/mgmtd.rst"
+    }
+   ],
+   "tpl": "Context: mgmtd requires that management data is stored in YANG in compliance with a pre-defined set of YANG based schema."
+  },
+  {
+   "id": "a42a7ce4",
+   "refs": [
+    {
+     "k": "D",
+     "q": "Data shall also be stored/retrieved in YANG format only.",
+     "r": "doc/user/mgmtd.rst"
+    }
+   ],
+   "tpl": "Decision: data shall also be stored/retrieved in YANG format only \u2014 no private config stores."
+  },
+  {
+   "id": "a546bfb3",
+   "refs": [
+    {
+     "k": "F",
+     "r": "nb_yang_join.hits"
+    },
+    {
+     "k": "F",
+     "r": "nb_yang_join.total_nb"
+    },
+    {
+     "k": "F",
+     "r": "nb_yang_join.pct"
+    },
+    {
+     "k": "S",
+     "r": "nb_join.hits"
+    },
+    {
+     "k": "S",
+     "r": "nb_join.total"
+    },
+    {
+     "k": "S",
+     "r": "nb_join.pct"
+    }
+   ],
+   "tpl": "Consequence: the northbound join validated this contract plane \u2014 426 of 426 handler-table registrations matched YANG schema paths (100%)."
+  },
+  {
+   "id": "a5651bdd",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D1737981e"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.yang.frr-filter"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.yang.ietf-key-chain"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.yang.frr-logging"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.yang.frr-route-map"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.yang.total"
+    }
+   ],
+   "tpl": "Consequence: shared models frr-filter(41), ietf-key-chain(26), frr-logging(21), frr-route-map(30) sit in domain D1737981e \u2014 147 YANG paths total \u2014 and are wired from multiple daemons' domains."
+  },
+  {
+   "id": "aa3b2c47",
+   "refs": [
+    {
+     "k": "D",
+     "r": "doc/user/zebra.rst"
+    },
+    {
+     "k": "D",
+     "r": "doc/user/mgmtd.rst"
+    },
+    {
+     "k": "D",
+     "r": "doc/user/ospfd.rst"
+    },
+    {
+     "k": "D",
+     "r": "doc/user/bgp.rst"
+    }
+   ],
+   "tpl": "Provenance: decision statements are authored from FRR documentation; quotes are validated verbatim by the verifier, consequences are measured graph facts."
+  }
+ ],
+ "claims": "yes",
+ "okf_level": "ADR",
+ "page_id": "adrs/ADR-0002-yang-mgmt.md",
+ "sources": [
+  "doc/user/ospfd.rst",
+  "doc/user/mgmtd.rst",
+  "doc/user/zebra.rst",
+  "doc/user/bgp.rst",
+  "p2/findings.json"
+ ]
+}

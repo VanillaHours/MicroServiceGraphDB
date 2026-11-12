@@ -1,0 +1,138 @@
+{
+ "pages": [
+  {
+   "claims": 5,
+   "page": "adrs/ADR-0001-zapi-ipc.md",
+   "reasons": [],
+   "status": "full",
+   "stripped": 0,
+   "stripped_lines": []
+  },
+  {
+   "claims": 5,
+   "page": "adrs/ADR-0002-yang-mgmt.md",
+   "reasons": [],
+   "status": "full",
+   "stripped": 0,
+   "stripped_lines": []
+  },
+  {
+   "claims": 5,
+   "page": "adrs/ADR-0003-zebra-kernel.md",
+   "reasons": [],
+   "status": "full",
+   "stripped": 0,
+   "stripped_lines": []
+  },
+  {
+   "claims": 0,
+   "page": "adrs/README.md",
+   "reasons": [],
+   "status": "meta",
+   "stripped": 0
+  },
+  {
+   "claims": 0,
+   "page": "adrs/TEMPLATE.md",
+   "reasons": [],
+   "status": "meta",
+   "stripped": 0
+  },
+  {
+   "claims": 52,
+   "page": "clusters/D1737981e.md",
+   "reasons": [],
+   "status": "full",
+   "stripped": 0,
+   "stripped_lines": []
+  },
+  {
+   "claims": 58,
+   "page": "clusters/D3063a0b0.md",
+   "reasons": [],
+   "status": "full",
+   "stripped": 0,
+   "stripped_lines": []
+  },
+  {
+   "claims": 66,
+   "page": "clusters/D4b2a9ab8.md",
+   "reasons": [],
+   "status": "full",
+   "stripped": 0,
+   "stripped_lines": []
+  },
+  {
+   "claims": 35,
+   "page": "clusters/Dc32724de.md",
+   "reasons": [],
+   "status": "full",
+   "stripped": 0,
+   "stripped_lines": []
+  },
+  {
+   "claims": 43,
+   "page": "clusters/Ded29f1c0.md",
+   "reasons": [],
+   "status": "full",
+   "stripped": 0,
+   "stripped_lines": []
+  },
+  {
+   "claims": 39,
+   "page": "daemons/bgpd.md",
+   "reasons": [],
+   "status": "full",
+   "stripped": 0,
+   "stripped_lines": []
+  },
+  {
+   "claims": 37,
+   "page": "daemons/lib.md",
+   "reasons": [],
+   "status": "full",
+   "stripped": 0,
+   "stripped_lines": []
+  },
+  {
+   "claims": 30,
+   "page": "daemons/ospfd.md",
+   "reasons": [],
+   "status": "full",
+   "stripped": 0,
+   "stripped_lines": []
+  },
+  {
+   "claims": 21,
+   "page": "daemons/staticd.md",
+   "reasons": [],
+   "status": "full",
+   "stripped": 0,
+   "stripped_lines": []
+  },
+  {
+   "claims": 39,
+   "page": "daemons/zebra.md",
+   "reasons": [],
+   "status": "full",
+   "stripped": 0,
+   "stripped_lines": []
+  },
+  {
+   "claims": 19,
+   "page": "index.md",
+   "reasons": [],
+   "status": "full",
+   "stripped": 0,
+   "stripped_lines": []
+  }
+ ],
+ "summary": {
+  "claims": 454,
+  "full": 14,
+  "meta": 2,
+  "pages": 16,
+  "partial": 0,
+  "stripped": 0
+ }
+}

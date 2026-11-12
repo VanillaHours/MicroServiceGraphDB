@@ -1,0 +1,217 @@
+{
+ "phase": "P3",
+ "metric": "recall vs FRR documented functional associations",
+ "bar": 0.8,
+ "n_gt": 12,
+ "n_recovered": 12,
+ "recall": 1.0,
+ "pass": true,
+ "ground_truth_source": "poc/src/frr-10.7.1/doc/user/*.rst (claims grep-verified 2026-11-12)",
+ "coverage_notes": [
+  "staticd->zebra route sends: attributed to svc:lib zclient wrappers in this slice (svc:staticd has 0 publishes edges) \u2014 extraction coverage gap, flow still recovered via notification handling + NB model ownership",
+  "bgpd BGP-model NB tables (frr-bgp* modules) were not extracted into nb tables in P1/P2; bgpd is wired only to frr-bgp-route-map \u2014 association evaluated on the wired subset",
+  "43 YANG modules exist repo-wide; only 15 are wired to the 6 in-slice daemons \u2014 unwired modules (isisd, ripd, bfdd, pim...) are out of ground-truth scope",
+  "bgpd's frr-bgp-route-map augment paths lack member_of linkage to the shared frr-route-map tree in the P1 yang extraction, so lib<->bgpd has no direct contract-plane edge; the shared-machinery claim is verified on the code plane (4 daemons call into lib modules), see GT row lib-machinery-codeplane"
+ ],
+ "verdicts": [
+  {
+   "id": "bgpd-zebra",
+   "type": "flow",
+   "pair": [
+    "svc:bgpd",
+    "svc:zebra"
+   ],
+   "claim": "bgpd hands routes to zebra over ZAPI",
+   "doc": "doc/user/bgp.rst: \"-Z, --no_zebra \u2014 Do not communicate with zebra at all\"",
+   "verdict": "recovered",
+   "evidence": {
+    "domains": [
+     "D3063a0b0",
+     "D4b2a9ab8"
+    ],
+    "rels": [
+     "handles",
+     "publishes"
+    ]
+   }
+  },
+  {
+   "id": "ospfd-zebra",
+   "type": "flow",
+   "pair": [
+    "svc:ospfd",
+    "svc:zebra"
+   ],
+   "claim": "ospfd acquires interface information from zebra and must run after it",
+   "doc": "doc/user/ospfd.rst: \"ospfd must acquire interface information from zebra\"",
+   "verdict": "recovered",
+   "evidence": {
+    "domains": [
+     "Ded29f1c0",
+     "D4b2a9ab8"
+    ],
+    "rels": [
+     "handles",
+     "publishes"
+    ]
+   }
+  },
+  {
+   "id": "staticd-zebra",
+   "type": "flow",
+   "pair": [
+    "svc:staticd",
+    "svc:zebra"
+   ],
+   "claim": "staticd registers nexthops with zebra for tracking",
+   "doc": "doc/user/static.rst: \"Whether staticd has registered this nexthop for tracking with zebra\"",
+   "verdict": "recovered",
+   "evidence": {
+    "domains": [
+     "Dc32724de",
+     "D4b2a9ab8"
+    ],
+    "rels": [
+     "publishes"
+    ]
+   }
+  },
+  {
+   "id": "zebra-is-zapi-server",
+   "type": "server",
+   "svc": "svc:zebra",
+   "claim": "zebra is the ZAPI server for all route daemons",
+   "doc": "doc/user/zebra.rst: \"Displays the ZAPI message handler counters\" (ZAPI server)",
+   "verdict": "recovered",
+   "evidence": {
+    "client_domains": [
+     "svc:bgpd",
+     "svc:lib",
+     "svc:ospfd",
+     "svc:staticd"
+    ]
+   }
+  },
+  {
+   "id": "staticd-owns-frr-staticd",
+   "type": "nb-owns",
+   "svc": "svc:staticd",
+   "module": "frr-staticd",
+   "claim": "staticd implements the frr-staticd northbound model",
+   "doc": "doc/user/static.rst (staticd northbound configuration)",
+   "verdict": "recovered",
+   "evidence": {
+    "yang_paths": 27,
+    "in_daemon_domain": 27,
+    "same_l2_area": 27
+   }
+  },
+  {
+   "id": "zebra-owns-frr-zebra",
+   "type": "nb-owns",
+   "svc": "svc:zebra",
+   "module": "frr-zebra",
+   "claim": "zebra implements the frr-zebra northbound model",
+   "doc": "doc/user/zebra.rst (interface/kernel configuration)",
+   "verdict": "recovered",
+   "evidence": {
+    "yang_paths": 164,
+    "in_daemon_domain": 164,
+    "same_l2_area": 164
+   }
+  },
+  {
+   "id": "bgpd-owns-frr-bgp-route-map",
+   "type": "nb-owns",
+   "svc": "svc:bgpd",
+   "module": "frr-bgp-route-map",
+   "claim": "bgpd implements BGP route-map match conditions",
+   "doc": "doc/user/bgp.rst / filter.rst (route-map framework)",
+   "verdict": "recovered",
+   "evidence": {
+    "yang_paths": 65,
+    "in_daemon_domain": 65,
+    "same_l2_area": 65
+   }
+  },
+  {
+   "id": "ospfd-owns-frr-ospf-route-map",
+   "type": "nb-owns",
+   "svc": "svc:ospfd",
+   "module": "frr-ospf-route-map",
+   "claim": "ospfd implements OSPF route-map match conditions",
+   "doc": "doc/user/ospfd.rst (route-map usage)",
+   "verdict": "recovered",
+   "evidence": {
+    "yang_paths": 1,
+    "in_daemon_domain": 1,
+    "same_l2_area": 1
+   }
+  },
+  {
+   "id": "zebra-owns-frr-zebra-route-map",
+   "type": "nb-owns",
+   "svc": "svc:zebra",
+   "module": "frr-zebra-route-map",
+   "claim": "zebra implements zebra route-map match conditions",
+   "doc": "doc/user/zebra.rst (route-map usage)",
+   "verdict": "recovered",
+   "evidence": {
+    "yang_paths": 6,
+    "in_daemon_domain": 6,
+    "same_l2_area": 6
+   }
+  },
+  {
+   "id": "lib-shared-models",
+   "type": "infra",
+   "svc": "svc:lib",
+   "min_bridges": 2,
+   "claim": "lib owns shared config models (filter/route-map/vrf/interface/logging) wired across multiple daemons' domains",
+   "doc": "doc/user/mgmtd.rst: \"management data is stored in YANG ... pre-defined set of YANG based schema\"",
+   "verdict": "recovered",
+   "evidence": {
+    "contract_plane_bridges": [
+     "svc:ospfd",
+     "svc:zebra"
+    ]
+   }
+  },
+  {
+   "id": "lib-machinery-codeplane",
+   "type": "infra-code",
+   "svc": "svc:lib",
+   "min_callers": 3,
+   "claim": "lib hosts the northbound+zclient machinery called by every daemon",
+   "doc": "doc/user/mgmtd.rst (mgmtd/northbound) + zebra.rst (zapi control socket)",
+   "verdict": "recovered",
+   "evidence": {
+    "daemons_calling_into_lib": {
+     "bgpd": 8696,
+     "ospfd": 3909,
+     "staticd": 484,
+     "zebra": 6061
+    }
+   }
+  },
+  {
+   "id": "expected-shape",
+   "type": "shape",
+   "n_min": 4,
+   "n_max": 8,
+   "claim": "expected community shape: one domain per daemon + one northbound/zclient infrastructure domain (POC-DESIGN P3 note; FRR daemon docs)",
+   "doc": "POC-DESIGN.md P3 + doc/user daemon pages",
+   "verdict": "recovered",
+   "evidence": {
+    "n_domains": 5,
+    "domains": {
+     "bgpd": "D3063a0b0",
+     "lib": "D1737981e",
+     "ospfd": "Ded29f1c0",
+     "staticd": "Dc32724de",
+     "zebra": "D4b2a9ab8"
+    }
+   }
+  }
+ ]
+}

@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+/data/src/
+/data/compile_commands.json
+/data/facts/facts.duckdb
+/data/facts/facts.db
+/data/facts/p1/*.jsonl
+/data/facts/p1/work/
+/data/facts/p1/facts.duckdb
+/data/facts/p6/_hash_before.json
+/out/

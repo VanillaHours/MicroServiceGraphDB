@@ -1,0 +1,646 @@
+{
+ "atoms": [
+  {
+   "id": "a063b4da",
+   "refs": [
+    {
+     "k": "N",
+     "r": "svc:ospfd"
+    },
+    {
+     "k": "C",
+     "r": "Ded29f1c0"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.members"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.members.svc"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.members.zapi"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.members.yang"
+    }
+   ],
+   "tpl": "svc:ospfd forms functional domain Ded29f1c0: 17 backbone members (1 service, 15 ZAPI message, 1 YANG path nodes)."
+  },
+  {
+   "id": "a63a4adf",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.published"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_CLIENT_CAPABILITIES"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_REDISTRIBUTE_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_REDISTRIBUTE_DEFAULT_ADD"
+    }
+   ],
+   "tpl": "svc:ospfd publishes 7 message types toward the ZAPI bus (ZEBRA_CLIENT_CAPABILITIES, ZEBRA_REDISTRIBUTE_ADD, ZEBRA_REDISTRIBUTE_DEFAULT_ADD, ...)."
+  },
+  {
+   "id": "aa395e93",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.handled"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_CLIENT_CLOSE_NOTIFY"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    }
+   ],
+   "tpl": "It handles 8 notification/event types from the bus (ZEBRA_CLIENT_CLOSE_NOTIFY, ZEBRA_INTERFACE_ADDRESS_ADD, ZEBRA_INTERFACE_ADDRESS_DELETE, ...)."
+  },
+  {
+   "id": "ae33cf5e",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.yang.total"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.nb_tables"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.yang.frr-ospf-route-map"
+    }
+   ],
+   "tpl": "Northbound contracts: frr-ospf-route-map(1) \u2014 1 YANG paths across 1 NB handler tables."
+  },
+  {
+   "id": "aceed916",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.roles"
+    }
+   ],
+   "tpl": "Measured roles: zapi-client, zapi-publisher."
+  },
+  {
+   "id": "aec28f17",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Ced29f1c0"
+    }
+   ],
+   "tpl": "The domain contains P3 L2 service area Ced29f1c0 (ospfd:frr-ospf-route-map)."
+  },
+  {
+   "id": "a5a928fd",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.boundary.total"
+    }
+   ],
+   "tpl": "31 cross-domain edge bindings point outside the domain."
+  },
+  {
+   "id": "a83126e1",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.flows.out"
+    },
+    {
+     "k": "F",
+     "r": "zapi.cross_svc_flows"
+    }
+   ],
+   "tpl": "7 verified cross-service ZAPI flows originate from svc:ospfd."
+  },
+  {
+   "id": "aaf36476",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.orphan.n"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "0 handled messages currently have no in-slice sender (orphan handlers)."
+  },
+  {
+   "id": "a952ffd9",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.modules.n"
+    },
+    {
+     "k": "C",
+     "r": "M90387781"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.M90387781.size"
+    }
+   ],
+   "tpl": "29 code modules; largest is ospfd:ospf with 212 functions."
+  },
+  {
+   "id": "a3d96ce8",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Mb7c3d1fd"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.Mb7c3d1fd.size"
+    }
+   ],
+   "tpl": "Bucket ospfd:unlinked holds 1012 functions without intra-service call edges (pointer-dispatched callbacks and CLI handlers)."
+  },
+  {
+   "id": "a853b444",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.bridge.total"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.bridge.lib:zlog"
+    }
+   ],
+   "tpl": "3625 intra-service `calls` edges leave for other service partitions; densest target lib:zlog (968 calls)."
+  }
+ ],
+ "claims": "yes",
+ "okf_level": "L2-cluster",
+ "page_id": "clusters/Ded29f1c0.md",
+ "row_atoms": [
+  {
+   "id": "a5d0d1c2",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_CLIENT_CAPABILITIES"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_CLIENT_CAPABILITIES"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_CLIENT_CAPABILITIES"
+  },
+  {
+   "id": "a9571ff6",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_REDISTRIBUTE_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_REDISTRIBUTE_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_REDISTRIBUTE_ADD"
+  },
+  {
+   "id": "a7dce706",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_REDISTRIBUTE_DEFAULT_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_REDISTRIBUTE_DEFAULT_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_REDISTRIBUTE_DEFAULT_ADD"
+  },
+  {
+   "id": "a6f81ce6",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_REDISTRIBUTE_DEFAULT_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_REDISTRIBUTE_DEFAULT_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_REDISTRIBUTE_DEFAULT_DELETE"
+  },
+  {
+   "id": "a20df46f",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_REDISTRIBUTE_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_REDISTRIBUTE_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_REDISTRIBUTE_DELETE"
+  },
+  {
+   "id": "a472edc6",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ROUTE_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_ROUTE_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ROUTE_ADD"
+  },
+  {
+   "id": "a0a6e4e9",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ROUTE_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_ROUTE_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ROUTE_DELETE"
+  },
+  {
+   "id": "a9a7fdac",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_CLIENT_CLOSE_NOTIFY"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_CLIENT_CLOSE_NOTIFY"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_CLIENT_CLOSE_NOTIFY"
+  },
+  {
+   "id": "a972961d",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+  },
+  {
+   "id": "a5c218a6",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+  },
+  {
+   "id": "a1ad582d",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_LINK_PARAMS"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_INTERFACE_LINK_PARAMS"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_LINK_PARAMS"
+  },
+  {
+   "id": "a8696d4a",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_OPAQUE_MESSAGE"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_OPAQUE_MESSAGE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_OPAQUE_MESSAGE"
+  },
+  {
+   "id": "ae5b8485",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_REDISTRIBUTE_ROUTE_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_REDISTRIBUTE_ROUTE_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_REDISTRIBUTE_ROUTE_ADD"
+  },
+  {
+   "id": "ac26575a",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_REDISTRIBUTE_ROUTE_DEL"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_REDISTRIBUTE_ROUTE_DEL"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_REDISTRIBUTE_ROUTE_DEL"
+  },
+  {
+   "id": "a7b59ae6",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ROUTER_ID_UPDATE"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_ROUTER_ID_UPDATE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ROUTER_ID_UPDATE"
+  },
+  {
+   "id": "ab1372ae",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D4b2a9ab8"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.boundary.D4b2a9ab8.handles"
+    }
+   ],
+   "tpl": "handles \u00d77 \u2192 D4b2a9ab8"
+  },
+  {
+   "id": "a2a7f395",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D4b2a9ab8"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.boundary.D4b2a9ab8.publishes"
+    }
+   ],
+   "tpl": "publishes \u00d77 \u2192 D4b2a9ab8"
+  },
+  {
+   "id": "a3fa625f",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D3063a0b0"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.boundary.D3063a0b0.handles"
+    }
+   ],
+   "tpl": "handles \u00d76 \u2192 D3063a0b0"
+  },
+  {
+   "id": "adc960b5",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D3063a0b0"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.boundary.D3063a0b0.publishes"
+    }
+   ],
+   "tpl": "publishes \u00d75 \u2192 D3063a0b0"
+  },
+  {
+   "id": "a90a3645",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D1737981e"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.boundary.D1737981e.publishes"
+    }
+   ],
+   "tpl": "publishes \u00d74 \u2192 D1737981e"
+  },
+  {
+   "id": "ac2943d1",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Dc32724de"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.boundary.Dc32724de.handles"
+    }
+   ],
+   "tpl": "handles \u00d72 \u2192 Dc32724de"
+  },
+  {
+   "id": "a4f3ed04",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M90387781"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.M90387781.size"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 212 functions"
+  },
+  {
+   "id": "a44e07c5",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M38cd72c7"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.M38cd72c7.size"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 154 functions"
+  },
+  {
+   "id": "a684bfe4",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Mbed952fb"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.Mbed952fb.size"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 136 functions"
+  },
+  {
+   "id": "aa9d67c9",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M62a211d6"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.M62a211d6.size"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 121 functions"
+  },
+  {
+   "id": "aba45c0d",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M89381b56"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.M89381b56.size"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 116 functions"
+  },
+  {
+   "id": "ac15ce29",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M2af12f08"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.M2af12f08.size"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 112 functions"
+  },
+  {
+   "id": "a05cc168",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M9e2457c9"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.M9e2457c9.size"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 107 functions"
+  },
+  {
+   "id": "a517c333",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M03ee9eb0"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.M03ee9eb0.size"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 101 functions"
+  },
+  {
+   "id": "a95ff474",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M28664eb2"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.M28664eb2.size"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 101 functions"
+  },
+  {
+   "id": "a6d89379",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M21fd366a"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.M21fd366a.size"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 100 functions"
+  }
+ ],
+ "sources": [
+  "p3/packs/Ded29f1c0.json",
+  "p3/profiles.jsonl",
+  "p3/backbone.json",
+  "p3/clusters.jsonl",
+  "p2/findings.json"
+ ]
+}

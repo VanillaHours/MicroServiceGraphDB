@@ -1,0 +1,2162 @@
+{
+ "results": [
+  {
+   "qid": "G001",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.27,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "svc_ok": true,
+    "verified_precision": 0.2,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_ROUTE_ADD",
+    "files": 12,
+    "ms": 14.3
+   },
+   "repeat_ms": 0.09,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G002",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.21,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "svc_ok": true,
+    "verified_precision": 0.1111111111111111,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_INTERFACE_ADD",
+    "files": 6,
+    "ms": 13.3
+   },
+   "repeat_ms": 0.06,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G003",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.17,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "svc_ok": true,
+    "verified_precision": 0.125,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_INTERFACE_DELETE",
+    "files": 5,
+    "ms": 12.7
+   },
+   "repeat_ms": 0.05,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G004",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.19,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "svc_ok": true,
+    "verified_precision": 0.2,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_REDISTRIBUTE_ADD",
+    "files": 7,
+    "ms": 12.5
+   },
+   "repeat_ms": 0.03,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G005",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.16,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "svc_ok": true,
+    "verified_precision": 0.25,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_REDISTRIBUTE_DELETE",
+    "files": 7,
+    "ms": 12.4
+   },
+   "repeat_ms": 0.03,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G006",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.13,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "svc_ok": true,
+    "verified_precision": 0.5,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_NEXTHOP_REGISTER",
+    "files": 7,
+    "ms": 14.7
+   },
+   "repeat_ms": 0.02,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G007",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.17,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "svc_ok": true,
+    "verified_precision": 0.25,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_SRV6_MANAGER_GET_LOCATOR",
+    "files": 4,
+    "ms": 12.2
+   },
+   "repeat_ms": 0.03,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G008",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.13,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "svc_ok": true,
+    "verified_precision": 0.5,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_MPLS_LABELS_ADD",
+    "files": 7,
+    "ms": 12.0
+   },
+   "repeat_ms": 0.02,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G009",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.14,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "svc_ok": true,
+    "verified_precision": 0.2,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_ROUTE_DELETE",
+    "files": 11,
+    "ms": 12.1
+   },
+   "repeat_ms": 0.03,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G010",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.14,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "svc_ok": true,
+    "verified_precision": 0.5,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_ROUTER_ID_ADD",
+    "files": 4,
+    "ms": 11.9
+   },
+   "repeat_ms": 0.02,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G011",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.15,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "svc_ok": true,
+    "verified_precision": 0.25,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_INTERFACE_SET_PROTODOWN",
+    "files": 4,
+    "ms": 12.2
+   },
+   "repeat_ms": 0.03,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G012",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.16,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "svc_ok": true,
+    "verified_precision": 0.5,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_NEXTHOP_UNREGISTER",
+    "files": 7,
+    "ms": 12.1
+   },
+   "repeat_ms": 0.02,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G013",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.15,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "svc_ok": true,
+    "verified_precision": 0.5,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_MPLS_LABELS_DELETE",
+    "files": 8,
+    "ms": 16.1
+   },
+   "repeat_ms": 0.02,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G014",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.22,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "verified_precision": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "apply_mask_ipv4",
+    "files": 12,
+    "ms": 11.9
+   },
+   "repeat_ms": 0.07,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G015",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.2,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "verified_precision": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "event_timer_remain_second",
+    "files": 11,
+    "ms": 12.1
+   },
+   "repeat_ms": 0.07,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G016",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.18,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "verified_precision": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "skiplist_free",
+    "files": 9,
+    "ms": 11.9
+   },
+   "repeat_ms": 0.09,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G017",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.2,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "verified_precision": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "bgp_recalculate_all_bestpaths",
+    "files": 4,
+    "ms": 12.5
+   },
+   "repeat_ms": 0.07,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G018",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.16,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "verified_precision": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "peer_af_flag_set_vty",
+    "files": 1,
+    "ms": 11.9
+   },
+   "repeat_ms": 0.07,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G019",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.23,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "verified_precision": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ospf_external_info_find_lsa",
+    "files": 7,
+    "ms": 12.1
+   },
+   "repeat_ms": 0.07,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G020",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.17,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "verified_precision": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ospf_get_if_params",
+    "files": 4,
+    "ms": 12.0
+   },
+   "repeat_ms": 0.06,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G021",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.22,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "verified_precision": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "zebra_vrf_table",
+    "files": 12,
+    "ms": 12.0
+   },
+   "repeat_ms": 0.07,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G022",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.24,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "verified_precision": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "bgp_dest_has_bgp_path_info_data",
+    "files": 10,
+    "ms": 12.5
+   },
+   "repeat_ms": 0.07,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G023",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.2,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "verified_precision": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "bgp_capability_send",
+    "files": 4,
+    "ms": 12.2
+   },
+   "repeat_ms": 0.07,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G024",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.24,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "verified_precision": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "lcommunity_free",
+    "files": 9,
+    "ms": 12.5
+   },
+   "repeat_ms": 0.07,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G025",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.21,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "verified_precision": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "aspath_dup",
+    "files": 8,
+    "ms": 12.2
+   },
+   "repeat_ms": 0.07,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G026",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.19,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "verified_precision": 0.1,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "dump_lsa_key",
+    "files": 7,
+    "ms": 12.2
+   },
+   "repeat_ms": 0.07,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G027",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.2,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "verified_precision": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "is_zero_mac",
+    "files": 11,
+    "ms": 11.9
+   },
+   "repeat_ms": 0.07,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G028",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.22,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "verified_precision": 0.8947368421052632,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "is_evpn_prefix_ipaddr_v4",
+    "files": 9,
+    "ms": 12.2
+   },
+   "repeat_ms": 0.07,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G029",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.26,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "verified_precision": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "stream_set_getp",
+    "files": 14,
+    "ms": 12.3
+   },
+   "repeat_ms": 0.07,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G030",
+   "intent": "callers",
+   "routed_intent": "callers",
+   "ok": true,
+   "latency_ms": 0.2,
+   "cache_hit": false,
+   "g": {
+    "recall": 1.0,
+    "svc_ok": true,
+    "verified_precision": 0.2,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_REDISTRIBUTE_ADD",
+    "files": 7,
+    "ms": 12.2
+   },
+   "repeat_ms": 0.04,
+   "repeat_hit": true
+  },
+  {
+   "qid": "G031",
+   "intent": "path",
+   "routed_intent": "path",
+   "ok": true,
+   "latency_ms": 0.37,
+   "cache_hit": false,
+   "g": {
+    "facets": 4,
+    "facets_hit": 4,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G032",
+   "intent": "path",
+   "routed_intent": "path",
+   "ok": true,
+   "latency_ms": 0.35,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G033",
+   "intent": "path",
+   "routed_intent": "path",
+   "ok": true,
+   "latency_ms": 0.98,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G034",
+   "intent": "path",
+   "routed_intent": "path",
+   "ok": true,
+   "latency_ms": 0.31,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G035",
+   "intent": "path",
+   "routed_intent": "path",
+   "ok": true,
+   "latency_ms": 0.21,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G036",
+   "intent": "path",
+   "routed_intent": "path",
+   "ok": true,
+   "latency_ms": 0.94,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G037",
+   "intent": "path",
+   "routed_intent": "path",
+   "ok": true,
+   "latency_ms": 0.21,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G038",
+   "intent": "path",
+   "routed_intent": "path",
+   "ok": true,
+   "latency_ms": 0.18,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G039",
+   "intent": "path",
+   "routed_intent": "path",
+   "ok": true,
+   "latency_ms": 0.18,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G040",
+   "intent": "path",
+   "routed_intent": "path",
+   "ok": true,
+   "latency_ms": 0.15,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G041",
+   "intent": "path",
+   "routed_intent": "path",
+   "ok": true,
+   "latency_ms": 37.2,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G042",
+   "intent": "path",
+   "routed_intent": "path",
+   "ok": true,
+   "latency_ms": 0.36,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G043",
+   "intent": "path",
+   "routed_intent": "path",
+   "ok": true,
+   "latency_ms": 0.18,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G044",
+   "intent": "path",
+   "routed_intent": "path",
+   "ok": false,
+   "latency_ms": 0.06,
+   "cache_hit": false,
+   "g": {
+    "refuse_ok": true,
+    "facets": 1,
+    "facets_hit": 1,
+    "recall": 1.0,
+    "exact": true,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G045",
+   "intent": "path",
+   "routed_intent": "path",
+   "ok": false,
+   "latency_ms": 0.04,
+   "cache_hit": false,
+   "g": {
+    "refuse_ok": true,
+    "facets": 1,
+    "facets_hit": 1,
+    "recall": 1.0,
+    "exact": true,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G046",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 541.56,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "yang:frr-bgp-route-map",
+    "files": 0,
+    "ms": 14.2
+   }
+  },
+  {
+   "qid": "G047",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 558.8,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "yang:frr-bgp-route-map",
+    "files": 0,
+    "ms": 13.8
+   }
+  },
+  {
+   "qid": "G048",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 559.27,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "yang:frr-bgp-route-map",
+    "files": 0,
+    "ms": 13.9
+   }
+  },
+  {
+   "qid": "G049",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 564.63,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "yang:frr-bgp-route-map",
+    "files": 0,
+    "ms": 16.1
+   }
+  },
+  {
+   "qid": "G050",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 555.27,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "yang:frr-bgp-route-map",
+    "files": 0,
+    "ms": 13.2
+   }
+  },
+  {
+   "qid": "G051",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 559.11,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "yang:frr-filter",
+    "files": 0,
+    "ms": 13.7
+   }
+  },
+  {
+   "qid": "G052",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 522.67,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "yang:frr-filter",
+    "files": 0,
+    "ms": 13.4
+   }
+  },
+  {
+   "qid": "G053",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 532.95,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "yang:frr-filter",
+    "files": 0,
+    "ms": 13.5
+   }
+  },
+  {
+   "qid": "G054",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 534.89,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "yang:frr-filter",
+    "files": 0,
+    "ms": 14.0
+   }
+  },
+  {
+   "qid": "G055",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 567.07,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "yang:frr-filter",
+    "files": 0,
+    "ms": 13.5
+   }
+  },
+  {
+   "qid": "G056",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 0.4,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_INTERFACE_ADD",
+    "files": 6,
+    "ms": 12.9
+   }
+  },
+  {
+   "qid": "G057",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 0.18,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_ROUTE_ADD",
+    "files": 12,
+    "ms": 12.3
+   }
+  },
+  {
+   "qid": "G058",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 0.18,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_REDISTRIBUTE_ADD",
+    "files": 7,
+    "ms": 12.1
+   }
+  },
+  {
+   "qid": "G059",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 2.76,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G060",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 1.74,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G061",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 1.33,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G062",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 1.72,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G063",
+   "intent": "impact",
+   "routed_intent": "impact",
+   "ok": true,
+   "latency_ms": 0.2,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": 1.0,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G064",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.11,
+   "cache_hit": false,
+   "g": {
+    "facets": 3,
+    "facets_hit": 3,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_ROUTE_ADD",
+    "files": 12,
+    "ms": 11.9
+   }
+  },
+  {
+   "qid": "G065",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.35,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "zebra",
+    "files": 556,
+    "ms": 16.3
+   }
+  },
+  {
+   "qid": "G066",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.26,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "bgpd",
+    "files": 185,
+    "ms": 13.8
+   }
+  },
+  {
+   "qid": "G067",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.15,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "zread_route_add",
+    "files": 2,
+    "ms": 11.9
+   }
+  },
+  {
+   "qid": "G068",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.18,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "bgp_zebra_announce_actual",
+    "files": 3,
+    "ms": 11.6
+   }
+  },
+  {
+   "qid": "G069",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.2,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "zclient_route_send",
+    "files": 6,
+    "ms": 12.2
+   }
+  },
+  {
+   "qid": "G070",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.17,
+   "cache_hit": false,
+   "g": {
+    "facets": 1,
+    "facets_hit": 1,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "address",
+    "files": 350,
+    "ms": 15.1
+   }
+  },
+  {
+   "qid": "G071",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.15,
+   "cache_hit": false,
+   "g": {
+    "facets": 1,
+    "facets_hit": 1,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_INTERFACE_ADD",
+    "files": 6,
+    "ms": 12.0
+   }
+  },
+  {
+   "qid": "G072",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.17,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "zserv_handle_commands",
+    "files": 3,
+    "ms": 13.6
+   }
+  },
+  {
+   "qid": "G073",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.18,
+   "cache_hit": false,
+   "g": {
+    "facets": 1,
+    "facets_hit": 1,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ospfd",
+    "files": 100,
+    "ms": 13.1
+   }
+  },
+  {
+   "qid": "G074",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.18,
+   "cache_hit": false,
+   "g": {
+    "facets": 1,
+    "facets_hit": 1,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "staticd",
+    "files": 44,
+    "ms": 12.4
+   }
+  },
+  {
+   "qid": "G075",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.34,
+   "cache_hit": false,
+   "g": {
+    "facets": 1,
+    "facets_hit": 1,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "lib",
+    "files": 369,
+    "ms": 15.0
+   }
+  },
+  {
+   "qid": "G076",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.17,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ospf_zebra_add",
+    "files": 5,
+    "ms": 11.7
+   }
+  },
+  {
+   "qid": "G077",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.18,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "static_zebra_route_add",
+    "files": 6,
+    "ms": 11.7
+   }
+  },
+  {
+   "qid": "G078",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.13,
+   "cache_hit": false,
+   "g": {
+    "facets": 1,
+    "facets_hit": 1,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_VRF_ADD",
+    "files": 5,
+    "ms": 11.9
+   }
+  },
+  {
+   "qid": "G079",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.17,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "zread_interface_add",
+    "files": 1,
+    "ms": 17.7
+   }
+  },
+  {
+   "qid": "G080",
+   "intent": "explain",
+   "routed_intent": "explain",
+   "ok": true,
+   "latency_ms": 0.15,
+   "cache_hit": false,
+   "g": {
+    "facets": 1,
+    "facets_hit": 1,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ZEBRA_INTERFACE_DELETE",
+    "files": 5,
+    "ms": 11.8
+   }
+  },
+  {
+   "qid": "G081",
+   "intent": "docs",
+   "routed_intent": "docs",
+   "ok": true,
+   "latency_ms": 0.99,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": true,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G082",
+   "intent": "docs",
+   "routed_intent": "docs",
+   "ok": true,
+   "latency_ms": 0.54,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": true,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G083",
+   "intent": "docs",
+   "routed_intent": "docs",
+   "ok": true,
+   "latency_ms": 0.47,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": true,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G084",
+   "intent": "docs",
+   "routed_intent": "docs",
+   "ok": true,
+   "latency_ms": 0.53,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": true,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G085",
+   "intent": "docs",
+   "routed_intent": "docs",
+   "ok": true,
+   "latency_ms": 0.31,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G086",
+   "intent": "docs",
+   "routed_intent": "docs",
+   "ok": true,
+   "latency_ms": 0.55,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": true,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G087",
+   "intent": "docs",
+   "routed_intent": "docs",
+   "ok": true,
+   "latency_ms": 0.48,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": true,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G088",
+   "intent": "docs",
+   "routed_intent": "docs",
+   "ok": true,
+   "latency_ms": 0.47,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": true,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G089",
+   "intent": "docs",
+   "routed_intent": "docs",
+   "ok": true,
+   "latency_ms": 0.48,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": true,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G090",
+   "intent": "docs",
+   "routed_intent": "docs",
+   "ok": true,
+   "latency_ms": 0.76,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": true,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G091",
+   "intent": "docs",
+   "routed_intent": "docs",
+   "ok": true,
+   "latency_ms": 0.47,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": true,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G092",
+   "intent": "docs",
+   "routed_intent": "docs",
+   "ok": true,
+   "latency_ms": 0.18,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G093",
+   "intent": "docs",
+   "routed_intent": "docs",
+   "ok": true,
+   "latency_ms": 0.21,
+   "cache_hit": false,
+   "g": {
+    "facets": 2,
+    "facets_hit": 2,
+    "recall": 1.0,
+    "exact": true,
+    "anchoring": null,
+    "routing_ok": true
+   },
+   "grep": null
+  },
+  {
+   "qid": "G094",
+   "intent": "slice",
+   "routed_intent": "slice",
+   "ok": true,
+   "latency_ms": 1.12,
+   "cache_hit": false,
+   "g": {
+    "facets": 4,
+    "facets_hit": 4,
+    "recall": 1.0,
+    "exact": true,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "zapi_msg",
+    "files": 21,
+    "ms": 11.7
+   }
+  },
+  {
+   "qid": "G095",
+   "intent": "slice",
+   "routed_intent": "slice",
+   "ok": true,
+   "latency_ms": 0.84,
+   "cache_hit": false,
+   "g": {
+    "facets": 4,
+    "facets_hit": 4,
+    "recall": 1.0,
+    "exact": true,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "bgp_zebra",
+    "files": 20,
+    "ms": 11.5
+   }
+  },
+  {
+   "qid": "G096",
+   "intent": "slice",
+   "routed_intent": "slice",
+   "ok": true,
+   "latency_ms": 0.95,
+   "cache_hit": false,
+   "g": {
+    "facets": 4,
+    "facets_hit": 4,
+    "recall": 1.0,
+    "exact": true,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ospf_zebra",
+    "files": 23,
+    "ms": 11.8
+   }
+  },
+  {
+   "qid": "G097",
+   "intent": "slice",
+   "routed_intent": "slice",
+   "ok": true,
+   "latency_ms": 1.16,
+   "cache_hit": false,
+   "g": {
+    "facets": 4,
+    "facets_hit": 4,
+    "recall": 1.0,
+    "exact": true,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "static_zebra",
+    "files": 10,
+    "ms": 11.8
+   }
+  },
+  {
+   "qid": "G098",
+   "intent": "slice",
+   "routed_intent": "slice",
+   "ok": true,
+   "latency_ms": 0.58,
+   "cache_hit": false,
+   "g": {
+    "facets": 4,
+    "facets_hit": 4,
+    "recall": 1.0,
+    "exact": true,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "zapi_msg",
+    "files": 21,
+    "ms": 12.0
+   }
+  },
+  {
+   "qid": "G099",
+   "intent": "slice",
+   "routed_intent": "slice",
+   "ok": true,
+   "latency_ms": 0.82,
+   "cache_hit": false,
+   "g": {
+    "facets": 4,
+    "facets_hit": 4,
+    "recall": 1.0,
+    "exact": true,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "zclient",
+    "files": 79,
+    "ms": 13.8
+   }
+  },
+  {
+   "qid": "G100",
+   "intent": "slice",
+   "routed_intent": "slice",
+   "ok": true,
+   "latency_ms": 0.68,
+   "cache_hit": false,
+   "g": {
+    "facets": 4,
+    "facets_hit": 4,
+    "recall": 1.0,
+    "exact": true,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "bgp_zebra",
+    "files": 20,
+    "ms": 11.9
+   }
+  },
+  {
+   "qid": "G101",
+   "intent": "slice",
+   "routed_intent": "slice",
+   "ok": true,
+   "latency_ms": 0.49,
+   "cache_hit": false,
+   "g": {
+    "facets": 4,
+    "facets_hit": 4,
+    "recall": 1.0,
+    "exact": true,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "ospf_zebra",
+    "files": 23,
+    "ms": 11.8
+   }
+  },
+  {
+   "qid": "G102",
+   "intent": "slice",
+   "routed_intent": "slice",
+   "ok": true,
+   "latency_ms": 1.05,
+   "cache_hit": true,
+   "g": {
+    "facets": 4,
+    "facets_hit": 4,
+    "recall": 1.0,
+    "exact": true,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "zapi_msg",
+    "files": 21,
+    "ms": 11.7
+   }
+  },
+  {
+   "qid": "G103",
+   "intent": "slice",
+   "routed_intent": "slice",
+   "ok": true,
+   "latency_ms": 0.52,
+   "cache_hit": false,
+   "g": {
+    "facets": 4,
+    "facets_hit": 4,
+    "recall": 1.0,
+    "exact": true,
+    "routing_ok": true
+   },
+   "grep": {
+    "token": "zclient",
+    "files": 79,
+    "ms": 12.6
+   }
+  }
+ ],
+ "aggregate": {
+  "n_questions": 103,
+  "intents": {
+   "callers": {
+    "n": 30,
+    "routing_acc": 1.0,
+    "recall": 1.0,
+    "verified_precision": 0.643,
+    "exact": "30/30",
+    "evidence_anchor_rate": 1.0,
+    "latency_p50_ms": 0.2,
+    "grep_files_median": 7
+   },
+   "docs": {
+    "n": 13,
+    "routing_acc": 1.0,
+    "recall": 1.0,
+    "verified_precision": null,
+    "exact": "13/13",
+    "evidence_anchor_rate": 1.0,
+    "latency_p50_ms": 0.48,
+    "grep_files_median": null
+   },
+   "explain": {
+    "n": 17,
+    "routing_acc": 1.0,
+    "recall": 1.0,
+    "verified_precision": null,
+    "exact": "17/17",
+    "evidence_anchor_rate": null,
+    "latency_p50_ms": 0.17,
+    "grep_files_median": 6
+   },
+   "impact": {
+    "n": 18,
+    "routing_acc": 1.0,
+    "recall": 1.0,
+    "verified_precision": null,
+    "exact": "18/18",
+    "evidence_anchor_rate": 1.0,
+    "latency_p50_ms": 532.95,
+    "grep_files_median": 0
+   },
+   "path": {
+    "n": 15,
+    "routing_acc": 1.0,
+    "recall": 1.0,
+    "verified_precision": null,
+    "exact": "15/15",
+    "evidence_anchor_rate": 1.0,
+    "latency_p50_ms": 0.21,
+    "grep_files_median": null
+   },
+   "slice": {
+    "n": 10,
+    "routing_acc": 1.0,
+    "recall": 1.0,
+    "verified_precision": null,
+    "exact": "10/10",
+    "evidence_anchor_rate": null,
+    "latency_p50_ms": 0.84,
+    "grep_files_median": 21
+   }
+  },
+  "latency_ms": {
+   "p50": 0.22,
+   "p95": 555.27,
+   "max": 567.07
+  },
+  "exact_answers": "103/103",
+  "routing_accuracy": 1.0,
+  "cache_probe_hits": "30/30 (re-ask of 30 questions)",
+  "kb": {
+   "nodes": 30229,
+   "edges_fused": 54246,
+   "edges_raw": 82477,
+   "clusters": 203,
+   "packs": [
+    "D1737981e.json",
+    "D3063a0b0.json",
+    "D4b2a9ab8.json",
+    "Dc32724de.json",
+    "Ded29f1c0.json"
+   ],
+   "okf_pages": 14,
+   "fingerprint": "7574aee1e25c0fa5",
+   "load_ms": 592.5
+  }
+ },
+ "cache_probe": {
+  "n": 30,
+  "hits": 30
+ }
+}

@@ -1,0 +1,93 @@
+{
+ "inputs_sha256": {
+  "p2/findings.json": "9d51aa244e7d987187f2ff898313f1537ae941c8cd3be15b07b064d7b8f3b298",
+  "p2/graph.json": "d5ddb2200626d0cacaaa4328c1a50c82c9a7277be1729af3136539951c7b7933",
+  "p3/backbone.json": "237a850ff87076ceeedcde7e3ce19e40cf41fabebbb3b1a1ebd01ecdcba66164",
+  "p3/backbone_assignments.json": "a32122399439a9ba6c6ce8d8c9cc9e5277b3e0cfd38769da145a5e9627920600",
+  "p3/clusters.jsonl": "8d51f7ae9b4d5090fa7850d89ec4bd9b1a267a0138b6ab935c8cefa318c65b87",
+  "p3/code_assignments.json": "ae5bf8f6a0720d10be8bfbe0a3723c17dbe6ce9adbccae443443f9e7a0616943",
+  "p3/packs/D1737981e.json": "e9169666bddf7ab7007768cf7ee35775feed1b4bccafc43ff6e98d46daf352eb",
+  "p3/packs/D3063a0b0.json": "f167f1e75f388252cf79e40cefd505c23922c2f50a7abd1446f50496b543e90c",
+  "p3/packs/D4b2a9ab8.json": "46a6eb83256a59f25ba4eab7f53b2ddc12e54055ce1de4a29437fff2358c4a90",
+  "p3/packs/Dc32724de.json": "4dacbab7d6b7db774e4779fd4d28133299adb1789b19a40d32eb0d6fb7579835",
+  "p3/packs/Ded29f1c0.json": "9164b9db57540d8a86eff4f1283470540059d08bd80d81392278738fc3d862ba",
+  "p3/profiles.jsonl": "d6d39c0660a116f4649acc6643aa4a39370d6c98c771be06b1e4cc9ab4fafb9d",
+  "p3/sweep.json": "fde6ef2ad93e00a9136d0d296aa4fdb7afd0c68e21ab5d01f8792880fac5443f"
+ },
+ "okf_version": "0.1.0",
+ "pages": {
+  "adrs/ADR-0001-zapi-ipc": {
+   "atoms": 5,
+   "okf_level": "ADR",
+   "page_id": "adrs/ADR-0001-zapi-ipc.md"
+  },
+  "adrs/ADR-0002-yang-mgmt": {
+   "atoms": 5,
+   "okf_level": "ADR",
+   "page_id": "adrs/ADR-0002-yang-mgmt.md"
+  },
+  "adrs/ADR-0003-zebra-kernel": {
+   "atoms": 5,
+   "okf_level": "ADR",
+   "page_id": "adrs/ADR-0003-zebra-kernel.md"
+  },
+  "clusters/D1737981e": {
+   "atoms": 52,
+   "okf_level": "L2-cluster",
+   "page_id": "clusters/D1737981e.md"
+  },
+  "clusters/D3063a0b0": {
+   "atoms": 58,
+   "okf_level": "L2-cluster",
+   "page_id": "clusters/D3063a0b0.md"
+  },
+  "clusters/D4b2a9ab8": {
+   "atoms": 66,
+   "okf_level": "L2-cluster",
+   "page_id": "clusters/D4b2a9ab8.md"
+  },
+  "clusters/Dc32724de": {
+   "atoms": 35,
+   "okf_level": "L2-cluster",
+   "page_id": "clusters/Dc32724de.md"
+  },
+  "clusters/Ded29f1c0": {
+   "atoms": 43,
+   "okf_level": "L2-cluster",
+   "page_id": "clusters/Ded29f1c0.md"
+  },
+  "daemons/bgpd": {
+   "atoms": 39,
+   "okf_level": "L3-daemon",
+   "page_id": "daemons/bgpd.md"
+  },
+  "daemons/lib": {
+   "atoms": 37,
+   "okf_level": "L3-daemon",
+   "page_id": "daemons/lib.md"
+  },
+  "daemons/ospfd": {
+   "atoms": 30,
+   "okf_level": "L3-daemon",
+   "page_id": "daemons/ospfd.md"
+  },
+  "daemons/staticd": {
+   "atoms": 21,
+   "okf_level": "L3-daemon",
+   "page_id": "daemons/staticd.md"
+  },
+  "daemons/zebra": {
+   "atoms": 39,
+   "okf_level": "L3-daemon",
+   "page_id": "daemons/zebra.md"
+  },
+  "index": {
+   "atoms": 19,
+   "okf_level": "L0-index",
+   "page_id": "index.md"
+  }
+ },
+ "phase": "P4",
+ "total_atoms": 454,
+ "verify": "scripts/p4/verify.py"
+}

@@ -1,0 +1,32 @@
+{
+  "run_id": "e082ab760d0b7e50",
+  "nodes": 30229,
+  "edges_raw": 82477,
+  "edges_fused": 54246,
+  "zapi_srv": {
+    "entries": 188
+  },
+  "zapi_send_grep": {
+    "svc_edges": 25,
+    "sites": 39
+  },
+  "nb_yang_join": {
+    "hits": 426,
+    "total": 426,
+    "pct": 100.0,
+    "strategies": {
+      "flex-raw": 155,
+      "schema-exact": 271
+    },
+    "yang_nodes_added": 137,
+    "misses": 0
+  },
+  "svc_publishes": 88,
+  "findings_counts": {
+    "dropped_on_wire": 7,
+    "orphan_handlers": 44,
+    "cross_svc_flows": 111,
+    "dead_registrations": 4
+  },
+  "multi_plane_edges": 0
+}

@@ -1,0 +1,220 @@
+{
+ "indexing_stages": [
+  {
+   "stage": "P0 build+schema freeze",
+   "input": "frr-10.7.1 full repo",
+   "wall": "10-25 (2 cores) min (2 cores, recorded)",
+   "output": "compile_commands.json (836 KB), schema v0.1.0"
+  },
+  {
+   "stage": "P1 extractors",
+   "input": "356 TUs (lib,zebra,bgpd,ospfd,staticd)",
+   "wall": "~8.5 min (recorded)",
+   "throughput": "~42 TU/min",
+   "output": "facts.duckdb 30,092 nodes / 81,750 edges"
+  },
+  {
+   "stage": "P2 fusion",
+   "input": "P1 facts + zapi_srv + lysc paths",
+   "wall_s": 3.9,
+   "max_rss_gb": 0.25,
+   "throughput": "13,908 fused edges/s",
+   "output": "30,229 nodes / 54,246 fused edges, graph.json"
+  },
+  {
+   "stage": "P3 clustering (Leiden sweep L1+L2+L3)",
+   "input": "fused graph",
+   "wall_s": 5.6,
+   "max_rss_gb": 0.14,
+   "throughput": "~4,900 nodes/s (30,229-node code graph, 26 gamma points)",
+   "output": "203 clusters (5+5+193), sweep.json"
+  },
+  {
+   "stage": "P3 profiles+packs",
+   "input": "clusters + graph + findings",
+   "wall_s": 0.8,
+   "max_rss_gb": 0.16,
+   "output": "203 no-LLM profiles, 5 domain packs"
+  },
+  {
+   "stage": "P4 OKF publish (skeleton+render+verify)",
+   "input": "P2+P3 facts",
+   "wall_s": 0.4,
+   "max_rss_gb": 0.09,
+   "output": "16 bundle pages, 454 anchored claims, 0 stripped"
+  },
+  {
+   "stage": "P5 KB map load (serve-time)",
+   "input": "P2 db + P3 + P4 bundle",
+   "wall_ms": 656.1,
+   "runs_ms": [
+    576.4,
+    656.1,
+    668.6
+   ],
+   "output": "in-RAM map + entity indexes, fingerprint"
+  }
+ ],
+ "cold_reindex_p1_to_p4_s": 520.7,
+ "storage_bytes": {
+  "facts_p2_duckdb": 28323840,
+  "graph_json": 12093627,
+  "findings_json": 26032,
+  "p3_artifacts": 2085054,
+  "p3_packs": 206414,
+  "p4_okf_bundle": 86849,
+  "p4_skeleton": 152616,
+  "p5_slice_cache": 323648,
+  "p6_eval_artifacts": 101218,
+  "compile_commands": 835510
+ },
+ "quality": {
+  "golden_set": {
+   "n": 103,
+   "gt_rule": "every expected key verified against pinned source (token at file:line, dispatch/signature regex) or FRR doc (normalized phrase grep); KB used for candidate enumeration only",
+   "gt_sources": {
+    "source": 58,
+    "doc+source": 1,
+    "graph": 14,
+    "graph+source": 17,
+    "doc": 13
+   },
+   "by_intent": {
+    "callers": 30,
+    "path": 15,
+    "impact": 18,
+    "explain": 17,
+    "docs": 13,
+    "slice": 10
+   }
+  },
+  "routing_accuracy": 1.0,
+  "exact_answers": "103/103",
+  "latency_ms": {
+   "p50": 0.22,
+   "p95": 555.27,
+   "max": 567.07
+  },
+  "cache_repeat_hits": "30/30 (re-ask of 30 questions)",
+  "per_intent": {
+   "callers": {
+    "n": 30,
+    "routing_acc": 1.0,
+    "recall": 1.0,
+    "verified_precision": 0.643,
+    "exact": "30/30",
+    "evidence_anchor_rate": 1.0,
+    "latency_p50_ms": 0.2,
+    "grep_files_median": 7
+   },
+   "docs": {
+    "n": 13,
+    "routing_acc": 1.0,
+    "recall": 1.0,
+    "verified_precision": null,
+    "exact": "13/13",
+    "evidence_anchor_rate": 1.0,
+    "latency_p50_ms": 0.48,
+    "grep_files_median": null
+   },
+   "explain": {
+    "n": 17,
+    "routing_acc": 1.0,
+    "recall": 1.0,
+    "verified_precision": null,
+    "exact": "17/17",
+    "evidence_anchor_rate": null,
+    "latency_p50_ms": 0.17,
+    "grep_files_median": 6
+   },
+   "impact": {
+    "n": 18,
+    "routing_acc": 1.0,
+    "recall": 1.0,
+    "verified_precision": null,
+    "exact": "18/18",
+    "evidence_anchor_rate": 1.0,
+    "latency_p50_ms": 532.95,
+    "grep_files_median": 0
+   },
+   "path": {
+    "n": 15,
+    "routing_acc": 1.0,
+    "recall": 1.0,
+    "verified_precision": null,
+    "exact": "15/15",
+    "evidence_anchor_rate": 1.0,
+    "latency_p50_ms": 0.21,
+    "grep_files_median": null
+   },
+   "slice": {
+    "n": 10,
+    "routing_acc": 1.0,
+    "recall": 1.0,
+    "verified_precision": null,
+    "exact": "10/10",
+    "evidence_anchor_rate": null,
+    "latency_p50_ms": 0.84,
+    "grep_files_median": 21
+   }
+  },
+  "phase_gates": {
+   "P2_join_nb_yang": "426/426 (100%)",
+   "P3_recall_vs_docs": "12/12 = 1.00 (bar 0.8)",
+   "P4_claim_anchoring": "454/454, 0 stripped, 14/14 verified:full",
+   "P5_exit_gates": "3/3 demo gates PASS",
+   "P5_tests": "69/69",
+   "P4_tests": "9/9",
+   "P3_tests": "9/9",
+   "P2_tests": "22/22"
+  }
+ },
+ "value": {
+  "structural_joins_beyond_grep": {
+   "cross_service_zapi_flows": 111,
+   "two_hop_hub_join": "svc:bgpd -publishes-> zapi:MSG <-handles- svc:zebra resolved with per-hop evidence in 0.2-0.3ms; grep cannot express this join in one command",
+   "yang_leaf_to_zapi_side_effects": "82 side-effect messages for a bgpd route-map leaf via NB callbacks + call closure (grep_files_median=0)",
+   "nb_yang_contract_join": "426/426 via libyang compiled paths"
+  },
+  "findings_surfaced": {
+   "dead_registrations": 4,
+   "dropped_on_wire": 7,
+   "orphan_handlers": 44
+  },
+  "grep_baseline": {
+   "note": "single rg -w over the indexed slice; files_median per intent (raw noise to inspect; no evidence typing, no joins)",
+   "files_median": {
+    "callers": 7,
+    "docs": null,
+    "explain": 6,
+    "impact": 0,
+    "path": null,
+    "slice": 21
+   },
+   "impact_grep_files_median": 0
+  },
+  "cache_economics": {
+   "query_cache": "repeat Q 0.05-0.06ms vs 0.2-553ms cold (up to ~4 orders of magnitude on impact)",
+   "slice_cache": "495.8ms cold compute -> memoized hit; keyed by (content-hash(scope), tool ver); 2 artifacts on disk",
+   "kb_memo": "yang impact memoized per (id,depth): 553ms -> 0.1ms"
+  },
+  "determinism": {
+   "P4_bundle": "byte-identical rebuild (tests T1)",
+   "P6_end_to_end_rerun": "30,229 nodes + 54,246 edges deep-equal (python dict compare); 59/63 artifacts byte-identical, 4 volatile by design (duckdb layout, mtime-derived run_id/fingerprint)",
+   "P3_cluster_ids": "seed-stable (min ARI 1.0 across seeds)"
+  },
+  "footprint": {
+   "kb_bytes_total": 43298080,
+   "kb_bytes_per_source_kloc": 73402,
+   "slice_loc_indexed": 589874,
+   "repo_loc_census": 1371970
+  }
+ },
+ "eval_driven_fixes": [
+  "intents.run_impact: new zapi-change mode (message impact = senders+handlers)",
+  "kbmap linker: top-level decl preferred over nested duplicates",
+  "kbmap linker: module mentions no longer swallow leaf ids (seen-marking)",
+  "intents.run_docs: entity-less ADR keyword fallback over OKF bundle",
+  "router: +1 docs rule ('where is X stored/configured') -> 65 rules"
+ ]
+}

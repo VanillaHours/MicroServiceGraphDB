@@ -1,0 +1,5442 @@
+{
+ "scope": {
+  "file": "staticd/static_zebra.c",
+  "function": "static_zebra_route_add",
+  "line_span": [
+   411,
+   564
+  ],
+  "params": [
+   {
+    "name": "pn",
+    "type": "struct static_path *"
+   },
+   {
+    "name": "install",
+    "type": "_Bool"
+   }
+  ]
+ },
+ "tool_ver": "p5-slice/1.0.0+clang18",
+ "cfg": {
+  "entry": 0,
+  "exit": 1,
+  "n_blocks": 50,
+  "n_edges": 73,
+  "blocks": [
+   {
+    "id": 0,
+    "tag": "entry",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 413,
+      "spell": "struct route_node * rn = pn -> rn ;",
+      "defs": [],
+      "uses": [
+       "pn"
+      ]
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 414,
+      "spell": "struct static_route_info * si = rn -> info ;",
+      "defs": [],
+      "uses": [
+       "rn"
+      ]
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 415,
+      "spell": "struct static_nexthop * nh ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 416,
+      "spell": "const struct prefix * p , * src_pp ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 417,
+      "spell": "struct zapi_nexthop * api_nh ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 418,
+      "spell": "struct zapi_route api ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 419,
+      "spell": "uint32_t nh_num = 0 ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 421,
+      "spell": "! si -> svrf -> vrf || si -> svrf -> vrf -> vrf_id == VRF_UNKNOWN",
+      "defs": [],
+      "uses": [
+       "si"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      3,
+      "then"
+     ],
+     [
+      2,
+      "no-else"
+     ]
+    ],
+    "pred": []
+   },
+   {
+    "id": 1,
+    "tag": "exit",
+    "stmts": [],
+    "succ": [],
+    "pred": [
+     [
+      3,
+      "return"
+     ],
+     [
+      48,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 2,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 424,
+      "spell": "p = src_pp = NULL",
+      "defs": [
+       [
+        "p",
+        "assign"
+       ],
+       [
+        "src_pp",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "src_pp"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 425,
+      "spell": "srcdest_rnode_prefixes ( rn , & p , & src_pp )",
+      "defs": [],
+      "uses": [
+       "rn",
+       "p",
+       "src_pp"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 427,
+      "spell": "zapi_route_init ( & api )",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 428,
+      "spell": "api . vrf_id = si -> svrf -> vrf -> vrf_id",
+      "defs": [
+       [
+        "api.vrf_id",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "si",
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 429,
+      "spell": "api . type = ZEBRA_ROUTE_STATIC",
+      "defs": [
+       [
+        "api.type",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 430,
+      "spell": "api . safi = si -> safi",
+      "defs": [
+       [
+        "api.safi",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "si",
+       "api"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 431,
+      "spell": "memcpy ( & api . prefix , p , sizeof ( api . prefix ) )",
+      "defs": [],
+      "uses": [
+       "api",
+       "p"
+      ]
+     },
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 433,
+      "spell": "src_pp",
+      "defs": [],
+      "uses": [
+       "src_pp"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      5,
+      "then"
+     ],
+     [
+      4,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 3,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "RETURN_STMT",
+      "line": 422,
+      "spell": "return",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 4,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 437,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 438,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 439,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 440,
+      "spell": "pn -> distance",
+      "defs": [],
+      "uses": [
+       "pn"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      7,
+      "then"
+     ],
+     [
+      6,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      5,
+      "fallthrough"
+     ],
+     [
+      2,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 5,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 434,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 435,
+      "spell": "memcpy ( & api . src_prefix , src_pp , sizeof ( api . src_prefix ) )",
+      "defs": [],
+      "uses": [
+       "api",
+       "src_pp"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      4,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      2,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 6,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 444,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 445,
+      "spell": "api . metric = pn -> metric",
+      "defs": [
+       [
+        "api.metric",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "pn",
+       "api"
+      ]
+     },
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 446,
+      "spell": "pn -> tag",
+      "defs": [],
+      "uses": [
+       "pn"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      9,
+      "then"
+     ],
+     [
+      8,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      7,
+      "fallthrough"
+     ],
+     [
+      4,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 7,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 441,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 442,
+      "spell": "api . distance = pn -> distance",
+      "defs": [
+       [
+        "api.distance",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "pn",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      6,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      4,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 8,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 450,
+      "spell": "pn -> table_id != 0",
+      "defs": [],
+      "uses": [
+       "pn"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      11,
+      "then"
+     ],
+     [
+      10,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      9,
+      "fallthrough"
+     ],
+     [
+      6,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 9,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 447,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 448,
+      "spell": "api . tag = pn -> tag",
+      "defs": [
+       [
+        "api.tag",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "pn",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      8,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      6,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 10,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 454,
+      "spell": "nh )",
+      "defs": [],
+      "uses": [
+       "nh",
+       "pn"
+      ]
+     },
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 454,
+      "spell": "nh",
+      "defs": [],
+      "uses": [
+       "nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      12,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      11,
+      "fallthrough"
+     ],
+     [
+      8,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 11,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 451,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 452,
+      "spell": "api . tableid = pn -> table_id",
+      "defs": [
+       [
+        "api.tableid",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "pn",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      10,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      8,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 12,
+    "tag": "for-head",
+    "stmts": [],
+    "succ": [
+     [
+      13,
+      "exit-false"
+     ],
+     [
+      14,
+      "loop-true"
+     ]
+    ],
+    "pred": [
+     [
+      10,
+      "next"
+     ],
+     [
+      15,
+      "latch"
+     ]
+    ]
+   },
+   {
+    "id": 13,
+    "tag": "for-exit",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 552,
+      "spell": "api . nexthop_num = nh_num",
+      "defs": [
+       [
+        "api.nexthop_num",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh_num",
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 558,
+      "spell": "! nh_num && install",
+      "defs": [],
+      "uses": [
+       "nh_num",
+       "install"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      49,
+      "then"
+     ],
+     [
+      48,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      12,
+      "exit-false"
+     ],
+     [
+      17,
+      "break"
+     ]
+    ]
+   },
+   {
+    "id": 14,
+    "tag": "for-body",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 456,
+      "spell": "nh_num == zebra_ecmp_count",
+      "defs": [],
+      "uses": [
+       "nh_num",
+       "zebra_ecmp_count"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      17,
+      "then"
+     ],
+     [
+      16,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      12,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 15,
+    "tag": "for-incr",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 454,
+      "spell": "nh )",
+      "defs": [],
+      "uses": [
+       "nh",
+       "pn"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      12,
+      "latch"
+     ]
+    ],
+    "pred": [
+     [
+      19,
+      "continue"
+     ],
+     [
+      21,
+      "continue"
+     ],
+     [
+      42,
+      "to-incr"
+     ]
+    ]
+   },
+   {
+    "id": 16,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 459,
+      "spell": "api_nh = & api . nexthops [ nh_num ]",
+      "defs": [
+       [
+        "api_nh",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api",
+       "nh_num"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 460,
+      "spell": "nh -> nh_vrf_id == VRF_UNKNOWN",
+      "defs": [],
+      "uses": [
+       "nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      19,
+      "then"
+     ],
+     [
+      18,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      14,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 17,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "BREAK_STMT",
+      "line": 457,
+      "spell": "break",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      13,
+      "break"
+     ]
+    ],
+    "pred": [
+     [
+      14,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 18,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 463,
+      "spell": "nh -> path_down",
+      "defs": [],
+      "uses": [
+       "nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      21,
+      "then"
+     ],
+     [
+      20,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      16,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 19,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "CONTINUE_STMT",
+      "line": 461,
+      "spell": "continue",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      15,
+      "continue"
+     ]
+    ],
+    "pred": [
+     [
+      16,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 20,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 466,
+      "spell": "zapi_nexthop_init ( api_nh )",
+      "defs": [],
+      "uses": [
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 467,
+      "spell": "api_nh -> vrf_id = nh -> nh_vrf_id",
+      "defs": [
+       [
+        "api_nh->vrf_id",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh",
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 468,
+      "spell": "api_nh -> weight = nh -> weight",
+      "defs": [
+       [
+        "api_nh->weight",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh",
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 469,
+      "spell": "nh -> onlink",
+      "defs": [],
+      "uses": [
+       "nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      23,
+      "then"
+     ],
+     [
+      22,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      18,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 21,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "CONTINUE_STMT",
+      "line": 464,
+      "spell": "continue",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      15,
+      "continue"
+     ]
+    ],
+    "pred": [
+     [
+      18,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 22,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 471,
+      "spell": "nh -> color != 0",
+      "defs": [],
+      "uses": [
+       "nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      25,
+      "then"
+     ],
+     [
+      24,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      23,
+      "fallthrough"
+     ],
+     [
+      20,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 23,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 470,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api_nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      22,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      20,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 24,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 476,
+      "spell": "nh -> type",
+      "defs": [],
+      "uses": [
+       "nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      27,
+      "case"
+     ],
+     [
+      27,
+      "fallthrough"
+     ],
+     [
+      28,
+      "case"
+     ],
+     [
+      29,
+      "case"
+     ],
+     [
+      30,
+      "case"
+     ],
+     [
+      31,
+      "case"
+     ],
+     [
+      32,
+      "case"
+     ]
+    ],
+    "pred": [
+     [
+      25,
+      "fallthrough"
+     ],
+     [
+      22,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 25,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 472,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 473,
+      "spell": "api_nh -> srte_color = nh -> color",
+      "defs": [
+       [
+        "api_nh->srte_color",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh",
+       "api_nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      24,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      22,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 26,
+    "tag": "switch-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 522,
+      "spell": "nh -> state = STATIC_SENT_TO_ZEBRA",
+      "defs": [
+       [
+        "nh->state",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh"
+      ]
+     },
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 524,
+      "spell": "nh -> snh_label . num_labels",
+      "defs": [],
+      "uses": [
+       "nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      37,
+      "then"
+     ],
+     [
+      36,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      27,
+      "break"
+     ],
+     [
+      28,
+      "break"
+     ],
+     [
+      29,
+      "break"
+     ],
+     [
+      30,
+      "break"
+     ],
+     [
+      31,
+      "break"
+     ],
+     [
+      33,
+      "break"
+     ]
+    ]
+   },
+   {
+    "id": 27,
+    "tag": "case",
+    "stmts": [
+     {
+      "kind": "CASE_STMT",
+      "line": 477,
+      "spell": "case STATIC_IFNAME : if ( nh -> ifindex == IFINDEX_INTERNAL ) continue",
+      "defs": [],
+      "uses": [
+       "nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 480,
+      "spell": "api_nh -> ifindex = nh -> ifindex",
+      "defs": [
+       [
+        "api_nh->ifindex",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh",
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 481,
+      "spell": "api_nh -> type = NEXTHOP_TYPE_IFINDEX",
+      "defs": [
+       [
+        "api_nh->type",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BREAK_STMT",
+      "line": 482,
+      "spell": "break",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      26,
+      "break"
+     ]
+    ],
+    "pred": [
+     [
+      24,
+      "case"
+     ],
+     [
+      24,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 28,
+    "tag": "case",
+    "stmts": [
+     {
+      "kind": "CASE_STMT",
+      "line": 483,
+      "spell": "case STATIC_IPV4_GATEWAY : if ( ! nh -> nh_valid ) continue",
+      "defs": [],
+      "uses": [
+       "nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 486,
+      "spell": "api_nh -> type = NEXTHOP_TYPE_IPV4",
+      "defs": [
+       [
+        "api_nh->type",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 487,
+      "spell": "api_nh -> gate = nh -> addr",
+      "defs": [
+       [
+        "api_nh->gate",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh",
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BREAK_STMT",
+      "line": 488,
+      "spell": "break",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      26,
+      "break"
+     ]
+    ],
+    "pred": [
+     [
+      24,
+      "case"
+     ]
+    ]
+   },
+   {
+    "id": 29,
+    "tag": "case",
+    "stmts": [
+     {
+      "kind": "CASE_STMT",
+      "line": 489,
+      "spell": "case STATIC_IPV4_GATEWAY_IFNAME : if ( nh -> ifindex == IFINDEX_INTERNAL ) continue",
+      "defs": [],
+      "uses": [
+       "nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 492,
+      "spell": "api_nh -> ifindex = nh -> ifindex",
+      "defs": [
+       [
+        "api_nh->ifindex",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh",
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 493,
+      "spell": "api_nh -> type = NEXTHOP_TYPE_IPV4_IFINDEX",
+      "defs": [
+       [
+        "api_nh->type",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 494,
+      "spell": "api_nh -> gate = nh -> addr",
+      "defs": [
+       [
+        "api_nh->gate",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh",
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BREAK_STMT",
+      "line": 495,
+      "spell": "break",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      26,
+      "break"
+     ]
+    ],
+    "pred": [
+     [
+      24,
+      "case"
+     ]
+    ]
+   },
+   {
+    "id": 30,
+    "tag": "case",
+    "stmts": [
+     {
+      "kind": "CASE_STMT",
+      "line": 496,
+      "spell": "case STATIC_IPV6_GATEWAY : if ( ! nh -> nh_valid ) continue",
+      "defs": [],
+      "uses": [
+       "nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 499,
+      "spell": "api_nh -> type = NEXTHOP_TYPE_IPV6",
+      "defs": [
+       [
+        "api_nh->type",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 500,
+      "spell": "api_nh -> gate = nh -> addr",
+      "defs": [
+       [
+        "api_nh->gate",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh",
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BREAK_STMT",
+      "line": 501,
+      "spell": "break",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      26,
+      "break"
+     ]
+    ],
+    "pred": [
+     [
+      24,
+      "case"
+     ]
+    ]
+   },
+   {
+    "id": 31,
+    "tag": "case",
+    "stmts": [
+     {
+      "kind": "CASE_STMT",
+      "line": 502,
+      "spell": "case STATIC_IPV6_GATEWAY_IFNAME : if ( nh -> ifindex == IFINDEX_INTERNAL ) continue",
+      "defs": [],
+      "uses": [
+       "nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 505,
+      "spell": "api_nh -> type = NEXTHOP_TYPE_IPV6_IFINDEX",
+      "defs": [
+       [
+        "api_nh->type",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 506,
+      "spell": "api_nh -> ifindex = nh -> ifindex",
+      "defs": [
+       [
+        "api_nh->ifindex",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh",
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 507,
+      "spell": "api_nh -> gate = nh -> addr",
+      "defs": [
+       [
+        "api_nh->gate",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh",
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BREAK_STMT",
+      "line": 508,
+      "spell": "break",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      26,
+      "break"
+     ]
+    ],
+    "pred": [
+     [
+      24,
+      "case"
+     ]
+    ]
+   },
+   {
+    "id": 32,
+    "tag": "case",
+    "stmts": [
+     {
+      "kind": "CASE_STMT",
+      "line": 509,
+      "spell": "case STATIC_BLACKHOLE : api_nh -> type = NEXTHOP_TYPE_BLACKHOLE",
+      "defs": [
+       [
+        "api_nh->type",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 511,
+      "spell": "nh -> bh_type",
+      "defs": [],
+      "uses": [
+       "nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      34,
+      "case"
+     ],
+     [
+      34,
+      "fallthrough"
+     ],
+     [
+      35,
+      "case"
+     ]
+    ],
+    "pred": [
+     [
+      24,
+      "case"
+     ]
+    ]
+   },
+   {
+    "id": 33,
+    "tag": "switch-merge",
+    "stmts": [
+     {
+      "kind": "BREAK_STMT",
+      "line": 519,
+      "spell": "break",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      26,
+      "break"
+     ]
+    ],
+    "pred": [
+     [
+      34,
+      "break"
+     ],
+     [
+      35,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 34,
+    "tag": "case",
+    "stmts": [
+     {
+      "kind": "CASE_STMT",
+      "line": 512,
+      "spell": "case STATIC_BLACKHOLE_DROP : case STATIC_BLACKHOLE_NULL : api_nh -> bh_type = BLACKHOLE_NULL",
+      "defs": [
+       [
+        "api_nh->bh_type",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BREAK_STMT",
+      "line": 515,
+      "spell": "break",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      33,
+      "break"
+     ]
+    ],
+    "pred": [
+     [
+      32,
+      "case"
+     ],
+     [
+      32,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 35,
+    "tag": "case",
+    "stmts": [
+     {
+      "kind": "CASE_STMT",
+      "line": 516,
+      "spell": "case STATIC_BLACKHOLE_REJECT : api_nh -> bh_type = BLACKHOLE_REJECT",
+      "defs": [
+       [
+        "api_nh->bh_type",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api_nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      33,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      32,
+      "case"
+     ]
+    ]
+   },
+   {
+    "id": 36,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 532,
+      "spell": "nh -> snh_seg . num_segs",
+      "defs": [],
+      "uses": [
+       "nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      43,
+      "then"
+     ],
+     [
+      42,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      39,
+      "fallthrough"
+     ],
+     [
+      26,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 37,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 525,
+      "spell": "int i ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 527,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 528,
+      "spell": "api_nh -> label_num = nh -> snh_label . num_labels",
+      "defs": [
+       [
+        "api_nh->label_num",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh",
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 529,
+      "spell": "i = 0",
+      "defs": [
+       [
+        "i",
+        "assign"
+       ]
+      ],
+      "uses": []
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 529,
+      "spell": "i < api_nh -> label_num",
+      "defs": [],
+      "uses": [
+       "i",
+       "api_nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      38,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      26,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 38,
+    "tag": "for-head",
+    "stmts": [],
+    "succ": [
+     [
+      39,
+      "exit-false"
+     ],
+     [
+      40,
+      "loop-true"
+     ]
+    ],
+    "pred": [
+     [
+      37,
+      "next"
+     ],
+     [
+      41,
+      "latch"
+     ]
+    ]
+   },
+   {
+    "id": 39,
+    "tag": "for-exit",
+    "stmts": [],
+    "succ": [
+     [
+      36,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      38,
+      "exit-false"
+     ]
+    ]
+   },
+   {
+    "id": 40,
+    "tag": "for-body",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 530,
+      "spell": "api_nh -> labels [ i ] = nh -> snh_label . label [ i ]",
+      "defs": [
+       [
+        "labels[...]",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh",
+       "i",
+       "api_nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      41,
+      "to-incr"
+     ]
+    ],
+    "pred": [
+     [
+      38,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 41,
+    "tag": "for-incr",
+    "stmts": [
+     {
+      "kind": "UNARY_OPERATOR",
+      "line": 529,
+      "spell": "i ++",
+      "defs": [
+       [
+        "i",
+        "incdec"
+       ]
+      ],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      38,
+      "latch"
+     ]
+    ],
+    "pred": [
+     [
+      40,
+      "to-incr"
+     ]
+    ]
+   },
+   {
+    "id": 42,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "UNARY_OPERATOR",
+      "line": 549,
+      "spell": "nh_num ++",
+      "defs": [
+       [
+        "nh_num",
+        "incdec"
+       ]
+      ],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      15,
+      "to-incr"
+     ]
+    ],
+    "pred": [
+     [
+      45,
+      "fallthrough"
+     ],
+     [
+      36,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 43,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 533,
+      "spell": "int i ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 535,
+      "spell": "api_nh -> seg6local_action = ZEBRA_SEG6_LOCAL_ACTION_UNSPEC",
+      "defs": [
+       [
+        "api_nh->seg6local_action",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 537,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 538,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 539,
+      "spell": "api . safi = SAFI_UNICAST",
+      "defs": [
+       [
+        "api.safi",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 541,
+      "spell": "api_nh -> seg_num = nh -> snh_seg . num_segs",
+      "defs": [
+       [
+        "api_nh->seg_num",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh",
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 542,
+      "spell": "i = 0",
+      "defs": [
+       [
+        "i",
+        "assign"
+       ]
+      ],
+      "uses": []
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 542,
+      "spell": "i < api_nh -> seg_num",
+      "defs": [],
+      "uses": [
+       "i",
+       "api_nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      44,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      36,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 44,
+    "tag": "for-head",
+    "stmts": [],
+    "succ": [
+     [
+      45,
+      "exit-false"
+     ],
+     [
+      46,
+      "loop-true"
+     ]
+    ],
+    "pred": [
+     [
+      43,
+      "next"
+     ],
+     [
+      47,
+      "latch"
+     ]
+    ]
+   },
+   {
+    "id": 45,
+    "tag": "for-exit",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 547,
+      "spell": "api_nh -> srv6_encap_behavior = nh -> snh_seg . encap_behavior",
+      "defs": [
+       [
+        "api_nh->srv6_encap_behavior",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh",
+       "api_nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      42,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      44,
+      "exit-false"
+     ]
+    ]
+   },
+   {
+    "id": 46,
+    "tag": "for-body",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 543,
+      "spell": "memcpy ( & api_nh -> seg6_segs [ i ] , & nh -> snh_seg . seg [ i ] , sizeof ( struct in6_addr ) )",
+      "defs": [],
+      "uses": [
+       "api_nh",
+       "i",
+       "nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      47,
+      "to-incr"
+     ]
+    ],
+    "pred": [
+     [
+      44,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 47,
+    "tag": "for-incr",
+    "stmts": [
+     {
+      "kind": "UNARY_OPERATOR",
+      "line": 542,
+      "spell": "i ++",
+      "defs": [
+       [
+        "i",
+        "incdec"
+       ]
+      ],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      44,
+      "latch"
+     ]
+    ],
+    "pred": [
+     [
+      46,
+      "to-incr"
+     ]
+    ]
+   },
+   {
+    "id": 48,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 561,
+      "spell": "zclient_route_send ( install ? ZEBRA_ROUTE_ADD : ZEBRA_ROUTE_DELETE , static_zclient , & api )",
+      "defs": [],
+      "uses": [
+       "install",
+       "static_zclient",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      49,
+      "fallthrough"
+     ],
+     [
+      13,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 49,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 559,
+      "spell": "install = false",
+      "defs": [
+       [
+        "install",
+        "assign"
+       ]
+      ],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      48,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      13,
+      "then"
+     ]
+    ]
+   }
+  ],
+  "edges": [
+   {
+    "from": 0,
+    "to": 3,
+    "kind": "then"
+   },
+   {
+    "from": 3,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 0,
+    "to": 2,
+    "kind": "no-else"
+   },
+   {
+    "from": 2,
+    "to": 5,
+    "kind": "then"
+   },
+   {
+    "from": 5,
+    "to": 4,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 2,
+    "to": 4,
+    "kind": "no-else"
+   },
+   {
+    "from": 4,
+    "to": 7,
+    "kind": "then"
+   },
+   {
+    "from": 7,
+    "to": 6,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 4,
+    "to": 6,
+    "kind": "no-else"
+   },
+   {
+    "from": 6,
+    "to": 9,
+    "kind": "then"
+   },
+   {
+    "from": 9,
+    "to": 8,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 6,
+    "to": 8,
+    "kind": "no-else"
+   },
+   {
+    "from": 8,
+    "to": 11,
+    "kind": "then"
+   },
+   {
+    "from": 11,
+    "to": 10,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 8,
+    "to": 10,
+    "kind": "no-else"
+   },
+   {
+    "from": 10,
+    "to": 12,
+    "kind": "next"
+   },
+   {
+    "from": 12,
+    "to": 13,
+    "kind": "exit-false"
+   },
+   {
+    "from": 12,
+    "to": 14,
+    "kind": "loop-true"
+   },
+   {
+    "from": 14,
+    "to": 17,
+    "kind": "then"
+   },
+   {
+    "from": 17,
+    "to": 13,
+    "kind": "break"
+   },
+   {
+    "from": 14,
+    "to": 16,
+    "kind": "no-else"
+   },
+   {
+    "from": 16,
+    "to": 19,
+    "kind": "then"
+   },
+   {
+    "from": 19,
+    "to": 15,
+    "kind": "continue"
+   },
+   {
+    "from": 16,
+    "to": 18,
+    "kind": "no-else"
+   },
+   {
+    "from": 18,
+    "to": 21,
+    "kind": "then"
+   },
+   {
+    "from": 21,
+    "to": 15,
+    "kind": "continue"
+   },
+   {
+    "from": 18,
+    "to": 20,
+    "kind": "no-else"
+   },
+   {
+    "from": 20,
+    "to": 23,
+    "kind": "then"
+   },
+   {
+    "from": 23,
+    "to": 22,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 20,
+    "to": 22,
+    "kind": "no-else"
+   },
+   {
+    "from": 22,
+    "to": 25,
+    "kind": "then"
+   },
+   {
+    "from": 25,
+    "to": 24,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 22,
+    "to": 24,
+    "kind": "no-else"
+   },
+   {
+    "from": 24,
+    "to": 27,
+    "kind": "case"
+   },
+   {
+    "from": 24,
+    "to": 27,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 27,
+    "to": 26,
+    "kind": "break"
+   },
+   {
+    "from": 24,
+    "to": 28,
+    "kind": "case"
+   },
+   {
+    "from": 28,
+    "to": 26,
+    "kind": "break"
+   },
+   {
+    "from": 24,
+    "to": 29,
+    "kind": "case"
+   },
+   {
+    "from": 29,
+    "to": 26,
+    "kind": "break"
+   },
+   {
+    "from": 24,
+    "to": 30,
+    "kind": "case"
+   },
+   {
+    "from": 30,
+    "to": 26,
+    "kind": "break"
+   },
+   {
+    "from": 24,
+    "to": 31,
+    "kind": "case"
+   },
+   {
+    "from": 31,
+    "to": 26,
+    "kind": "break"
+   },
+   {
+    "from": 24,
+    "to": 32,
+    "kind": "case"
+   },
+   {
+    "from": 32,
+    "to": 34,
+    "kind": "case"
+   },
+   {
+    "from": 32,
+    "to": 34,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 34,
+    "to": 33,
+    "kind": "break"
+   },
+   {
+    "from": 32,
+    "to": 35,
+    "kind": "case"
+   },
+   {
+    "from": 35,
+    "to": 33,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 33,
+    "to": 26,
+    "kind": "break"
+   },
+   {
+    "from": 26,
+    "to": 37,
+    "kind": "then"
+   },
+   {
+    "from": 37,
+    "to": 38,
+    "kind": "next"
+   },
+   {
+    "from": 38,
+    "to": 39,
+    "kind": "exit-false"
+   },
+   {
+    "from": 38,
+    "to": 40,
+    "kind": "loop-true"
+   },
+   {
+    "from": 40,
+    "to": 41,
+    "kind": "to-incr"
+   },
+   {
+    "from": 41,
+    "to": 38,
+    "kind": "latch"
+   },
+   {
+    "from": 39,
+    "to": 36,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 26,
+    "to": 36,
+    "kind": "no-else"
+   },
+   {
+    "from": 36,
+    "to": 43,
+    "kind": "then"
+   },
+   {
+    "from": 43,
+    "to": 44,
+    "kind": "next"
+   },
+   {
+    "from": 44,
+    "to": 45,
+    "kind": "exit-false"
+   },
+   {
+    "from": 44,
+    "to": 46,
+    "kind": "loop-true"
+   },
+   {
+    "from": 46,
+    "to": 47,
+    "kind": "to-incr"
+   },
+   {
+    "from": 47,
+    "to": 44,
+    "kind": "latch"
+   },
+   {
+    "from": 45,
+    "to": 42,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 36,
+    "to": 42,
+    "kind": "no-else"
+   },
+   {
+    "from": 42,
+    "to": 15,
+    "kind": "to-incr"
+   },
+   {
+    "from": 15,
+    "to": 12,
+    "kind": "latch"
+   },
+   {
+    "from": 13,
+    "to": 49,
+    "kind": "then"
+   },
+   {
+    "from": 49,
+    "to": 48,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 13,
+    "to": 48,
+    "kind": "no-else"
+   },
+   {
+    "from": 48,
+    "to": 1,
+    "kind": "fallthrough"
+   }
+  ]
+ },
+ "dfg": {
+  "defs": [
+   {
+    "id": "d42",
+    "var": "pn",
+    "block": 0,
+    "stmt": -1,
+    "line": 411,
+    "kind": "param",
+    "type": "struct static_path *"
+   },
+   {
+    "id": "d43",
+    "var": "install",
+    "block": 0,
+    "stmt": -1,
+    "line": 411,
+    "kind": "param",
+    "type": "_Bool"
+   },
+   {
+    "id": "d0",
+    "var": "p",
+    "block": 2,
+    "stmt": 0,
+    "line": 424,
+    "kind": "assign"
+   },
+   {
+    "id": "d1",
+    "var": "src_pp",
+    "block": 2,
+    "stmt": 0,
+    "line": 424,
+    "kind": "assign"
+   },
+   {
+    "id": "d2",
+    "var": "api.vrf_id",
+    "block": 2,
+    "stmt": 3,
+    "line": 428,
+    "kind": "assign"
+   },
+   {
+    "id": "d3",
+    "var": "api.type",
+    "block": 2,
+    "stmt": 4,
+    "line": 429,
+    "kind": "assign"
+   },
+   {
+    "id": "d4",
+    "var": "api.safi",
+    "block": 2,
+    "stmt": 5,
+    "line": 430,
+    "kind": "assign"
+   },
+   {
+    "id": "d5",
+    "var": "api.metric",
+    "block": 6,
+    "stmt": 1,
+    "line": 445,
+    "kind": "assign"
+   },
+   {
+    "id": "d6",
+    "var": "api.distance",
+    "block": 7,
+    "stmt": 1,
+    "line": 442,
+    "kind": "assign"
+   },
+   {
+    "id": "d7",
+    "var": "api.tag",
+    "block": 9,
+    "stmt": 1,
+    "line": 448,
+    "kind": "assign"
+   },
+   {
+    "id": "d8",
+    "var": "api.tableid",
+    "block": 11,
+    "stmt": 1,
+    "line": 452,
+    "kind": "assign"
+   },
+   {
+    "id": "d9",
+    "var": "api.nexthop_num",
+    "block": 13,
+    "stmt": 0,
+    "line": 552,
+    "kind": "assign"
+   },
+   {
+    "id": "d10",
+    "var": "api_nh",
+    "block": 16,
+    "stmt": 0,
+    "line": 459,
+    "kind": "assign"
+   },
+   {
+    "id": "d11",
+    "var": "api_nh->vrf_id",
+    "block": 20,
+    "stmt": 1,
+    "line": 467,
+    "kind": "assign"
+   },
+   {
+    "id": "d12",
+    "var": "api_nh->weight",
+    "block": 20,
+    "stmt": 2,
+    "line": 468,
+    "kind": "assign"
+   },
+   {
+    "id": "d13",
+    "var": "api_nh->srte_color",
+    "block": 25,
+    "stmt": 1,
+    "line": 473,
+    "kind": "assign"
+   },
+   {
+    "id": "d14",
+    "var": "nh->state",
+    "block": 26,
+    "stmt": 0,
+    "line": 522,
+    "kind": "assign"
+   },
+   {
+    "id": "d15",
+    "var": "api_nh->ifindex",
+    "block": 27,
+    "stmt": 1,
+    "line": 480,
+    "kind": "assign"
+   },
+   {
+    "id": "d16",
+    "var": "api_nh->type",
+    "block": 27,
+    "stmt": 2,
+    "line": 481,
+    "kind": "assign"
+   },
+   {
+    "id": "d17",
+    "var": "api_nh->type",
+    "block": 28,
+    "stmt": 1,
+    "line": 486,
+    "kind": "assign"
+   },
+   {
+    "id": "d18",
+    "var": "api_nh->gate",
+    "block": 28,
+    "stmt": 2,
+    "line": 487,
+    "kind": "assign"
+   },
+   {
+    "id": "d19",
+    "var": "api_nh->ifindex",
+    "block": 29,
+    "stmt": 1,
+    "line": 492,
+    "kind": "assign"
+   },
+   {
+    "id": "d20",
+    "var": "api_nh->type",
+    "block": 29,
+    "stmt": 2,
+    "line": 493,
+    "kind": "assign"
+   },
+   {
+    "id": "d21",
+    "var": "api_nh->gate",
+    "block": 29,
+    "stmt": 3,
+    "line": 494,
+    "kind": "assign"
+   },
+   {
+    "id": "d22",
+    "var": "api_nh->type",
+    "block": 30,
+    "stmt": 1,
+    "line": 499,
+    "kind": "assign"
+   },
+   {
+    "id": "d23",
+    "var": "api_nh->gate",
+    "block": 30,
+    "stmt": 2,
+    "line": 500,
+    "kind": "assign"
+   },
+   {
+    "id": "d24",
+    "var": "api_nh->type",
+    "block": 31,
+    "stmt": 1,
+    "line": 505,
+    "kind": "assign"
+   },
+   {
+    "id": "d25",
+    "var": "api_nh->ifindex",
+    "block": 31,
+    "stmt": 2,
+    "line": 506,
+    "kind": "assign"
+   },
+   {
+    "id": "d26",
+    "var": "api_nh->gate",
+    "block": 31,
+    "stmt": 3,
+    "line": 507,
+    "kind": "assign"
+   },
+   {
+    "id": "d27",
+    "var": "api_nh->type",
+    "block": 32,
+    "stmt": 0,
+    "line": 509,
+    "kind": "assign"
+   },
+   {
+    "id": "d28",
+    "var": "api_nh->bh_type",
+    "block": 34,
+    "stmt": 0,
+    "line": 512,
+    "kind": "assign"
+   },
+   {
+    "id": "d29",
+    "var": "api_nh->bh_type",
+    "block": 35,
+    "stmt": 0,
+    "line": 516,
+    "kind": "assign"
+   },
+   {
+    "id": "d30",
+    "var": "api_nh->label_num",
+    "block": 37,
+    "stmt": 2,
+    "line": 528,
+    "kind": "assign"
+   },
+   {
+    "id": "d31",
+    "var": "i",
+    "block": 37,
+    "stmt": 3,
+    "line": 529,
+    "kind": "assign"
+   },
+   {
+    "id": "d32",
+    "var": "labels[...]",
+    "block": 40,
+    "stmt": 0,
+    "line": 530,
+    "kind": "assign"
+   },
+   {
+    "id": "d33",
+    "var": "i",
+    "block": 41,
+    "stmt": 0,
+    "line": 529,
+    "kind": "incdec"
+   },
+   {
+    "id": "d34",
+    "var": "nh_num",
+    "block": 42,
+    "stmt": 0,
+    "line": 549,
+    "kind": "incdec"
+   },
+   {
+    "id": "d35",
+    "var": "api_nh->seg6local_action",
+    "block": 43,
+    "stmt": 1,
+    "line": 535,
+    "kind": "assign"
+   },
+   {
+    "id": "d36",
+    "var": "api.safi",
+    "block": 43,
+    "stmt": 4,
+    "line": 539,
+    "kind": "assign"
+   },
+   {
+    "id": "d37",
+    "var": "api_nh->seg_num",
+    "block": 43,
+    "stmt": 5,
+    "line": 541,
+    "kind": "assign"
+   },
+   {
+    "id": "d38",
+    "var": "i",
+    "block": 43,
+    "stmt": 6,
+    "line": 542,
+    "kind": "assign"
+   },
+   {
+    "id": "d39",
+    "var": "api_nh->srv6_encap_behavior",
+    "block": 45,
+    "stmt": 0,
+    "line": 547,
+    "kind": "assign"
+   },
+   {
+    "id": "d40",
+    "var": "i",
+    "block": 47,
+    "stmt": 0,
+    "line": 542,
+    "kind": "incdec"
+   },
+   {
+    "id": "d41",
+    "var": "install",
+    "block": 49,
+    "stmt": 0,
+    "line": 559,
+    "kind": "assign"
+   }
+  ],
+  "chains": [
+   {
+    "use": "pn",
+    "block": 0,
+    "line": 413,
+    "stmt": "struct route_node * rn = pn -> rn ;",
+    "defs": [
+     "d42"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "rn",
+    "block": 0,
+    "line": 414,
+    "stmt": "struct static_route_info * si = rn -> info ;",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "si",
+    "block": 0,
+    "line": 421,
+    "stmt": "! si -> svrf -> vrf || si -> svrf -> vrf -> vrf_id == VRF_UNKNOWN",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "src_pp",
+    "block": 2,
+    "line": 424,
+    "stmt": "p = src_pp = NULL",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "rn",
+    "block": 2,
+    "line": 425,
+    "stmt": "srcdest_rnode_prefixes ( rn , & p , & src_pp )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "p",
+    "block": 2,
+    "line": 425,
+    "stmt": "srcdest_rnode_prefixes ( rn , & p , & src_pp )",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "src_pp",
+    "block": 2,
+    "line": 425,
+    "stmt": "srcdest_rnode_prefixes ( rn , & p , & src_pp )",
+    "defs": [
+     "d1"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 427,
+    "stmt": "zapi_route_init ( & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "si",
+    "block": 2,
+    "line": 428,
+    "stmt": "api . vrf_id = si -> svrf -> vrf -> vrf_id",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 428,
+    "stmt": "api . vrf_id = si -> svrf -> vrf -> vrf_id",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 429,
+    "stmt": "api . type = ZEBRA_ROUTE_STATIC",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "si",
+    "block": 2,
+    "line": 430,
+    "stmt": "api . safi = si -> safi",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 430,
+    "stmt": "api . safi = si -> safi",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 431,
+    "stmt": "memcpy ( & api . prefix , p , sizeof ( api . prefix ) )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "p",
+    "block": 2,
+    "line": 431,
+    "stmt": "memcpy ( & api . prefix , p , sizeof ( api . prefix ) )",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "src_pp",
+    "block": 2,
+    "line": 433,
+    "stmt": "src_pp",
+    "defs": [
+     "d1"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 437,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 438,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 439,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "pn",
+    "block": 4,
+    "line": 440,
+    "stmt": "pn -> distance",
+    "defs": [
+     "d42"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 5,
+    "line": 434,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 5,
+    "line": 435,
+    "stmt": "memcpy ( & api . src_prefix , src_pp , sizeof ( api . src_prefix ) )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "src_pp",
+    "block": 5,
+    "line": 435,
+    "stmt": "memcpy ( & api . src_prefix , src_pp , sizeof ( api . src_prefix ) )",
+    "defs": [
+     "d1"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 444,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "pn",
+    "block": 6,
+    "line": 445,
+    "stmt": "api . metric = pn -> metric",
+    "defs": [
+     "d42"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 445,
+    "stmt": "api . metric = pn -> metric",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "pn",
+    "block": 6,
+    "line": 446,
+    "stmt": "pn -> tag",
+    "defs": [
+     "d42"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 7,
+    "line": 441,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "pn",
+    "block": 7,
+    "line": 442,
+    "stmt": "api . distance = pn -> distance",
+    "defs": [
+     "d42"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 7,
+    "line": 442,
+    "stmt": "api . distance = pn -> distance",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "pn",
+    "block": 8,
+    "line": 450,
+    "stmt": "pn -> table_id != 0",
+    "defs": [
+     "d42"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 9,
+    "line": 447,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "pn",
+    "block": 9,
+    "line": 448,
+    "stmt": "api . tag = pn -> tag",
+    "defs": [
+     "d42"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 9,
+    "line": 448,
+    "stmt": "api . tag = pn -> tag",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 10,
+    "line": 454,
+    "stmt": "nh )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "pn",
+    "block": 10,
+    "line": 454,
+    "stmt": "nh )",
+    "defs": [
+     "d42"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 10,
+    "line": 454,
+    "stmt": "nh",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 11,
+    "line": 451,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "pn",
+    "block": 11,
+    "line": 452,
+    "stmt": "api . tableid = pn -> table_id",
+    "defs": [
+     "d42"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 11,
+    "line": 452,
+    "stmt": "api . tableid = pn -> table_id",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh_num",
+    "block": 13,
+    "line": 552,
+    "stmt": "api . nexthop_num = nh_num",
+    "defs": [
+     "d34"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 13,
+    "line": 552,
+    "stmt": "api . nexthop_num = nh_num",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh_num",
+    "block": 13,
+    "line": 558,
+    "stmt": "! nh_num && install",
+    "defs": [
+     "d34"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "install",
+    "block": 13,
+    "line": 558,
+    "stmt": "! nh_num && install",
+    "defs": [
+     "d43"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh_num",
+    "block": 14,
+    "line": 456,
+    "stmt": "nh_num == zebra_ecmp_count",
+    "defs": [
+     "d34"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "zebra_ecmp_count",
+    "block": 14,
+    "line": 456,
+    "stmt": "nh_num == zebra_ecmp_count",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 15,
+    "line": 454,
+    "stmt": "nh )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "pn",
+    "block": 15,
+    "line": 454,
+    "stmt": "nh )",
+    "defs": [
+     "d42"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 16,
+    "line": 459,
+    "stmt": "api_nh = & api . nexthops [ nh_num ]",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh_num",
+    "block": 16,
+    "line": 459,
+    "stmt": "api_nh = & api . nexthops [ nh_num ]",
+    "defs": [
+     "d34"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 16,
+    "line": 460,
+    "stmt": "nh -> nh_vrf_id == VRF_UNKNOWN",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 18,
+    "line": 463,
+    "stmt": "nh -> path_down",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 20,
+    "line": 466,
+    "stmt": "zapi_nexthop_init ( api_nh )",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 20,
+    "line": 467,
+    "stmt": "api_nh -> vrf_id = nh -> nh_vrf_id",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 20,
+    "line": 467,
+    "stmt": "api_nh -> vrf_id = nh -> nh_vrf_id",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 20,
+    "line": 468,
+    "stmt": "api_nh -> weight = nh -> weight",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 20,
+    "line": 468,
+    "stmt": "api_nh -> weight = nh -> weight",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 20,
+    "line": 469,
+    "stmt": "nh -> onlink",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 22,
+    "line": 471,
+    "stmt": "nh -> color != 0",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 23,
+    "line": 470,
+    "stmt": "",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 24,
+    "line": 476,
+    "stmt": "nh -> type",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 25,
+    "line": 472,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 25,
+    "line": 473,
+    "stmt": "api_nh -> srte_color = nh -> color",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 25,
+    "line": 473,
+    "stmt": "api_nh -> srte_color = nh -> color",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 26,
+    "line": 522,
+    "stmt": "nh -> state = STATIC_SENT_TO_ZEBRA",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 26,
+    "line": 524,
+    "stmt": "nh -> snh_label . num_labels",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 27,
+    "line": 477,
+    "stmt": "case STATIC_IFNAME : if ( nh -> ifindex == IFINDEX_INTERNAL ) continue",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 27,
+    "line": 480,
+    "stmt": "api_nh -> ifindex = nh -> ifindex",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 27,
+    "line": 480,
+    "stmt": "api_nh -> ifindex = nh -> ifindex",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api_nh",
+    "block": 27,
+    "line": 481,
+    "stmt": "api_nh -> type = NEXTHOP_TYPE_IFINDEX",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 28,
+    "line": 483,
+    "stmt": "case STATIC_IPV4_GATEWAY : if ( ! nh -> nh_valid ) continue",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 28,
+    "line": 486,
+    "stmt": "api_nh -> type = NEXTHOP_TYPE_IPV4",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 28,
+    "line": 487,
+    "stmt": "api_nh -> gate = nh -> addr",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 28,
+    "line": 487,
+    "stmt": "api_nh -> gate = nh -> addr",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 29,
+    "line": 489,
+    "stmt": "case STATIC_IPV4_GATEWAY_IFNAME : if ( nh -> ifindex == IFINDEX_INTERNAL ) conti",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 29,
+    "line": 492,
+    "stmt": "api_nh -> ifindex = nh -> ifindex",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 29,
+    "line": 492,
+    "stmt": "api_nh -> ifindex = nh -> ifindex",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api_nh",
+    "block": 29,
+    "line": 493,
+    "stmt": "api_nh -> type = NEXTHOP_TYPE_IPV4_IFINDEX",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 29,
+    "line": 494,
+    "stmt": "api_nh -> gate = nh -> addr",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 29,
+    "line": 494,
+    "stmt": "api_nh -> gate = nh -> addr",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 30,
+    "line": 496,
+    "stmt": "case STATIC_IPV6_GATEWAY : if ( ! nh -> nh_valid ) continue",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 30,
+    "line": 499,
+    "stmt": "api_nh -> type = NEXTHOP_TYPE_IPV6",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 30,
+    "line": 500,
+    "stmt": "api_nh -> gate = nh -> addr",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 30,
+    "line": 500,
+    "stmt": "api_nh -> gate = nh -> addr",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 31,
+    "line": 502,
+    "stmt": "case STATIC_IPV6_GATEWAY_IFNAME : if ( nh -> ifindex == IFINDEX_INTERNAL ) conti",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 31,
+    "line": 505,
+    "stmt": "api_nh -> type = NEXTHOP_TYPE_IPV6_IFINDEX",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 31,
+    "line": 506,
+    "stmt": "api_nh -> ifindex = nh -> ifindex",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 31,
+    "line": 506,
+    "stmt": "api_nh -> ifindex = nh -> ifindex",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 31,
+    "line": 507,
+    "stmt": "api_nh -> gate = nh -> addr",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 31,
+    "line": 507,
+    "stmt": "api_nh -> gate = nh -> addr",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api_nh",
+    "block": 32,
+    "line": 509,
+    "stmt": "case STATIC_BLACKHOLE : api_nh -> type = NEXTHOP_TYPE_BLACKHOLE",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 32,
+    "line": 511,
+    "stmt": "nh -> bh_type",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 34,
+    "line": 512,
+    "stmt": "case STATIC_BLACKHOLE_DROP : case STATIC_BLACKHOLE_NULL : api_nh -> bh_type = BL",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api_nh",
+    "block": 35,
+    "line": 516,
+    "stmt": "case STATIC_BLACKHOLE_REJECT : api_nh -> bh_type = BLACKHOLE_REJECT",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 36,
+    "line": 532,
+    "stmt": "nh -> snh_seg . num_segs",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 37,
+    "line": 527,
+    "stmt": "",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 37,
+    "line": 528,
+    "stmt": "api_nh -> label_num = nh -> snh_label . num_labels",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 37,
+    "line": 528,
+    "stmt": "api_nh -> label_num = nh -> snh_label . num_labels",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "i",
+    "block": 37,
+    "line": 529,
+    "stmt": "i < api_nh -> label_num",
+    "defs": [
+     "d31"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api_nh",
+    "block": 37,
+    "line": 529,
+    "stmt": "i < api_nh -> label_num",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 40,
+    "line": 530,
+    "stmt": "api_nh -> labels [ i ] = nh -> snh_label . label [ i ]",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "i",
+    "block": 40,
+    "line": 530,
+    "stmt": "api_nh -> labels [ i ] = nh -> snh_label . label [ i ]",
+    "defs": [
+     "d31",
+     "d33"
+    ],
+    "n_defs": 2
+   },
+   {
+    "use": "api_nh",
+    "block": 40,
+    "line": 530,
+    "stmt": "api_nh -> labels [ i ] = nh -> snh_label . label [ i ]",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api_nh",
+    "block": 43,
+    "line": 535,
+    "stmt": "api_nh -> seg6local_action = ZEBRA_SEG6_LOCAL_ACTION_UNSPEC",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api_nh",
+    "block": 43,
+    "line": 537,
+    "stmt": "",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 43,
+    "line": 538,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 43,
+    "line": 539,
+    "stmt": "api . safi = SAFI_UNICAST",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 43,
+    "line": 541,
+    "stmt": "api_nh -> seg_num = nh -> snh_seg . num_segs",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 43,
+    "line": 541,
+    "stmt": "api_nh -> seg_num = nh -> snh_seg . num_segs",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "i",
+    "block": 43,
+    "line": 542,
+    "stmt": "i < api_nh -> seg_num",
+    "defs": [
+     "d38"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api_nh",
+    "block": 43,
+    "line": 542,
+    "stmt": "i < api_nh -> seg_num",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 45,
+    "line": 547,
+    "stmt": "api_nh -> srv6_encap_behavior = nh -> snh_seg . encap_behavior",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 45,
+    "line": 547,
+    "stmt": "api_nh -> srv6_encap_behavior = nh -> snh_seg . encap_behavior",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api_nh",
+    "block": 46,
+    "line": 543,
+    "stmt": "memcpy ( & api_nh -> seg6_segs [ i ] , & nh -> snh_seg . seg [ i ] , sizeof ( st",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "i",
+    "block": 46,
+    "line": 543,
+    "stmt": "memcpy ( & api_nh -> seg6_segs [ i ] , & nh -> snh_seg . seg [ i ] , sizeof ( st",
+    "defs": [
+     "d38",
+     "d40"
+    ],
+    "n_defs": 2
+   },
+   {
+    "use": "nh",
+    "block": 46,
+    "line": 543,
+    "stmt": "memcpy ( & api_nh -> seg6_segs [ i ] , & nh -> snh_seg . seg [ i ] , sizeof ( st",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "install",
+    "block": 48,
+    "line": 561,
+    "stmt": "zclient_route_send ( install ? ZEBRA_ROUTE_ADD : ZEBRA_ROUTE_DELETE , static_zcl",
+    "defs": [
+     "d41",
+     "d43"
+    ],
+    "n_defs": 2
+   },
+   {
+    "use": "static_zclient",
+    "block": 48,
+    "line": 561,
+    "stmt": "zclient_route_send ( install ? ZEBRA_ROUTE_ADD : ZEBRA_ROUTE_DELETE , static_zcl",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 48,
+    "line": 561,
+    "stmt": "zclient_route_send ( install ? ZEBRA_ROUTE_ADD : ZEBRA_ROUTE_DELETE , static_zcl",
+    "defs": [],
+    "n_defs": 0
+   }
+  ],
+  "n_chains": 119,
+  "undef_uses": [
+   {
+    "use": "rn",
+    "block": 0,
+    "line": 414,
+    "stmt": "struct static_route_info * si = rn -> info ;",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "si",
+    "block": 0,
+    "line": 421,
+    "stmt": "! si -> svrf -> vrf || si -> svrf -> vrf -> vrf_id == VRF_UNKNOWN",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "src_pp",
+    "block": 2,
+    "line": 424,
+    "stmt": "p = src_pp = NULL",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "rn",
+    "block": 2,
+    "line": 425,
+    "stmt": "srcdest_rnode_prefixes ( rn , & p , & src_pp )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 427,
+    "stmt": "zapi_route_init ( & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "si",
+    "block": 2,
+    "line": 428,
+    "stmt": "api . vrf_id = si -> svrf -> vrf -> vrf_id",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 428,
+    "stmt": "api . vrf_id = si -> svrf -> vrf -> vrf_id",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 429,
+    "stmt": "api . type = ZEBRA_ROUTE_STATIC",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "si",
+    "block": 2,
+    "line": 430,
+    "stmt": "api . safi = si -> safi",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 430,
+    "stmt": "api . safi = si -> safi",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 431,
+    "stmt": "memcpy ( & api . prefix , p , sizeof ( api . prefix ) )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 437,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 438,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 439,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 5,
+    "line": 434,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 5,
+    "line": 435,
+    "stmt": "memcpy ( & api . src_prefix , src_pp , sizeof ( api . src_prefix ) )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 444,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 445,
+    "stmt": "api . metric = pn -> metric",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 7,
+    "line": 441,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 7,
+    "line": 442,
+    "stmt": "api . distance = pn -> distance",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 9,
+    "line": 447,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 9,
+    "line": 448,
+    "stmt": "api . tag = pn -> tag",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 10,
+    "line": 454,
+    "stmt": "nh )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 10,
+    "line": 454,
+    "stmt": "nh",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 11,
+    "line": 451,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 11,
+    "line": 452,
+    "stmt": "api . tableid = pn -> table_id",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 13,
+    "line": 552,
+    "stmt": "api . nexthop_num = nh_num",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zebra_ecmp_count",
+    "block": 14,
+    "line": 456,
+    "stmt": "nh_num == zebra_ecmp_count",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 15,
+    "line": 454,
+    "stmt": "nh )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 16,
+    "line": 459,
+    "stmt": "api_nh = & api . nexthops [ nh_num ]",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 16,
+    "line": 460,
+    "stmt": "nh -> nh_vrf_id == VRF_UNKNOWN",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 18,
+    "line": 463,
+    "stmt": "nh -> path_down",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 20,
+    "line": 467,
+    "stmt": "api_nh -> vrf_id = nh -> nh_vrf_id",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 20,
+    "line": 468,
+    "stmt": "api_nh -> weight = nh -> weight",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 20,
+    "line": 469,
+    "stmt": "nh -> onlink",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 22,
+    "line": 471,
+    "stmt": "nh -> color != 0",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 24,
+    "line": 476,
+    "stmt": "nh -> type",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 25,
+    "line": 472,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 25,
+    "line": 473,
+    "stmt": "api_nh -> srte_color = nh -> color",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 26,
+    "line": 522,
+    "stmt": "nh -> state = STATIC_SENT_TO_ZEBRA",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 26,
+    "line": 524,
+    "stmt": "nh -> snh_label . num_labels",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 27,
+    "line": 477,
+    "stmt": "case STATIC_IFNAME : if ( nh -> ifindex == IFINDEX_INTERNAL ) continue",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 27,
+    "line": 480,
+    "stmt": "api_nh -> ifindex = nh -> ifindex",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 28,
+    "line": 483,
+    "stmt": "case STATIC_IPV4_GATEWAY : if ( ! nh -> nh_valid ) continue",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 28,
+    "line": 487,
+    "stmt": "api_nh -> gate = nh -> addr",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 29,
+    "line": 489,
+    "stmt": "case STATIC_IPV4_GATEWAY_IFNAME : if ( nh -> ifindex == IFINDEX_INTERNAL ) conti",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 29,
+    "line": 492,
+    "stmt": "api_nh -> ifindex = nh -> ifindex",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 29,
+    "line": 494,
+    "stmt": "api_nh -> gate = nh -> addr",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 30,
+    "line": 496,
+    "stmt": "case STATIC_IPV6_GATEWAY : if ( ! nh -> nh_valid ) continue",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 30,
+    "line": 500,
+    "stmt": "api_nh -> gate = nh -> addr",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 31,
+    "line": 502,
+    "stmt": "case STATIC_IPV6_GATEWAY_IFNAME : if ( nh -> ifindex == IFINDEX_INTERNAL ) conti",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 31,
+    "line": 506,
+    "stmt": "api_nh -> ifindex = nh -> ifindex",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 31,
+    "line": 507,
+    "stmt": "api_nh -> gate = nh -> addr",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 32,
+    "line": 511,
+    "stmt": "nh -> bh_type",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 36,
+    "line": 532,
+    "stmt": "nh -> snh_seg . num_segs",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 37,
+    "line": 528,
+    "stmt": "api_nh -> label_num = nh -> snh_label . num_labels",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 40,
+    "line": 530,
+    "stmt": "api_nh -> labels [ i ] = nh -> snh_label . label [ i ]",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 43,
+    "line": 538,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 43,
+    "line": 539,
+    "stmt": "api . safi = SAFI_UNICAST",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 43,
+    "line": 541,
+    "stmt": "api_nh -> seg_num = nh -> snh_seg . num_segs",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 45,
+    "line": 547,
+    "stmt": "api_nh -> srv6_encap_behavior = nh -> snh_seg . encap_behavior",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 46,
+    "line": 543,
+    "stmt": "memcpy ( & api_nh -> seg6_segs [ i ] , & nh -> snh_seg . seg [ i ] , sizeof ( st",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "static_zclient",
+    "block": 48,
+    "line": 561,
+    "stmt": "zclient_route_send ( install ? ZEBRA_ROUTE_ADD : ZEBRA_ROUTE_DELETE , static_zcl",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 48,
+    "line": 561,
+    "stmt": "zclient_route_send ( install ? ZEBRA_ROUTE_ADD : ZEBRA_ROUTE_DELETE , static_zcl",
+    "defs": [],
+    "n_defs": 0
+   }
+  ]
+ },
+ "liveness": {
+  "live_in": {
+   "0": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "rn",
+    "si",
+    "src_pp",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "1": [],
+   "2": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "rn",
+    "si",
+    "src_pp",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "3": [],
+   "4": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "5": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "src_pp",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "6": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "7": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "8": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "9": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "10": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "11": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "12": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "13": [
+    "api",
+    "install",
+    "nh_num",
+    "static_zclient"
+   ],
+   "14": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "15": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "16": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "17": [
+    "api",
+    "install",
+    "nh_num",
+    "static_zclient"
+   ],
+   "18": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "19": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "20": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "21": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "22": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "23": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "24": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "25": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "26": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "27": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "28": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "29": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "30": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "31": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "32": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "33": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "34": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "35": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "36": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "37": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "38": [
+    "api",
+    "api_nh",
+    "i",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "39": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "40": [
+    "api",
+    "api_nh",
+    "i",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "41": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "42": [
+    "api",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "43": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "44": [
+    "api",
+    "api_nh",
+    "i",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "45": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "46": [
+    "api",
+    "api_nh",
+    "i",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "47": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "48": [
+    "api",
+    "install",
+    "static_zclient"
+   ],
+   "49": [
+    "api",
+    "static_zclient"
+   ]
+  },
+  "live_out": {
+   "0": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "rn",
+    "si",
+    "src_pp",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "1": [],
+   "2": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "src_pp",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "3": [],
+   "4": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "5": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "6": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "7": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "8": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "9": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "10": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "11": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "12": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "13": [
+    "api",
+    "install",
+    "static_zclient"
+   ],
+   "14": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "15": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "16": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "17": [
+    "api",
+    "install",
+    "nh_num",
+    "static_zclient"
+   ],
+   "18": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "19": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "20": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "21": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "22": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "23": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "24": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "25": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "26": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "27": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "28": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "29": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "30": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "31": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "32": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "33": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "34": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "35": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "36": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "37": [
+    "api",
+    "api_nh",
+    "i",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "38": [
+    "api",
+    "api_nh",
+    "i",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "39": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "40": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "41": [
+    "api",
+    "api_nh",
+    "i",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "42": [
+    "api",
+    "install",
+    "nh",
+    "nh_num",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "43": [
+    "api",
+    "api_nh",
+    "i",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "44": [
+    "api",
+    "api_nh",
+    "i",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "45": [
+    "api",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "46": [
+    "api",
+    "api_nh",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "47": [
+    "api",
+    "api_nh",
+    "i",
+    "install",
+    "nh",
+    "pn",
+    "static_zclient",
+    "zebra_ecmp_count"
+   ],
+   "48": [],
+   "49": [
+    "api",
+    "install",
+    "static_zclient"
+   ]
+  },
+  "params_live_at_entry": [
+   "install",
+   "pn"
+  ]
+ },
+ "meta": {
+  "compute_ms": 294.2,
+  "unreachable_stmts_skipped": 0,
+  "cache_key": "f80064fbdb9085848d3e0f486a1b7efd4c476d98ad97a3e0e41d3fa0fc2843ab"
+ },
+ "cache": {
+  "hit": false,
+  "key": "f80064fbdb9085848d3e0f486a1b7efd4c476d98ad97a3e0e41d3fa0fc2843ab",
+  "path": "/home/z/my-project/poc/facts/p5/cache/slices/f80064fbdb9085848d3e0f486a1b7efd4c476d98ad97a3e0e41d3fa0fc2843ab.json",
+  "tool_ver": "p5-slice/1.0.0+clang18"
+ }
+}

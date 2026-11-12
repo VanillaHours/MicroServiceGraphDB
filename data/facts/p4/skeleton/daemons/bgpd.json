@@ -1,0 +1,653 @@
+{
+ "atoms": [
+  {
+   "id": "a7978249",
+   "refs": [
+    {
+     "k": "N",
+     "r": "svc:bgpd"
+    },
+    {
+     "k": "C",
+     "r": "D3063a0b0"
+    }
+   ],
+   "tpl": "svc:bgpd is a service in the fused graph; its functional domain is D3063a0b0."
+  },
+  {
+   "id": "a2ccd54d",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.published"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|publishes|zapi:ZEBRA_ADVERTISE_ALL_VNI"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|publishes|zapi:ZEBRA_ADVERTISE_DEFAULT_GW"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|publishes|zapi:ZEBRA_ADVERTISE_SUBNET"
+    }
+   ],
+   "tpl": "svc:bgpd publishes 27 message types toward the ZAPI bus (ZEBRA_ADVERTISE_ALL_VNI, ZEBRA_ADVERTISE_DEFAULT_GW, ZEBRA_ADVERTISE_SUBNET, ...)."
+  },
+  {
+   "id": "a8b1b604",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.handled"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|handles|zapi:ZEBRA_FEC_UPDATE"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    }
+   ],
+   "tpl": "It handles 30 notification/event types from the bus (ZEBRA_FEC_UPDATE, ZEBRA_INTERFACE_ADDRESS_ADD, ZEBRA_INTERFACE_ADDRESS_DELETE, ...)."
+  },
+  {
+   "id": "a6338b18",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.yang.total"
+    },
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.nb_tables"
+    },
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.yang.frr-bgp-route-map"
+    }
+   ],
+   "tpl": "Northbound contracts: frr-bgp-route-map(65) \u2014 65 YANG paths across 68 NB handler tables."
+  },
+  {
+   "id": "a270cdb1",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.roles"
+    }
+   ],
+   "tpl": "Measured roles: zapi-client, zapi-publisher."
+  },
+  {
+   "id": "ae847f47",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M05216fef"
+    },
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.mod.M05216fef.size"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgp_table.h"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgp_table.c"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgp_route.c"
+    }
+   ],
+   "tpl": "bgpd:bgp \u2014 697 functions; anchors: bgp_route_next (bgpd/bgp_table.h), bgp_dest_unlock_node (bgpd/bgp_table.c), bgp_table_top (bgpd/bgp_table.h), bgp_update (bgpd/bgp_route.c)."
+  },
+  {
+   "id": "a4f40fd9",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M5fbc08dc"
+    },
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.mod.M5fbc08dc.size"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgp_debug.c"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgpd.h"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgpd.c"
+    }
+   ],
+   "tpl": "bgpd:peer \u2014 607 functions; anchors: bgp_debug_neighbor_events (bgpd/bgp_debug.c), peer_set_last_reset (bgpd/bgpd.h), peer_delete (bgpd/bgpd.c), peer_notify_config_change (bgpd/bgpd.c)."
+  },
+  {
+   "id": "a625f059",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M8a2078aa"
+    },
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.mod.M8a2078aa.size"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgp_attr.c"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgp_route.c"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgp_ecommunity.c"
+    }
+   ],
+   "tpl": "bgpd:bgp \u2014 556 functions; anchors: bgp_attr_intern (bgpd/bgp_attr.c), bgp_attr_flush (bgpd/bgp_attr.c), bgp_attr_parse (bgpd/bgp_attr.c), bgp_attr_unintern_sub (bgpd/bgp_attr.c)."
+  },
+  {
+   "id": "a414da58",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M0db7f269"
+    },
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.mod.M0db7f269.size"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgpd.c"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgp_evpn.c"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgp_evpn_vty.c"
+    }
+   ],
+   "tpl": "bgpd:bgp \u2014 530 functions; anchors: bgp_lookup_by_vrf_id (bgpd/bgpd.c), bgp_evpn_local_vni_add (bgpd/bgp_evpn.c), bgp_show_ethernet_vpn (bgpd/bgp_evpn_vty.c), bgp_evpn_es_find (bgpd/bgp_evpn_mh.c)."
+  },
+  {
+   "id": "ad885bf3",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M177e2382"
+    },
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.mod.M177e2382.size"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgp_vty.c"
+    }
+   ],
+   "tpl": "bgpd:peer \u2014 331 functions; anchors: peer_and_group_lookup_vty (bgpd/bgp_vty.c), bgp_vty_return (bgpd/bgp_vty.c), peer_af_flag_unset_vty (bgpd/bgp_vty.c), peer_flag_set_vty (bgpd/bgp_vty.c)."
+  },
+  {
+   "id": "ac1fc9e0",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M96bf08bc"
+    },
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.mod.M96bf08bc.size"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgp_aspath.h"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgp_vty.c"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgp_advertise.h"
+    }
+   ],
+   "tpl": "bgpd:bgp \u2014 308 functions; anchors: as_list_list_prev (bgpd/bgp_aspath.h), bgp_ac_neighbor (bgpd/bgp_vty.c), bgp_adv_fifo_next (bgpd/bgp_advertise.h), bgp_adv_fifo_prev (bgpd/bgp_advertise.h)."
+  },
+  {
+   "id": "a751331c",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M68866613"
+    },
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.mod.M68866613.size"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgpd.c"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgp_mplsvpn.h"
+    },
+    {
+     "k": "P",
+     "r": "bgpd/bgp_zebra.c"
+    }
+   ],
+   "tpl": "bgpd:bgp \u2014 306 functions; anchors: bgp_get_default (bgpd/bgpd.c), vpn_leak_postchange (bgpd/bgp_mplsvpn.h), bgp_delete (bgpd/bgpd.c), vpn_leak_prechange (bgpd/bgp_mplsvpn.h)."
+  },
+  {
+   "id": "a5c7f6a0",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.bridge.total"
+    },
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.bridge.lib:list"
+    }
+   ],
+   "tpl": "7813 intra-service `calls` edges reach other service partitions; densest target lib:list (2171 calls)."
+  },
+  {
+   "id": "a17e6c3c",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.flows.out"
+    },
+    {
+     "k": "F",
+     "r": "zapi.cross_svc_flows"
+    }
+   ],
+   "tpl": "27 cross-service flows originate here; targets: svc:zebra."
+  },
+  {
+   "id": "a177e5a9",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.orphan.n"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "7 handled messages have no in-slice sender (orphan handlers)."
+  }
+ ],
+ "claims": "yes",
+ "okf_level": "L3-daemon",
+ "page_id": "daemons/bgpd.md",
+ "row_atoms": [
+  {
+   "id": "abe021ef",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ADVERTISE_ALL_VNI"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|publishes|zapi:ZEBRA_ADVERTISE_ALL_VNI"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ADVERTISE_ALL_VNI"
+  },
+  {
+   "id": "a82da21d",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ADVERTISE_DEFAULT_GW"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|publishes|zapi:ZEBRA_ADVERTISE_DEFAULT_GW"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ADVERTISE_DEFAULT_GW"
+  },
+  {
+   "id": "a3b56db9",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ADVERTISE_SUBNET"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|publishes|zapi:ZEBRA_ADVERTISE_SUBNET"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ADVERTISE_SUBNET"
+  },
+  {
+   "id": "ad948363",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ADVERTISE_SVI_MACIP"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|publishes|zapi:ZEBRA_ADVERTISE_SVI_MACIP"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ADVERTISE_SVI_MACIP"
+  },
+  {
+   "id": "a2ea0162",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_CLIENT_CAPABILITIES"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|publishes|zapi:ZEBRA_CLIENT_CAPABILITIES"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_CLIENT_CAPABILITIES"
+  },
+  {
+   "id": "ad928eb5",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_DUPLICATE_ADDR_DETECTION"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|publishes|zapi:ZEBRA_DUPLICATE_ADDR_DETECTION"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_DUPLICATE_ADDR_DETECTION"
+  },
+  {
+   "id": "a99ff74b",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_EVPN_REMOTE_NH_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|publishes|zapi:ZEBRA_EVPN_REMOTE_NH_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_EVPN_REMOTE_NH_ADD"
+  },
+  {
+   "id": "acc566dc",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_EVPN_REMOTE_NH_DEL"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|publishes|zapi:ZEBRA_EVPN_REMOTE_NH_DEL"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_EVPN_REMOTE_NH_DEL"
+  },
+  {
+   "id": "aa45ed9a",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_IPSET_CREATE"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|publishes|zapi:ZEBRA_IPSET_CREATE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_IPSET_CREATE"
+  },
+  {
+   "id": "a919ed71",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_IPSET_DESTROY"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|publishes|zapi:ZEBRA_IPSET_DESTROY"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_IPSET_DESTROY"
+  },
+  {
+   "id": "a36d1ce3",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_IPSET_ENTRY_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|publishes|zapi:ZEBRA_IPSET_ENTRY_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_IPSET_ENTRY_ADD"
+  },
+  {
+   "id": "a9b55f7c",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_IPSET_ENTRY_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|publishes|zapi:ZEBRA_IPSET_ENTRY_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_IPSET_ENTRY_DELETE"
+  },
+  {
+   "id": "ab7449cb",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_FEC_UPDATE"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|handles|zapi:ZEBRA_FEC_UPDATE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_FEC_UPDATE"
+  },
+  {
+   "id": "a6e32beb",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+  },
+  {
+   "id": "a116ae9f",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+  },
+  {
+   "id": "a0213eb3",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_NBR_ADDRESS_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|handles|zapi:ZEBRA_INTERFACE_NBR_ADDRESS_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_NBR_ADDRESS_ADD"
+  },
+  {
+   "id": "aac7f786",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_NBR_ADDRESS_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|handles|zapi:ZEBRA_INTERFACE_NBR_ADDRESS_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_NBR_ADDRESS_DELETE"
+  },
+  {
+   "id": "a9d694b4",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_IPSET_ENTRY_NOTIFY_OWNER"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|handles|zapi:ZEBRA_IPSET_ENTRY_NOTIFY_OWNER"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_IPSET_ENTRY_NOTIFY_OWNER"
+  },
+  {
+   "id": "a07a745d",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_IPSET_NOTIFY_OWNER"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|handles|zapi:ZEBRA_IPSET_NOTIFY_OWNER"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_IPSET_NOTIFY_OWNER"
+  },
+  {
+   "id": "a92f4f52",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_IPTABLE_NOTIFY_OWNER"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|handles|zapi:ZEBRA_IPTABLE_NOTIFY_OWNER"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_IPTABLE_NOTIFY_OWNER"
+  },
+  {
+   "id": "a324cc47",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_IP_PREFIX_ROUTE_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|handles|zapi:ZEBRA_IP_PREFIX_ROUTE_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_IP_PREFIX_ROUTE_ADD"
+  },
+  {
+   "id": "a2d63596",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_IP_PREFIX_ROUTE_DEL"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|handles|zapi:ZEBRA_IP_PREFIX_ROUTE_DEL"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_IP_PREFIX_ROUTE_DEL"
+  },
+  {
+   "id": "aa1a5127",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_L3VNI_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|handles|zapi:ZEBRA_L3VNI_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_L3VNI_ADD"
+  },
+  {
+   "id": "ae5c17cb",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_L3VNI_DEL"
+    },
+    {
+     "k": "E",
+     "r": "svc:bgpd|handles|zapi:ZEBRA_L3VNI_DEL"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_L3VNI_DEL"
+  }
+ ],
+ "sources": [
+  "p3/profiles.jsonl",
+  "p3/backbone.json",
+  "p3/clusters.jsonl",
+  "p2/findings.json"
+ ]
+}

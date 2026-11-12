@@ -1,0 +1,9 @@
+{
+  "table": "zebra/zapi_msg.c:4133-4230",
+  "entries": 94,
+  "null_entries": [],
+  "messages": 94,
+  "fns": 72,
+  "fn_edges": 94,
+  "svc_edges": 94
+}

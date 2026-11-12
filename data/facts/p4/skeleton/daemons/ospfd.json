@@ -1,0 +1,535 @@
+{
+ "atoms": [
+  {
+   "id": "aa9e3cd3",
+   "refs": [
+    {
+     "k": "N",
+     "r": "svc:ospfd"
+    },
+    {
+     "k": "C",
+     "r": "Ded29f1c0"
+    }
+   ],
+   "tpl": "svc:ospfd is a service in the fused graph; its functional domain is Ded29f1c0."
+  },
+  {
+   "id": "a63a4adf",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.published"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_CLIENT_CAPABILITIES"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_REDISTRIBUTE_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_REDISTRIBUTE_DEFAULT_ADD"
+    }
+   ],
+   "tpl": "svc:ospfd publishes 7 message types toward the ZAPI bus (ZEBRA_CLIENT_CAPABILITIES, ZEBRA_REDISTRIBUTE_ADD, ZEBRA_REDISTRIBUTE_DEFAULT_ADD, ...)."
+  },
+  {
+   "id": "aa395e93",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.handled"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_CLIENT_CLOSE_NOTIFY"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    }
+   ],
+   "tpl": "It handles 8 notification/event types from the bus (ZEBRA_CLIENT_CLOSE_NOTIFY, ZEBRA_INTERFACE_ADDRESS_ADD, ZEBRA_INTERFACE_ADDRESS_DELETE, ...)."
+  },
+  {
+   "id": "ae33cf5e",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.yang.total"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.nb_tables"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.yang.frr-ospf-route-map"
+    }
+   ],
+   "tpl": "Northbound contracts: frr-ospf-route-map(1) \u2014 1 YANG paths across 1 NB handler tables."
+  },
+  {
+   "id": "aceed916",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.roles"
+    }
+   ],
+   "tpl": "Measured roles: zapi-client, zapi-publisher."
+  },
+  {
+   "id": "a3d22836",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M90387781"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.M90387781.size"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_lsa.c"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_flood.c"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_dump_api.c"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 212 functions; anchors: ospf_lsa_install (ospfd/ospf_lsa.c), ospf_lsa_unlock (ospfd/ospf_lsa.c), ospf_flood_through_area (ospfd/ospf_flood.c), ospf_lsa_header_dump (ospfd/ospf_dump_api.c)."
+  },
+  {
+   "id": "a82b0b41",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M38cd72c7"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.M38cd72c7.size"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospfd.c"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_vty.c"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_flood.h"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 154 functions; anchors: ospf_get_name (ospfd/ospfd.c), ospf_show_vrf_name (ospfd/ospf_vty.c), show_ip_ospf_neighbor_detail_sub (ospfd/ospf_vty.c), ospf_lookup_instance (ospfd/ospfd.c)."
+  },
+  {
+   "id": "ac392813",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Mbed952fb"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.Mbed952fb.size"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_route.c"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_ase.c"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_spf.c"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 136 functions; anchors: ospf_route_free (ospfd/ospf_route.c), ospf_ase_calculate_route (ospfd/ospf_ase.c), ospf_spf_calculate_schedule_worker (ospfd/ospf_spf.c), ospf_abr_task (ospfd/ospf_abr.c)."
+  },
+  {
+   "id": "ae7e93bc",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M62a211d6"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.M62a211d6.size"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_interface.c"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospfd.c"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_vty.c"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 121 functions; anchors: ospf_if_update_params (ospfd/ospf_interface.c), ospf_get_if_params (ospfd/ospf_interface.c), ospf_free_if_params (ospfd/ospf_interface.c), ospf_lookup_if_params (ospfd/ospf_interface.c)."
+  },
+  {
+   "id": "ac082ca9",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M89381b56"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.M89381b56.size"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospfd.c"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_interface.c"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_lsdb.c"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 116 functions; anchors: ospf_finish_final (ospfd/ospfd.c), ospf_if_down (ospfd/ospf_interface.c), ospf_if_free (ospfd/ospf_interface.c), ospf_router_id_update (ospfd/ospfd.c)."
+  },
+  {
+   "id": "ad276fd9",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M2af12f08"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.M2af12f08.size"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_ri.c"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_sr.c"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_ext.c"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 112 functions; anchors: ospf_router_info_update_sr (ospfd/ospf_ri.c), ospf_sr_start (ospfd/ospf_sr.c), update_sr_blocks (ospfd/ospf_sr.c), ospf_ext_link_update_adj_sid (ospfd/ospf_ext.c)."
+  },
+  {
+   "id": "a6911ec6",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M9e2457c9"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.mod.M9e2457c9.size"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospfd.c"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_abr.c"
+    },
+    {
+     "k": "P",
+     "r": "ospfd/ospf_vty.c"
+    }
+   ],
+   "tpl": "ospfd:ospf \u2014 107 functions; anchors: ospf_area_get (ospfd/ospfd.c), ospf_schedule_abr_task (ospfd/ospf_abr.c), ospf_area_lookup_by_area_id (ospfd/ospfd.c), ospf_area_check_free (ospfd/ospfd.c)."
+  },
+  {
+   "id": "a612b864",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.bridge.total"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.bridge.lib:zlog"
+    }
+   ],
+   "tpl": "3625 intra-service `calls` edges reach other service partitions; densest target lib:zlog (968 calls)."
+  },
+  {
+   "id": "af3b7f80",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.flows.out"
+    },
+    {
+     "k": "F",
+     "r": "zapi.cross_svc_flows"
+    }
+   ],
+   "tpl": "7 cross-service flows originate here; targets: svc:zebra."
+  },
+  {
+   "id": "af9f095e",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.orphan.n"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "0 handled messages have no in-slice sender (orphan handlers)."
+  }
+ ],
+ "claims": "yes",
+ "okf_level": "L3-daemon",
+ "page_id": "daemons/ospfd.md",
+ "row_atoms": [
+  {
+   "id": "a5d0d1c2",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_CLIENT_CAPABILITIES"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_CLIENT_CAPABILITIES"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_CLIENT_CAPABILITIES"
+  },
+  {
+   "id": "a9571ff6",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_REDISTRIBUTE_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_REDISTRIBUTE_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_REDISTRIBUTE_ADD"
+  },
+  {
+   "id": "a7dce706",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_REDISTRIBUTE_DEFAULT_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_REDISTRIBUTE_DEFAULT_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_REDISTRIBUTE_DEFAULT_ADD"
+  },
+  {
+   "id": "a6f81ce6",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_REDISTRIBUTE_DEFAULT_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_REDISTRIBUTE_DEFAULT_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_REDISTRIBUTE_DEFAULT_DELETE"
+  },
+  {
+   "id": "a20df46f",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_REDISTRIBUTE_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_REDISTRIBUTE_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_REDISTRIBUTE_DELETE"
+  },
+  {
+   "id": "a472edc6",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ROUTE_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_ROUTE_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ROUTE_ADD"
+  },
+  {
+   "id": "a0a6e4e9",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ROUTE_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|publishes|zapi:ZEBRA_ROUTE_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ROUTE_DELETE"
+  },
+  {
+   "id": "a9a7fdac",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_CLIENT_CLOSE_NOTIFY"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_CLIENT_CLOSE_NOTIFY"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_CLIENT_CLOSE_NOTIFY"
+  },
+  {
+   "id": "a972961d",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+  },
+  {
+   "id": "a5c218a6",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+  },
+  {
+   "id": "a1ad582d",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_LINK_PARAMS"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_INTERFACE_LINK_PARAMS"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_LINK_PARAMS"
+  },
+  {
+   "id": "a8696d4a",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_OPAQUE_MESSAGE"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_OPAQUE_MESSAGE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_OPAQUE_MESSAGE"
+  },
+  {
+   "id": "ae5b8485",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_REDISTRIBUTE_ROUTE_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_REDISTRIBUTE_ROUTE_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_REDISTRIBUTE_ROUTE_ADD"
+  },
+  {
+   "id": "ac26575a",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_REDISTRIBUTE_ROUTE_DEL"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_REDISTRIBUTE_ROUTE_DEL"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_REDISTRIBUTE_ROUTE_DEL"
+  },
+  {
+   "id": "a7b59ae6",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ROUTER_ID_UPDATE"
+    },
+    {
+     "k": "E",
+     "r": "svc:ospfd|handles|zapi:ZEBRA_ROUTER_ID_UPDATE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ROUTER_ID_UPDATE"
+  }
+ ],
+ "sources": [
+  "p3/profiles.jsonl",
+  "p3/backbone.json",
+  "p3/clusters.jsonl",
+  "p2/findings.json"
+ ]
+}

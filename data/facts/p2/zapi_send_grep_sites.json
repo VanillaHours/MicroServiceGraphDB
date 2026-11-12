@@ -1,0 +1,236 @@
+[
+  {
+    "file": "lib/zclient.c",
+    "line": 586,
+    "wrapper": "zclient_route_send",
+    "msg": "ZEBRA_ROUTE_DELETE"
+  },
+  {
+    "file": "lib/zclient.c",
+    "line": 603,
+    "wrapper": "zclient_route_send",
+    "msg": "ZEBRA_ROUTE_ADD"
+  },
+  {
+    "file": "lib/zclient.c",
+    "line": 678,
+    "wrapper": "zebra_redistribute_send",
+    "msg": "ZEBRA_REDISTRIBUTE_ADD"
+  },
+  {
+    "file": "zebra/redistribute.c",
+    "line": 85,
+    "wrapper": "zsend_redistribute_route",
+    "msg": "ZEBRA_REDISTRIBUTE_ROUTE_ADD"
+  },
+  {
+    "file": "zebra/redistribute.c",
+    "line": 161,
+    "wrapper": "zsend_redistribute_route",
+    "msg": "ZEBRA_REDISTRIBUTE_ROUTE_ADD"
+  },
+  {
+    "file": "zebra/redistribute.c",
+    "line": 275,
+    "wrapper": "zsend_redistribute_route",
+    "msg": "ZEBRA_REDISTRIBUTE_ROUTE_ADD"
+  },
+  {
+    "file": "zebra/redistribute.c",
+    "line": 282,
+    "wrapper": "zsend_redistribute_route",
+    "msg": "ZEBRA_REDISTRIBUTE_ROUTE_DEL"
+  },
+  {
+    "file": "zebra/redistribute.c",
+    "line": 368,
+    "wrapper": "zsend_redistribute_route",
+    "msg": "ZEBRA_REDISTRIBUTE_ROUTE_DEL"
+  },
+  {
+    "file": "zebra/redistribute.c",
+    "line": 542,
+    "wrapper": "zsend_interface_update",
+    "msg": "ZEBRA_INTERFACE_UP"
+  },
+  {
+    "file": "zebra/redistribute.c",
+    "line": 563,
+    "wrapper": "zsend_interface_update",
+    "msg": "ZEBRA_INTERFACE_DOWN"
+  },
+  {
+    "file": "zebra/redistribute.c",
+    "line": 635,
+    "wrapper": "zsend_interface_address",
+    "msg": "ZEBRA_INTERFACE_ADDRESS_ADD"
+  },
+  {
+    "file": "zebra/redistribute.c",
+    "line": 664,
+    "wrapper": "zsend_interface_address",
+    "msg": "ZEBRA_INTERFACE_ADDRESS_DELETE"
+  },
+  {
+    "file": "zebra/redistribute.c",
+    "line": 688,
+    "wrapper": "zsend_interface_update",
+    "msg": "ZEBRA_INTERFACE_DOWN"
+  },
+  {
+    "file": "zebra/zapi_msg.c",
+    "line": 378,
+    "wrapper": "zsend_interface_nbr_address",
+    "msg": "ZEBRA_INTERFACE_NBR_ADDRESS_ADD"
+  },
+  {
+    "file": "zebra/zapi_msg.c",
+    "line": 406,
+    "wrapper": "zsend_interface_nbr_address",
+    "msg": "ZEBRA_INTERFACE_NBR_ADDRESS_DELETE"
+  },
+  {
+    "file": "zebra/zapi_msg.c",
+    "line": 423,
+    "wrapper": "zsend_interface_address",
+    "msg": "ZEBRA_INTERFACE_ADDRESS_ADD"
+  },
+  {
+    "file": "zebra/zapi_msg.c",
+    "line": 431,
+    "wrapper": "zsend_interface_nbr_address",
+    "msg": "ZEBRA_INTERFACE_NBR_ADDRESS_ADD"
+  },
+  {
+    "file": "zebra/zebra_ptm_redistribute.c",
+    "line": 66,
+    "wrapper": "zsend_interface_bfd_update",
+    "msg": "ZEBRA_INTERFACE_BFD_DEST_UPDATE"
+  },
+  {
+    "file": "zebra/zebra_ptm_redistribute.c",
+    "line": 95,
+    "wrapper": "zsend_bfd_peer_replay",
+    "msg": "ZEBRA_BFD_DEST_REPLAY"
+  },
+  {
+    "file": "bgpd/bgp_zebra.c",
+    "line": 1741,
+    "wrapper": "zclient_route_send",
+    "msg": "ZEBRA_ROUTE_ADD"
+  },
+  {
+    "file": "bgpd/bgp_zebra.c",
+    "line": 1839,
+    "wrapper": "zclient_route_send",
+    "msg": "ZEBRA_ROUTE_DELETE"
+  },
+  {
+    "file": "bgpd/bgp_zebra.c",
+    "line": 2297,
+    "wrapper": "zebra_redistribute_send",
+    "msg": "ZEBRA_REDISTRIBUTE_ADD"
+  },
+  {
+    "file": "bgpd/bgp_zebra.c",
+    "line": 2318,
+    "wrapper": "zebra_redistribute_send",
+    "msg": "ZEBRA_REDISTRIBUTE_DELETE"
+  },
+  {
+    "file": "bgpd/bgp_zebra.c",
+    "line": 2320,
+    "wrapper": "zebra_redistribute_send",
+    "msg": "ZEBRA_REDISTRIBUTE_ADD"
+  },
+  {
+    "file": "bgpd/bgp_zebra.c",
+    "line": 2423,
+    "wrapper": "zebra_redistribute_send",
+    "msg": "ZEBRA_REDISTRIBUTE_DELETE"
+  },
+  {
+    "file": "bgpd/bgp_zebra.c",
+    "line": 4946,
+    "wrapper": "zclient_capabilities_send",
+    "msg": "ZEBRA_CLIENT_CAPABILITIES"
+  },
+  {
+    "file": "bgpd/bgp_zebra.c",
+    "line": 5012,
+    "wrapper": "zclient_capabilities_send",
+    "msg": "ZEBRA_CLIENT_CAPABILITIES"
+  },
+  {
+    "file": "bgpd/bgp_zebra.c",
+    "line": 5054,
+    "wrapper": "zclient_capabilities_send",
+    "msg": "ZEBRA_CLIENT_CAPABILITIES"
+  },
+  {
+    "file": "bgpd/rfapi/vnc_zebra.c",
+    "line": 819,
+    "wrapper": "zebra_redistribute_send",
+    "msg": "ZEBRA_REDISTRIBUTE_ADD"
+  },
+  {
+    "file": "bgpd/rfapi/vnc_zebra.c",
+    "line": 851,
+    "wrapper": "zebra_redistribute_send",
+    "msg": "ZEBRA_REDISTRIBUTE_DELETE"
+  },
+  {
+    "file": "ospfd/ospf_zebra.c",
+    "line": 352,
+    "wrapper": "zclient_route_send",
+    "msg": "ZEBRA_ROUTE_ADD"
+  },
+  {
+    "file": "ospfd/ospf_zebra.c",
+    "line": 378,
+    "wrapper": "zclient_route_send",
+    "msg": "ZEBRA_ROUTE_DELETE"
+  },
+  {
+    "file": "ospfd/ospf_zebra.c",
+    "line": 400,
+    "wrapper": "zclient_route_send",
+    "msg": "ZEBRA_ROUTE_ADD"
+  },
+  {
+    "file": "ospfd/ospf_zebra.c",
+    "line": 426,
+    "wrapper": "zclient_route_send",
+    "msg": "ZEBRA_ROUTE_DELETE"
+  },
+  {
+    "file": "ospfd/ospf_zebra.c",
+    "line": 871,
+    "wrapper": "zclient_redistribute",
+    "msg": "ZEBRA_REDISTRIBUTE_ADD"
+  },
+  {
+    "file": "ospfd/ospf_zebra.c",
+    "line": 892,
+    "wrapper": "zclient_redistribute",
+    "msg": "ZEBRA_REDISTRIBUTE_DELETE"
+  },
+  {
+    "file": "ospfd/ospf_zebra.c",
+    "line": 941,
+    "wrapper": "zclient_redistribute_default",
+    "msg": "ZEBRA_REDISTRIBUTE_DEFAULT_ADD"
+  },
+  {
+    "file": "ospfd/ospf_zebra.c",
+    "line": 946,
+    "wrapper": "zclient_redistribute_default",
+    "msg": "ZEBRA_REDISTRIBUTE_DEFAULT_DELETE"
+  },
+  {
+    "file": "ospfd/ospf_zebra.c",
+    "line": 1287,
+    "wrapper": "zclient_capabilities_send",
+    "msg": "ZEBRA_CLIENT_CAPABILITIES"
+  }
+]

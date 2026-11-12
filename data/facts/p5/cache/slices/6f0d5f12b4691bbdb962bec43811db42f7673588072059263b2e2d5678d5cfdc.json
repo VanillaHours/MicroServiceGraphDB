@@ -1,0 +1,2575 @@
+{
+ "scope": {
+  "file": "bgpd/bgp_zebra.c",
+  "function": "bgp_zebra_announce_default",
+  "line_span": [
+   4817,
+   4894
+  ],
+  "params": [
+   {
+    "name": "bgp",
+    "type": "struct bgp *"
+   },
+   {
+    "name": "nh",
+    "type": "struct nexthop *"
+   },
+   {
+    "name": "afi",
+    "type": "afi_t"
+   },
+   {
+    "name": "table_id",
+    "type": "uint32_t"
+   },
+   {
+    "name": "announce",
+    "type": "_Bool"
+   }
+  ]
+ },
+ "tool_ver": "p5-slice/1.0.0+clang18",
+ "cfg": {
+  "entry": 0,
+  "exit": 1,
+  "n_blocks": 25,
+  "n_edges": 34,
+  "blocks": [
+   {
+    "id": 0,
+    "tag": "entry",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 4820,
+      "spell": "struct zapi_nexthop * api_nh ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 4821,
+      "spell": "struct zapi_route api ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 4822,
+      "spell": "struct prefix p ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4824,
+      "spell": "! nh || ( nh -> type != NEXTHOP_TYPE_IPV4 && nh -> type != NEXTHOP_TYPE_IPV6 ) || nh -> vrf_id == VRF_UNKNOWN",
+      "defs": [],
+      "uses": [
+       "nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      3,
+      "then"
+     ],
+     [
+      2,
+      "no-else"
+     ]
+    ],
+    "pred": []
+   },
+   {
+    "id": 1,
+    "tag": "exit",
+    "stmts": [],
+    "succ": [],
+    "pred": [
+     [
+      3,
+      "return"
+     ],
+     [
+      5,
+      "return"
+     ],
+     [
+      7,
+      "return"
+     ],
+     [
+      22,
+      "return"
+     ],
+     [
+      24,
+      "return"
+     ],
+     [
+      13,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 2,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4832,
+      "spell": "! vrf_is_backend_netns ( ) && bgp -> vrf_id != nh -> vrf_id",
+      "defs": [],
+      "uses": [
+       "bgp",
+       "nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      5,
+      "then"
+     ],
+     [
+      4,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 3,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "RETURN_STMT",
+      "line": 4827,
+      "spell": "return",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 4,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 4835,
+      "spell": "memset ( & p , 0 , sizeof ( p ) )",
+      "defs": [],
+      "uses": [
+       "p"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4836,
+      "spell": "afi != AFI_IP && afi != AFI_IP6",
+      "defs": [],
+      "uses": [
+       "afi"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      7,
+      "then"
+     ],
+     [
+      6,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      2,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 5,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "RETURN_STMT",
+      "line": 4833,
+      "spell": "return",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      2,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 6,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4838,
+      "spell": "p . family = afi2family ( afi )",
+      "defs": [
+       [
+        "p.family",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "afi",
+       "p"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 4839,
+      "spell": "zapi_route_init ( & api )",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4840,
+      "spell": "api . vrf_id = bgp -> vrf_id",
+      "defs": [
+       [
+        "api.vrf_id",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "bgp",
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4841,
+      "spell": "api . type = ZEBRA_ROUTE_BGP",
+      "defs": [
+       [
+        "api.type",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4842,
+      "spell": "api . safi = SAFI_UNICAST",
+      "defs": [
+       [
+        "api.safi",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4843,
+      "spell": "api . prefix = p",
+      "defs": [
+       [
+        "api.prefix",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "p",
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4844,
+      "spell": "api . tableid = table_id",
+      "defs": [
+       [
+        "api.tableid",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "table_id",
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4845,
+      "spell": "api . nexthop_num = 1",
+      "defs": [
+       [
+        "api.nexthop_num",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 4846,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 4847,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4848,
+      "spell": "api_nh = & api . nexthops [ 0 ]",
+      "defs": [
+       [
+        "api_nh",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 4850,
+      "spell": "zapi_nexthop_init ( api_nh )",
+      "defs": [],
+      "uses": [
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4852,
+      "spell": "api . distance = ZEBRA_EBGP_DISTANCE_DEFAULT",
+      "defs": [
+       [
+        "api.distance",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 4853,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4855,
+      "spell": "api_nh -> vrf_id = nh -> vrf_id",
+      "defs": [
+       [
+        "api_nh->vrf_id",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh",
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "PAREN_EXPR",
+      "line": 4857,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "term_bgp_debug_zebra"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      9,
+      "then"
+     ],
+     [
+      8,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      4,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 7,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "RETURN_STMT",
+      "line": 4837,
+      "spell": "return",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      4,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 8,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4867,
+      "spell": "afi == AFI_IP && nh -> gate . ipv4 . s_addr != INADDR_ANY",
+      "defs": [],
+      "uses": [
+       "afi",
+       "nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      14,
+      "then"
+     ],
+     [
+      15,
+      "else"
+     ]
+    ],
+    "pred": [
+     [
+      12,
+      "fallthrough"
+     ],
+     [
+      6,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 9,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 4858,
+      "spell": "struct vrf * vrf ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4860,
+      "spell": "vrf = vrf_lookup_by_id ( nh -> vrf_id )",
+      "defs": [
+       [
+        "vrf",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      10,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      6,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 10,
+    "tag": "do-body",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 4861,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 4861,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xrefdata"
+      ]
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 4861,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 4861,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref",
+       "bgp",
+       "announce",
+       "nh",
+       "vrf",
+       "table_id"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      11,
+      "cond"
+     ]
+    ],
+    "pred": [
+     [
+      9,
+      "next"
+     ],
+     [
+      11,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 11,
+    "tag": "do-cond",
+    "stmts": [
+     {
+      "kind": "INTEGER_LITERAL",
+      "line": 4861,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      10,
+      "loop-true"
+     ],
+     [
+      12,
+      "exit-false"
+     ]
+    ],
+    "pred": [
+     [
+      10,
+      "cond"
+     ]
+    ]
+   },
+   {
+    "id": 12,
+    "tag": "do-exit",
+    "stmts": [],
+    "succ": [
+     [
+      8,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      11,
+      "exit-false"
+     ]
+    ]
+   },
+   {
+    "id": 13,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 4892,
+      "spell": "zclient_route_send ( announce ? ZEBRA_ROUTE_ADD : ZEBRA_ROUTE_DELETE , bgp_zclient , & api )",
+      "defs": [],
+      "uses": [
+       "announce",
+       "bgp_zclient",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      14,
+      "fallthrough"
+     ],
+     [
+      16,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 14,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4868,
+      "spell": "api_nh -> gate . ipv4 = nh -> gate . ipv4",
+      "defs": [
+       [
+        "api_nh->gate->ipv4",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh",
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4869,
+      "spell": "api_nh -> type = NEXTHOP_TYPE_IPV4",
+      "defs": [
+       [
+        "api_nh->type",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api_nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      13,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      8,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 15,
+    "tag": "else",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4870,
+      "spell": "afi == AFI_IP6 && memcmp ( & nh -> gate . ipv6 , & in6addr_any , sizeof ( struct in6_addr ) )",
+      "defs": [],
+      "uses": [
+       "afi",
+       "nh",
+       "in6addr_any"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      17,
+      "then"
+     ],
+     [
+      18,
+      "else"
+     ]
+    ],
+    "pred": [
+     [
+      8,
+      "else"
+     ]
+    ]
+   },
+   {
+    "id": 16,
+    "tag": "if-merge",
+    "stmts": [],
+    "succ": [
+     [
+      13,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      17,
+      "fallthrough"
+     ],
+     [
+      19,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 17,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 4872,
+      "spell": "memcpy ( & api_nh -> gate . ipv6 , & nh -> gate . ipv6 , sizeof ( struct in6_addr ) )",
+      "defs": [],
+      "uses": [
+       "api_nh",
+       "nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4874,
+      "spell": "api_nh -> type = NEXTHOP_TYPE_IPV6",
+      "defs": [
+       [
+        "api_nh->type",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api_nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      16,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      15,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 18,
+    "tag": "else",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4875,
+      "spell": "nh -> vrf_id != bgp -> vrf_id",
+      "defs": [],
+      "uses": [
+       "nh",
+       "bgp"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      20,
+      "then"
+     ],
+     [
+      19,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      15,
+      "else"
+     ]
+    ]
+   },
+   {
+    "id": 19,
+    "tag": "if-merge",
+    "stmts": [],
+    "succ": [
+     [
+      16,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      23,
+      "fallthrough"
+     ],
+     [
+      18,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 20,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 4876,
+      "spell": "struct vrf * vrf ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 4877,
+      "spell": "struct interface * ifp ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4879,
+      "spell": "vrf = vrf_lookup_by_id ( nh -> vrf_id )",
+      "defs": [
+       [
+        "vrf",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nh"
+      ]
+     },
+     {
+      "kind": "UNARY_OPERATOR",
+      "line": 4880,
+      "spell": "! vrf",
+      "defs": [],
+      "uses": [
+       "vrf"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      22,
+      "then"
+     ],
+     [
+      21,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      18,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 21,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4885,
+      "spell": "ifp = if_lookup_by_name_vrf ( vrf -> name , vrf )",
+      "defs": [
+       [
+        "ifp",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "vrf"
+      ]
+     },
+     {
+      "kind": "UNARY_OPERATOR",
+      "line": 4886,
+      "spell": "! ifp",
+      "defs": [],
+      "uses": [
+       "ifp"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      24,
+      "then"
+     ],
+     [
+      23,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      20,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 22,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "RETURN_STMT",
+      "line": 4881,
+      "spell": "return",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      20,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 23,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4888,
+      "spell": "api_nh -> type = NEXTHOP_TYPE_IFINDEX",
+      "defs": [
+       [
+        "api_nh->type",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api_nh"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4889,
+      "spell": "api_nh -> ifindex = ifp -> ifindex",
+      "defs": [
+       [
+        "api_nh->ifindex",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "ifp",
+       "api_nh"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      19,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      21,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 24,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "RETURN_STMT",
+      "line": 4887,
+      "spell": "return",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      21,
+      "then"
+     ]
+    ]
+   }
+  ],
+  "edges": [
+   {
+    "from": 0,
+    "to": 3,
+    "kind": "then"
+   },
+   {
+    "from": 3,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 0,
+    "to": 2,
+    "kind": "no-else"
+   },
+   {
+    "from": 2,
+    "to": 5,
+    "kind": "then"
+   },
+   {
+    "from": 5,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 2,
+    "to": 4,
+    "kind": "no-else"
+   },
+   {
+    "from": 4,
+    "to": 7,
+    "kind": "then"
+   },
+   {
+    "from": 7,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 4,
+    "to": 6,
+    "kind": "no-else"
+   },
+   {
+    "from": 6,
+    "to": 9,
+    "kind": "then"
+   },
+   {
+    "from": 9,
+    "to": 10,
+    "kind": "next"
+   },
+   {
+    "from": 10,
+    "to": 11,
+    "kind": "cond"
+   },
+   {
+    "from": 11,
+    "to": 10,
+    "kind": "loop-true"
+   },
+   {
+    "from": 11,
+    "to": 12,
+    "kind": "exit-false"
+   },
+   {
+    "from": 12,
+    "to": 8,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 6,
+    "to": 8,
+    "kind": "no-else"
+   },
+   {
+    "from": 8,
+    "to": 14,
+    "kind": "then"
+   },
+   {
+    "from": 14,
+    "to": 13,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 8,
+    "to": 15,
+    "kind": "else"
+   },
+   {
+    "from": 15,
+    "to": 17,
+    "kind": "then"
+   },
+   {
+    "from": 17,
+    "to": 16,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 15,
+    "to": 18,
+    "kind": "else"
+   },
+   {
+    "from": 18,
+    "to": 20,
+    "kind": "then"
+   },
+   {
+    "from": 20,
+    "to": 22,
+    "kind": "then"
+   },
+   {
+    "from": 22,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 20,
+    "to": 21,
+    "kind": "no-else"
+   },
+   {
+    "from": 21,
+    "to": 24,
+    "kind": "then"
+   },
+   {
+    "from": 24,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 21,
+    "to": 23,
+    "kind": "no-else"
+   },
+   {
+    "from": 23,
+    "to": 19,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 18,
+    "to": 19,
+    "kind": "no-else"
+   },
+   {
+    "from": 19,
+    "to": 16,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 16,
+    "to": 13,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 13,
+    "to": 1,
+    "kind": "fallthrough"
+   }
+  ]
+ },
+ "dfg": {
+  "defs": [
+   {
+    "id": "d18",
+    "var": "bgp",
+    "block": 0,
+    "stmt": -1,
+    "line": 4817,
+    "kind": "param",
+    "type": "struct bgp *"
+   },
+   {
+    "id": "d19",
+    "var": "nh",
+    "block": 0,
+    "stmt": -1,
+    "line": 4817,
+    "kind": "param",
+    "type": "struct nexthop *"
+   },
+   {
+    "id": "d20",
+    "var": "afi",
+    "block": 0,
+    "stmt": -1,
+    "line": 4817,
+    "kind": "param",
+    "type": "afi_t"
+   },
+   {
+    "id": "d21",
+    "var": "table_id",
+    "block": 0,
+    "stmt": -1,
+    "line": 4817,
+    "kind": "param",
+    "type": "uint32_t"
+   },
+   {
+    "id": "d22",
+    "var": "announce",
+    "block": 0,
+    "stmt": -1,
+    "line": 4817,
+    "kind": "param",
+    "type": "_Bool"
+   },
+   {
+    "id": "d0",
+    "var": "p.family",
+    "block": 6,
+    "stmt": 0,
+    "line": 4838,
+    "kind": "assign"
+   },
+   {
+    "id": "d1",
+    "var": "api.vrf_id",
+    "block": 6,
+    "stmt": 2,
+    "line": 4840,
+    "kind": "assign"
+   },
+   {
+    "id": "d2",
+    "var": "api.type",
+    "block": 6,
+    "stmt": 3,
+    "line": 4841,
+    "kind": "assign"
+   },
+   {
+    "id": "d3",
+    "var": "api.safi",
+    "block": 6,
+    "stmt": 4,
+    "line": 4842,
+    "kind": "assign"
+   },
+   {
+    "id": "d4",
+    "var": "api.prefix",
+    "block": 6,
+    "stmt": 5,
+    "line": 4843,
+    "kind": "assign"
+   },
+   {
+    "id": "d5",
+    "var": "api.tableid",
+    "block": 6,
+    "stmt": 6,
+    "line": 4844,
+    "kind": "assign"
+   },
+   {
+    "id": "d6",
+    "var": "api.nexthop_num",
+    "block": 6,
+    "stmt": 7,
+    "line": 4845,
+    "kind": "assign"
+   },
+   {
+    "id": "d7",
+    "var": "api_nh",
+    "block": 6,
+    "stmt": 10,
+    "line": 4848,
+    "kind": "assign"
+   },
+   {
+    "id": "d8",
+    "var": "api.distance",
+    "block": 6,
+    "stmt": 12,
+    "line": 4852,
+    "kind": "assign"
+   },
+   {
+    "id": "d9",
+    "var": "api_nh->vrf_id",
+    "block": 6,
+    "stmt": 14,
+    "line": 4855,
+    "kind": "assign"
+   },
+   {
+    "id": "d10",
+    "var": "vrf",
+    "block": 9,
+    "stmt": 1,
+    "line": 4860,
+    "kind": "assign"
+   },
+   {
+    "id": "d11",
+    "var": "api_nh->gate->ipv4",
+    "block": 14,
+    "stmt": 0,
+    "line": 4868,
+    "kind": "assign"
+   },
+   {
+    "id": "d12",
+    "var": "api_nh->type",
+    "block": 14,
+    "stmt": 1,
+    "line": 4869,
+    "kind": "assign"
+   },
+   {
+    "id": "d13",
+    "var": "api_nh->type",
+    "block": 17,
+    "stmt": 1,
+    "line": 4874,
+    "kind": "assign"
+   },
+   {
+    "id": "d14",
+    "var": "vrf",
+    "block": 20,
+    "stmt": 2,
+    "line": 4879,
+    "kind": "assign"
+   },
+   {
+    "id": "d15",
+    "var": "ifp",
+    "block": 21,
+    "stmt": 0,
+    "line": 4885,
+    "kind": "assign"
+   },
+   {
+    "id": "d16",
+    "var": "api_nh->type",
+    "block": 23,
+    "stmt": 0,
+    "line": 4888,
+    "kind": "assign"
+   },
+   {
+    "id": "d17",
+    "var": "api_nh->ifindex",
+    "block": 23,
+    "stmt": 1,
+    "line": 4889,
+    "kind": "assign"
+   }
+  ],
+  "chains": [
+   {
+    "use": "nh",
+    "block": 0,
+    "line": 4824,
+    "stmt": "! nh || ( nh -> type != NEXTHOP_TYPE_IPV4 && nh -> type != NEXTHOP_TYPE_IPV6 ) |",
+    "defs": [
+     "d19"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "bgp",
+    "block": 2,
+    "line": 4832,
+    "stmt": "! vrf_is_backend_netns ( ) && bgp -> vrf_id != nh -> vrf_id",
+    "defs": [
+     "d18"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 2,
+    "line": 4832,
+    "stmt": "! vrf_is_backend_netns ( ) && bgp -> vrf_id != nh -> vrf_id",
+    "defs": [
+     "d19"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "p",
+    "block": 4,
+    "line": 4835,
+    "stmt": "memset ( & p , 0 , sizeof ( p ) )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "afi",
+    "block": 4,
+    "line": 4836,
+    "stmt": "afi != AFI_IP && afi != AFI_IP6",
+    "defs": [
+     "d20"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "afi",
+    "block": 6,
+    "line": 4838,
+    "stmt": "p . family = afi2family ( afi )",
+    "defs": [
+     "d20"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "p",
+    "block": 6,
+    "line": 4838,
+    "stmt": "p . family = afi2family ( afi )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4839,
+    "stmt": "zapi_route_init ( & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bgp",
+    "block": 6,
+    "line": 4840,
+    "stmt": "api . vrf_id = bgp -> vrf_id",
+    "defs": [
+     "d18"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4840,
+    "stmt": "api . vrf_id = bgp -> vrf_id",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4841,
+    "stmt": "api . type = ZEBRA_ROUTE_BGP",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4842,
+    "stmt": "api . safi = SAFI_UNICAST",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "p",
+    "block": 6,
+    "line": 4843,
+    "stmt": "api . prefix = p",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4843,
+    "stmt": "api . prefix = p",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "table_id",
+    "block": 6,
+    "line": 4844,
+    "stmt": "api . tableid = table_id",
+    "defs": [
+     "d21"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4844,
+    "stmt": "api . tableid = table_id",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4845,
+    "stmt": "api . nexthop_num = 1",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4846,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4847,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4848,
+    "stmt": "api_nh = & api . nexthops [ 0 ]",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 6,
+    "line": 4850,
+    "stmt": "zapi_nexthop_init ( api_nh )",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4852,
+    "stmt": "api . distance = ZEBRA_EBGP_DISTANCE_DEFAULT",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4853,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 6,
+    "line": 4855,
+    "stmt": "api_nh -> vrf_id = nh -> vrf_id",
+    "defs": [
+     "d19"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api_nh",
+    "block": 6,
+    "line": 4855,
+    "stmt": "api_nh -> vrf_id = nh -> vrf_id",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "term_bgp_debug_zebra",
+    "block": 6,
+    "line": 4857,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "afi",
+    "block": 8,
+    "line": 4867,
+    "stmt": "afi == AFI_IP && nh -> gate . ipv4 . s_addr != INADDR_ANY",
+    "defs": [
+     "d20"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 8,
+    "line": 4867,
+    "stmt": "afi == AFI_IP && nh -> gate . ipv4 . s_addr != INADDR_ANY",
+    "defs": [
+     "d19"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 9,
+    "line": 4860,
+    "stmt": "vrf = vrf_lookup_by_id ( nh -> vrf_id )",
+    "defs": [
+     "d19"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "_xrefdata",
+    "block": 10,
+    "line": 4861,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 10,
+    "line": 4861,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 10,
+    "line": 4861,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bgp",
+    "block": 10,
+    "line": 4861,
+    "stmt": "",
+    "defs": [
+     "d18"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "announce",
+    "block": 10,
+    "line": 4861,
+    "stmt": "",
+    "defs": [
+     "d22"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 10,
+    "line": 4861,
+    "stmt": "",
+    "defs": [
+     "d19"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "vrf",
+    "block": 10,
+    "line": 4861,
+    "stmt": "",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "table_id",
+    "block": 10,
+    "line": 4861,
+    "stmt": "",
+    "defs": [
+     "d21"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "announce",
+    "block": 13,
+    "line": 4892,
+    "stmt": "zclient_route_send ( announce ? ZEBRA_ROUTE_ADD : ZEBRA_ROUTE_DELETE , bgp_zclie",
+    "defs": [
+     "d22"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "bgp_zclient",
+    "block": 13,
+    "line": 4892,
+    "stmt": "zclient_route_send ( announce ? ZEBRA_ROUTE_ADD : ZEBRA_ROUTE_DELETE , bgp_zclie",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 13,
+    "line": 4892,
+    "stmt": "zclient_route_send ( announce ? ZEBRA_ROUTE_ADD : ZEBRA_ROUTE_DELETE , bgp_zclie",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh",
+    "block": 14,
+    "line": 4868,
+    "stmt": "api_nh -> gate . ipv4 = nh -> gate . ipv4",
+    "defs": [
+     "d19"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api_nh",
+    "block": 14,
+    "line": 4868,
+    "stmt": "api_nh -> gate . ipv4 = nh -> gate . ipv4",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api_nh",
+    "block": 14,
+    "line": 4869,
+    "stmt": "api_nh -> type = NEXTHOP_TYPE_IPV4",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "afi",
+    "block": 15,
+    "line": 4870,
+    "stmt": "afi == AFI_IP6 && memcmp ( & nh -> gate . ipv6 , & in6addr_any , sizeof ( struct",
+    "defs": [
+     "d20"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 15,
+    "line": 4870,
+    "stmt": "afi == AFI_IP6 && memcmp ( & nh -> gate . ipv6 , & in6addr_any , sizeof ( struct",
+    "defs": [
+     "d19"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "in6addr_any",
+    "block": 15,
+    "line": 4870,
+    "stmt": "afi == AFI_IP6 && memcmp ( & nh -> gate . ipv6 , & in6addr_any , sizeof ( struct",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api_nh",
+    "block": 17,
+    "line": 4872,
+    "stmt": "memcpy ( & api_nh -> gate . ipv6 , & nh -> gate . ipv6 , sizeof ( struct in6_add",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 17,
+    "line": 4872,
+    "stmt": "memcpy ( & api_nh -> gate . ipv6 , & nh -> gate . ipv6 , sizeof ( struct in6_add",
+    "defs": [
+     "d19"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api_nh",
+    "block": 17,
+    "line": 4874,
+    "stmt": "api_nh -> type = NEXTHOP_TYPE_IPV6",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 18,
+    "line": 4875,
+    "stmt": "nh -> vrf_id != bgp -> vrf_id",
+    "defs": [
+     "d19"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "bgp",
+    "block": 18,
+    "line": 4875,
+    "stmt": "nh -> vrf_id != bgp -> vrf_id",
+    "defs": [
+     "d18"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nh",
+    "block": 20,
+    "line": 4879,
+    "stmt": "vrf = vrf_lookup_by_id ( nh -> vrf_id )",
+    "defs": [
+     "d19"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "vrf",
+    "block": 20,
+    "line": 4880,
+    "stmt": "! vrf",
+    "defs": [
+     "d14"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "vrf",
+    "block": 21,
+    "line": 4885,
+    "stmt": "ifp = if_lookup_by_name_vrf ( vrf -> name , vrf )",
+    "defs": [
+     "d14"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "ifp",
+    "block": 21,
+    "line": 4886,
+    "stmt": "! ifp",
+    "defs": [
+     "d15"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api_nh",
+    "block": 23,
+    "line": 4888,
+    "stmt": "api_nh -> type = NEXTHOP_TYPE_IFINDEX",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "ifp",
+    "block": 23,
+    "line": 4889,
+    "stmt": "api_nh -> ifindex = ifp -> ifindex",
+    "defs": [
+     "d15"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api_nh",
+    "block": 23,
+    "line": 4889,
+    "stmt": "api_nh -> ifindex = ifp -> ifindex",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   }
+  ],
+  "n_chains": 58,
+  "undef_uses": [
+   {
+    "use": "p",
+    "block": 4,
+    "line": 4835,
+    "stmt": "memset ( & p , 0 , sizeof ( p ) )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "p",
+    "block": 6,
+    "line": 4838,
+    "stmt": "p . family = afi2family ( afi )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4839,
+    "stmt": "zapi_route_init ( & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4840,
+    "stmt": "api . vrf_id = bgp -> vrf_id",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4841,
+    "stmt": "api . type = ZEBRA_ROUTE_BGP",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4842,
+    "stmt": "api . safi = SAFI_UNICAST",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "p",
+    "block": 6,
+    "line": 4843,
+    "stmt": "api . prefix = p",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4843,
+    "stmt": "api . prefix = p",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4844,
+    "stmt": "api . tableid = table_id",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4845,
+    "stmt": "api . nexthop_num = 1",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4846,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4847,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4848,
+    "stmt": "api_nh = & api . nexthops [ 0 ]",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4852,
+    "stmt": "api . distance = ZEBRA_EBGP_DISTANCE_DEFAULT",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 6,
+    "line": 4853,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "term_bgp_debug_zebra",
+    "block": 6,
+    "line": 4857,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 10,
+    "line": 4861,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 10,
+    "line": 4861,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 10,
+    "line": 4861,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bgp_zclient",
+    "block": 13,
+    "line": 4892,
+    "stmt": "zclient_route_send ( announce ? ZEBRA_ROUTE_ADD : ZEBRA_ROUTE_DELETE , bgp_zclie",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 13,
+    "line": 4892,
+    "stmt": "zclient_route_send ( announce ? ZEBRA_ROUTE_ADD : ZEBRA_ROUTE_DELETE , bgp_zclie",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "in6addr_any",
+    "block": 15,
+    "line": 4870,
+    "stmt": "afi == AFI_IP6 && memcmp ( & nh -> gate . ipv6 , & in6addr_any , sizeof ( struct",
+    "defs": [],
+    "n_defs": 0
+   }
+  ]
+ },
+ "liveness": {
+  "live_in": {
+   "0": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "announce",
+    "api",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh",
+    "p",
+    "table_id",
+    "term_bgp_debug_zebra"
+   ],
+   "1": [],
+   "2": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "announce",
+    "api",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh",
+    "p",
+    "table_id",
+    "term_bgp_debug_zebra"
+   ],
+   "3": [],
+   "4": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "announce",
+    "api",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh",
+    "p",
+    "table_id",
+    "term_bgp_debug_zebra"
+   ],
+   "5": [],
+   "6": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "announce",
+    "api",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh",
+    "p",
+    "table_id",
+    "term_bgp_debug_zebra"
+   ],
+   "7": [],
+   "8": [
+    "afi",
+    "announce",
+    "api",
+    "api_nh",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh"
+   ],
+   "9": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "announce",
+    "api",
+    "api_nh",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh",
+    "table_id"
+   ],
+   "10": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "announce",
+    "api",
+    "api_nh",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh",
+    "table_id",
+    "vrf"
+   ],
+   "11": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "announce",
+    "api",
+    "api_nh",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh",
+    "table_id",
+    "vrf"
+   ],
+   "12": [
+    "afi",
+    "announce",
+    "api",
+    "api_nh",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh"
+   ],
+   "13": [
+    "announce",
+    "api",
+    "bgp_zclient"
+   ],
+   "14": [
+    "announce",
+    "api",
+    "api_nh",
+    "bgp_zclient",
+    "nh"
+   ],
+   "15": [
+    "afi",
+    "announce",
+    "api",
+    "api_nh",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh"
+   ],
+   "16": [
+    "announce",
+    "api",
+    "bgp_zclient"
+   ],
+   "17": [
+    "announce",
+    "api",
+    "api_nh",
+    "bgp_zclient",
+    "nh"
+   ],
+   "18": [
+    "announce",
+    "api",
+    "api_nh",
+    "bgp",
+    "bgp_zclient",
+    "nh"
+   ],
+   "19": [
+    "announce",
+    "api",
+    "bgp_zclient"
+   ],
+   "20": [
+    "announce",
+    "api",
+    "api_nh",
+    "bgp_zclient",
+    "nh"
+   ],
+   "21": [
+    "announce",
+    "api",
+    "api_nh",
+    "bgp_zclient",
+    "vrf"
+   ],
+   "22": [],
+   "23": [
+    "announce",
+    "api",
+    "api_nh",
+    "bgp_zclient",
+    "ifp"
+   ],
+   "24": []
+  },
+  "live_out": {
+   "0": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "announce",
+    "api",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh",
+    "p",
+    "table_id",
+    "term_bgp_debug_zebra"
+   ],
+   "1": [],
+   "2": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "announce",
+    "api",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh",
+    "p",
+    "table_id",
+    "term_bgp_debug_zebra"
+   ],
+   "3": [],
+   "4": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "announce",
+    "api",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh",
+    "p",
+    "table_id",
+    "term_bgp_debug_zebra"
+   ],
+   "5": [],
+   "6": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "announce",
+    "api",
+    "api_nh",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh",
+    "table_id"
+   ],
+   "7": [],
+   "8": [
+    "afi",
+    "announce",
+    "api",
+    "api_nh",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh"
+   ],
+   "9": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "announce",
+    "api",
+    "api_nh",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh",
+    "table_id",
+    "vrf"
+   ],
+   "10": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "announce",
+    "api",
+    "api_nh",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh",
+    "table_id",
+    "vrf"
+   ],
+   "11": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "announce",
+    "api",
+    "api_nh",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh",
+    "table_id",
+    "vrf"
+   ],
+   "12": [
+    "afi",
+    "announce",
+    "api",
+    "api_nh",
+    "bgp",
+    "bgp_zclient",
+    "in6addr_any",
+    "nh"
+   ],
+   "13": [],
+   "14": [
+    "announce",
+    "api",
+    "bgp_zclient"
+   ],
+   "15": [
+    "announce",
+    "api",
+    "api_nh",
+    "bgp",
+    "bgp_zclient",
+    "nh"
+   ],
+   "16": [
+    "announce",
+    "api",
+    "bgp_zclient"
+   ],
+   "17": [
+    "announce",
+    "api",
+    "bgp_zclient"
+   ],
+   "18": [
+    "announce",
+    "api",
+    "api_nh",
+    "bgp_zclient",
+    "nh"
+   ],
+   "19": [
+    "announce",
+    "api",
+    "bgp_zclient"
+   ],
+   "20": [
+    "announce",
+    "api",
+    "api_nh",
+    "bgp_zclient",
+    "vrf"
+   ],
+   "21": [
+    "announce",
+    "api",
+    "api_nh",
+    "bgp_zclient",
+    "ifp"
+   ],
+   "22": [],
+   "23": [
+    "announce",
+    "api",
+    "bgp_zclient"
+   ],
+   "24": []
+  },
+  "params_live_at_entry": [
+   "afi",
+   "announce",
+   "bgp",
+   "nh",
+   "table_id"
+  ]
+ },
+ "meta": {
+  "compute_ms": 714.3,
+  "unreachable_stmts_skipped": 0,
+  "cache_key": "6f0d5f12b4691bbdb962bec43811db42f7673588072059263b2e2d5678d5cfdc"
+ },
+ "cache": {
+  "hit": false,
+  "key": "6f0d5f12b4691bbdb962bec43811db42f7673588072059263b2e2d5678d5cfdc",
+  "path": "/home/z/my-project/poc/facts/p5/cache/slices/6f0d5f12b4691bbdb962bec43811db42f7673588072059263b2e2d5678d5cfdc.json",
+  "tool_ver": "p5-slice/1.0.0+clang18"
+ }
+}

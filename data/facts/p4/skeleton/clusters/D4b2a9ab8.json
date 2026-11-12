@@ -1,0 +1,972 @@
+{
+ "atoms": [
+  {
+   "id": "a3c040e8",
+   "refs": [
+    {
+     "k": "N",
+     "r": "svc:zebra"
+    },
+    {
+     "k": "C",
+     "r": "D4b2a9ab8"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.members"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.members.svc"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.members.zapi"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.members.yang"
+    }
+   ],
+   "tpl": "svc:zebra forms functional domain D4b2a9ab8: 217 backbone members (1 service, 46 ZAPI message, 170 YANG path nodes)."
+  },
+  {
+   "id": "a33adfed",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.published"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|publishes|zapi:ZEBRA_BFD_DEST_REPLAY"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|publishes|zapi:ZEBRA_CAPABILITIES"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|publishes|zapi:ZEBRA_CLIENT_CLOSE_NOTIFY"
+    }
+   ],
+   "tpl": "svc:zebra publishes 44 message types toward the ZAPI bus (ZEBRA_BFD_DEST_REPLAY, ZEBRA_CAPABILITIES, ZEBRA_CLIENT_CLOSE_NOTIFY, ...)."
+  },
+  {
+   "id": "acec72f5",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.handled"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|handles|zapi:ZEBRA_ADVERTISE_ALL_VNI"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|handles|zapi:ZEBRA_ADVERTISE_DEFAULT_GW"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|handles|zapi:ZEBRA_ADVERTISE_SUBNET"
+    }
+   ],
+   "tpl": "It handles 94 notification/event types from the bus (ZEBRA_ADVERTISE_ALL_VNI, ZEBRA_ADVERTISE_DEFAULT_GW, ZEBRA_ADVERTISE_SUBNET, ...)."
+  },
+  {
+   "id": "a5771c3e",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.yang.total"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.nb_tables"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.yang.frr-zebra"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.yang.frr-zebra-route-map"
+    }
+   ],
+   "tpl": "Northbound contracts: frr-zebra(164), frr-zebra-route-map(6) \u2014 170 YANG paths across 183 NB handler tables."
+  },
+  {
+   "id": "a0c06897",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.roles"
+    }
+   ],
+   "tpl": "Measured roles: zapi-publisher, zapi-server."
+  },
+  {
+   "id": "a9b77ca6",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Cb6653b94"
+    }
+   ],
+   "tpl": "The domain contains P3 L2 service area Cb6653b94 (zebra:frr-zebra)."
+  },
+  {
+   "id": "a9ca2346",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.boundary.total"
+    }
+   ],
+   "tpl": "90 cross-domain edge bindings point outside the domain."
+  },
+  {
+   "id": "ad204437",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.flows.out"
+    },
+    {
+     "k": "F",
+     "r": "zapi.cross_svc_flows"
+    }
+   ],
+   "tpl": "44 verified cross-service ZAPI flows originate from svc:zebra."
+  },
+  {
+   "id": "a3333dd9",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.orphan.n"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "34 handled messages currently have no in-slice sender (orphan handlers)."
+  },
+  {
+   "id": "a923ff51",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.dropped.n"
+    },
+    {
+     "k": "F",
+     "r": "zapi.dropped_on_wire"
+    }
+   ],
+   "tpl": "4 published sends currently drop on the wire in the extractor view (dropped-on-wire findings)."
+  },
+  {
+   "id": "a97c3f64",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.modules.n"
+    },
+    {
+     "k": "C",
+     "r": "M6816d16c"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.mod.M6816d16c.size"
+    }
+   ],
+   "tpl": "48 code modules; largest is zebra:dplane with 407 functions."
+  },
+  {
+   "id": "a3c615eb",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Mb5ff12d4"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.mod.Mb5ff12d4.size"
+    }
+   ],
+   "tpl": "Bucket zebra:unlinked holds 2941 functions without intra-service call edges (pointer-dispatched callbacks and CLI handlers)."
+  },
+  {
+   "id": "ae2566bf",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.bridge.total"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.bridge.lib:zlog"
+    }
+   ],
+   "tpl": "5203 intra-service `calls` edges leave for other service partitions; densest target lib:zlog (1426 calls)."
+  }
+ ],
+ "claims": "yes",
+ "okf_level": "L2-cluster",
+ "page_id": "clusters/D4b2a9ab8.md",
+ "row_atoms": [
+  {
+   "id": "a5724978",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_BFD_DEST_REPLAY"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|publishes|zapi:ZEBRA_BFD_DEST_REPLAY"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_BFD_DEST_REPLAY"
+  },
+  {
+   "id": "af6ac915",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_CAPABILITIES"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|publishes|zapi:ZEBRA_CAPABILITIES"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_CAPABILITIES"
+  },
+  {
+   "id": "ad14d95b",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_CLIENT_CLOSE_NOTIFY"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|publishes|zapi:ZEBRA_CLIENT_CLOSE_NOTIFY"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_CLIENT_CLOSE_NOTIFY"
+  },
+  {
+   "id": "af0a9126",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ERROR"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|publishes|zapi:ZEBRA_ERROR"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ERROR"
+  },
+  {
+   "id": "a9df89ac",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_FEC_UPDATE"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|publishes|zapi:ZEBRA_FEC_UPDATE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_FEC_UPDATE"
+  },
+  {
+   "id": "a8b6d2a9",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_GET_LABEL_CHUNK"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|publishes|zapi:ZEBRA_GET_LABEL_CHUNK"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_GET_LABEL_CHUNK"
+  },
+  {
+   "id": "a86cf124",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_GET_TABLE_CHUNK"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|publishes|zapi:ZEBRA_GET_TABLE_CHUNK"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_GET_TABLE_CHUNK"
+  },
+  {
+   "id": "a00a6a15",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_GRE_UPDATE"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|publishes|zapi:ZEBRA_GRE_UPDATE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_GRE_UPDATE"
+  },
+  {
+   "id": "ad189903",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|publishes|zapi:ZEBRA_INTERFACE_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_ADD"
+  },
+  {
+   "id": "a9b330da",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|publishes|zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+  },
+  {
+   "id": "ae59cf87",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|publishes|zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+  },
+  {
+   "id": "a7a3314c",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_BFD_DEST_UPDATE"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|publishes|zapi:ZEBRA_INTERFACE_BFD_DEST_UPDATE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_BFD_DEST_UPDATE"
+  },
+  {
+   "id": "addf6671",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ADVERTISE_ALL_VNI"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|handles|zapi:ZEBRA_ADVERTISE_ALL_VNI"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ADVERTISE_ALL_VNI"
+  },
+  {
+   "id": "ad727056",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ADVERTISE_DEFAULT_GW"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|handles|zapi:ZEBRA_ADVERTISE_DEFAULT_GW"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ADVERTISE_DEFAULT_GW"
+  },
+  {
+   "id": "ad42c26d",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ADVERTISE_SUBNET"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|handles|zapi:ZEBRA_ADVERTISE_SUBNET"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ADVERTISE_SUBNET"
+  },
+  {
+   "id": "a7e2ba25",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ADVERTISE_SVI_MACIP"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|handles|zapi:ZEBRA_ADVERTISE_SVI_MACIP"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ADVERTISE_SVI_MACIP"
+  },
+  {
+   "id": "a0d89d09",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_BFD_CLIENT_REGISTER"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|handles|zapi:ZEBRA_BFD_CLIENT_REGISTER"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_BFD_CLIENT_REGISTER"
+  },
+  {
+   "id": "a885d035",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_BFD_DEST_DEREGISTER"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|handles|zapi:ZEBRA_BFD_DEST_DEREGISTER"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_BFD_DEST_DEREGISTER"
+  },
+  {
+   "id": "a21f6f86",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_BFD_DEST_REGISTER"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|handles|zapi:ZEBRA_BFD_DEST_REGISTER"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_BFD_DEST_REGISTER"
+  },
+  {
+   "id": "a1cccebe",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_BFD_DEST_REPLAY"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|handles|zapi:ZEBRA_BFD_DEST_REPLAY"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_BFD_DEST_REPLAY"
+  },
+  {
+   "id": "a5e88b33",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_BFD_DEST_UPDATE"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|handles|zapi:ZEBRA_BFD_DEST_UPDATE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_BFD_DEST_UPDATE"
+  },
+  {
+   "id": "a4cf96f4",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_CLIENT_CAPABILITIES"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|handles|zapi:ZEBRA_CLIENT_CAPABILITIES"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_CLIENT_CAPABILITIES"
+  },
+  {
+   "id": "a1527306",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_CONFIGURE_ARP"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|handles|zapi:ZEBRA_CONFIGURE_ARP"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_CONFIGURE_ARP"
+  },
+  {
+   "id": "a13448fe",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_DUPLICATE_ADDR_DETECTION"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|handles|zapi:ZEBRA_DUPLICATE_ADDR_DETECTION"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_DUPLICATE_ADDR_DETECTION"
+  },
+  {
+   "id": "a23955cc",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D1737981e"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.boundary.D1737981e.handles"
+    }
+   ],
+   "tpl": "handles \u00d724 \u2192 D1737981e"
+  },
+  {
+   "id": "af38adaf",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D1737981e"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.boundary.D1737981e.publishes"
+    }
+   ],
+   "tpl": "publishes \u00d714 \u2192 D1737981e"
+  },
+  {
+   "id": "ad4eb096",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D3063a0b0"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.boundary.D3063a0b0.handles"
+    }
+   ],
+   "tpl": "handles \u00d723 \u2192 D3063a0b0"
+  },
+  {
+   "id": "a2355067",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D3063a0b0"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.boundary.D3063a0b0.publishes"
+    }
+   ],
+   "tpl": "publishes \u00d712 \u2192 D3063a0b0"
+  },
+  {
+   "id": "a48bb287",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Ded29f1c0"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.boundary.Ded29f1c0.handles"
+    }
+   ],
+   "tpl": "handles \u00d77 \u2192 Ded29f1c0"
+  },
+  {
+   "id": "a748ca30",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Ded29f1c0"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.boundary.Ded29f1c0.publishes"
+    }
+   ],
+   "tpl": "publishes \u00d77 \u2192 Ded29f1c0"
+  },
+  {
+   "id": "aa84df29",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Dc32724de"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.boundary.Dc32724de.publishes"
+    }
+   ],
+   "tpl": "publishes \u00d73 \u2192 Dc32724de"
+  },
+  {
+   "id": "a6540301",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_BFD_CLIENT_REGISTER"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_BFD_CLIENT_REGISTER"
+  },
+  {
+   "id": "a30d5db9",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_BFD_DEST_DEREGISTER"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_BFD_DEST_DEREGISTER"
+  },
+  {
+   "id": "abcf241d",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_BFD_DEST_REGISTER"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_BFD_DEST_REGISTER"
+  },
+  {
+   "id": "a8912fa4",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_BFD_DEST_UPDATE"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_BFD_DEST_UPDATE"
+  },
+  {
+   "id": "adc184e0",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_CONFIGURE_ARP"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_CONFIGURE_ARP"
+  },
+  {
+   "id": "ad5bb0f6",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_FEC_REGISTER"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_FEC_REGISTER"
+  },
+  {
+   "id": "abd48f15",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_FEC_UNREGISTER"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_FEC_UNREGISTER"
+  },
+  {
+   "id": "a12ee0a0",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_GRE_SOURCE_SET"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_GRE_SOURCE_SET"
+  },
+  {
+   "id": "a00ed39c",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_LABEL_MANAGER_CONNECT_ASYNC"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_LABEL_MANAGER_CONNECT_ASYNC"
+  },
+  {
+   "id": "a06a077a",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_MPLS_LABELS_ADD"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_MPLS_LABELS_ADD"
+  },
+  {
+   "id": "a1813409",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_MPLS_LABELS_DELETE"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_MPLS_LABELS_DELETE"
+  },
+  {
+   "id": "a213d5ec",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_MPLS_LABELS_REPLACE"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_MPLS_LABELS_REPLACE"
+  },
+  {
+   "id": "a6893823",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M6816d16c"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.mod.M6816d16c.size"
+    }
+   ],
+   "tpl": "zebra:dplane \u2014 407 functions"
+  },
+  {
+   "id": "a378f11b",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M11ed049a"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.mod.M11ed049a.size"
+    }
+   ],
+   "tpl": "zebra:zebra \u2014 345 functions"
+  },
+  {
+   "id": "a216e427",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M749027f4"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.mod.M749027f4.size"
+    }
+   ],
+   "tpl": "zebra:rib \u2014 257 functions"
+  },
+  {
+   "id": "af3dc415",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M36d601bd"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.mod.M36d601bd.size"
+    }
+   ],
+   "tpl": "zebra:netlink \u2014 224 functions"
+  },
+  {
+   "id": "af17bed9",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M761377d9"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.mod.M761377d9.size"
+    }
+   ],
+   "tpl": "zebra:dplane \u2014 220 functions"
+  },
+  {
+   "id": "aa81a2c7",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Med7a3cb2"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.mod.Med7a3cb2.size"
+    }
+   ],
+   "tpl": "zebra:zserv \u2014 173 functions"
+  },
+  {
+   "id": "a2ae6376",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Mf3415498"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.mod.Mf3415498.size"
+    }
+   ],
+   "tpl": "zebra:nhlfe \u2014 171 functions"
+  },
+  {
+   "id": "aa23e003",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Md257f514"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.mod.Md257f514.size"
+    }
+   ],
+   "tpl": "zebra:dplane \u2014 170 functions"
+  },
+  {
+   "id": "aee2609e",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M9a38c8b6"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.mod.M9a38c8b6.size"
+    }
+   ],
+   "tpl": "zebra:zebra \u2014 168 functions"
+  },
+  {
+   "id": "aad4ff50",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M884ca7f8"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.mod.M884ca7f8.size"
+    }
+   ],
+   "tpl": "zebra:netlink \u2014 135 functions"
+  }
+ ],
+ "sources": [
+  "p3/packs/D4b2a9ab8.json",
+  "p3/profiles.jsonl",
+  "p3/backbone.json",
+  "p3/clusters.jsonl",
+  "p2/findings.json"
+ ]
+}

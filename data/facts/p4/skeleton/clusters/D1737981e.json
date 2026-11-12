@@ -1,0 +1,808 @@
+{
+ "atoms": [
+  {
+   "id": "a3b5da2e",
+   "refs": [
+    {
+     "k": "N",
+     "r": "svc:lib"
+    },
+    {
+     "k": "C",
+     "r": "D1737981e"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.members"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.members.svc"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.members.zapi"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.members.yang"
+    }
+   ],
+   "tpl": "svc:lib forms functional domain D1737981e: 182 backbone members (1 service, 34 ZAPI message, 147 YANG path nodes)."
+  },
+  {
+   "id": "a29ba45b",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D1737981e.published"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|publishes|zapi:ZEBRA_GET_LABEL_CHUNK"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|publishes|zapi:ZEBRA_GET_TABLE_CHUNK"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|publishes|zapi:ZEBRA_GRE_GET"
+    }
+   ],
+   "tpl": "svc:lib publishes 34 message types toward the ZAPI bus (ZEBRA_GET_LABEL_CHUNK, ZEBRA_GET_TABLE_CHUNK, ZEBRA_GRE_GET, ...)."
+  },
+  {
+   "id": "a9098ef6",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D1737981e.handled"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|handles|zapi:ZEBRA_BFD_DEST_REPLAY"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|handles|zapi:ZEBRA_CAPABILITIES"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|handles|zapi:ZEBRA_ERROR"
+    }
+   ],
+   "tpl": "It handles 11 notification/event types from the bus (ZEBRA_BFD_DEST_REPLAY, ZEBRA_CAPABILITIES, ZEBRA_ERROR, ...)."
+  },
+  {
+   "id": "ad0e28f6",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D1737981e.yang.total"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.nb_tables"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.yang.frr-affinity-map"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.yang.frr-backend"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.yang.frr-filter"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.yang.frr-host"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.yang.frr-interface"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.yang.frr-logging"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.yang.frr-route-map"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.yang.frr-routing"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.yang.frr-vrf"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.yang.ietf-key-chain"
+    }
+   ],
+   "tpl": "Northbound contracts: frr-affinity-map(2), frr-backend(11), frr-filter(41), frr-host(1), frr-interface(11), frr-logging(21), frr-route-map(30), frr-routing(1), frr-vrf(3), ietf-key-chain(26) \u2014 147 YANG paths across 147 NB handler tables."
+  },
+  {
+   "id": "aeaf9f03",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D1737981e.roles"
+    }
+   ],
+   "tpl": "Measured roles: shared-infra, zapi-client, zapi-publisher."
+  },
+  {
+   "id": "af6ce801",
+   "refs": [
+    {
+     "k": "C",
+     "r": "C1737981e"
+    }
+   ],
+   "tpl": "The domain contains P3 L2 service area C1737981e (lib:frr-filter)."
+  },
+  {
+   "id": "a77e2313",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D1737981e.boundary.total"
+    }
+   ],
+   "tpl": "42 cross-domain edge bindings point outside the domain."
+  },
+  {
+   "id": "a4039ee8",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D1737981e.flows.out"
+    },
+    {
+     "k": "F",
+     "r": "zapi.cross_svc_flows"
+    }
+   ],
+   "tpl": "33 verified cross-service ZAPI flows originate from svc:lib."
+  },
+  {
+   "id": "a70b9979",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D1737981e.orphan.n"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "0 handled messages currently have no in-slice sender (orphan handlers)."
+  },
+  {
+   "id": "a83b3b04",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D1737981e.dropped.n"
+    },
+    {
+     "k": "F",
+     "r": "zapi.dropped_on_wire"
+    }
+   ],
+   "tpl": "3 published sends currently drop on the wire in the extractor view (dropped-on-wire findings)."
+  },
+  {
+   "id": "a151bf3a",
+   "refs": [
+    {
+     "k": "F",
+     "r": "dead_wiring.registrations_without_callbacks.0"
+    },
+    {
+     "k": "N",
+     "r": "nb:lib:frr-host:host/allow-reserved-ranges"
+    }
+   ],
+   "tpl": "Dead wiring: nb:lib:frr-host:host/allow-reserved-ranges registered in lib/host_cli.c:45 has no callbacks."
+  },
+  {
+   "id": "a944e259",
+   "refs": [
+    {
+     "k": "F",
+     "r": "dead_wiring.registrations_without_callbacks.1"
+    },
+    {
+     "k": "N",
+     "r": "nb:lib:frr-host:host/allow-reserved-ranges"
+    }
+   ],
+   "tpl": "Dead wiring: nb:lib:frr-host:host/allow-reserved-ranges registered in lib/host_nb.c:30 has no callbacks."
+  },
+  {
+   "id": "a29e9bce",
+   "refs": [
+    {
+     "k": "F",
+     "r": "dead_wiring.registrations_without_callbacks.2"
+    },
+    {
+     "k": "N",
+     "r": "nb:lib:frr-backend:clients/client/name"
+    }
+   ],
+   "tpl": "Dead wiring: nb:lib:frr-backend:clients/client/name registered in lib/mgmt_be_client.c:1313 has no callbacks."
+  },
+  {
+   "id": "afce6f7e",
+   "refs": [
+    {
+     "k": "F",
+     "r": "dead_wiring.registrations_without_callbacks.3"
+    },
+    {
+     "k": "N",
+     "r": "nb:lib:frr-backend:clients/client/state/notify-selectors"
+    }
+   ],
+   "tpl": "Dead wiring: nb:lib:frr-backend:clients/client/state/notify-selectors registered in lib/mgmt_be_client.c:1371 has no callbacks."
+  },
+  {
+   "id": "a6da67a1",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D1737981e.modules.n"
+    },
+    {
+     "k": "C",
+     "r": "M0b7896b1"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.mod.M0b7896b1.size"
+    }
+   ],
+   "tpl": "59 code modules; largest is lib:nb with 663 functions."
+  },
+  {
+   "id": "a9d954ef",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M14366098"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.mod.M14366098.size"
+    }
+   ],
+   "tpl": "Bucket lib:unlinked holds 3023 functions without intra-service call edges (pointer-dispatched callbacks and CLI handlers)."
+  }
+ ],
+ "claims": "yes",
+ "okf_level": "L2-cluster",
+ "page_id": "clusters/D1737981e.md",
+ "row_atoms": [
+  {
+   "id": "a72bcc1b",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_GET_LABEL_CHUNK"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|publishes|zapi:ZEBRA_GET_LABEL_CHUNK"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_GET_LABEL_CHUNK"
+  },
+  {
+   "id": "a2a829d2",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_GET_TABLE_CHUNK"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|publishes|zapi:ZEBRA_GET_TABLE_CHUNK"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_GET_TABLE_CHUNK"
+  },
+  {
+   "id": "a31419e8",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_GRE_GET"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|publishes|zapi:ZEBRA_GRE_GET"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_GRE_GET"
+  },
+  {
+   "id": "a46da7c3",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_HELLO"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|publishes|zapi:ZEBRA_HELLO"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_HELLO"
+  },
+  {
+   "id": "a643ff5f",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|publishes|zapi:ZEBRA_INTERFACE_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_ADD"
+  },
+  {
+   "id": "ae3ec1f7",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|publishes|zapi:ZEBRA_INTERFACE_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_DELETE"
+  },
+  {
+   "id": "a2d92063",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_DISABLE_RADV"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|publishes|zapi:ZEBRA_INTERFACE_DISABLE_RADV"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_DISABLE_RADV"
+  },
+  {
+   "id": "a0193a84",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_ENABLE_RADV"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|publishes|zapi:ZEBRA_INTERFACE_ENABLE_RADV"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_ENABLE_RADV"
+  },
+  {
+   "id": "aeca70b5",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_SET_ARP"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|publishes|zapi:ZEBRA_INTERFACE_SET_ARP"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_SET_ARP"
+  },
+  {
+   "id": "a210b975",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_SET_MASTER"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|publishes|zapi:ZEBRA_INTERFACE_SET_MASTER"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_SET_MASTER"
+  },
+  {
+   "id": "a8d04121",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_SET_PROTODOWN"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|publishes|zapi:ZEBRA_INTERFACE_SET_PROTODOWN"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_SET_PROTODOWN"
+  },
+  {
+   "id": "a4c6deb8",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_MLAG_CLIENT_REGISTER"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|publishes|zapi:ZEBRA_MLAG_CLIENT_REGISTER"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_MLAG_CLIENT_REGISTER"
+  },
+  {
+   "id": "af658e79",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_BFD_DEST_REPLAY"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|handles|zapi:ZEBRA_BFD_DEST_REPLAY"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_BFD_DEST_REPLAY"
+  },
+  {
+   "id": "a21528d1",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_CAPABILITIES"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|handles|zapi:ZEBRA_CAPABILITIES"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_CAPABILITIES"
+  },
+  {
+   "id": "a1a7ff62",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ERROR"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|handles|zapi:ZEBRA_ERROR"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ERROR"
+  },
+  {
+   "id": "a925a996",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|handles|zapi:ZEBRA_INTERFACE_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_ADD"
+  },
+  {
+   "id": "ae5fb4c3",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_BFD_DEST_UPDATE"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|handles|zapi:ZEBRA_INTERFACE_BFD_DEST_UPDATE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_BFD_DEST_UPDATE"
+  },
+  {
+   "id": "a2f81d47",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|handles|zapi:ZEBRA_INTERFACE_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_DELETE"
+  },
+  {
+   "id": "a951ff05",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_DOWN"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|handles|zapi:ZEBRA_INTERFACE_DOWN"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_DOWN"
+  },
+  {
+   "id": "a247c86b",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_UP"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|handles|zapi:ZEBRA_INTERFACE_UP"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_UP"
+  },
+  {
+   "id": "a6884ddf",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_NEXTHOP_UPDATE"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|handles|zapi:ZEBRA_NEXTHOP_UPDATE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_NEXTHOP_UPDATE"
+  },
+  {
+   "id": "a6abd230",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_VRF_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|handles|zapi:ZEBRA_VRF_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_VRF_ADD"
+  },
+  {
+   "id": "ae83d490",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_VRF_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:lib|handles|zapi:ZEBRA_VRF_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_VRF_DELETE"
+  },
+  {
+   "id": "a1a31a00",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D4b2a9ab8"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.boundary.D4b2a9ab8.handles"
+    }
+   ],
+   "tpl": "handles \u00d724 \u2192 D4b2a9ab8"
+  },
+  {
+   "id": "a9a5d6c3",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D4b2a9ab8"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.boundary.D4b2a9ab8.publishes"
+    }
+   ],
+   "tpl": "publishes \u00d714 \u2192 D4b2a9ab8"
+  },
+  {
+   "id": "a1d470db",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Ded29f1c0"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.boundary.Ded29f1c0.publishes"
+    }
+   ],
+   "tpl": "publishes \u00d74 \u2192 Ded29f1c0"
+  },
+  {
+   "id": "aa349ca1",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M0b7896b1"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.mod.M0b7896b1.size"
+    }
+   ],
+   "tpl": "lib:nb \u2014 663 functions"
+  },
+  {
+   "id": "aae0fad7",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Me4dc81e5"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.mod.Me4dc81e5.size"
+    }
+   ],
+   "tpl": "lib:zlog \u2014 610 functions"
+  },
+  {
+   "id": "a09e9be6",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Md41c76a1"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.mod.Md41c76a1.size"
+    }
+   ],
+   "tpl": "lib:list \u2014 580 functions"
+  },
+  {
+   "id": "a0134006",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M68604753"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.mod.M68604753.size"
+    }
+   ],
+   "tpl": "lib:rb \u2014 259 functions"
+  },
+  {
+   "id": "ac170249",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M72ca1469"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.mod.M72ca1469.size"
+    }
+   ],
+   "tpl": "lib:typed \u2014 243 functions"
+  },
+  {
+   "id": "a133d903",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Mb6b71573"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.mod.Mb6b71573.size"
+    }
+   ],
+   "tpl": "lib:zlog \u2014 207 functions"
+  },
+  {
+   "id": "ac79ec42",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M57da9241"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.mod.M57da9241.size"
+    }
+   ],
+   "tpl": "lib:yang \u2014 184 functions"
+  },
+  {
+   "id": "a418d2df",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Me899b8ce"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.mod.Me899b8ce.size"
+    }
+   ],
+   "tpl": "lib:cmd \u2014 155 functions"
+  },
+  {
+   "id": "ab6e6bc3",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M592f037c"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.mod.M592f037c.size"
+    }
+   ],
+   "tpl": "lib:debug \u2014 151 functions"
+  },
+  {
+   "id": "a1bbff84",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M300ac150"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.mod.M300ac150.size"
+    }
+   ],
+   "tpl": "lib:route \u2014 146 functions"
+  }
+ ],
+ "sources": [
+  "p3/packs/D1737981e.json",
+  "p3/profiles.jsonl",
+  "p3/backbone.json",
+  "p3/clusters.jsonl",
+  "p2/findings.json"
+ ]
+}

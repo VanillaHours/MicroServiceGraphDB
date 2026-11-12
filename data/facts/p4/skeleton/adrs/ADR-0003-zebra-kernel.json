@@ -1,0 +1,102 @@
+{
+ "atoms": [
+  {
+   "id": "a3a3e7c3",
+   "refs": [
+    {
+     "k": "D",
+     "q": "*zebra* is an IP routing manager. It provides kernel routing table updates, interface lookups, and redistribution of routes between different routing protocols.",
+     "r": "doc/user/zebra.rst"
+    }
+   ],
+   "tpl": "Context: zebra is an IP routing manager providing kernel routing table updates, interface lookups, and redistribution of routes between different routing protocols."
+  },
+  {
+   "id": "af3fd906",
+   "refs": [
+    {
+     "k": "D",
+     "q": "Specify which kernel routing table *Zebra* should communicate with.",
+     "r": "doc/user/zebra.rst"
+    },
+    {
+     "k": "C",
+     "r": "D4b2a9ab8"
+    },
+    {
+     "k": "N",
+     "r": "svc:zebra"
+    }
+   ],
+   "tpl": "Decision: zebra is the process that communicates with the kernel routing tables \u2014 protocol daemons interact only through ZAPI requests and notifications."
+  },
+  {
+   "id": "ae5fb10f",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.yang.frr-zebra"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.yang.frr-zebra-route-map"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.nb_tables"
+    }
+   ],
+   "tpl": "Consequence: zebra implements the frr-zebra northbound model with 164 YANG paths and 6 YANG paths on frr-zebra-route-map, served by 183 NB handler tables."
+  },
+  {
+   "id": "a240c9de",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.handled"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.published"
+    },
+    {
+     "k": "C",
+     "r": "D4b2a9ab8"
+    }
+   ],
+   "tpl": "Consequence: zebra is the ZAPI server \u2014 it handles 94 message types published by the route daemons and emits 44 notification/event types back to clients."
+  },
+  {
+   "id": "aa3b2c47",
+   "refs": [
+    {
+     "k": "D",
+     "r": "doc/user/zebra.rst"
+    },
+    {
+     "k": "D",
+     "r": "doc/user/mgmtd.rst"
+    },
+    {
+     "k": "D",
+     "r": "doc/user/ospfd.rst"
+    },
+    {
+     "k": "D",
+     "r": "doc/user/bgp.rst"
+    }
+   ],
+   "tpl": "Provenance: decision statements are authored from FRR documentation; quotes are validated verbatim by the verifier, consequences are measured graph facts."
+  }
+ ],
+ "claims": "yes",
+ "okf_level": "ADR",
+ "page_id": "adrs/ADR-0003-zebra-kernel.md",
+ "sources": [
+  "doc/user/ospfd.rst",
+  "doc/user/mgmtd.rst",
+  "doc/user/zebra.rst",
+  "doc/user/bgp.rst",
+  "p2/findings.json"
+ ]
+}

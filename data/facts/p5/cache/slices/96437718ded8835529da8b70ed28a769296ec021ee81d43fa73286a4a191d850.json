@@ -1,0 +1,4009 @@
+{
+ "scope": {
+  "file": "ospfd/ospf_zebra.c",
+  "function": "ospf_zebra_add",
+  "line_span": [
+   258,
+   353
+  ],
+  "params": [
+   {
+    "name": "ospf",
+    "type": "struct ospf *"
+   },
+   {
+    "name": "p",
+    "type": "struct prefix_ipv4 *"
+   },
+   {
+    "name": "or",
+    "type": "struct ospf_route *"
+   }
+  ]
+ },
+ "tool_ver": "p5-slice/1.0.0+clang18",
+ "cfg": {
+  "entry": 0,
+  "exit": 1,
+  "n_blocks": 44,
+  "n_edges": 60,
+  "blocks": [
+   {
+    "id": 0,
+    "tag": "entry",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 261,
+      "spell": "struct zapi_route api ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 262,
+      "spell": "uint8_t distance ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 263,
+      "spell": "struct ospf_path * path ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 264,
+      "spell": "struct listnode * node ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 267,
+      "spell": "or -> connected",
+      "defs": [],
+      "uses": [
+       "or"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      3,
+      "then"
+     ],
+     [
+      2,
+      "no-else"
+     ]
+    ],
+    "pred": []
+   },
+   {
+    "id": 1,
+    "tag": "exit",
+    "stmts": [],
+    "succ": [],
+    "pred": [
+     [
+      3,
+      "return"
+     ],
+     [
+      6,
+      "return"
+     ],
+     [
+      42,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 2,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 270,
+      "spell": "ospf -> gr_info . restart_in_progress",
+      "defs": [],
+      "uses": [
+       "ospf"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      5,
+      "then"
+     ],
+     [
+      4,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 3,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "RETURN_STMT",
+      "line": 268,
+      "spell": "return",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 4,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 277,
+      "spell": "zapi_route_init ( & api )",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 278,
+      "spell": "api . vrf_id = ospf -> vrf_id",
+      "defs": [
+       [
+        "api.vrf_id",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "ospf",
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 279,
+      "spell": "api . type = ZEBRA_ROUTE_OSPF",
+      "defs": [
+       [
+        "api.type",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 280,
+      "spell": "api . instance = ospf -> instance",
+      "defs": [
+       [
+        "api.instance",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "ospf",
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 281,
+      "spell": "api . safi = SAFI_UNICAST",
+      "defs": [
+       [
+        "api.safi",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 283,
+      "spell": "memcpy ( & api . prefix , p , sizeof ( * p ) )",
+      "defs": [],
+      "uses": [
+       "api",
+       "p"
+      ]
+     },
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 284,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 287,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 288,
+      "spell": "or -> path_type == OSPF_PATH_TYPE1_EXTERNAL",
+      "defs": [],
+      "uses": [
+       "or"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      12,
+      "then"
+     ],
+     [
+      13,
+      "else"
+     ]
+    ],
+    "pred": [
+     [
+      2,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 5,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "PAREN_EXPR",
+      "line": 271,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "term_debug_ospf_gr"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      7,
+      "then"
+     ],
+     [
+      6,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      2,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 6,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "RETURN_STMT",
+      "line": 274,
+      "spell": "return",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      10,
+      "fallthrough"
+     ],
+     [
+      5,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 7,
+    "tag": "then",
+    "stmts": [],
+    "succ": [
+     [
+      8,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      5,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 8,
+    "tag": "do-body",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 272,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 272,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xrefdata"
+      ]
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 272,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 272,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref",
+       "p",
+       "ospf"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      9,
+      "cond"
+     ]
+    ],
+    "pred": [
+     [
+      7,
+      "next"
+     ],
+     [
+      9,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 9,
+    "tag": "do-cond",
+    "stmts": [
+     {
+      "kind": "INTEGER_LITERAL",
+      "line": 272,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      8,
+      "loop-true"
+     ],
+     [
+      10,
+      "exit-false"
+     ]
+    ],
+    "pred": [
+     [
+      8,
+      "cond"
+     ]
+    ]
+   },
+   {
+    "id": 10,
+    "tag": "do-exit",
+    "stmts": [],
+    "succ": [
+     [
+      6,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      9,
+      "exit-false"
+     ]
+    ]
+   },
+   {
+    "id": 11,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 296,
+      "spell": "( ( or -> path_type == OSPF_PATH_TYPE1_EXTERNAL ) || ( or -> path_type == OSPF_PATH_TYPE2_EXTERNAL ) ) && ( or -> u . ext . tag > 0 ) && ( o",
+      "defs": [],
+      "uses": [
+       "or"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      18,
+      "then"
+     ],
+     [
+      17,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      12,
+      "fallthrough"
+     ],
+     [
+      14,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 12,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 289,
+      "spell": "api . metric = or -> cost + or -> u . ext . type2_cost",
+      "defs": [
+       [
+        "api.metric",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "or",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      11,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      4,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 13,
+    "tag": "else",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 290,
+      "spell": "or -> path_type == OSPF_PATH_TYPE2_EXTERNAL",
+      "defs": [],
+      "uses": [
+       "or"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      15,
+      "then"
+     ],
+     [
+      16,
+      "else"
+     ]
+    ],
+    "pred": [
+     [
+      4,
+      "else"
+     ]
+    ]
+   },
+   {
+    "id": 14,
+    "tag": "if-merge",
+    "stmts": [],
+    "succ": [
+     [
+      11,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      15,
+      "fallthrough"
+     ],
+     [
+      16,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 15,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 291,
+      "spell": "api . metric = or -> u . ext . type2_cost",
+      "defs": [
+       [
+        "api.metric",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "or",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      14,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      13,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 16,
+    "tag": "else",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 293,
+      "spell": "api . metric = or -> cost",
+      "defs": [
+       [
+        "api.metric",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "or",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      14,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      13,
+      "else"
+     ]
+    ]
+   },
+   {
+    "id": 17,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 304,
+      "spell": "distance = ospf_distance_apply ( ospf , p , or )",
+      "defs": [
+       [
+        "distance",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "ospf",
+       "p",
+       "or"
+      ]
+     },
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 305,
+      "spell": "distance",
+      "defs": [],
+      "uses": [
+       "distance"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      20,
+      "then"
+     ],
+     [
+      19,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      18,
+      "fallthrough"
+     ],
+     [
+      11,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 18,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 299,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 300,
+      "spell": "api . tag = or -> u . ext . tag",
+      "defs": [
+       [
+        "api.tag",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "or",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      17,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      11,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 19,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 310,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "node",
+       "or",
+       "path"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 310,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "node",
+       "path"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      21,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      20,
+      "fallthrough"
+     ],
+     [
+      17,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 20,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 306,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 307,
+      "spell": "api . distance = distance",
+      "defs": [
+       [
+        "api.distance",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "distance",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      19,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      17,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 21,
+    "tag": "for-head",
+    "stmts": [],
+    "succ": [
+     [
+      22,
+      "exit-false"
+     ],
+     [
+      23,
+      "loop-true"
+     ]
+    ],
+    "pred": [
+     [
+      19,
+      "next"
+     ],
+     [
+      24,
+      "latch"
+     ]
+    ]
+   },
+   {
+    "id": 22,
+    "tag": "for-exit",
+    "stmts": [
+     {
+      "kind": "PAREN_EXPR",
+      "line": 349,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "ospf"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      43,
+      "then"
+     ],
+     [
+      42,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      21,
+      "exit-false"
+     ],
+     [
+      26,
+      "break"
+     ]
+    ]
+   },
+   {
+    "id": 23,
+    "tag": "for-body",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 311,
+      "spell": "api . nexthop_num >= ospf -> max_multipath",
+      "defs": [],
+      "uses": [
+       "api",
+       "ospf"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      26,
+      "then"
+     ],
+     [
+      25,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      21,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 24,
+    "tag": "for-incr",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 310,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "node",
+       "path"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      21,
+      "latch"
+     ]
+    ],
+    "pred": [
+     [
+      36,
+      "continue"
+     ],
+     [
+      37,
+      "to-incr"
+     ]
+    ]
+   },
+   {
+    "id": 25,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 319,
+      "spell": "or -> path_type != OSPF_PATH_INTRA_AREA",
+      "defs": [],
+      "uses": [
+       "or"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      28,
+      "then"
+     ],
+     [
+      27,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      23,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 26,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "BREAK_STMT",
+      "line": 312,
+      "spell": "break",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      22,
+      "break"
+     ]
+    ],
+    "pred": [
+     [
+      23,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 27,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 335,
+      "spell": "ospf_zebra_add_nexthop ( ospf , path , & api )",
+      "defs": [],
+      "uses": [
+       "ospf",
+       "path",
+       "api"
+      ]
+     },
+     {
+      "kind": "PAREN_EXPR",
+      "line": 337,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "term_debug_ospf_zebra"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      38,
+      "then"
+     ],
+     [
+      37,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      35,
+      "fallthrough"
+     ],
+     [
+      25,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 28,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 320,
+      "spell": "struct zapi_nexthop * api_nh = & api . nexthops [ 0 ] ;",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 321,
+      "spell": "unsigned int nh_index ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 322,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 324,
+      "spell": "nh_index = 0",
+      "defs": [
+       [
+        "nh_index",
+        "assign"
+       ]
+      ],
+      "uses": []
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 324,
+      "spell": "nh_index < api . nexthop_num",
+      "defs": [],
+      "uses": [
+       "nh_index",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      29,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      25,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 29,
+    "tag": "for-head",
+    "stmts": [],
+    "succ": [
+     [
+      30,
+      "exit-false"
+     ],
+     [
+      31,
+      "loop-true"
+     ]
+    ],
+    "pred": [
+     [
+      28,
+      "next"
+     ],
+     [
+      32,
+      "latch"
+     ]
+    ]
+   },
+   {
+    "id": 30,
+    "tag": "for-exit",
+    "stmts": [
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 331,
+      "spell": "duplicate_next_hop",
+      "defs": [],
+      "uses": [
+       "duplicate_next_hop"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      36,
+      "then"
+     ],
+     [
+      35,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      29,
+      "exit-false"
+     ],
+     [
+      34,
+      "break"
+     ]
+    ]
+   },
+   {
+    "id": 31,
+    "tag": "for-body",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 325,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api_nh",
+       "path"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      34,
+      "then"
+     ],
+     [
+      33,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      29,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 32,
+    "tag": "for-incr",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 324,
+      "spell": "api_nh ++ , nh_index ++",
+      "defs": [
+       [
+        "api_nh",
+        "incdec"
+       ],
+       [
+        "nh_index",
+        "incdec"
+       ]
+      ],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      29,
+      "latch"
+     ]
+    ],
+    "pred": [
+     [
+      33,
+      "to-incr"
+     ]
+    ]
+   },
+   {
+    "id": 33,
+    "tag": "if-merge",
+    "stmts": [],
+    "succ": [
+     [
+      32,
+      "to-incr"
+     ]
+    ],
+    "pred": [
+     [
+      31,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 34,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 327,
+      "spell": "duplicate_next_hop = true",
+      "defs": [
+       [
+        "duplicate_next_hop",
+        "assign"
+       ]
+      ],
+      "uses": []
+     },
+     {
+      "kind": "BREAK_STMT",
+      "line": 328,
+      "spell": "break",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      30,
+      "break"
+     ]
+    ],
+    "pred": [
+     [
+      31,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 35,
+    "tag": "if-merge",
+    "stmts": [],
+    "succ": [
+     [
+      27,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      30,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 36,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "CONTINUE_STMT",
+      "line": 332,
+      "spell": "continue",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      24,
+      "continue"
+     ]
+    ],
+    "pred": [
+     [
+      30,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 37,
+    "tag": "if-merge",
+    "stmts": [],
+    "succ": [
+     [
+      24,
+      "to-incr"
+     ]
+    ],
+    "pred": [
+     [
+      41,
+      "fallthrough"
+     ],
+     [
+      27,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 38,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 338,
+      "spell": "struct interface * ifp ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 340,
+      "spell": "ifp = if_lookup_by_index ( path -> ifindex , ospf -> vrf_id )",
+      "defs": [
+       [
+        "ifp",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "path",
+       "ospf"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      39,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      27,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 39,
+    "tag": "do-body",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 342,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 342,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xrefdata"
+      ]
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 342,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 342,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref",
+       "p",
+       "ospf",
+       "path",
+       "ifp"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      40,
+      "cond"
+     ]
+    ],
+    "pred": [
+     [
+      38,
+      "next"
+     ],
+     [
+      40,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 40,
+    "tag": "do-cond",
+    "stmts": [
+     {
+      "kind": "INTEGER_LITERAL",
+      "line": 342,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      39,
+      "loop-true"
+     ],
+     [
+      41,
+      "exit-false"
+     ]
+    ],
+    "pred": [
+     [
+      39,
+      "cond"
+     ]
+    ]
+   },
+   {
+    "id": 41,
+    "tag": "do-exit",
+    "stmts": [],
+    "succ": [
+     [
+      37,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      40,
+      "exit-false"
+     ]
+    ]
+   },
+   {
+    "id": 42,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 352,
+      "spell": "zclient_route_send ( ZEBRA_ROUTE_ADD , ospf_zclient , & api )",
+      "defs": [],
+      "uses": [
+       "ospf_zclient",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      43,
+      "fallthrough"
+     ],
+     [
+      22,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 43,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 350,
+      "spell": "ospf_zebra_append_opaque_attr ( or , & api )",
+      "defs": [],
+      "uses": [
+       "or",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      42,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      22,
+      "then"
+     ]
+    ]
+   }
+  ],
+  "edges": [
+   {
+    "from": 0,
+    "to": 3,
+    "kind": "then"
+   },
+   {
+    "from": 3,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 0,
+    "to": 2,
+    "kind": "no-else"
+   },
+   {
+    "from": 2,
+    "to": 5,
+    "kind": "then"
+   },
+   {
+    "from": 5,
+    "to": 7,
+    "kind": "then"
+   },
+   {
+    "from": 7,
+    "to": 8,
+    "kind": "next"
+   },
+   {
+    "from": 8,
+    "to": 9,
+    "kind": "cond"
+   },
+   {
+    "from": 9,
+    "to": 8,
+    "kind": "loop-true"
+   },
+   {
+    "from": 9,
+    "to": 10,
+    "kind": "exit-false"
+   },
+   {
+    "from": 10,
+    "to": 6,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 5,
+    "to": 6,
+    "kind": "no-else"
+   },
+   {
+    "from": 6,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 2,
+    "to": 4,
+    "kind": "no-else"
+   },
+   {
+    "from": 4,
+    "to": 12,
+    "kind": "then"
+   },
+   {
+    "from": 12,
+    "to": 11,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 4,
+    "to": 13,
+    "kind": "else"
+   },
+   {
+    "from": 13,
+    "to": 15,
+    "kind": "then"
+   },
+   {
+    "from": 15,
+    "to": 14,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 13,
+    "to": 16,
+    "kind": "else"
+   },
+   {
+    "from": 16,
+    "to": 14,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 14,
+    "to": 11,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 11,
+    "to": 18,
+    "kind": "then"
+   },
+   {
+    "from": 18,
+    "to": 17,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 11,
+    "to": 17,
+    "kind": "no-else"
+   },
+   {
+    "from": 17,
+    "to": 20,
+    "kind": "then"
+   },
+   {
+    "from": 20,
+    "to": 19,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 17,
+    "to": 19,
+    "kind": "no-else"
+   },
+   {
+    "from": 19,
+    "to": 21,
+    "kind": "next"
+   },
+   {
+    "from": 21,
+    "to": 22,
+    "kind": "exit-false"
+   },
+   {
+    "from": 21,
+    "to": 23,
+    "kind": "loop-true"
+   },
+   {
+    "from": 23,
+    "to": 26,
+    "kind": "then"
+   },
+   {
+    "from": 26,
+    "to": 22,
+    "kind": "break"
+   },
+   {
+    "from": 23,
+    "to": 25,
+    "kind": "no-else"
+   },
+   {
+    "from": 25,
+    "to": 28,
+    "kind": "then"
+   },
+   {
+    "from": 28,
+    "to": 29,
+    "kind": "next"
+   },
+   {
+    "from": 29,
+    "to": 30,
+    "kind": "exit-false"
+   },
+   {
+    "from": 29,
+    "to": 31,
+    "kind": "loop-true"
+   },
+   {
+    "from": 31,
+    "to": 34,
+    "kind": "then"
+   },
+   {
+    "from": 34,
+    "to": 30,
+    "kind": "break"
+   },
+   {
+    "from": 31,
+    "to": 33,
+    "kind": "no-else"
+   },
+   {
+    "from": 33,
+    "to": 32,
+    "kind": "to-incr"
+   },
+   {
+    "from": 32,
+    "to": 29,
+    "kind": "latch"
+   },
+   {
+    "from": 30,
+    "to": 36,
+    "kind": "then"
+   },
+   {
+    "from": 36,
+    "to": 24,
+    "kind": "continue"
+   },
+   {
+    "from": 30,
+    "to": 35,
+    "kind": "no-else"
+   },
+   {
+    "from": 35,
+    "to": 27,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 25,
+    "to": 27,
+    "kind": "no-else"
+   },
+   {
+    "from": 27,
+    "to": 38,
+    "kind": "then"
+   },
+   {
+    "from": 38,
+    "to": 39,
+    "kind": "next"
+   },
+   {
+    "from": 39,
+    "to": 40,
+    "kind": "cond"
+   },
+   {
+    "from": 40,
+    "to": 39,
+    "kind": "loop-true"
+   },
+   {
+    "from": 40,
+    "to": 41,
+    "kind": "exit-false"
+   },
+   {
+    "from": 41,
+    "to": 37,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 27,
+    "to": 37,
+    "kind": "no-else"
+   },
+   {
+    "from": 37,
+    "to": 24,
+    "kind": "to-incr"
+   },
+   {
+    "from": 24,
+    "to": 21,
+    "kind": "latch"
+   },
+   {
+    "from": 22,
+    "to": 43,
+    "kind": "then"
+   },
+   {
+    "from": 43,
+    "to": 42,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 22,
+    "to": 42,
+    "kind": "no-else"
+   },
+   {
+    "from": 42,
+    "to": 1,
+    "kind": "fallthrough"
+   }
+  ]
+ },
+ "dfg": {
+  "defs": [
+   {
+    "id": "d15",
+    "var": "ospf",
+    "block": 0,
+    "stmt": -1,
+    "line": 258,
+    "kind": "param",
+    "type": "struct ospf *"
+   },
+   {
+    "id": "d16",
+    "var": "p",
+    "block": 0,
+    "stmt": -1,
+    "line": 258,
+    "kind": "param",
+    "type": "struct prefix_ipv4 *"
+   },
+   {
+    "id": "d17",
+    "var": "or",
+    "block": 0,
+    "stmt": -1,
+    "line": 258,
+    "kind": "param",
+    "type": "struct ospf_route *"
+   },
+   {
+    "id": "d0",
+    "var": "api.vrf_id",
+    "block": 4,
+    "stmt": 1,
+    "line": 278,
+    "kind": "assign"
+   },
+   {
+    "id": "d1",
+    "var": "api.type",
+    "block": 4,
+    "stmt": 2,
+    "line": 279,
+    "kind": "assign"
+   },
+   {
+    "id": "d2",
+    "var": "api.instance",
+    "block": 4,
+    "stmt": 3,
+    "line": 280,
+    "kind": "assign"
+   },
+   {
+    "id": "d3",
+    "var": "api.safi",
+    "block": 4,
+    "stmt": 4,
+    "line": 281,
+    "kind": "assign"
+   },
+   {
+    "id": "d4",
+    "var": "api.metric",
+    "block": 12,
+    "stmt": 0,
+    "line": 289,
+    "kind": "assign"
+   },
+   {
+    "id": "d5",
+    "var": "api.metric",
+    "block": 15,
+    "stmt": 0,
+    "line": 291,
+    "kind": "assign"
+   },
+   {
+    "id": "d6",
+    "var": "api.metric",
+    "block": 16,
+    "stmt": 0,
+    "line": 293,
+    "kind": "assign"
+   },
+   {
+    "id": "d7",
+    "var": "distance",
+    "block": 17,
+    "stmt": 0,
+    "line": 304,
+    "kind": "assign"
+   },
+   {
+    "id": "d8",
+    "var": "api.tag",
+    "block": 18,
+    "stmt": 1,
+    "line": 300,
+    "kind": "assign"
+   },
+   {
+    "id": "d9",
+    "var": "api.distance",
+    "block": 20,
+    "stmt": 1,
+    "line": 307,
+    "kind": "assign"
+   },
+   {
+    "id": "d10",
+    "var": "nh_index",
+    "block": 28,
+    "stmt": 3,
+    "line": 324,
+    "kind": "assign"
+   },
+   {
+    "id": "d11",
+    "var": "api_nh",
+    "block": 32,
+    "stmt": 0,
+    "line": 324,
+    "kind": "incdec"
+   },
+   {
+    "id": "d12",
+    "var": "nh_index",
+    "block": 32,
+    "stmt": 0,
+    "line": 324,
+    "kind": "incdec"
+   },
+   {
+    "id": "d13",
+    "var": "duplicate_next_hop",
+    "block": 34,
+    "stmt": 0,
+    "line": 327,
+    "kind": "assign"
+   },
+   {
+    "id": "d14",
+    "var": "ifp",
+    "block": 38,
+    "stmt": 1,
+    "line": 340,
+    "kind": "assign"
+   }
+  ],
+  "chains": [
+   {
+    "use": "or",
+    "block": 0,
+    "line": 267,
+    "stmt": "or -> connected",
+    "defs": [
+     "d17"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "ospf",
+    "block": 2,
+    "line": 270,
+    "stmt": "ospf -> gr_info . restart_in_progress",
+    "defs": [
+     "d15"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 277,
+    "stmt": "zapi_route_init ( & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ospf",
+    "block": 4,
+    "line": 278,
+    "stmt": "api . vrf_id = ospf -> vrf_id",
+    "defs": [
+     "d15"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 278,
+    "stmt": "api . vrf_id = ospf -> vrf_id",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 279,
+    "stmt": "api . type = ZEBRA_ROUTE_OSPF",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ospf",
+    "block": 4,
+    "line": 280,
+    "stmt": "api . instance = ospf -> instance",
+    "defs": [
+     "d15"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 280,
+    "stmt": "api . instance = ospf -> instance",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 281,
+    "stmt": "api . safi = SAFI_UNICAST",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 283,
+    "stmt": "memcpy ( & api . prefix , p , sizeof ( * p ) )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "p",
+    "block": 4,
+    "line": 283,
+    "stmt": "memcpy ( & api . prefix , p , sizeof ( * p ) )",
+    "defs": [
+     "d16"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 284,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 287,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "or",
+    "block": 4,
+    "line": 288,
+    "stmt": "or -> path_type == OSPF_PATH_TYPE1_EXTERNAL",
+    "defs": [
+     "d17"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "term_debug_ospf_gr",
+    "block": 5,
+    "line": 271,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 8,
+    "line": 272,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 8,
+    "line": 272,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 8,
+    "line": 272,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "p",
+    "block": 8,
+    "line": 272,
+    "stmt": "",
+    "defs": [
+     "d16"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "ospf",
+    "block": 8,
+    "line": 272,
+    "stmt": "",
+    "defs": [
+     "d15"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "or",
+    "block": 11,
+    "line": 296,
+    "stmt": "( ( or -> path_type == OSPF_PATH_TYPE1_EXTERNAL ) || ( or -> path_type == OSPF_P",
+    "defs": [
+     "d17"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "or",
+    "block": 12,
+    "line": 289,
+    "stmt": "api . metric = or -> cost + or -> u . ext . type2_cost",
+    "defs": [
+     "d17"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 12,
+    "line": 289,
+    "stmt": "api . metric = or -> cost + or -> u . ext . type2_cost",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "or",
+    "block": 13,
+    "line": 290,
+    "stmt": "or -> path_type == OSPF_PATH_TYPE2_EXTERNAL",
+    "defs": [
+     "d17"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "or",
+    "block": 15,
+    "line": 291,
+    "stmt": "api . metric = or -> u . ext . type2_cost",
+    "defs": [
+     "d17"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 15,
+    "line": 291,
+    "stmt": "api . metric = or -> u . ext . type2_cost",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "or",
+    "block": 16,
+    "line": 293,
+    "stmt": "api . metric = or -> cost",
+    "defs": [
+     "d17"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 16,
+    "line": 293,
+    "stmt": "api . metric = or -> cost",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ospf",
+    "block": 17,
+    "line": 304,
+    "stmt": "distance = ospf_distance_apply ( ospf , p , or )",
+    "defs": [
+     "d15"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "p",
+    "block": 17,
+    "line": 304,
+    "stmt": "distance = ospf_distance_apply ( ospf , p , or )",
+    "defs": [
+     "d16"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "or",
+    "block": 17,
+    "line": 304,
+    "stmt": "distance = ospf_distance_apply ( ospf , p , or )",
+    "defs": [
+     "d17"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "distance",
+    "block": 17,
+    "line": 305,
+    "stmt": "distance",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 18,
+    "line": 299,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "or",
+    "block": 18,
+    "line": 300,
+    "stmt": "api . tag = or -> u . ext . tag",
+    "defs": [
+     "d17"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 18,
+    "line": 300,
+    "stmt": "api . tag = or -> u . ext . tag",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "node",
+    "block": 19,
+    "line": 310,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "or",
+    "block": 19,
+    "line": 310,
+    "stmt": "",
+    "defs": [
+     "d17"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "path",
+    "block": 19,
+    "line": 310,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "node",
+    "block": 19,
+    "line": 310,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "path",
+    "block": 19,
+    "line": 310,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 20,
+    "line": 306,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "distance",
+    "block": 20,
+    "line": 307,
+    "stmt": "api . distance = distance",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 20,
+    "line": 307,
+    "stmt": "api . distance = distance",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ospf",
+    "block": 22,
+    "line": 349,
+    "stmt": "",
+    "defs": [
+     "d15"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 23,
+    "line": 311,
+    "stmt": "api . nexthop_num >= ospf -> max_multipath",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ospf",
+    "block": 23,
+    "line": 311,
+    "stmt": "api . nexthop_num >= ospf -> max_multipath",
+    "defs": [
+     "d15"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "node",
+    "block": 24,
+    "line": 310,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "path",
+    "block": 24,
+    "line": 310,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "or",
+    "block": 25,
+    "line": 319,
+    "stmt": "or -> path_type != OSPF_PATH_INTRA_AREA",
+    "defs": [
+     "d17"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "ospf",
+    "block": 27,
+    "line": 335,
+    "stmt": "ospf_zebra_add_nexthop ( ospf , path , & api )",
+    "defs": [
+     "d15"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "path",
+    "block": 27,
+    "line": 335,
+    "stmt": "ospf_zebra_add_nexthop ( ospf , path , & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 27,
+    "line": 335,
+    "stmt": "ospf_zebra_add_nexthop ( ospf , path , & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "term_debug_ospf_zebra",
+    "block": 27,
+    "line": 337,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 28,
+    "line": 320,
+    "stmt": "struct zapi_nexthop * api_nh = & api . nexthops [ 0 ] ;",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nh_index",
+    "block": 28,
+    "line": 324,
+    "stmt": "nh_index < api . nexthop_num",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 28,
+    "line": 324,
+    "stmt": "nh_index < api . nexthop_num",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "duplicate_next_hop",
+    "block": 30,
+    "line": 331,
+    "stmt": "duplicate_next_hop",
+    "defs": [
+     "d13"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api_nh",
+    "block": 31,
+    "line": 325,
+    "stmt": "",
+    "defs": [
+     "d11"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "path",
+    "block": 31,
+    "line": 325,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "path",
+    "block": 38,
+    "line": 340,
+    "stmt": "ifp = if_lookup_by_index ( path -> ifindex , ospf -> vrf_id )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ospf",
+    "block": 38,
+    "line": 340,
+    "stmt": "ifp = if_lookup_by_index ( path -> ifindex , ospf -> vrf_id )",
+    "defs": [
+     "d15"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "_xrefdata",
+    "block": 39,
+    "line": 342,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 39,
+    "line": 342,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 39,
+    "line": 342,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "p",
+    "block": 39,
+    "line": 342,
+    "stmt": "",
+    "defs": [
+     "d16"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "ospf",
+    "block": 39,
+    "line": 342,
+    "stmt": "",
+    "defs": [
+     "d15"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "path",
+    "block": 39,
+    "line": 342,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ifp",
+    "block": 39,
+    "line": 342,
+    "stmt": "",
+    "defs": [
+     "d14"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "ospf_zclient",
+    "block": 42,
+    "line": 352,
+    "stmt": "zclient_route_send ( ZEBRA_ROUTE_ADD , ospf_zclient , & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 42,
+    "line": 352,
+    "stmt": "zclient_route_send ( ZEBRA_ROUTE_ADD , ospf_zclient , & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "or",
+    "block": 43,
+    "line": 350,
+    "stmt": "ospf_zebra_append_opaque_attr ( or , & api )",
+    "defs": [
+     "d17"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 43,
+    "line": 350,
+    "stmt": "ospf_zebra_append_opaque_attr ( or , & api )",
+    "defs": [],
+    "n_defs": 0
+   }
+  ],
+  "n_chains": 72,
+  "undef_uses": [
+   {
+    "use": "api",
+    "block": 4,
+    "line": 277,
+    "stmt": "zapi_route_init ( & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 278,
+    "stmt": "api . vrf_id = ospf -> vrf_id",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 279,
+    "stmt": "api . type = ZEBRA_ROUTE_OSPF",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 280,
+    "stmt": "api . instance = ospf -> instance",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 281,
+    "stmt": "api . safi = SAFI_UNICAST",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 283,
+    "stmt": "memcpy ( & api . prefix , p , sizeof ( * p ) )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 284,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 4,
+    "line": 287,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "term_debug_ospf_gr",
+    "block": 5,
+    "line": 271,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 8,
+    "line": 272,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 8,
+    "line": 272,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 8,
+    "line": 272,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 12,
+    "line": 289,
+    "stmt": "api . metric = or -> cost + or -> u . ext . type2_cost",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 15,
+    "line": 291,
+    "stmt": "api . metric = or -> u . ext . type2_cost",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 16,
+    "line": 293,
+    "stmt": "api . metric = or -> cost",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 18,
+    "line": 299,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 18,
+    "line": 300,
+    "stmt": "api . tag = or -> u . ext . tag",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "node",
+    "block": 19,
+    "line": 310,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "path",
+    "block": 19,
+    "line": 310,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "node",
+    "block": 19,
+    "line": 310,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "path",
+    "block": 19,
+    "line": 310,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 20,
+    "line": 306,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 20,
+    "line": 307,
+    "stmt": "api . distance = distance",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 23,
+    "line": 311,
+    "stmt": "api . nexthop_num >= ospf -> max_multipath",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "node",
+    "block": 24,
+    "line": 310,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "path",
+    "block": 24,
+    "line": 310,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "path",
+    "block": 27,
+    "line": 335,
+    "stmt": "ospf_zebra_add_nexthop ( ospf , path , & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 27,
+    "line": 335,
+    "stmt": "ospf_zebra_add_nexthop ( ospf , path , & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "term_debug_ospf_zebra",
+    "block": 27,
+    "line": 337,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 28,
+    "line": 320,
+    "stmt": "struct zapi_nexthop * api_nh = & api . nexthops [ 0 ] ;",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 28,
+    "line": 324,
+    "stmt": "nh_index < api . nexthop_num",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "path",
+    "block": 31,
+    "line": 325,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "path",
+    "block": 38,
+    "line": 340,
+    "stmt": "ifp = if_lookup_by_index ( path -> ifindex , ospf -> vrf_id )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 39,
+    "line": 342,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 39,
+    "line": 342,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 39,
+    "line": 342,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "path",
+    "block": 39,
+    "line": 342,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ospf_zclient",
+    "block": 42,
+    "line": 352,
+    "stmt": "zclient_route_send ( ZEBRA_ROUTE_ADD , ospf_zclient , & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 42,
+    "line": 352,
+    "stmt": "zclient_route_send ( ZEBRA_ROUTE_ADD , ospf_zclient , & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 43,
+    "line": 350,
+    "stmt": "ospf_zebra_append_opaque_attr ( or , & api )",
+    "defs": [],
+    "n_defs": 0
+   }
+  ]
+ },
+ "liveness": {
+  "live_in": {
+   "0": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_gr",
+    "term_debug_ospf_zebra"
+   ],
+   "1": [],
+   "2": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_gr",
+    "term_debug_ospf_zebra"
+   ],
+   "3": [],
+   "4": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "5": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p",
+    "term_debug_ospf_gr"
+   ],
+   "6": [],
+   "7": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "8": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "9": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "10": [],
+   "11": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "12": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "13": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "14": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "15": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "16": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "17": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "18": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "19": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "20": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "distance",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "21": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "22": [
+    "api",
+    "or",
+    "ospf",
+    "ospf_zclient"
+   ],
+   "23": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "24": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "25": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "26": [
+    "api",
+    "or",
+    "ospf",
+    "ospf_zclient"
+   ],
+   "27": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "28": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "29": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "30": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "31": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "32": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "33": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "34": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "35": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "36": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "37": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "38": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "39": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "ifp",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "40": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "ifp",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "41": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "42": [
+    "api",
+    "ospf_zclient"
+   ],
+   "43": [
+    "api",
+    "or",
+    "ospf_zclient"
+   ]
+  },
+  "live_out": {
+   "0": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_gr",
+    "term_debug_ospf_zebra"
+   ],
+   "1": [],
+   "2": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_gr",
+    "term_debug_ospf_zebra"
+   ],
+   "3": [],
+   "4": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "5": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "6": [],
+   "7": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "8": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "9": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "10": [],
+   "11": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "12": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "13": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "14": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "15": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "16": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "17": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "distance",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "18": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "19": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "20": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "21": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "22": [
+    "api",
+    "or",
+    "ospf_zclient"
+   ],
+   "23": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "24": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "25": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "26": [
+    "api",
+    "or",
+    "ospf",
+    "ospf_zclient"
+   ],
+   "27": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "28": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "29": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "30": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "31": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "32": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "33": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "34": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "35": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "36": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "37": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "38": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "ifp",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "39": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "ifp",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "40": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "ifp",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "41": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "api_nh",
+    "duplicate_next_hop",
+    "node",
+    "or",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "path",
+    "term_debug_ospf_zebra"
+   ],
+   "42": [],
+   "43": [
+    "api",
+    "ospf_zclient"
+   ]
+  },
+  "params_live_at_entry": [
+   "or",
+   "ospf",
+   "p"
+  ]
+ },
+ "meta": {
+  "compute_ms": 313.5,
+  "unreachable_stmts_skipped": 0,
+  "cache_key": "96437718ded8835529da8b70ed28a769296ec021ee81d43fa73286a4a191d850"
+ },
+ "cache": {
+  "hit": false,
+  "key": "96437718ded8835529da8b70ed28a769296ec021ee81d43fa73286a4a191d850",
+  "path": "/home/z/my-project/poc/facts/p5/cache/slices/96437718ded8835529da8b70ed28a769296ec021ee81d43fa73286a4a191d850.json",
+  "tool_ver": "p5-slice/1.0.0+clang18"
+ }
+}

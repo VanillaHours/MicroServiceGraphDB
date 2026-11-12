@@ -1,0 +1,93 @@
+{
+ "ok": true,
+ "question": "path from svc:bgpd to svc:zebra",
+ "intent": "path",
+ "routed": {
+  "intent": "path",
+  "confidence": 1.0,
+  "scores": {
+   "slice": 0,
+   "callers": 0,
+   "impact": 0,
+   "path": 5,
+   "docs": 0,
+   "explain": 0
+  },
+  "rules_fired": [
+   [
+    "path",
+    "path"
+   ],
+   [
+    "path",
+    "from svc:bgpd to"
+   ]
+  ]
+ },
+ "entities": [
+  {
+   "mention": "bgpd",
+   "kind": "svc",
+   "ids": [
+    "svc:bgpd"
+   ],
+   "n_ids": 1
+  },
+  {
+   "mention": "zebra",
+   "kind": "svc",
+   "ids": [
+    "svc:zebra"
+   ],
+   "n_ids": 1
+  }
+ ],
+ "meta": {
+  "latency_ms": 0.3,
+  "cache_hit": false,
+  "fingerprint": "db5d33a41bf1d576",
+  "cache_key": "a0fe45eae834d3da93e254345fa4f8ef2720cc8706227d2a87a36c55076e3821"
+ },
+ "answer": {
+  "intent": "path",
+  "src": "svc:bgpd",
+  "dst": "svc:zebra",
+  "via": "zapi:ZEBRA_ROUTE_ADD",
+  "hops": 2,
+  "path": [
+   {
+    "from": "svc:bgpd",
+    "to": "zapi:ZEBRA_ROUTE_ADD",
+    "rel": "publishes",
+    "dir": "out"
+   },
+   {
+    "from": "zapi:ZEBRA_ROUTE_ADD",
+    "to": "svc:zebra",
+    "rel": "handles",
+    "dir": "in"
+   }
+  ],
+  "evidence": [
+   {
+    "hop": 1,
+    "rel": "publishes",
+    "dir": "out",
+    "evidence": [
+     "DECLARED:wiring"
+    ],
+    "src_ref": "fusion:send-grep"
+   },
+   {
+    "hop": 2,
+    "rel": "handles",
+    "dir": "in",
+    "evidence": [
+     "DECLARED:wiring"
+    ],
+    "src_ref": "zebra/zapi_msg.c:4133"
+   }
+  ]
+ },
+ "text": "path svc:bgpd -> svc:zebra  (2 hops)  via zapi:ZEBRA_ROUTE_ADD (ZAPI flow)\n  svc:bgpd -publishes-> zapi:ZEBRA_ROUTE_ADD\n  zapi:ZEBRA_ROUTE_ADD <-handles- svc:zebra\n  evidence items: 2 (per-hop tag:plane + src_ref)"
+}

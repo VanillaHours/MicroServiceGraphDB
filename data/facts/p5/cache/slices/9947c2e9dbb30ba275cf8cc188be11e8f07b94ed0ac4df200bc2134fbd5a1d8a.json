@@ -1,0 +1,264 @@
+{
+ "scope": {
+  "file": "lib/zclient.c",
+  "function": "zclient_route_send",
+  "line_span": [
+   971,
+   977
+  ],
+  "params": [
+   {
+    "name": "cmd",
+    "type": "uint8_t"
+   },
+   {
+    "name": "zclient",
+    "type": "struct zclient *"
+   },
+   {
+    "name": "api",
+    "type": "struct zapi_route *"
+   }
+  ]
+ },
+ "tool_ver": "p5-slice/1.0.0+clang18",
+ "cfg": {
+  "entry": 0,
+  "exit": 1,
+  "n_blocks": 4,
+  "n_edges": 4,
+  "blocks": [
+   {
+    "id": 0,
+    "tag": "entry",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 974,
+      "spell": "zapi_route_encode ( cmd , zclient -> obuf , api ) < 0",
+      "defs": [],
+      "uses": [
+       "cmd",
+       "zclient",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      3,
+      "then"
+     ],
+     [
+      2,
+      "no-else"
+     ]
+    ],
+    "pred": []
+   },
+   {
+    "id": 1,
+    "tag": "exit",
+    "stmts": [],
+    "succ": [],
+    "pred": [
+     [
+      3,
+      "return"
+     ],
+     [
+      2,
+      "return"
+     ]
+    ]
+   },
+   {
+    "id": 2,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "RETURN_STMT",
+      "line": 976,
+      "spell": "return zclient_send_message ( zclient )",
+      "defs": [],
+      "uses": [
+       "zclient"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 3,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "RETURN_STMT",
+      "line": 975,
+      "spell": "return ZCLIENT_SEND_FAILURE",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "then"
+     ]
+    ]
+   }
+  ],
+  "edges": [
+   {
+    "from": 0,
+    "to": 3,
+    "kind": "then"
+   },
+   {
+    "from": 3,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 0,
+    "to": 2,
+    "kind": "no-else"
+   },
+   {
+    "from": 2,
+    "to": 1,
+    "kind": "return"
+   }
+  ]
+ },
+ "dfg": {
+  "defs": [
+   {
+    "id": "d0",
+    "var": "cmd",
+    "block": 0,
+    "stmt": -1,
+    "line": 972,
+    "kind": "param",
+    "type": "uint8_t"
+   },
+   {
+    "id": "d1",
+    "var": "zclient",
+    "block": 0,
+    "stmt": -1,
+    "line": 972,
+    "kind": "param",
+    "type": "struct zclient *"
+   },
+   {
+    "id": "d2",
+    "var": "api",
+    "block": 0,
+    "stmt": -1,
+    "line": 972,
+    "kind": "param",
+    "type": "struct zapi_route *"
+   }
+  ],
+  "chains": [
+   {
+    "use": "cmd",
+    "block": 0,
+    "line": 974,
+    "stmt": "zapi_route_encode ( cmd , zclient -> obuf , api ) < 0",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "zclient",
+    "block": 0,
+    "line": 974,
+    "stmt": "zapi_route_encode ( cmd , zclient -> obuf , api ) < 0",
+    "defs": [
+     "d1"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 0,
+    "line": 974,
+    "stmt": "zapi_route_encode ( cmd , zclient -> obuf , api ) < 0",
+    "defs": [
+     "d2"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "zclient",
+    "block": 2,
+    "line": 976,
+    "stmt": "return zclient_send_message ( zclient )",
+    "defs": [
+     "d1"
+    ],
+    "n_defs": 1
+   }
+  ],
+  "n_chains": 4,
+  "undef_uses": []
+ },
+ "liveness": {
+  "live_in": {
+   "0": [
+    "api",
+    "cmd",
+    "zclient"
+   ],
+   "1": [],
+   "2": [
+    "zclient"
+   ],
+   "3": []
+  },
+  "live_out": {
+   "0": [
+    "zclient"
+   ],
+   "1": [],
+   "2": [],
+   "3": []
+  },
+  "params_live_at_entry": [
+   "api",
+   "cmd",
+   "zclient"
+  ]
+ },
+ "meta": {
+  "compute_ms": 265.6,
+  "unreachable_stmts_skipped": 0,
+  "cache_key": "9947c2e9dbb30ba275cf8cc188be11e8f07b94ed0ac4df200bc2134fbd5a1d8a"
+ },
+ "cache": {
+  "hit": false,
+  "key": "9947c2e9dbb30ba275cf8cc188be11e8f07b94ed0ac4df200bc2134fbd5a1d8a",
+  "path": "/home/z/my-project/poc/facts/p5/cache/slices/9947c2e9dbb30ba275cf8cc188be11e8f07b94ed0ac4df200bc2134fbd5a1d8a.json",
+  "tool_ver": "p5-slice/1.0.0+clang18"
+ }
+}

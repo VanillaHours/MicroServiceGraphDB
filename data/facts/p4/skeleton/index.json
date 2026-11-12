@@ -1,0 +1,327 @@
+{
+ "atoms": [
+  {
+   "id": "aeba72d8",
+   "refs": [
+    {
+     "k": "S",
+     "r": "graph.nodes"
+    },
+    {
+     "k": "S",
+     "r": "graph.edges"
+    }
+   ],
+   "tpl": "The fused graph contains 30229 nodes and 54246 fused edges."
+  },
+  {
+   "id": "a345e6fa",
+   "refs": [
+    {
+     "k": "S",
+     "r": "backbone.nodes"
+    },
+    {
+     "k": "S",
+     "r": "backbone.edges"
+    },
+    {
+     "k": "S",
+     "r": "slice.svc"
+    }
+   ],
+   "tpl": "The P3 semantic backbone carries 557 nodes and 782 weighted edges over 5 services."
+  },
+  {
+   "id": "a9755b27",
+   "refs": [
+    {
+     "k": "S",
+     "r": "seed"
+    },
+    {
+     "k": "S",
+     "r": "gamma.L1"
+    },
+    {
+     "k": "S",
+     "r": "clusters.L1"
+    },
+    {
+     "k": "S",
+     "r": "clusters.L2"
+    },
+    {
+     "k": "S",
+     "r": "clusters.L3"
+    }
+   ],
+   "tpl": "Hierarchical Leiden (seed 42, L1 resolution 1.2) partitioned the backbone into 5 functional domains, 5 service areas and 193 code modules."
+  },
+  {
+   "id": "ac7cf2e7",
+   "refs": [
+    {
+     "k": "F",
+     "r": "nb_yang_join.hits"
+    },
+    {
+     "k": "F",
+     "r": "nb_yang_join.total_nb"
+    },
+    {
+     "k": "F",
+     "r": "nb_yang_join.pct"
+    },
+    {
+     "k": "S",
+     "r": "nb_join.hits"
+    },
+    {
+     "k": "S",
+     "r": "nb_join.total"
+    },
+    {
+     "k": "S",
+     "r": "nb_join.pct"
+    }
+   ],
+   "tpl": "The northbound join matched 426 of 426 handler-table registrations to YANG schema paths (100%)."
+  },
+  {
+   "id": "a9df207f",
+   "refs": [
+    {
+     "k": "S",
+     "r": "findings.orphan"
+    },
+    {
+     "k": "S",
+     "r": "findings.dropped"
+    },
+    {
+     "k": "S",
+     "r": "findings.dead"
+    },
+    {
+     "k": "S",
+     "r": "findings.flows"
+    }
+   ],
+   "tpl": "Open findings: 44 orphan handlers, 7 dropped-on-wire messages, 4 dead registrations and 111 verified cross-service ZAPI flows."
+  },
+  {
+   "id": "abeb63f3",
+   "refs": [
+    {
+     "k": "S",
+     "r": "svc.partition"
+    }
+   ],
+   "tpl": "Code responsibilities are partitioned across 6 service partitions, including svc:fpm."
+  }
+ ],
+ "claims": "yes",
+ "okf_level": "L0-index",
+ "page_id": "index.md",
+ "sources": [
+  "p2/graph.json",
+  "p3/backbone.json",
+  "p3/clusters.jsonl",
+  "p3/profiles.jsonl",
+  "p2/findings.json",
+  "p3/packs/*.json"
+ ],
+ "toc_atoms": [
+  {
+   "id": "a3980ff5",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D1737981e"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.members"
+    }
+   ],
+   "tpl": "D1737981e \u2014 lib [34z/147y]: 182 members \u2192 clusters/D1737981e.md"
+  },
+  {
+   "id": "a02ac317",
+   "refs": [
+    {
+     "k": "N",
+     "r": "svc:lib"
+    },
+    {
+     "k": "C",
+     "r": "D1737981e"
+    },
+    {
+     "k": "S",
+     "r": "pack.D1737981e.modules.n"
+    }
+   ],
+   "tpl": "svc:lib \u2014 59 code modules, domain D1737981e \u2192 daemons/lib.md"
+  },
+  {
+   "id": "aa5b31f9",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D3063a0b0"
+    },
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.members"
+    }
+   ],
+   "tpl": "D3063a0b0 \u2014 bgpd [41z/65y]: 107 members \u2192 clusters/D3063a0b0.md"
+  },
+  {
+   "id": "a0cc0754",
+   "refs": [
+    {
+     "k": "N",
+     "r": "svc:bgpd"
+    },
+    {
+     "k": "C",
+     "r": "D3063a0b0"
+    },
+    {
+     "k": "S",
+     "r": "pack.D3063a0b0.modules.n"
+    }
+   ],
+   "tpl": "svc:bgpd \u2014 37 code modules, domain D3063a0b0 \u2192 daemons/bgpd.md"
+  },
+  {
+   "id": "aafe0748",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D4b2a9ab8"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.members"
+    }
+   ],
+   "tpl": "D4b2a9ab8 \u2014 zebra [46z/170y]: 217 members \u2192 clusters/D4b2a9ab8.md"
+  },
+  {
+   "id": "a4448e2d",
+   "refs": [
+    {
+     "k": "N",
+     "r": "svc:zebra"
+    },
+    {
+     "k": "C",
+     "r": "D4b2a9ab8"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.modules.n"
+    }
+   ],
+   "tpl": "svc:zebra \u2014 48 code modules, domain D4b2a9ab8 \u2192 daemons/zebra.md"
+  },
+  {
+   "id": "a6e38ec3",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Dc32724de"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.members"
+    }
+   ],
+   "tpl": "Dc32724de \u2014 staticd [6z/27y]: 34 members \u2192 clusters/Dc32724de.md"
+  },
+  {
+   "id": "a5a363b5",
+   "refs": [
+    {
+     "k": "N",
+     "r": "svc:staticd"
+    },
+    {
+     "k": "C",
+     "r": "Dc32724de"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.modules.n"
+    }
+   ],
+   "tpl": "svc:staticd \u2014 19 code modules, domain Dc32724de \u2192 daemons/staticd.md"
+  },
+  {
+   "id": "a882cf2a",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Ded29f1c0"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.members"
+    }
+   ],
+   "tpl": "Ded29f1c0 \u2014 ospfd [15z/1y]: 17 members \u2192 clusters/Ded29f1c0.md"
+  },
+  {
+   "id": "a79d79ed",
+   "refs": [
+    {
+     "k": "N",
+     "r": "svc:ospfd"
+    },
+    {
+     "k": "C",
+     "r": "Ded29f1c0"
+    },
+    {
+     "k": "S",
+     "r": "pack.Ded29f1c0.modules.n"
+    }
+   ],
+   "tpl": "svc:ospfd \u2014 29 code modules, domain Ded29f1c0 \u2192 daemons/ospfd.md"
+  },
+  {
+   "id": "a7785e89",
+   "refs": [
+    {
+     "k": "D",
+     "r": "doc/user/ospfd.rst"
+    }
+   ],
+   "tpl": "ADR-0001 \u2014 inter-daemon IPC goes through zebra (authored) \u2192 adrs/ADR-0001-zapi-ipc.md"
+  },
+  {
+   "id": "a4f5dd5b",
+   "refs": [
+    {
+     "k": "D",
+     "r": "doc/user/mgmtd.rst"
+    }
+   ],
+   "tpl": "ADR-0002 \u2014 management data is YANG-typed (authored) \u2192 adrs/ADR-0002-yang-mgmt.md"
+  },
+  {
+   "id": "a0f593c8",
+   "refs": [
+    {
+     "k": "D",
+     "r": "doc/user/zebra.rst"
+    }
+   ],
+   "tpl": "ADR-0003 \u2014 zebra owns kernel routing-table updates (authored) \u2192 adrs/ADR-0003-zebra-kernel.md"
+  }
+ ]
+}

@@ -1,0 +1,1832 @@
+{
+ "scope": {
+  "file": "zebra/zapi_msg.c",
+  "function": "zserv_handle_commands",
+  "line_span": [
+   4235,
+   4302
+  ],
+  "params": [
+   {
+    "name": "client",
+    "type": "struct zserv *"
+   },
+   {
+    "name": "fifo",
+    "type": "struct stream_fifo *"
+   }
+  ]
+ },
+ "tool_ver": "p5-slice/1.0.0+clang18",
+ "cfg": {
+  "entry": 0,
+  "exit": 1,
+  "n_blocks": 23,
+  "n_edges": 27,
+  "blocks": [
+   {
+    "id": 0,
+    "tag": "entry",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 4237,
+      "spell": "struct zmsghdr hdr ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 4238,
+      "spell": "struct zebra_vrf * zvrf ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 4239,
+      "spell": "struct stream * msg ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 4240,
+      "spell": "struct stream_fifo temp_fifo ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 4242,
+      "spell": "stream_fifo_init ( & temp_fifo )",
+      "defs": [],
+      "uses": [
+       "temp_fifo"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 4244,
+      "spell": "stream_fifo_head ( fifo )",
+      "defs": [],
+      "uses": [
+       "fifo"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      2,
+      "next"
+     ]
+    ],
+    "pred": []
+   },
+   {
+    "id": 1,
+    "tag": "exit",
+    "stmts": [],
+    "succ": [],
+    "pred": [
+     [
+      21,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 2,
+    "tag": "while-head",
+    "stmts": [],
+    "succ": [
+     [
+      3,
+      "exit-false"
+     ],
+     [
+      4,
+      "loop-true"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "next"
+     ],
+     [
+      20,
+      "latch"
+     ]
+    ]
+   },
+   {
+    "id": 3,
+    "tag": "while-exit",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4298,
+      "spell": "stream_fifo_head ( & temp_fifo ) != NULL",
+      "defs": [],
+      "uses": [
+       "temp_fifo"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      22,
+      "then"
+     ],
+     [
+      21,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      2,
+      "exit-false"
+     ]
+    ]
+   },
+   {
+    "id": 4,
+    "tag": "while-body",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4245,
+      "spell": "msg = stream_fifo_pop ( fifo )",
+      "defs": [
+       [
+        "msg",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "fifo"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4247,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "msg"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      6,
+      "then"
+     ],
+     [
+      5,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      2,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 5,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 4256,
+      "spell": "zapi_parse_header ( msg , & hdr )",
+      "defs": [],
+      "uses": [
+       "msg",
+       "hdr"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4258,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "zebra_debug_packet"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      13,
+      "then"
+     ],
+     [
+      12,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      4,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 6,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4248,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "zebra_debug_packet"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      8,
+      "then"
+     ],
+     [
+      7,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      4,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 7,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "GOTO_STMT",
+      "line": 4253,
+      "spell": "goto continue_loop",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [],
+    "pred": [
+     [
+      11,
+      "fallthrough"
+     ],
+     [
+      6,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 8,
+    "tag": "then",
+    "stmts": [],
+    "succ": [
+     [
+      9,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      6,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 9,
+    "tag": "do-body",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 4249,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 4249,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xrefdata"
+      ]
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 4249,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 4249,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref",
+       "msg"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      10,
+      "cond"
+     ]
+    ],
+    "pred": [
+     [
+      8,
+      "next"
+     ],
+     [
+      10,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 10,
+    "tag": "do-cond",
+    "stmts": [
+     {
+      "kind": "INTEGER_LITERAL",
+      "line": 4249,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      9,
+      "loop-true"
+     ],
+     [
+      11,
+      "exit-false"
+     ]
+    ],
+    "pred": [
+     [
+      9,
+      "cond"
+     ]
+    ]
+   },
+   {
+    "id": 11,
+    "tag": "do-exit",
+    "stmts": [],
+    "succ": [
+     [
+      7,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      10,
+      "exit-false"
+     ]
+    ]
+   },
+   {
+    "id": 12,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "COMPOUND_ASSIGNMENT_OPERATOR",
+      "line": 4262,
+      "spell": "hdr . length -= ZEBRA_HEADER_SIZE",
+      "defs": [],
+      "uses": [
+       "hdr"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 4267,
+      "spell": "zebra_opaque_handles_msgid ( hdr . command )",
+      "defs": [],
+      "uses": [
+       "hdr"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      15,
+      "then"
+     ],
+     [
+      14,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      13,
+      "fallthrough"
+     ],
+     [
+      5,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 13,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 4260,
+      "spell": "zserv_log_message ( NULL , msg , & hdr )",
+      "defs": [],
+      "uses": [
+       "msg",
+       "hdr"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      12,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      5,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 14,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4279,
+      "spell": "zvrf = zebra_vrf_lookup_by_id ( hdr . vrf_id )",
+      "defs": [
+       [
+        "zvrf",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "hdr"
+      ]
+     },
+     {
+      "kind": "UNARY_OPERATOR",
+      "line": 4280,
+      "spell": "! zvrf",
+      "defs": [],
+      "uses": [
+       "zvrf"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      17,
+      "then"
+     ],
+     [
+      16,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      12,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 15,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 4269,
+      "spell": "stream_set_getp ( msg , 0 )",
+      "defs": [],
+      "uses": [
+       "msg"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 4271,
+      "spell": "stream_fifo_push ( & temp_fifo , msg )",
+      "defs": [],
+      "uses": [
+       "temp_fifo",
+       "msg"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4274,
+      "spell": "msg = NULL",
+      "defs": [
+       [
+        "msg",
+        "assign"
+       ]
+      ],
+      "uses": []
+     },
+     {
+      "kind": "GOTO_STMT",
+      "line": 4275,
+      "spell": "goto continue_loop",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [],
+    "pred": [
+     [
+      12,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 16,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 4285,
+      "spell": "hdr . command >= array_size ( zserv_handlers ) || zserv_handlers [ hdr . command ] == NULL",
+      "defs": [],
+      "uses": [
+       "hdr",
+       "zserv_handlers"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      19,
+      "then"
+     ],
+     [
+      18,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      14,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 17,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 4281,
+      "spell": "zserv_error_no_vrf ( client , & hdr , msg , zvrf )",
+      "defs": [],
+      "uses": [
+       "client",
+       "hdr",
+       "msg",
+       "zvrf"
+      ]
+     },
+     {
+      "kind": "GOTO_STMT",
+      "line": 4282,
+      "spell": "goto continue_loop",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [],
+    "pred": [
+     [
+      14,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 18,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 4291,
+      "spell": "zserv_handlers [ hdr . command ] ( client , & hdr , msg , zvrf )",
+      "defs": [],
+      "uses": [
+       "zserv_handlers",
+       "hdr",
+       "client",
+       "msg",
+       "zvrf"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      20,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      16,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 19,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 4287,
+      "spell": "zserv_error_invalid_msg_type ( client , & hdr , msg , zvrf )",
+      "defs": [],
+      "uses": [
+       "client",
+       "hdr",
+       "msg",
+       "zvrf"
+      ]
+     },
+     {
+      "kind": "GOTO_STMT",
+      "line": 4288,
+      "spell": "goto continue_loop",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [],
+    "pred": [
+     [
+      16,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 20,
+    "tag": "label",
+    "stmts": [
+     {
+      "kind": "LABEL_STMT",
+      "line": 4293,
+      "spell": "continue_loop : stream_free ( msg )",
+      "defs": [],
+      "uses": [
+       "msg"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      2,
+      "latch"
+     ]
+    ],
+    "pred": [
+     [
+      18,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 21,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 4301,
+      "spell": "stream_fifo_deinit ( & temp_fifo )",
+      "defs": [],
+      "uses": [
+       "temp_fifo"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      22,
+      "fallthrough"
+     ],
+     [
+      3,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 22,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 4299,
+      "spell": "zebra_opaque_enqueue_batch ( & temp_fifo )",
+      "defs": [],
+      "uses": [
+       "temp_fifo"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      21,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      3,
+      "then"
+     ]
+    ]
+   }
+  ],
+  "edges": [
+   {
+    "from": 0,
+    "to": 2,
+    "kind": "next"
+   },
+   {
+    "from": 2,
+    "to": 3,
+    "kind": "exit-false"
+   },
+   {
+    "from": 2,
+    "to": 4,
+    "kind": "loop-true"
+   },
+   {
+    "from": 4,
+    "to": 6,
+    "kind": "then"
+   },
+   {
+    "from": 6,
+    "to": 8,
+    "kind": "then"
+   },
+   {
+    "from": 8,
+    "to": 9,
+    "kind": "next"
+   },
+   {
+    "from": 9,
+    "to": 10,
+    "kind": "cond"
+   },
+   {
+    "from": 10,
+    "to": 9,
+    "kind": "loop-true"
+   },
+   {
+    "from": 10,
+    "to": 11,
+    "kind": "exit-false"
+   },
+   {
+    "from": 11,
+    "to": 7,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 6,
+    "to": 7,
+    "kind": "no-else"
+   },
+   {
+    "from": 4,
+    "to": 5,
+    "kind": "no-else"
+   },
+   {
+    "from": 5,
+    "to": 13,
+    "kind": "then"
+   },
+   {
+    "from": 13,
+    "to": 12,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 5,
+    "to": 12,
+    "kind": "no-else"
+   },
+   {
+    "from": 12,
+    "to": 15,
+    "kind": "then"
+   },
+   {
+    "from": 12,
+    "to": 14,
+    "kind": "no-else"
+   },
+   {
+    "from": 14,
+    "to": 17,
+    "kind": "then"
+   },
+   {
+    "from": 14,
+    "to": 16,
+    "kind": "no-else"
+   },
+   {
+    "from": 16,
+    "to": 19,
+    "kind": "then"
+   },
+   {
+    "from": 16,
+    "to": 18,
+    "kind": "no-else"
+   },
+   {
+    "from": 18,
+    "to": 20,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 20,
+    "to": 2,
+    "kind": "latch"
+   },
+   {
+    "from": 3,
+    "to": 22,
+    "kind": "then"
+   },
+   {
+    "from": 22,
+    "to": 21,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 3,
+    "to": 21,
+    "kind": "no-else"
+   },
+   {
+    "from": 21,
+    "to": 1,
+    "kind": "fallthrough"
+   }
+  ]
+ },
+ "dfg": {
+  "defs": [
+   {
+    "id": "d3",
+    "var": "client",
+    "block": 0,
+    "stmt": -1,
+    "line": 4235,
+    "kind": "param",
+    "type": "struct zserv *"
+   },
+   {
+    "id": "d4",
+    "var": "fifo",
+    "block": 0,
+    "stmt": -1,
+    "line": 4235,
+    "kind": "param",
+    "type": "struct stream_fifo *"
+   },
+   {
+    "id": "d0",
+    "var": "msg",
+    "block": 4,
+    "stmt": 0,
+    "line": 4245,
+    "kind": "assign"
+   },
+   {
+    "id": "d1",
+    "var": "zvrf",
+    "block": 14,
+    "stmt": 0,
+    "line": 4279,
+    "kind": "assign"
+   },
+   {
+    "id": "d2",
+    "var": "msg",
+    "block": 15,
+    "stmt": 2,
+    "line": 4274,
+    "kind": "assign"
+   }
+  ],
+  "chains": [
+   {
+    "use": "temp_fifo",
+    "block": 0,
+    "line": 4242,
+    "stmt": "stream_fifo_init ( & temp_fifo )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "fifo",
+    "block": 0,
+    "line": 4244,
+    "stmt": "stream_fifo_head ( fifo )",
+    "defs": [
+     "d4"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "temp_fifo",
+    "block": 3,
+    "line": 4298,
+    "stmt": "stream_fifo_head ( & temp_fifo ) != NULL",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "fifo",
+    "block": 4,
+    "line": 4245,
+    "stmt": "msg = stream_fifo_pop ( fifo )",
+    "defs": [
+     "d4"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "msg",
+    "block": 4,
+    "line": 4247,
+    "stmt": "",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "msg",
+    "block": 5,
+    "line": 4256,
+    "stmt": "zapi_parse_header ( msg , & hdr )",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "hdr",
+    "block": 5,
+    "line": 4256,
+    "stmt": "zapi_parse_header ( msg , & hdr )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zebra_debug_packet",
+    "block": 5,
+    "line": 4258,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zebra_debug_packet",
+    "block": 6,
+    "line": 4248,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 9,
+    "line": 4249,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 9,
+    "line": 4249,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 9,
+    "line": 4249,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "msg",
+    "block": 9,
+    "line": 4249,
+    "stmt": "",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "hdr",
+    "block": 12,
+    "line": 4262,
+    "stmt": "hdr . length -= ZEBRA_HEADER_SIZE",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "hdr",
+    "block": 12,
+    "line": 4267,
+    "stmt": "zebra_opaque_handles_msgid ( hdr . command )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "msg",
+    "block": 13,
+    "line": 4260,
+    "stmt": "zserv_log_message ( NULL , msg , & hdr )",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "hdr",
+    "block": 13,
+    "line": 4260,
+    "stmt": "zserv_log_message ( NULL , msg , & hdr )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "hdr",
+    "block": 14,
+    "line": 4279,
+    "stmt": "zvrf = zebra_vrf_lookup_by_id ( hdr . vrf_id )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zvrf",
+    "block": 14,
+    "line": 4280,
+    "stmt": "! zvrf",
+    "defs": [
+     "d1"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "msg",
+    "block": 15,
+    "line": 4269,
+    "stmt": "stream_set_getp ( msg , 0 )",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "temp_fifo",
+    "block": 15,
+    "line": 4271,
+    "stmt": "stream_fifo_push ( & temp_fifo , msg )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "msg",
+    "block": 15,
+    "line": 4271,
+    "stmt": "stream_fifo_push ( & temp_fifo , msg )",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "hdr",
+    "block": 16,
+    "line": 4285,
+    "stmt": "hdr . command >= array_size ( zserv_handlers ) || zserv_handlers [ hdr . command",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zserv_handlers",
+    "block": 16,
+    "line": 4285,
+    "stmt": "hdr . command >= array_size ( zserv_handlers ) || zserv_handlers [ hdr . command",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "client",
+    "block": 17,
+    "line": 4281,
+    "stmt": "zserv_error_no_vrf ( client , & hdr , msg , zvrf )",
+    "defs": [
+     "d3"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "hdr",
+    "block": 17,
+    "line": 4281,
+    "stmt": "zserv_error_no_vrf ( client , & hdr , msg , zvrf )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "msg",
+    "block": 17,
+    "line": 4281,
+    "stmt": "zserv_error_no_vrf ( client , & hdr , msg , zvrf )",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "zvrf",
+    "block": 17,
+    "line": 4281,
+    "stmt": "zserv_error_no_vrf ( client , & hdr , msg , zvrf )",
+    "defs": [
+     "d1"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "zserv_handlers",
+    "block": 18,
+    "line": 4291,
+    "stmt": "zserv_handlers [ hdr . command ] ( client , & hdr , msg , zvrf )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "hdr",
+    "block": 18,
+    "line": 4291,
+    "stmt": "zserv_handlers [ hdr . command ] ( client , & hdr , msg , zvrf )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "client",
+    "block": 18,
+    "line": 4291,
+    "stmt": "zserv_handlers [ hdr . command ] ( client , & hdr , msg , zvrf )",
+    "defs": [
+     "d3"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "msg",
+    "block": 18,
+    "line": 4291,
+    "stmt": "zserv_handlers [ hdr . command ] ( client , & hdr , msg , zvrf )",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "zvrf",
+    "block": 18,
+    "line": 4291,
+    "stmt": "zserv_handlers [ hdr . command ] ( client , & hdr , msg , zvrf )",
+    "defs": [
+     "d1"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "client",
+    "block": 19,
+    "line": 4287,
+    "stmt": "zserv_error_invalid_msg_type ( client , & hdr , msg , zvrf )",
+    "defs": [
+     "d3"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "hdr",
+    "block": 19,
+    "line": 4287,
+    "stmt": "zserv_error_invalid_msg_type ( client , & hdr , msg , zvrf )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "msg",
+    "block": 19,
+    "line": 4287,
+    "stmt": "zserv_error_invalid_msg_type ( client , & hdr , msg , zvrf )",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "zvrf",
+    "block": 19,
+    "line": 4287,
+    "stmt": "zserv_error_invalid_msg_type ( client , & hdr , msg , zvrf )",
+    "defs": [
+     "d1"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "msg",
+    "block": 20,
+    "line": 4293,
+    "stmt": "continue_loop : stream_free ( msg )",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "temp_fifo",
+    "block": 21,
+    "line": 4301,
+    "stmt": "stream_fifo_deinit ( & temp_fifo )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "temp_fifo",
+    "block": 22,
+    "line": 4299,
+    "stmt": "zebra_opaque_enqueue_batch ( & temp_fifo )",
+    "defs": [],
+    "n_defs": 0
+   }
+  ],
+  "n_chains": 40,
+  "undef_uses": [
+   {
+    "use": "temp_fifo",
+    "block": 0,
+    "line": 4242,
+    "stmt": "stream_fifo_init ( & temp_fifo )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "temp_fifo",
+    "block": 3,
+    "line": 4298,
+    "stmt": "stream_fifo_head ( & temp_fifo ) != NULL",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "hdr",
+    "block": 5,
+    "line": 4256,
+    "stmt": "zapi_parse_header ( msg , & hdr )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zebra_debug_packet",
+    "block": 5,
+    "line": 4258,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zebra_debug_packet",
+    "block": 6,
+    "line": 4248,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 9,
+    "line": 4249,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 9,
+    "line": 4249,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 9,
+    "line": 4249,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "hdr",
+    "block": 12,
+    "line": 4262,
+    "stmt": "hdr . length -= ZEBRA_HEADER_SIZE",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "hdr",
+    "block": 12,
+    "line": 4267,
+    "stmt": "zebra_opaque_handles_msgid ( hdr . command )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "hdr",
+    "block": 13,
+    "line": 4260,
+    "stmt": "zserv_log_message ( NULL , msg , & hdr )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "hdr",
+    "block": 14,
+    "line": 4279,
+    "stmt": "zvrf = zebra_vrf_lookup_by_id ( hdr . vrf_id )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "temp_fifo",
+    "block": 15,
+    "line": 4271,
+    "stmt": "stream_fifo_push ( & temp_fifo , msg )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "hdr",
+    "block": 16,
+    "line": 4285,
+    "stmt": "hdr . command >= array_size ( zserv_handlers ) || zserv_handlers [ hdr . command",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zserv_handlers",
+    "block": 16,
+    "line": 4285,
+    "stmt": "hdr . command >= array_size ( zserv_handlers ) || zserv_handlers [ hdr . command",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "hdr",
+    "block": 17,
+    "line": 4281,
+    "stmt": "zserv_error_no_vrf ( client , & hdr , msg , zvrf )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zserv_handlers",
+    "block": 18,
+    "line": 4291,
+    "stmt": "zserv_handlers [ hdr . command ] ( client , & hdr , msg , zvrf )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "hdr",
+    "block": 18,
+    "line": 4291,
+    "stmt": "zserv_handlers [ hdr . command ] ( client , & hdr , msg , zvrf )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "hdr",
+    "block": 19,
+    "line": 4287,
+    "stmt": "zserv_error_invalid_msg_type ( client , & hdr , msg , zvrf )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "temp_fifo",
+    "block": 21,
+    "line": 4301,
+    "stmt": "stream_fifo_deinit ( & temp_fifo )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "temp_fifo",
+    "block": 22,
+    "line": 4299,
+    "stmt": "zebra_opaque_enqueue_batch ( & temp_fifo )",
+    "defs": [],
+    "n_defs": 0
+   }
+  ]
+ },
+ "liveness": {
+  "live_in": {
+   "0": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers"
+   ],
+   "1": [],
+   "2": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers"
+   ],
+   "3": [
+    "temp_fifo"
+   ],
+   "4": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers"
+   ],
+   "5": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "msg",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers"
+   ],
+   "6": [
+    "_xref",
+    "_xrefdata",
+    "msg",
+    "zebra_debug_packet"
+   ],
+   "7": [],
+   "8": [
+    "_xref",
+    "_xrefdata",
+    "msg"
+   ],
+   "9": [
+    "_xref",
+    "_xrefdata",
+    "msg"
+   ],
+   "10": [
+    "_xref",
+    "_xrefdata",
+    "msg"
+   ],
+   "11": [],
+   "12": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "msg",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers"
+   ],
+   "13": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "msg",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers"
+   ],
+   "14": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "msg",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers"
+   ],
+   "15": [
+    "msg",
+    "temp_fifo"
+   ],
+   "16": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "msg",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers",
+    "zvrf"
+   ],
+   "17": [
+    "client",
+    "hdr",
+    "msg",
+    "zvrf"
+   ],
+   "18": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "msg",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers",
+    "zvrf"
+   ],
+   "19": [
+    "client",
+    "hdr",
+    "msg",
+    "zvrf"
+   ],
+   "20": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "msg",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers"
+   ],
+   "21": [
+    "temp_fifo"
+   ],
+   "22": [
+    "temp_fifo"
+   ]
+  },
+  "live_out": {
+   "0": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers"
+   ],
+   "1": [],
+   "2": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers"
+   ],
+   "3": [
+    "temp_fifo"
+   ],
+   "4": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "msg",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers"
+   ],
+   "5": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "msg",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers"
+   ],
+   "6": [
+    "_xref",
+    "_xrefdata",
+    "msg"
+   ],
+   "7": [],
+   "8": [
+    "_xref",
+    "_xrefdata",
+    "msg"
+   ],
+   "9": [
+    "_xref",
+    "_xrefdata",
+    "msg"
+   ],
+   "10": [
+    "_xref",
+    "_xrefdata",
+    "msg"
+   ],
+   "11": [],
+   "12": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "msg",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers"
+   ],
+   "13": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "msg",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers"
+   ],
+   "14": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "msg",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers",
+    "zvrf"
+   ],
+   "15": [],
+   "16": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "msg",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers",
+    "zvrf"
+   ],
+   "17": [],
+   "18": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "msg",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers"
+   ],
+   "19": [],
+   "20": [
+    "_xref",
+    "_xrefdata",
+    "client",
+    "fifo",
+    "hdr",
+    "temp_fifo",
+    "zebra_debug_packet",
+    "zserv_handlers"
+   ],
+   "21": [],
+   "22": [
+    "temp_fifo"
+   ]
+  },
+  "params_live_at_entry": [
+   "client",
+   "fifo"
+  ]
+ },
+ "meta": {
+  "compute_ms": 515.1,
+  "unreachable_stmts_skipped": 0,
+  "cache_key": "b8724ce3f15eb58b673885d4b096e8017118cda6209f6b53ad8a71c2846056a3"
+ },
+ "cache": {
+  "hit": false,
+  "key": "b8724ce3f15eb58b673885d4b096e8017118cda6209f6b53ad8a71c2846056a3",
+  "path": "/home/z/my-project/poc/facts/p5/cache/slices/b8724ce3f15eb58b673885d4b096e8017118cda6209f6b53ad8a71c2846056a3.json",
+  "tool_ver": "p5-slice/1.0.0+clang18"
+ }
+}

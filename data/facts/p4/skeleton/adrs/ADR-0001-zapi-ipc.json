@@ -1,0 +1,106 @@
+{
+ "atoms": [
+  {
+   "id": "a7092afc",
+   "refs": [
+    {
+     "k": "D",
+     "q": "*ospfd* must acquire interface information from *zebra* in order to function.",
+     "r": "doc/user/ospfd.rst"
+    }
+   ],
+   "tpl": "Context: FRR separates protocol daemons from the routing manager \u2014 ospfd must acquire interface information from zebra in order to function, so zebra must run first."
+  },
+  {
+   "id": "afa4156e",
+   "refs": [
+    {
+     "k": "D",
+     "q": "This route is installed into zebra if following conditions are satisfied:",
+     "r": "doc/user/bgp.rst"
+    }
+   ],
+   "tpl": "Decision: routes are installed through zebra, not independently into the kernel \u2014 a route is installed into zebra when its conditions are satisfied."
+  },
+  {
+   "id": "a0c0d831",
+   "refs": [
+    {
+     "k": "N",
+     "r": "svc:zebra"
+    },
+    {
+     "k": "S",
+     "r": "findings.flows"
+    },
+    {
+     "k": "S",
+     "r": "pack.D4b2a9ab8.handled"
+    },
+    {
+     "k": "F",
+     "r": "zapi.cross_svc_flows"
+    }
+   ],
+   "tpl": "Consequence: in the fused slice this materializes as 111 cross-service ZAPI flows converging on svc:zebra, which handles 94 message types."
+  },
+  {
+   "id": "aa5ee17b",
+   "refs": [
+    {
+     "k": "E",
+     "r": "svc:bgpd|publishes|zapi:ZEBRA_ROUTE_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:zebra|handles|zapi:ZEBRA_ROUTE_ADD"
+    },
+    {
+     "k": "N",
+     "r": "svc:bgpd"
+    },
+    {
+     "k": "N",
+     "r": "svc:zebra"
+    },
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ROUTE_ADD"
+    }
+   ],
+   "tpl": "Consequence: svc:bgpd publishes zapi:ZEBRA_ROUTE_ADD and svc:zebra handles it \u2014 the route-install path the docs describe."
+  },
+  {
+   "id": "aa3b2c47",
+   "refs": [
+    {
+     "k": "D",
+     "r": "doc/user/zebra.rst"
+    },
+    {
+     "k": "D",
+     "r": "doc/user/mgmtd.rst"
+    },
+    {
+     "k": "D",
+     "r": "doc/user/ospfd.rst"
+    },
+    {
+     "k": "D",
+     "r": "doc/user/bgp.rst"
+    }
+   ],
+   "tpl": "Provenance: decision statements are authored from FRR documentation; quotes are validated verbatim by the verifier, consequences are measured graph facts."
+  }
+ ],
+ "claims": "yes",
+ "okf_level": "ADR",
+ "page_id": "adrs/ADR-0001-zapi-ipc.md",
+ "sources": [
+  "doc/user/ospfd.rst",
+  "doc/user/mgmtd.rst",
+  "doc/user/zebra.rst",
+  "doc/user/bgp.rst",
+  "p2/findings.json"
+ ]
+}

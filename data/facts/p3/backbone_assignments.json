@@ -1,0 +1,2230 @@
+{
+"svc:bgpd": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_ADVERTISE_ALL_VNI": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_ADVERTISE_DEFAULT_GW": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_ADVERTISE_SUBNET": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_ADVERTISE_SVI_MACIP": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_DUPLICATE_ADDR_DETECTION": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_EVPN_REMOTE_NH_ADD": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_EVPN_REMOTE_NH_DEL": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_FEC_UPDATE": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_INTERFACE_NBR_ADDRESS_ADD": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_INTERFACE_NBR_ADDRESS_DELETE": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_IPSET_CREATE": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_IPSET_DESTROY": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_IPSET_ENTRY_ADD": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_IPSET_ENTRY_DELETE": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_IPSET_ENTRY_NOTIFY_OWNER": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_IPSET_NOTIFY_OWNER": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_IPTABLE_ADD": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_IPTABLE_DELETE": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_IPTABLE_NOTIFY_OWNER": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_IP_PREFIX_ROUTE_ADD": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_IP_PREFIX_ROUTE_DEL": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_L3VNI_ADD": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_L3VNI_DEL": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_LOCAL_ES_ADD": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_LOCAL_ES_DEL": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_LOCAL_ES_EVI_ADD": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_LOCAL_ES_EVI_DEL": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_MACIP_ADD": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_MACIP_DEL": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_REMOTE_ES_VTEP_ADD": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_REMOTE_ES_VTEP_DEL": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_REMOTE_MACIP_ADD": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_REMOTE_MACIP_DEL": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_REMOTE_VTEP_ADD": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_REMOTE_VTEP_DEL": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_RULE_ADD": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_RULE_DELETE": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_RULE_NOTIFY_OWNER": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_VNI_ADD": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_VNI_DEL": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"zapi:ZEBRA_VXLAN_FLOOD_CONTROL": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:aggregator": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:aggregator/aggregator-address": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:aggregator/aggregator-asn": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:aigp-metric": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:alias": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:as-path-count": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:atomic-aggregate": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:comm-list": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:comm-list-name": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:comm-list/comm-list-name": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:comm-list/comm-list-name-any": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:comm-list/comm-list-name-exact-match": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:community-limit": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:community-none": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:community-string": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:distance": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:evpn-default-route": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:evpn-gateway-ip-ipv4": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:evpn-gateway-ip-ipv6": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:evpn-route-type": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:evpn-vni": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:exclude-as-path": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:extcommunity-color": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:extcommunity-lb": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:extcommunity-lb/bandwidth": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:extcommunity-lb/lb-type": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:extcommunity-lb/two-octet-as-specific": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:extcommunity-limit": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:extcommunity-none": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:extcommunity-nt": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:extcommunity-rt": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:extcommunity-soo": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:ipv4-address": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:ipv4-nexthop": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:ipv6-address": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:l3vpn-nexthop-encapsulation": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:label-index": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:large-community-none": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:large-community-string": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:last-as": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:list-name": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:local-pref": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:local-preference": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:origin": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:originator-id": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:peer-interface": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:peer-ipv4-address": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:peer-ipv6-address": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:peer-local": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:preference": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:prepend-as-path": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:probability": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:replace-as-path": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:route-distinguisher": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:rpki": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:rpki-extcommunity": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:script": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:source-protocol": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:source-vrf": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:src-peer-interface": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:src-peer-ipv4-address": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:src-peer-ipv6-address": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:table": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:vpn-dataplane": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"yang:frr-bgp-route-map:weight": {
+"L1": "D3063a0b0",
+"L2": "C3063a0b0"
+},
+"svc:lib": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_CAPABILITIES": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_ERROR": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_GRE_GET": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_HELLO": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_INTERFACE_ADD": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_INTERFACE_BFD_DEST_UPDATE": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_INTERFACE_DELETE": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_INTERFACE_DISABLE_RADV": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_INTERFACE_DOWN": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_INTERFACE_ENABLE_RADV": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_INTERFACE_SET_ARP": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_INTERFACE_SET_MASTER": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_INTERFACE_SET_PROTODOWN": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_INTERFACE_UP": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_MLAG_CLIENT_REGISTER": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_MLAG_CLIENT_UNREGISTER": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_MLAG_FORWARD_MSG": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_NEIGH_DISCOVER": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_NEIGH_GET": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_NEIGH_REGISTER": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_NEIGH_UNREGISTER": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_NEXTHOP_UPDATE": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_OPAQUE_NOTIFY": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_OPAQUE_REGISTER": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_OPAQUE_UNREGISTER": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_RELEASE_LABEL_CHUNK": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_RELEASE_TABLE_CHUNK": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_SRV6_MANAGER_GET_LOCATOR": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_SRV6_MANAGER_GET_SRV6_SID": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_SRV6_MANAGER_RELEASE_LOCATOR_CHUNK": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_SRV6_MANAGER_RELEASE_SRV6_SID": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_VRF_ADD": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_VRF_DELETE": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"zapi:ZEBRA_VRF_LABEL": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-affinity-map:lib/affinity-maps/affinity-map": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-affinity-map:lib/affinity-maps/affinity-map/value": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-backend:clients/client": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-backend:clients/client/name": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-backend:clients/client/state/apply-count": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-backend:clients/client/state/avg-apply-time": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-backend:clients/client/state/avg-edit-time": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-backend:clients/client/state/avg-prep-time": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-backend:clients/client/state/candidate-config-version": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-backend:clients/client/state/edit-count": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-backend:clients/client/state/notify-selectors": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-backend:clients/client/state/prep-count": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-backend:clients/client/state/running-config-version": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/action": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/any": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/destination-any": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/destination-host": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/destination-network": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/destination-network/address": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/destination-network/mask": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/host": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/ipv4-exact-match": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/ipv4-prefix": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/ipv6-destination-any": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/ipv6-destination-host": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/ipv6-destination-network": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/ipv6-destination-network/address": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/ipv6-destination-network/mask": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/ipv6-exact-match": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/ipv6-host": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/ipv6-network": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/ipv6-network/address": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/ipv6-network/mask": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/ipv6-prefix": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/ipv6-source-any": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/mac": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/network": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/network/address": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/network/mask": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/entry/source-any": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/access-list/remark": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/prefix-list": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/prefix-list/entry": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/prefix-list/entry/action": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/prefix-list/entry/any": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/prefix-list/entry/ipv4-prefix": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/prefix-list/entry/ipv4-prefix-length-greater-or-equal": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/prefix-list/entry/ipv4-prefix-length-lesser-or-equal": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/prefix-list/entry/ipv6-prefix": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/prefix-list/entry/ipv6-prefix-length-greater-or-equal": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/prefix-list/entry/ipv6-prefix-length-lesser-or-equal": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-filter:lib/prefix-list/remark": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-host:host/allow-reserved-ranges": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-interface:lib/interface": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-interface:lib/interface/description": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-interface:lib/interface/state/flags": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-interface:lib/interface/state/if-index": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-interface:lib/interface/state/metric": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-interface:lib/interface/state/mtu": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-interface:lib/interface/state/mtu6": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-interface:lib/interface/state/phy-address": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-interface:lib/interface/state/speed": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-interface:lib/interface/state/type": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-interface:lib/interface/vrf": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/daemon-file": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/daemon-file/filename": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/daemon-file/level": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/error-category": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/facility": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/file/filename": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/file/level": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/filter-text": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/filtered-file/filename": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/filtered-file/level": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/immediate-mode": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/record-priority": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/record-severity": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/stdout": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/stdout/level": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/syslog": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/syslog/level": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/timestamp-precision": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/uid-backtrace": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-logging:logging/unique-id": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/action": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/call": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/description": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/exit-policy": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/goto-value": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/match-condition": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/match-condition/rmap-match-condition/interface": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/match-condition/rmap-match-condition/ipv4-next-hop-type": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/match-condition/rmap-match-condition/ipv6-next-hop-type": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/match-condition/rmap-match-condition/list-name": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/match-condition/rmap-match-condition/metric": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/match-condition/rmap-match-condition/tag": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/set-action": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/set-action/rmap-set-action/add-metric": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/set-action/rmap-set-action/add-round-trip-time": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/set-action/rmap-set-action/ipv4-address": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/set-action/rmap-set-action/ipv6-address": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/set-action/rmap-set-action/max-metric": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/set-action/rmap-set-action/min-metric": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/set-action/rmap-set-action/policy": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/set-action/rmap-set-action/subtract-metric": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/set-action/rmap-set-action/subtract-round-trip-time": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/set-action/rmap-set-action/tag": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/set-action/rmap-set-action/use-aigp": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/set-action/rmap-set-action/use-igp": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/set-action/rmap-set-action/use-round-trip-time": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/entry/set-action/rmap-set-action/value": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-route-map:lib/route-map/optimization-disabled": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-routing:routing/control-plane-protocols/control-plane-protocol": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-vrf:lib/vrf": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-vrf:lib/vrf/state/active": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:frr-vrf:lib/vrf/state/id": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/description": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/accept-lifetime-active": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/crypto-algorithm": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/key-string/keystring": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/accept-lifetime": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/accept-lifetime/always": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/accept-lifetime/duration": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/accept-lifetime/end-date-time": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/accept-lifetime/no-end-time": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/accept-lifetime/start-date-time": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/send-accept-lifetime": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/send-accept-lifetime/always": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/send-accept-lifetime/duration": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/send-accept-lifetime/end-date-time": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/send-accept-lifetime/no-end-time": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/send-accept-lifetime/start-date-time": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/send-lifetime": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/send-lifetime/always": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/send-lifetime/duration": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/send-lifetime/end-date-time": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/send-lifetime/no-end-time": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/lifetime/send-lifetime/start-date-time": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/key/send-lifetime-active": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"yang:ietf-key-chain:key-chains/key-chain/last-modified-timestamp": {
+"L1": "D1737981e",
+"L2": "C1737981e"
+},
+"svc:ospfd": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"zapi:ZEBRA_CLIENT_CAPABILITIES": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"zapi:ZEBRA_CLIENT_CLOSE_NOTIFY": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"zapi:ZEBRA_INTERFACE_ADDRESS_ADD": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"zapi:ZEBRA_INTERFACE_ADDRESS_DELETE": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"zapi:ZEBRA_INTERFACE_LINK_PARAMS": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"zapi:ZEBRA_OPAQUE_MESSAGE": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"zapi:ZEBRA_REDISTRIBUTE_ADD": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"zapi:ZEBRA_REDISTRIBUTE_DEFAULT_ADD": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"zapi:ZEBRA_REDISTRIBUTE_DEFAULT_DELETE": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"zapi:ZEBRA_REDISTRIBUTE_DELETE": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"zapi:ZEBRA_REDISTRIBUTE_ROUTE_ADD": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"zapi:ZEBRA_REDISTRIBUTE_ROUTE_DEL": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"zapi:ZEBRA_ROUTER_ID_UPDATE": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"zapi:ZEBRA_ROUTE_ADD": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"zapi:ZEBRA_ROUTE_DELETE": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"yang:frr-ospf-route-map:metric-type": {
+"L1": "Ded29f1c0",
+"L2": "Ced29f1c0"
+},
+"svc:staticd": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"zapi:ZEBRA_NEIGH_ADDED": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"zapi:ZEBRA_NEIGH_REMOVED": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"zapi:ZEBRA_ROUTE_NOTIFY_OWNER": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"zapi:ZEBRA_SRV6_LOCATOR_ADD": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"zapi:ZEBRA_SRV6_LOCATOR_DELETE": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"zapi:ZEBRA_SRV6_SID_NOTIFY": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/bfd-monitoring": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/bfd-monitoring/multi-hop": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/bfd-monitoring/profile": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/bfd-monitoring/source": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/bh-type": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/distance": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/metric": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/mpls-label-stack/entry": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/mpls-label-stack/entry/label": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/mpls-label-stack/entry/traffic-class": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/mpls-label-stack/entry/ttl": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/onlink": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/srte-color": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/srv6-segs-stack/encap-behavior": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/srv6-segs-stack/entry": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/srv6-segs-stack/entry/seg": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/tag": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/route-list/path-list/weight": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/segment-routing/srv6/static-sids/sid": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/segment-routing/srv6/static-sids/sid/behavior": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/segment-routing/srv6/static-sids/sid/locator-name": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/segment-routing/srv6/static-sids/sid/paths": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/segment-routing/srv6/static-sids/sid/paths/interface": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/segment-routing/srv6/static-sids/sid/paths/next-hop": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"yang:frr-staticd:staticd/segment-routing/srv6/static-sids/sid/vrf-name": {
+"L1": "Dc32724de",
+"L2": "Cc32724de"
+},
+"svc:zebra": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_BFD_CLIENT_REGISTER": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_BFD_DEST_DEREGISTER": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_BFD_DEST_REGISTER": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_BFD_DEST_REPLAY": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_BFD_DEST_UPDATE": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_CONFIGURE_ARP": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_FEC_REGISTER": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_FEC_UNREGISTER": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_GET_LABEL_CHUNK": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_GET_TABLE_CHUNK": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_GRE_SOURCE_SET": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_GRE_UPDATE": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_IPMR_ROUTE_STATS": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_LABEL_MANAGER_CONNECT": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_LABEL_MANAGER_CONNECT_ASYNC": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_MPLS_LABELS_ADD": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_MPLS_LABELS_DELETE": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_MPLS_LABELS_REPLACE": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_NEIGH_IP_ADD": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_NEIGH_IP_DEL": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_NEXTHOP_LOOKUP": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_NEXTHOP_REGISTER": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_NEXTHOP_UNREGISTER": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_NHG_ADD": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_NHG_DEL": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_NHG_NOTIFY_OWNER": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_PW_ADD": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_PW_DELETE": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_PW_SET": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_PW_STATUS_UPDATE": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_PW_UNSET": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_ROUTER_ID_ADD": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_ROUTER_ID_DELETE": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_ROUTE_NOTIFY_REQUEST": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_SR_POLICY_DELETE": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_SR_POLICY_NOTIFY_STATUS": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_SR_POLICY_SET": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_TABLE_MANAGER_CONNECT": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_TC_CLASS_ADD": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_TC_CLASS_DELETE": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_TC_FILTER_ADD": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_TC_FILTER_DELETE": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_TC_QDISC_INSTALL": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_TC_QDISC_UNINSTALL": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_VXLAN_SG_REPLAY": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra-route-map:ipv4-prefix-length": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra-route-map:ipv4-src-address": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra-route-map:ipv6-prefix-length": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra-route-map:ipv6-src-address": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra-route-map:source-instance": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra-route-map:source-protocol": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/allow-external-route-update": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/bandwidth": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-dplane": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-dplane-detail": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-events": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-fpm": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-kernel": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-kernel-msg-recv": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-kernel-msg-send": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-mlag": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-mpls": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-nht": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-nht-detail": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-pw": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-rib": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-rib-detail": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-vxlan": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-zapi-detail": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-zapi-recv": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/debugs/debug-zapi-send": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/dplane-queue-limit": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/enabled": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/evpn-mh/bypass": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/evpn-mh/df-preference": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/evpn-mh/type-0": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/evpn-mh/type-0/esi": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/evpn-mh/type-3": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/evpn-mh/type-3/local-discriminator": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/evpn-mh/type-3/system-mac": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/evpn-mh/uplink": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/filter-nht": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/filter-nht/route-map": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/filter-protocol": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/filter-protocol/route-map": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/import-kernel-table": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/import-kernel-table/distance": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/import-kernel-table/route-map": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ip-forwarding": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv4-addrs": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv4-addrs/label": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv4-p2p-addrs": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv4-p2p-addrs/label": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-addrs": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-forwarding": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-resolve-via-default": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/advertisement-interval-option": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/cur-hop-limit": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/default-lifetime": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/default-router-preference": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/dnssl/dnssl-domain": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/dnssl/dnssl-domain/lifetime": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/fast-retransmit": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/home-agent-flag": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/home-agent-lifetime": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/home-agent-preference": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/link-mtu": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/managed-flag": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/max-rtr-adv-interval": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/other-config-flag": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/pref64/pref64-prefix": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/pref64/pref64-prefix/lifetime": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/prefix-list/prefix": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/prefix-list/prefix/autonomous-flag": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/prefix-list/prefix/on-link-flag": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/prefix-list/prefix/preferred-lifetime": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/prefix-list/prefix/router-address-flag": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/prefix-list/prefix/valid-lifetime": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/rdnss/rdnss-address": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/rdnss/rdnss-address/lifetime": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/reachable-time": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/retrans-timer": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-advertisements/send-advertisements": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ipv6-router-id": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/l3vni-id": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-detect": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/affinities": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/affinities/affinity": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/affinity-mode": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/available-bandwidth": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/delay": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/delay-variation": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/legacy-admin-group": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/max-bandwidth": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/max-reservable-bandwidth": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/metric": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/min-max-delay": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/min-max-delay/delay-max": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/min-max-delay/delay-min": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/neighbor": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/neighbor/ipv4-remote-id": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/neighbor/remote-as": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/packet-loss": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/residual-bandwidth": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/unreserved-bandwidths/unreserved-bandwidth": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/unreserved-bandwidths/unreserved-bandwidth/unreserved-bandwidth": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/link-params/utilized-bandwidth": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/mpls": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/mpls/fec-nexthop-resolution": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/multicast": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/netns/table-range": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/netns/table-range/end": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/netns/table-range/start": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/prefix-only": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/resolve-via-default": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/afi-safi-name": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/prefix": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/distance": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/failed": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/installed": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/instance": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/internal-flags": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/internal-status": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/metric": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/id": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/active": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/bh-type": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/duplicate": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/fib": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/gateway": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/interface": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/mpls-label-stack/entry": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/mpls-label-stack/entry/id": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/mpls-label-stack/entry/label": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/mpls-label-stack/entry/traffic-class": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/mpls-label-stack/entry/ttl": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/nh-type": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/onlink": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/recursive": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/srte-color": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/srv6-segs-stack/encap-behavior": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/srv6-segs-stack/entry": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/srv6-segs-stack/entry/id": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/srv6-segs-stack/entry/seg": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/vrf": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/nexthop-group/nexthop/weight": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/protocol": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/queued": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/selected": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/tag": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/route/route-entry/uptime": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/ribs/rib/table-id": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/route-map-delay": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/router-id": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/state/bond": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/state/down-count": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/state/ip-forwarding": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/state/ipv6-forwarding": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/state/max-multipath": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/state/mcast-group": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/state/mpls-forwarding": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/state/ptm-status": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/state/remote-vtep": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/state/up-count": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/state/vlan-id": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/state/vni-id": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/state/zif-type": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/workqueue-hold-timer": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"yang:frr-zebra:zebra/zapi-packets": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+},
+"zapi:ZEBRA_SRV6_MANAGER_GET_LOCATOR_CHUNK": {
+"L1": "D4b2a9ab8",
+"L2": "Cb6653b94"
+}
+}

@@ -1,0 +1,666 @@
+{
+ "id": "Dc32724de",
+ "label": "staticd [6z/27y]",
+ "level": "L1",
+ "services": [
+  "svc:staticd"
+ ],
+ "functionality": [
+  "staticd is a config/route client: handles 8 notification types from the ZAPI bus (address_add, address_delete, added, removed...); its route sends go through lib zclient wrappers",
+  "northbound contracts: 27 YANG paths across 1 module (frr-staticd(27))"
+ ],
+ "roles": [
+  "zapi-client"
+ ],
+ "yang_modules": {
+  "frr-staticd": 27
+ },
+ "zapi_msgs": [
+  "zapi:ZEBRA_NEIGH_ADDED",
+  "zapi:ZEBRA_NEIGH_REMOVED",
+  "zapi:ZEBRA_ROUTE_NOTIFY_OWNER",
+  "zapi:ZEBRA_SRV6_LOCATOR_ADD",
+  "zapi:ZEBRA_SRV6_LOCATOR_DELETE",
+  "zapi:ZEBRA_SRV6_SID_NOTIFY"
+ ],
+ "boundary_edges": [
+  {
+   "to": "D3063a0b0",
+   "rels": {
+    "handles": 4
+   }
+  },
+  {
+   "to": "D4b2a9ab8",
+   "rels": {
+    "publishes": 3
+   }
+  },
+  {
+   "to": "Ded29f1c0",
+   "rels": {
+    "handles": 2
+   }
+  }
+ ],
+ "children": [
+  "Cc32724de"
+ ],
+ "findings": {
+  "dropped_on_wire": [],
+  "orphan_handlers": [
+   "zapi:ZEBRA_NEIGH_ADDED",
+   "zapi:ZEBRA_NEIGH_REMOVED",
+   "zapi:ZEBRA_SRV6_SID_NOTIFY"
+  ],
+  "dead_wiring": [],
+  "cross_svc_flows": [
+   {
+    "msg": "zapi:ZEBRA_ROUTE_NOTIFY_OWNER",
+    "from": "svc:zebra",
+    "to": "svc:staticd"
+   },
+   {
+    "msg": "zapi:ZEBRA_SRV6_LOCATOR_ADD",
+    "from": "svc:zebra",
+    "to": "svc:staticd"
+   },
+   {
+    "msg": "zapi:ZEBRA_SRV6_LOCATOR_DELETE",
+    "from": "svc:zebra",
+    "to": "svc:staticd"
+   }
+  ]
+ },
+ "modules": [
+  {
+   "id": "M197bbcdc",
+   "label": "staticd:unlinked",
+   "size": 249,
+   "anchors": [],
+   "tags": [],
+   "note": "no intra-service call edges observed",
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M4fc85874",
+   "label": "staticd:static",
+   "size": 77,
+   "anchors": [
+    {
+     "id": "code:staticd::debug_staticd_magic",
+     "file": "staticd/static_vty.c"
+    },
+    {
+     "id": "code:staticd::static_add_route",
+     "file": "staticd/static_routes.c"
+    },
+    {
+     "id": "code:staticd::static_next_hop_bfd_profile",
+     "file": "staticd/static_bfd.c"
+    },
+    {
+     "id": "code:staticd::static_nexthop_list_prev",
+     "file": "staticd/static_routes.h"
+    },
+    {
+     "id": "code:staticd::static_nht_hash_next",
+     "file": "staticd/static_zebra.c"
+    },
+    {
+     "id": "code:staticd::static_path_list_prev",
+     "file": "staticd/static_routes.h"
+    },
+    {
+     "id": "code:staticd::static_srv6_neigh_table_next",
+     "file": "staticd/static_srv6.c"
+    },
+    {
+     "id": "code:staticd::static_vrf_alloc",
+     "file": "staticd/static_vrf.c"
+    }
+   ],
+   "tags": [],
+   "note": "misc (<4-func call fragments)",
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M9cc473a4",
+   "label": "staticd:static",
+   "size": 34,
+   "anchors": [
+    {
+     "id": "code:staticd::static_nexthop_list_first",
+     "file": "staticd/static_routes.h"
+    },
+    {
+     "id": "code:staticd::static_nexthop_list_next",
+     "file": "staticd/static_routes.h"
+    },
+    {
+     "id": "code:staticd::static_path_list_first",
+     "file": "staticd/static_routes.h"
+    },
+    {
+     "id": "code:staticd::static_path_list_next",
+     "file": "staticd/static_routes.h"
+    },
+    {
+     "id": "code:staticd::static_route_info_from_rnode",
+     "file": null
+    },
+    {
+     "id": "code:staticd::static_ifindex_update_af",
+     "file": "staticd/static_routes.c"
+    },
+    {
+     "id": "code:staticd::static_bfd_show_path",
+     "file": "staticd/static_bfd.c"
+    },
+    {
+     "id": "code:staticd::static_bfd_show_path_json",
+     "file": "staticd/static_bfd.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M9b01cc7b",
+   "label": "staticd:static",
+   "size": 31,
+   "anchors": [
+    {
+     "id": "code:staticd::static_nexthop_move_path",
+     "file": "staticd/static_nb_config.c"
+    },
+    {
+     "id": "code:staticd::static_del_path",
+     "file": "staticd/static_routes.c"
+    },
+    {
+     "id": "code:staticd::static_delete_nexthop",
+     "file": "staticd/static_routes.c"
+    },
+    {
+     "id": "code:staticd::ecmp_path_list_validate",
+     "file": "staticd/static_nb_config.c"
+    },
+    {
+     "id": "code:staticd::static_add_path",
+     "file": "staticd/static_routes.c"
+    },
+    {
+     "id": "code:staticd::static_path_list_create",
+     "file": "staticd/static_nb_config.c"
+    },
+    {
+     "id": "code:staticd::static_path_list_destroy",
+     "file": "staticd/static_nb_config.c"
+    },
+    {
+     "id": "code:staticd::zebra_stable_node_cleanup",
+     "file": "staticd/static_routes.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M71861180",
+   "label": "staticd:static",
+   "size": 28,
+   "anchors": [
+    {
+     "id": "code:staticd::static_zebra_srv6_sid_uninstall",
+     "file": "staticd/static_zebra.c"
+    },
+    {
+     "id": "code:staticd::static_zebra_release_srv6_sid",
+     "file": "staticd/static_zebra.c"
+    },
+    {
+     "id": "code:staticd::static_zebra_request_srv6_sid",
+     "file": "staticd/static_zebra.c"
+    },
+    {
+     "id": "code:staticd::static_zebra_process_srv6_locator_internal",
+     "file": "staticd/static_zebra.c"
+    },
+    {
+     "id": "code:staticd::routing_control_plane_protocols_control_plane_protocol_staticd_segment_routing_srv6_local_sids_sid_apply_finish",
+     "file": "staticd/static_nb_config.c"
+    },
+    {
+     "id": "code:staticd::static_srv6_locator_lookup",
+     "file": "staticd/static_srv6.c"
+    },
+    {
+     "id": "code:staticd::static_srv6_sid_del",
+     "file": "staticd/static_srv6.c"
+    },
+    {
+     "id": "code:staticd::static_zebra_process_srv6_locator_delete",
+     "file": "staticd/static_zebra.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M6b0e6125",
+   "label": "staticd:static",
+   "size": 25,
+   "anchors": [
+    {
+     "id": "code:staticd::static_srv6_neigh_add",
+     "file": "staticd/static_srv6.c"
+    },
+    {
+     "id": "code:staticd::static_ifp_srv6_sids_update",
+     "file": "staticd/static_srv6.c"
+    },
+    {
+     "id": "code:staticd::static_srv6_neigh_lookup",
+     "file": "staticd/static_srv6.c"
+    },
+    {
+     "id": "code:staticd::static_srv6_neigh_table_find",
+     "file": "staticd/static_srv6.c"
+    },
+    {
+     "id": "code:staticd::static_srv6_refresh_sids_on_neigh_change",
+     "file": "staticd/static_srv6.c"
+    },
+    {
+     "id": "code:staticd::static_ifindex_update",
+     "file": "staticd/static_routes.c"
+    },
+    {
+     "id": "code:staticd::static_srv6_neigh_remove",
+     "file": "staticd/static_srv6.c"
+    },
+    {
+     "id": "code:staticd::static_srv6_neigh_table_add",
+     "file": "staticd/static_srv6.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mb7dec354",
+   "label": "staticd:static",
+   "size": 23,
+   "anchors": [
+    {
+     "id": "code:staticd::main",
+     "file": "staticd/static_main.c"
+    },
+    {
+     "id": "code:staticd::static_srv6_neigh_cache_cleanup",
+     "file": "staticd/static_srv6.c"
+    },
+    {
+     "id": "code:staticd::static_srv6_neigh_cache_init",
+     "file": "staticd/static_srv6.c"
+    },
+    {
+     "id": "code:staticd::static_zebra_init",
+     "file": "staticd/static_zebra.c"
+    },
+    {
+     "id": "code:staticd::static_zebra_stop",
+     "file": "staticd/static_zebra.c"
+    },
+    {
+     "id": "code:staticd::sigint",
+     "file": "staticd/static_main.c"
+    },
+    {
+     "id": "code:staticd::static_nht_hash_clear",
+     "file": "staticd/static_zebra.c"
+    },
+    {
+     "id": "code:staticd::static_srv6_cleanup",
+     "file": "staticd/static_srv6.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M87eb3a08",
+   "label": "staticd:static",
+   "size": 22,
+   "anchors": [
+    {
+     "id": "code:staticd::svrf_name_head_RB_MIN",
+     "file": "staticd/static_vrf.h"
+    },
+    {
+     "id": "code:staticd::svrf_name_head_RB_NEXT",
+     "file": "staticd/static_vrf.h"
+    },
+    {
+     "id": "code:staticd::static_bfd_show",
+     "file": "staticd/static_bfd.c"
+    },
+    {
+     "id": "code:staticd::show_static_routes_magic",
+     "file": "staticd/static_vty.c"
+    },
+    {
+     "id": "code:staticd::static_bfd_show_json",
+     "file": "staticd/static_bfd.c"
+    },
+    {
+     "id": "code:staticd::static_cleanup_vrf_ids",
+     "file": "staticd/static_routes.c"
+    },
+    {
+     "id": "code:staticd::static_fixup_vrf_ids",
+     "file": "staticd/static_routes.c"
+    },
+    {
+     "id": "code:staticd::static_nht_reset_start",
+     "file": "staticd/static_nht.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M858fa78e",
+   "label": "staticd:ip",
+   "size": 17,
+   "anchors": [
+    {
+     "id": "code:staticd::static_route_nb_run",
+     "file": "staticd/static_vty.c"
+    },
+    {
+     "id": "code:staticd::ip_mroute_dist_magic",
+     "file": "staticd/static_vty.c"
+    },
+    {
+     "id": "code:staticd::ip_route_address_interface_magic",
+     "file": "staticd/static_vty.c"
+    },
+    {
+     "id": "code:staticd::ip_route_address_interface_vrf_magic",
+     "file": "staticd/static_vty.c"
+    },
+    {
+     "id": "code:staticd::ip_route_blackhole_vrf_magic",
+     "file": "staticd/static_vty.c"
+    },
+    {
+     "id": "code:staticd::ip_route_magic",
+     "file": "staticd/static_vty.c"
+    },
+    {
+     "id": "code:staticd::ipv6_route_blackhole_magic",
+     "file": "staticd/static_vty.c"
+    },
+    {
+     "id": "code:staticd::ipv6_route_vrf_magic",
+     "file": "staticd/static_vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M840258e6",
+   "label": "staticd:static",
+   "size": 15,
+   "anchors": [
+    {
+     "id": "code:staticd::static_zebra_nht_register",
+     "file": "staticd/static_zebra.c"
+    },
+    {
+     "id": "code:staticd::static_install_nexthop",
+     "file": "staticd/static_routes.c"
+    },
+    {
+     "id": "code:staticd::static_nht_hash_add",
+     "file": "staticd/static_zebra.c"
+    },
+    {
+     "id": "code:staticd::static_nht_hash_const_find",
+     "file": "staticd/static_zebra.c"
+    },
+    {
+     "id": "code:staticd::static_nht_hash_find",
+     "file": "staticd/static_zebra.c"
+    },
+    {
+     "id": "code:staticd::static_nht_hash_getref",
+     "file": "staticd/static_zebra.c"
+    },
+    {
+     "id": "code:staticd::route_next_hop_bfd_source_destroy",
+     "file": "staticd/static_nb_config.c"
+    },
+    {
+     "id": "code:staticd::static_nht_data_cmp",
+     "file": "staticd/static_zebra.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M3b48bc3a",
+   "label": "staticd:static",
+   "size": 6,
+   "anchors": [
+    {
+     "id": "code:staticd::static_show_nh",
+     "file": "staticd/static_vty.c"
+    },
+    {
+     "id": "code:staticd::static_nexthop_is_active",
+     "file": null
+    },
+    {
+     "id": "code:staticd::static_nh_reason_inactive",
+     "file": "staticd/static_vty.c"
+    },
+    {
+     "id": "code:staticd::static_bh_type_str",
+     "file": null
+    },
+    {
+     "id": "code:staticd::static_nh_state_str",
+     "file": null
+    },
+    {
+     "id": "code:staticd::static_nh_type_str",
+     "file": null
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Ma91ceefd",
+   "label": "staticd:static",
+   "size": 5,
+   "anchors": [
+    {
+     "id": "code:staticd::static_next_hop_bfd_monitor_enable",
+     "file": "staticd/static_bfd.c"
+    },
+    {
+     "id": "code:staticd::static_next_hop_bfd_source",
+     "file": "staticd/static_bfd.c"
+    },
+    {
+     "id": "code:staticd::static_next_hop_type_to_family",
+     "file": "staticd/static_bfd.c"
+    },
+    {
+     "id": "code:staticd::route_next_hop_bfd_create",
+     "file": "staticd/static_nb_config.c"
+    },
+    {
+     "id": "code:staticd::route_next_hop_bfd_source_modify",
+     "file": "staticd/static_nb_config.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M541120a7",
+   "label": "staticd:static",
+   "size": 5,
+   "anchors": [
+    {
+     "id": "code:staticd::static_bfd_holddown_timer_cancel",
+     "file": "staticd/static_bfd.c"
+    },
+    {
+     "id": "code:staticd::static_next_hop_bfd_change",
+     "file": "staticd/static_bfd.c"
+    },
+    {
+     "id": "code:staticd::static_next_hop_bfd_monitor_disable",
+     "file": "staticd/static_bfd.c"
+    },
+    {
+     "id": "code:staticd::route_next_hop_bfd_destroy",
+     "file": "staticd/static_nb_config.c"
+    },
+    {
+     "id": "code:staticd::static_next_hop_bfd_updatecb",
+     "file": "staticd/static_bfd.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M91d9f3e2",
+   "label": "staticd:ip",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:staticd::ip_route_blackhole",
+     "file": "staticd/static_vty_clippy.c"
+    },
+    {
+     "id": "code:staticd::ip_route_blackhole_magic",
+     "file": "staticd/static_vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M53338244",
+   "label": "staticd:ip",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:staticd::ip_route_vrf",
+     "file": "staticd/static_vty_clippy.c"
+    },
+    {
+     "id": "code:staticd::ip_route_vrf_magic",
+     "file": "staticd/static_vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M3f69f5a7",
+   "label": "staticd:ipv6",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:staticd::ipv6_route",
+     "file": "staticd/static_vty_clippy.c"
+    },
+    {
+     "id": "code:staticd::ipv6_route_magic",
+     "file": "staticd/static_vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M03d0fc36",
+   "label": "staticd:ipv6",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:staticd::ipv6_route_address_interface",
+     "file": "staticd/static_vty_clippy.c"
+    },
+    {
+     "id": "code:staticd::ipv6_route_address_interface_magic",
+     "file": "staticd/static_vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M92ddabc1",
+   "label": "staticd:ipv6",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:staticd::ipv6_route_address_interface_vrf",
+     "file": "staticd/static_vty_clippy.c"
+    },
+    {
+     "id": "code:staticd::ipv6_route_address_interface_vrf_magic",
+     "file": "staticd/static_vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M896f458a",
+   "label": "staticd:ipv6",
+   "size": 2,
+   "anchors": [
+    {
+     "id": "code:staticd::ipv6_route_blackhole_vrf",
+     "file": "staticd/static_vty_clippy.c"
+    },
+    {
+     "id": "code:staticd::ipv6_route_blackhole_vrf_magic",
+     "file": "staticd/static_vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  }
+ ]
+}

@@ -1,0 +1,1994 @@
+{
+ "id": "D4b2a9ab8",
+ "label": "zebra [46z/170y]",
+ "level": "L1",
+ "services": [
+  "svc:zebra"
+ ],
+ "functionality": [
+  "zebra is the ZAPI message bus: handles 94 message types published by the route daemons (bgpd, ospfd) and publishes 44 notification/event types back to clients",
+  "northbound contracts: 170 YANG paths across 2 modules (frr-zebra(164), frr-zebra-route-map(6))"
+ ],
+ "roles": [
+  "zapi-publisher",
+  "zapi-server"
+ ],
+ "yang_modules": {
+  "frr-zebra-route-map": 6,
+  "frr-zebra": 164
+ },
+ "zapi_msgs": [
+  "zapi:ZEBRA_BFD_CLIENT_REGISTER",
+  "zapi:ZEBRA_BFD_DEST_DEREGISTER",
+  "zapi:ZEBRA_BFD_DEST_REGISTER",
+  "zapi:ZEBRA_BFD_DEST_REPLAY",
+  "zapi:ZEBRA_BFD_DEST_UPDATE",
+  "zapi:ZEBRA_CONFIGURE_ARP",
+  "zapi:ZEBRA_FEC_REGISTER",
+  "zapi:ZEBRA_FEC_UNREGISTER",
+  "zapi:ZEBRA_GET_LABEL_CHUNK",
+  "zapi:ZEBRA_GET_TABLE_CHUNK",
+  "zapi:ZEBRA_GRE_SOURCE_SET",
+  "zapi:ZEBRA_GRE_UPDATE",
+  "zapi:ZEBRA_IPMR_ROUTE_STATS",
+  "zapi:ZEBRA_LABEL_MANAGER_CONNECT",
+  "zapi:ZEBRA_LABEL_MANAGER_CONNECT_ASYNC",
+  "zapi:ZEBRA_MPLS_LABELS_ADD",
+  "zapi:ZEBRA_MPLS_LABELS_DELETE",
+  "zapi:ZEBRA_MPLS_LABELS_REPLACE",
+  "zapi:ZEBRA_NEIGH_IP_ADD",
+  "zapi:ZEBRA_NEIGH_IP_DEL",
+  "zapi:ZEBRA_NEXTHOP_LOOKUP",
+  "zapi:ZEBRA_NEXTHOP_REGISTER",
+  "zapi:ZEBRA_NEXTHOP_UNREGISTER",
+  "zapi:ZEBRA_NHG_ADD",
+  "zapi:ZEBRA_NHG_DEL",
+  "zapi:ZEBRA_NHG_NOTIFY_OWNER",
+  "zapi:ZEBRA_PW_ADD",
+  "zapi:ZEBRA_PW_DELETE",
+  "zapi:ZEBRA_PW_SET",
+  "zapi:ZEBRA_PW_STATUS_UPDATE",
+  "zapi:ZEBRA_PW_UNSET",
+  "zapi:ZEBRA_ROUTER_ID_ADD",
+  "zapi:ZEBRA_ROUTER_ID_DELETE",
+  "zapi:ZEBRA_ROUTE_NOTIFY_REQUEST",
+  "zapi:ZEBRA_SRV6_MANAGER_GET_LOCATOR_CHUNK",
+  "zapi:ZEBRA_SR_POLICY_DELETE",
+  "zapi:ZEBRA_SR_POLICY_NOTIFY_STATUS",
+  "zapi:ZEBRA_SR_POLICY_SET",
+  "zapi:ZEBRA_TABLE_MANAGER_CONNECT",
+  "zapi:ZEBRA_TC_CLASS_ADD",
+  "zapi:ZEBRA_TC_CLASS_DELETE",
+  "zapi:ZEBRA_TC_FILTER_ADD",
+  "zapi:ZEBRA_TC_FILTER_DELETE",
+  "zapi:ZEBRA_TC_QDISC_INSTALL",
+  "zapi:ZEBRA_TC_QDISC_UNINSTALL",
+  "zapi:ZEBRA_VXLAN_SG_REPLAY"
+ ],
+ "boundary_edges": [
+  {
+   "to": "D1737981e",
+   "rels": {
+    "handles": 24,
+    "publishes": 14
+   }
+  },
+  {
+   "to": "D3063a0b0",
+   "rels": {
+    "handles": 23,
+    "publishes": 12
+   }
+  },
+  {
+   "to": "Ded29f1c0",
+   "rels": {
+    "handles": 7,
+    "publishes": 7
+   }
+  },
+  {
+   "to": "Dc32724de",
+   "rels": {
+    "publishes": 3
+   }
+  }
+ ],
+ "children": [
+  "Cb6653b94"
+ ],
+ "findings": {
+  "dropped_on_wire": [
+   "zapi:ZEBRA_GRE_UPDATE",
+   "zapi:ZEBRA_NHG_NOTIFY_OWNER",
+   "zapi:ZEBRA_PW_STATUS_UPDATE",
+   "zapi:ZEBRA_SR_POLICY_NOTIFY_STATUS"
+  ],
+  "orphan_handlers": [
+   "zapi:ZEBRA_BFD_CLIENT_REGISTER",
+   "zapi:ZEBRA_BFD_DEST_DEREGISTER",
+   "zapi:ZEBRA_BFD_DEST_REGISTER",
+   "zapi:ZEBRA_BFD_DEST_UPDATE",
+   "zapi:ZEBRA_CONFIGURE_ARP",
+   "zapi:ZEBRA_FEC_REGISTER",
+   "zapi:ZEBRA_FEC_UNREGISTER",
+   "zapi:ZEBRA_GRE_SOURCE_SET",
+   "zapi:ZEBRA_LABEL_MANAGER_CONNECT_ASYNC",
+   "zapi:ZEBRA_MPLS_LABELS_ADD",
+   "zapi:ZEBRA_MPLS_LABELS_DELETE",
+   "zapi:ZEBRA_MPLS_LABELS_REPLACE",
+   "zapi:ZEBRA_NEIGH_IP_ADD",
+   "zapi:ZEBRA_NEIGH_IP_DEL",
+   "zapi:ZEBRA_NEXTHOP_REGISTER",
+   "zapi:ZEBRA_NEXTHOP_UNREGISTER",
+   "zapi:ZEBRA_NHG_ADD",
+   "zapi:ZEBRA_NHG_DEL",
+   "zapi:ZEBRA_PW_ADD",
+   "zapi:ZEBRA_PW_DELETE",
+   "zapi:ZEBRA_PW_SET",
+   "zapi:ZEBRA_PW_UNSET",
+   "zapi:ZEBRA_ROUTER_ID_ADD",
+   "zapi:ZEBRA_ROUTER_ID_DELETE",
+   "zapi:ZEBRA_ROUTE_NOTIFY_REQUEST",
+   "zapi:ZEBRA_SR_POLICY_DELETE",
+   "zapi:ZEBRA_SR_POLICY_SET",
+   "zapi:ZEBRA_TC_CLASS_ADD",
+   "zapi:ZEBRA_TC_CLASS_DELETE",
+   "zapi:ZEBRA_TC_FILTER_ADD",
+   "zapi:ZEBRA_TC_FILTER_DELETE",
+   "zapi:ZEBRA_TC_QDISC_INSTALL",
+   "zapi:ZEBRA_TC_QDISC_UNINSTALL",
+   "zapi:ZEBRA_VXLAN_SG_REPLAY"
+  ],
+  "dead_wiring": [],
+  "cross_svc_flows": [
+   {
+    "msg": "zapi:ZEBRA_BFD_DEST_REPLAY",
+    "from": "svc:zebra",
+    "to": "svc:lib"
+   },
+   {
+    "msg": "zapi:ZEBRA_GET_LABEL_CHUNK",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_GET_TABLE_CHUNK",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_SRV6_MANAGER_GET_LOCATOR_CHUNK",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_SRV6_MANAGER_GET_LOCATOR_CHUNK",
+    "from": "svc:zebra",
+    "to": "svc:bgpd"
+   },
+   {
+    "msg": "zapi:ZEBRA_TABLE_MANAGER_CONNECT",
+    "from": "svc:lib",
+    "to": "svc:zebra"
+   }
+  ]
+ },
+ "modules": [
+  {
+   "id": "Mb5ff12d4",
+   "label": "zebra:unlinked",
+   "size": 2941,
+   "anchors": [],
+   "tags": [],
+   "note": "no intra-service call edges observed",
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M6816d16c",
+   "label": "zebra:dplane",
+   "size": 407,
+   "anchors": [
+    {
+     "id": "code:zebra::backup_nexthop_recursive_use_enable_magic",
+     "file": "zebra/zebra_vty.c"
+    },
+    {
+     "id": "code:zebra::dplane_ctx_list_prev",
+     "file": "zebra/zebra_dplane.c"
+    },
+    {
+     "id": "code:zebra::dplane_intf_extra_list_const_first",
+     "file": null
+    },
+    {
+     "id": "code:zebra::dplane_intf_extra_list_prev",
+     "file": "zebra/zebra_dplane.c"
+    },
+    {
+     "id": "code:zebra::dplane_prov_list_prev",
+     "file": "zebra/zebra_dplane.c"
+    },
+    {
+     "id": "code:zebra::evpn_mh_mac_holdtime_magic",
+     "file": "zebra/zebra_vty.c"
+    },
+    {
+     "id": "code:zebra::evpn_mh_neigh_holdtime_magic",
+     "file": "zebra/zebra_vty.c"
+    },
+    {
+     "id": "code:zebra::evpn_mh_redirect_off_magic",
+     "file": "zebra/zebra_vty.c"
+    }
+   ],
+   "tags": [],
+   "note": "misc (<4-func call fragments)",
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M11ed049a",
+   "label": "zebra:zebra",
+   "size": 345,
+   "anchors": [
+    {
+     "id": "code:zebra::is_evpn_enabled",
+     "file": "zebra/zebra_vxlan.h"
+    },
+    {
+     "id": "code:zebra::zebra_vrf_get_evpn",
+     "file": "zebra/zebra_router.h"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_lookup",
+     "file": "zebra/zebra_evpn.c"
+    },
+    {
+     "id": "code:zebra::zebra_vxlan_if_update_vni",
+     "file": "zebra/zebra_vxlan_if.c"
+    },
+    {
+     "id": "code:zebra::zebra_vxlan_if_vni_find",
+     "file": "zebra/zebra_vxlan_if.c"
+    },
+    {
+     "id": "code:zebra::zl3vni_lookup",
+     "file": "zebra/zebra_vxlan.c"
+    },
+    {
+     "id": "code:zebra::zebra_vxlan_if_add_vni",
+     "file": "zebra/zebra_vxlan_if.c"
+    },
+    {
+     "id": "code:zebra::zebra_vxlan_process_vrf_vni_cmd",
+     "file": "zebra/zebra_vxlan.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M749027f4",
+   "label": "zebra:rib",
+   "size": 257,
+   "anchors": [
+    {
+     "id": "code:zebra::rib_dest_from_rnode",
+     "file": null
+    },
+    {
+     "id": "code:zebra::re_list_first",
+     "file": "zebra/rib.h"
+    },
+    {
+     "id": "code:zebra::re_list_next",
+     "file": "zebra/rib.h"
+    },
+    {
+     "id": "code:zebra::zebra_vrf_table",
+     "file": "zebra/zebra_vrf.c"
+    },
+    {
+     "id": "code:zebra::process_subq_early_route_add",
+     "file": "zebra/zebra_rib.c"
+    },
+    {
+     "id": "code:zebra::zvrf_name",
+     "file": null
+    },
+    {
+     "id": "code:zebra::rib_process",
+     "file": "zebra/zebra_rib.c"
+    },
+    {
+     "id": "code:zebra::zebra_nhg_free",
+     "file": "zebra/zebra_nhg.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M36d601bd",
+   "label": "zebra:netlink",
+   "size": 224,
+   "anchors": [
+    {
+     "id": "code:zebra::dplane_ctx_get_op",
+     "file": null
+    },
+    {
+     "id": "code:zebra::netlink_route_multipath_msg_encode",
+     "file": "zebra/rt_netlink.c"
+    },
+    {
+     "id": "code:zebra::netlink_route_change_read_unicast_internal",
+     "file": "zebra/rt_netlink.c"
+    },
+    {
+     "id": "code:zebra::kernel_dplane_log_detail",
+     "file": "zebra/zebra_dplane.c"
+    },
+    {
+     "id": "code:zebra::netlink_nexthop_msg_encode",
+     "file": "zebra/rt_netlink.c"
+    },
+    {
+     "id": "code:zebra::rib_process_result",
+     "file": "zebra/zebra_rib.c"
+    },
+    {
+     "id": "code:zebra::nl_put_msg",
+     "file": "zebra/kernel_netlink.c"
+    },
+    {
+     "id": "code:zebra::zebra_neigh_macfdb_update",
+     "file": "zebra/zebra_neigh.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M761377d9",
+   "label": "zebra:dplane",
+   "size": 220,
+   "anchors": [
+    {
+     "id": "code:zebra::netlink_parse_info",
+     "file": "zebra/kernel_netlink.c"
+    },
+    {
+     "id": "code:zebra::kernel_dplane_process_func",
+     "file": "zebra/zebra_dplane.c"
+    },
+    {
+     "id": "code:zebra::nl_msg_type_to_str",
+     "file": "zebra/kernel_netlink.c"
+    },
+    {
+     "id": "code:zebra::dplane_provider_enqueue_out_ctx",
+     "file": "zebra/zebra_dplane.c"
+    },
+    {
+     "id": "code:zebra::dplane_thread_loop",
+     "file": "zebra/zebra_dplane.c"
+    },
+    {
+     "id": "code:zebra::kernel_read_macfdb",
+     "file": "zebra/rt_netlink.c"
+    },
+    {
+     "id": "code:zebra::netlink_request",
+     "file": "zebra/kernel_netlink.c"
+    },
+    {
+     "id": "code:zebra::dplane_ctx_list_pop",
+     "file": null
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Med7a3cb2",
+   "label": "zebra:zserv",
+   "size": 173,
+   "anchors": [
+    {
+     "id": "code:zebra::zserv_client_list_first",
+     "file": "zebra/zserv.h"
+    },
+    {
+     "id": "code:zebra::zserv_client_list_next",
+     "file": "zebra/zserv.h"
+    },
+    {
+     "id": "code:zebra::zserv_send_message",
+     "file": "zebra/zserv.c"
+    },
+    {
+     "id": "code:zebra::zsend_rule_notify_owner",
+     "file": "zebra/zapi_msg.c"
+    },
+    {
+     "id": "code:zebra::zserv_find_client",
+     "file": "zebra/zserv.c"
+    },
+    {
+     "id": "code:zebra::netlink_rule_msg_encoder",
+     "file": "zebra/rule_netlink.c"
+    },
+    {
+     "id": "code:zebra::redistribute_delete",
+     "file": "zebra/redistribute.c"
+    },
+    {
+     "id": "code:zebra::redistribute_update",
+     "file": "zebra/redistribute.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mf3415498",
+   "label": "zebra:nhlfe",
+   "size": 171,
+   "anchors": [
+    {
+     "id": "code:zebra::zebra_vrf_lookup_by_id",
+     "file": "zebra/zebra_vrf.c"
+    },
+    {
+     "id": "code:zebra::nhlfe_list_first",
+     "file": "zebra/zebra_mpls.h"
+    },
+    {
+     "id": "code:zebra::nhlfe_list_next_safe",
+     "file": "zebra/zebra_mpls.h"
+    },
+    {
+     "id": "code:zebra::lsp_uninstall",
+     "file": "zebra/zebra_mpls.c"
+    },
+    {
+     "id": "code:zebra::netlink_mpls_multipath_msg_encode",
+     "file": "zebra/rt_netlink.c"
+    },
+    {
+     "id": "code:zebra::lsp_process",
+     "file": "zebra/zebra_mpls.c"
+    },
+    {
+     "id": "code:zebra::nhlfe_add",
+     "file": "zebra/zebra_mpls.c"
+    },
+    {
+     "id": "code:zebra::zebra_mpls_static_lsp_del",
+     "file": "zebra/zebra_mpls.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Md257f514",
+   "label": "zebra:dplane",
+   "size": 170,
+   "anchors": [
+    {
+     "id": "code:zebra::zebra_ns_lookup",
+     "file": "zebra/zebra_ns.c"
+    },
+    {
+     "id": "code:zebra::dplane_ctx_alloc",
+     "file": "zebra/zebra_dplane.c"
+    },
+    {
+     "id": "code:zebra::dplane_ctx_free",
+     "file": "zebra/zebra_dplane.c"
+    },
+    {
+     "id": "code:zebra::dplane_update_enqueue",
+     "file": "zebra/zebra_dplane.c"
+    },
+    {
+     "id": "code:zebra::dplane_ctx_ns_init",
+     "file": "zebra/zebra_dplane.c"
+    },
+    {
+     "id": "code:zebra::dplane_op2str",
+     "file": null
+    },
+    {
+     "id": "code:zebra::if_lookup_by_index_per_ns",
+     "file": "zebra/interface.c"
+    },
+    {
+     "id": "code:zebra::dplane_route_update_internal",
+     "file": "zebra/zebra_dplane.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M9a38c8b6",
+   "label": "zebra:zebra",
+   "size": 168,
+   "anchors": [
+    {
+     "id": "code:zebra::zebra_srv6_get_default",
+     "file": "zebra/zebra_srv6.c"
+    },
+    {
+     "id": "code:zebra::zebra_srv6_sid_format_changed_cb",
+     "file": "zebra/zebra_srv6.c"
+    },
+    {
+     "id": "code:zebra::no_srv6_locator",
+     "file": "zebra/zebra_srv6_vty.c"
+    },
+    {
+     "id": "code:zebra::zebra_srv6_locator_lookup",
+     "file": "zebra/zebra_srv6.c"
+    },
+    {
+     "id": "code:zebra::zebra_srv6_sid_client_del_all",
+     "file": "zebra/zebra_srv6.c"
+    },
+    {
+     "id": "code:zebra::zebra_srv6_sid_free",
+     "file": "zebra/zebra_srv6.c"
+    },
+    {
+     "id": "code:zebra::get_srv6_sid_explicit",
+     "file": "zebra/zebra_srv6.c"
+    },
+    {
+     "id": "code:zebra::zebra_srv6_sid_entry_list_first",
+     "file": "zebra/zebra_srv6.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M884ca7f8",
+   "label": "zebra:netlink",
+   "size": 135,
+   "anchors": [
+    {
+     "id": "code:zebra::netlink_link_change",
+     "file": "zebra/if_netlink.c"
+    },
+    {
+     "id": "code:zebra::netlink_route_read_unicast_ctx",
+     "file": "zebra/rt_netlink.c"
+    },
+    {
+     "id": "code:zebra::netlink_macfdb_change",
+     "file": "zebra/rt_netlink.c"
+    },
+    {
+     "id": "code:zebra::netlink_ipneigh_change",
+     "file": "zebra/rt_netlink.c"
+    },
+    {
+     "id": "code:zebra::netlink_interface_addr_dplane",
+     "file": "zebra/if_netlink.c"
+    },
+    {
+     "id": "code:zebra::netlink_interface_update_l2info",
+     "file": "zebra/if_netlink.c"
+    },
+    {
+     "id": "code:zebra::netlink_netconf_dplane_update",
+     "file": "zebra/netconf_netlink.c"
+    },
+    {
+     "id": "code:zebra::dplane_ctx_set_ns_id",
+     "file": null
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mf7a3167a",
+   "label": "zebra:zebra",
+   "size": 134,
+   "anchors": [
+    {
+     "id": "code:zebra::zebra_evpn_es_local_info_set",
+     "file": "zebra/zebra_evpn_mh.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_local_es_update",
+     "file": "zebra/zebra_evpn_mh.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_es_br_port_dplane_update",
+     "file": "zebra/zebra_evpn_mh.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_es_run_df_election",
+     "file": "zebra/zebra_evpn_mh.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_es_local_info_clear",
+     "file": "zebra/zebra_evpn_mh.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_es_evi_show_one_evpn",
+     "file": "zebra/zebra_evpn_mh.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_es_vtep_add",
+     "file": "zebra/zebra_evpn_mh.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_es_find",
+     "file": "zebra/zebra_evpn_mh.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Ma1f4c59c",
+   "label": "zebra:zebra",
+   "size": 130,
+   "anchors": [
+    {
+     "id": "code:zebra::zebra_evpn_mac_lookup",
+     "file": "zebra/zebra_evpn_mac.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_sync_mac_dp_install",
+     "file": "zebra/zebra_evpn_mac.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_local_neigh_update",
+     "file": "zebra/zebra_evpn_neigh.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_proc_sync_neigh_update",
+     "file": "zebra/zebra_evpn_neigh.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_zebra_mac_flag_dump",
+     "file": "zebra/zebra_evpn_mac.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_mac_is_static",
+     "file": null
+    },
+    {
+     "id": "code:zebra::zebra_evpn_proc_sync_mac_update",
+     "file": "zebra/zebra_evpn_mac.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_add_update_local_mac",
+     "file": "zebra/zebra_evpn_mac.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mb095eb5a",
+   "label": "zebra:if",
+   "size": 125,
+   "anchors": [
+    {
+     "id": "code:zebra::zebra_if_dplane_ifp_handling",
+     "file": "zebra/interface.c"
+    },
+    {
+     "id": "code:zebra::if_down",
+     "file": "zebra/interface.c"
+    },
+    {
+     "id": "code:zebra::interface_update_l2info",
+     "file": "zebra/interface.c"
+    },
+    {
+     "id": "code:zebra::zebra_ns_delete",
+     "file": "zebra/zebra_netns_notify.c"
+    },
+    {
+     "id": "code:zebra::if_delete_update",
+     "file": "zebra/interface.c"
+    },
+    {
+     "id": "code:zebra::if_nbr_ipv6ll_to_ipv4ll_neigh_update",
+     "file": "zebra/interface.c"
+    },
+    {
+     "id": "code:zebra::if_up",
+     "file": "zebra/interface.c"
+    },
+    {
+     "id": "code:zebra::if_zebra_delete_hook",
+     "file": "zebra/interface.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M84e7242a",
+   "label": "zebra:nhg",
+   "size": 123,
+   "anchors": [
+    {
+     "id": "code:zebra::nhg_connected_tree_first",
+     "file": "zebra/zebra_nhg_private.h"
+    },
+    {
+     "id": "code:zebra::nhg_ctx_process_new",
+     "file": "zebra/zebra_nhg.c"
+    },
+    {
+     "id": "code:zebra::nhg_connected_tree_next",
+     "file": "zebra/zebra_nhg_private.h"
+    },
+    {
+     "id": "code:zebra::zebra_nhg_install_kernel",
+     "file": "zebra/zebra_nhg.c"
+    },
+    {
+     "id": "code:zebra::nhg_ctx_process",
+     "file": "zebra/zebra_nhg.c"
+    },
+    {
+     "id": "code:zebra::show_nexthop_group_out",
+     "file": "zebra/zebra_vty.c"
+    },
+    {
+     "id": "code:zebra::zebra_nhg_depends_is_empty",
+     "file": "zebra/zebra_nhg.c"
+    },
+    {
+     "id": "code:zebra::zebra_nhe_find",
+     "file": "zebra/zebra_nhg.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M08c681c1",
+   "label": "zebra:rtadv",
+   "size": 113,
+   "anchors": [
+    {
+     "id": "code:zebra::zvrf_id",
+     "file": null
+    },
+    {
+     "id": "code:zebra::rtadv_send_packet",
+     "file": "zebra/rtadv.c"
+    },
+    {
+     "id": "code:zebra::adv_if_list_count",
+     "file": null
+    },
+    {
+     "id": "code:zebra::ipv6_nd_suppress_ra_set",
+     "file": "zebra/rtadv.c"
+    },
+    {
+     "id": "code:zebra::adv_if_clean_internal",
+     "file": "zebra/rtadv.c"
+    },
+    {
+     "id": "code:zebra::rtadv_interface_get_zvrf",
+     "file": "zebra/rtadv.c"
+    },
+    {
+     "id": "code:zebra::rtadv_start_interface_events",
+     "file": "zebra/rtadv.c"
+    },
+    {
+     "id": "code:zebra::zread_srv6_manager_request",
+     "file": "zebra/zapi_msg.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M6e57a9ac",
+   "label": "zebra:zebra",
+   "size": 109,
+   "anchors": [
+    {
+     "id": "code:zebra::zebra_evaluate_rnh",
+     "file": "zebra/zebra_rnh.c"
+    },
+    {
+     "id": "code:zebra::zebra_pw_change",
+     "file": "zebra/zebra_pw.c"
+    },
+    {
+     "id": "code:zebra::zebra_pw_del",
+     "file": "zebra/zebra_pw.c"
+    },
+    {
+     "id": "code:zebra::rib_get_fib_nhg",
+     "file": null
+    },
+    {
+     "id": "code:zebra::rnh_rbtree_first",
+     "file": "zebra/zebra_rnh.c"
+    },
+    {
+     "id": "code:zebra::zebra_add_rnh",
+     "file": "zebra/zebra_rnh.c"
+    },
+    {
+     "id": "code:zebra::get_rnh_table",
+     "file": "zebra/zebra_rnh.c"
+    },
+    {
+     "id": "code:zebra::vty_show_mpls_pseudowire_detail",
+     "file": "zebra/zebra_pw.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M78454a78",
+   "label": "zebra:zebra",
+   "size": 92,
+   "anchors": [
+    {
+     "id": "code:zebra::main",
+     "file": "zebra/main.c"
+    },
+    {
+     "id": "code:zebra::_hook_typecheck_zserv_client_close",
+     "file": null
+    },
+    {
+     "id": "code:zebra::zebra_finalize",
+     "file": "zebra/main.c"
+    },
+    {
+     "id": "code:zebra::zebra_router_init",
+     "file": "zebra/zebra_router.c"
+    },
+    {
+     "id": "code:zebra::zebra_srv6_init",
+     "file": "zebra/zebra_srv6.c"
+    },
+    {
+     "id": "code:zebra::lm_hooks_register",
+     "file": "zebra/label_manager.c"
+    },
+    {
+     "id": "code:zebra::zebra_ns_id_get",
+     "file": "zebra/zebra_netns_id.c"
+    },
+    {
+     "id": "code:zebra::zebra_ns_init",
+     "file": "zebra/zebra_ns.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mc1a75b29",
+   "label": "zebra:if",
+   "size": 72,
+   "anchors": [
+    {
+     "id": "code:zebra::zebra_if_addr_update_ctx",
+     "file": "zebra/interface.c"
+    },
+    {
+     "id": "code:zebra::if_refresh",
+     "file": null
+    },
+    {
+     "id": "code:zebra::if_set_flags",
+     "file": "zebra/ioctl.c"
+    },
+    {
+     "id": "code:zebra::connected_update",
+     "file": "zebra/connected.c"
+    },
+    {
+     "id": "code:zebra::if_ip_address_install",
+     "file": "zebra/interface.c"
+    },
+    {
+     "id": "code:zebra::netlink_address_msg_encoder",
+     "file": "zebra/if_netlink.c"
+    },
+    {
+     "id": "code:zebra::rtadv_prefix_reset",
+     "file": "zebra/rtadv.c"
+    },
+    {
+     "id": "code:zebra::connected_check_ptp",
+     "file": "zebra/connected.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M0c304f00",
+   "label": "zebra:opq",
+   "size": 51,
+   "anchors": [
+    {
+     "id": "code:zebra::sigint",
+     "file": "zebra/main.c"
+    },
+    {
+     "id": "code:zebra::handle_opq_notif_req",
+     "file": "zebra/zebra_opaque.c"
+    },
+    {
+     "id": "code:zebra::handle_opq_registration",
+     "file": "zebra/zebra_opaque.c"
+    },
+    {
+     "id": "code:zebra::handle_opq_unregistration",
+     "file": "zebra/zebra_opaque.c"
+    },
+    {
+     "id": "code:zebra::handle_opq_notif_unreg",
+     "file": "zebra/zebra_opaque.c"
+    },
+    {
+     "id": "code:zebra::dispatch_opq_messages",
+     "file": "zebra/zebra_opaque.c"
+    },
+    {
+     "id": "code:zebra::opq_regh_find",
+     "file": "zebra/zebra_opaque.c"
+    },
+    {
+     "id": "code:zebra::opq_client2str",
+     "file": "zebra/zebra_opaque.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M9254c380",
+   "label": "zebra:parse",
+   "size": 45,
+   "anchors": [
+    {
+     "id": "code:zebra::parse_netlink_msg",
+     "file": "zebra/fpm_listener.c"
+    },
+    {
+     "id": "code:zebra::sigusr1_handler",
+     "file": "zebra/fpm_listener.c"
+    },
+    {
+     "id": "code:zebra::get_timestamp",
+     "file": null
+    },
+    {
+     "id": "code:zebra::parse_route_msg",
+     "file": "zebra/fpm_listener.c"
+    },
+    {
+     "id": "code:zebra::netlink_msg_ctx_snprint",
+     "file": "zebra/fpm_listener.c"
+    },
+    {
+     "id": "code:zebra::parse_nexthop_msg",
+     "file": "zebra/fpm_listener.c"
+    },
+    {
+     "id": "code:zebra::handle_nexthop_update",
+     "file": "zebra/fpm_listener.c"
+    },
+    {
+     "id": "code:zebra::handle_route_update",
+     "file": "zebra/fpm_listener.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M63859ec5",
+   "label": "zebra:dump",
+   "size": 39,
+   "anchors": [
+    {
+     "id": "code:zebra::nl_dump",
+     "file": "zebra/debug_nl.c"
+    },
+    {
+     "id": "code:zebra::flag_write",
+     "file": null
+    },
+    {
+     "id": "code:zebra::nllink_dump",
+     "file": "zebra/debug_nl.c"
+    },
+    {
+     "id": "code:zebra::nlnh_dump",
+     "file": "zebra/debug_nl.c"
+    },
+    {
+     "id": "code:zebra::nlncm_dump",
+     "file": "zebra/debug_nl.c"
+    },
+    {
+     "id": "code:zebra::if_flags2str",
+     "file": "zebra/debug_nl.c"
+    },
+    {
+     "id": "code:zebra::neigh_flags2str",
+     "file": "zebra/debug_nl.c"
+    },
+    {
+     "id": "code:zebra::neigh_state2str",
+     "file": "zebra/debug_nl.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M58343762",
+   "label": "zebra:zebra",
+   "size": 38,
+   "anchors": [
+    {
+     "id": "code:zebra::zebra_neigh_free",
+     "file": "zebra/zebra_neigh.c"
+    },
+    {
+     "id": "code:zebra::zebra_neigh_show",
+     "file": "zebra/zebra_neigh.c"
+    },
+    {
+     "id": "code:zebra::zebra_pbr_add_rule",
+     "file": "zebra/zebra_pbr.c"
+    },
+    {
+     "id": "code:zebra::zebra_neigh_add",
+     "file": "zebra/zebra_neigh.c"
+    },
+    {
+     "id": "code:zebra::zebra_neigh_find",
+     "file": "zebra/zebra_neigh.c"
+    },
+    {
+     "id": "code:zebra::zebra_neigh_new",
+     "file": "zebra/zebra_neigh.c"
+    },
+    {
+     "id": "code:zebra::zebra_neigh_rb_head_RB_MIN",
+     "file": "zebra/zebra_neigh.h"
+    },
+    {
+     "id": "code:zebra::zebra_neigh_rb_head_RB_NEXT",
+     "file": "zebra/zebra_neigh.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mdf340e26",
+   "label": "zebra:mpls",
+   "size": 33,
+   "anchors": [
+    {
+     "id": "code:zebra::mq_add_handler",
+     "file": "zebra/zebra_rib.c"
+    },
+    {
+     "id": "code:zebra::mpls_zapi_labels_process",
+     "file": "zebra/zebra_rib.c"
+    },
+    {
+     "id": "code:zebra::rib_add_gr_run",
+     "file": "zebra/zebra_rib.c"
+    },
+    {
+     "id": "code:zebra::zread_client_capabilities",
+     "file": "zebra/zebra_gr.c"
+    },
+    {
+     "id": "code:zebra::zread_mpls_labels_replace",
+     "file": "zebra/zapi_msg.c"
+    },
+    {
+     "id": "code:zebra::mpls_ftn_uninstall",
+     "file": "zebra/zebra_rib.c"
+    },
+    {
+     "id": "code:zebra::zebra_gr_client_info_delete",
+     "file": "zebra/zebra_gr.c"
+    },
+    {
+     "id": "code:zebra::zebra_gr_delete_stale_routes",
+     "file": "zebra/zebra_gr.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mff698da4",
+   "label": "zebra:ipforward",
+   "size": 26,
+   "anchors": [
+    {
+     "id": "code:zebra::ipforward",
+     "file": "zebra/ipforward_proc.c"
+    },
+    {
+     "id": "code:zebra::config_write_protocol",
+     "file": "zebra/zebra_vty.c"
+    },
+    {
+     "id": "code:zebra::ipforward_ipv6",
+     "file": null
+    },
+    {
+     "id": "code:zebra::show_zebra",
+     "file": "zebra/zebra_vty.c"
+    },
+    {
+     "id": "code:zebra::netlink_config_write_helper",
+     "file": "zebra/kernel_netlink.c"
+    },
+    {
+     "id": "code:zebra::zebra_ip_forwarding_modify",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::zebra_ipv6_forwarding_modify",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::ipforward_ipv6_off",
+     "file": "zebra/ipforward_proc.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mdb4d7fb2",
+   "label": "zebra:show",
+   "size": 24,
+   "anchors": [
+    {
+     "id": "code:zebra::if_dump_vty",
+     "file": "zebra/interface.c"
+    },
+    {
+     "id": "code:zebra::if_dump_vty_json",
+     "file": "zebra/interface.c"
+    },
+    {
+     "id": "code:zebra::show_interface_magic",
+     "file": "zebra/interface.c"
+    },
+    {
+     "id": "code:zebra::show_interface_vrf_all_magic",
+     "file": "zebra/interface.c"
+    },
+    {
+     "id": "code:zebra::interface_update_stats",
+     "file": null
+    },
+    {
+     "id": "code:zebra::show_interface_name_vrf_all_magic",
+     "file": "zebra/interface.c"
+    },
+    {
+     "id": "code:zebra::show_interface_name_vrf_magic",
+     "file": "zebra/interface.c"
+    },
+    {
+     "id": "code:zebra::zebra_protodown_rc_str",
+     "file": null
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mf14c2f93",
+   "label": "zebra:dplane",
+   "size": 23,
+   "anchors": [
+    {
+     "id": "code:zebra::netlink_tfilter_flower_put_options",
+     "file": "zebra/tc_netlink.c"
+    },
+    {
+     "id": "code:zebra::netlink_tfilter_msg_encode",
+     "file": "zebra/tc_netlink.c"
+    },
+    {
+     "id": "code:zebra::dplane_ctx_tc_filter_get_eth_proto",
+     "file": null
+    },
+    {
+     "id": "code:zebra::dplane_ctx_tc_filter_get_filter_bm",
+     "file": null
+    },
+    {
+     "id": "code:zebra::dplane_ctx_tc_filter_get_ip_proto",
+     "file": null
+    },
+    {
+     "id": "code:zebra::dplane_ctx_tc_filter_get_classid",
+     "file": null
+    },
+    {
+     "id": "code:zebra::dplane_ctx_tc_filter_get_dsfield",
+     "file": null
+    },
+    {
+     "id": "code:zebra::dplane_ctx_tc_filter_get_dsfield_mask",
+     "file": null
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Ma8b65012",
+   "label": "zebra:label",
+   "size": 22,
+   "anchors": [
+    {
+     "id": "code:zebra::assign_label_chunk",
+     "file": "zebra/label_manager.c"
+    },
+    {
+     "id": "code:zebra::assign_specific_label_chunk",
+     "file": "zebra/label_manager.c"
+    },
+    {
+     "id": "code:zebra::release_daemon_label_chunks",
+     "file": "zebra/label_manager.c"
+    },
+    {
+     "id": "code:zebra::release_label_chunk",
+     "file": "zebra/label_manager.c"
+    },
+    {
+     "id": "code:zebra::zread_label_manager_connect",
+     "file": "zebra/zapi_msg.c"
+    },
+    {
+     "id": "code:zebra::zread_label_manager_request",
+     "file": "zebra/zapi_msg.c"
+    },
+    {
+     "id": "code:zebra::create_label_chunk",
+     "file": "zebra/label_manager.c"
+    },
+    {
+     "id": "code:zebra::delete_label_chunk",
+     "file": "zebra/label_manager.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M8d105308",
+   "label": "zebra:zserv",
+   "size": 13,
+   "anchors": [
+    {
+     "id": "code:zebra::zserv_handle_commands",
+     "file": "zebra/zapi_msg.c"
+    },
+    {
+     "id": "code:zebra::zsend_error_msg",
+     "file": "zebra/zapi_msg.c"
+    },
+    {
+     "id": "code:zebra::zserv_client_fail",
+     "file": "zebra/zserv.c"
+    },
+    {
+     "id": "code:zebra::zserv_error_invalid_msg_type",
+     "file": "zebra/zapi_msg.c"
+    },
+    {
+     "id": "code:zebra::zserv_error_no_vrf",
+     "file": "zebra/zapi_msg.c"
+    },
+    {
+     "id": "code:zebra::zserv_log_message",
+     "file": "zebra/zserv.c"
+    },
+    {
+     "id": "code:zebra::zserv_process_messages",
+     "file": "zebra/zserv.c"
+    },
+    {
+     "id": "code:zebra::zserv_read",
+     "file": "zebra/zserv.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Maeefa3dc",
+   "label": "zebra:lib",
+   "size": 11,
+   "anchors": [
+    {
+     "id": "code:zebra::link_param_cmd_set_float",
+     "file": null
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_available_bandwidth_modify",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_max_bandwidth_destroy",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_max_bandwidth_modify",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_max_reservable_bandwidth_destroy",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_max_reservable_bandwidth_modify",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_residual_bandwidth_modify",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_unreserved_bandwidths_unreserved_bandwidth_create",
+     "file": "zebra/zebra_nb_config.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M390e7d14",
+   "label": "zebra:zebra",
+   "size": 10,
+   "anchors": [
+    {
+     "id": "code:zebra::zebra_vrf_alloc",
+     "file": "zebra/zebra_vrf.c"
+    },
+    {
+     "id": "code:zebra::zebra_vrf_new",
+     "file": "zebra/zebra_vrf.c"
+    },
+    {
+     "id": "code:zebra::zebra_pw_init_vrf",
+     "file": "zebra/zebra_pw.c"
+    },
+    {
+     "id": "code:zebra::otable_init",
+     "file": null
+    },
+    {
+     "id": "code:zebra::router_id_init",
+     "file": null
+    },
+    {
+     "id": "code:zebra::table_manager_enable",
+     "file": "zebra/table_manager.c"
+    },
+    {
+     "id": "code:zebra::zebra_mpls_init_tables",
+     "file": "zebra/zebra_mpls.c"
+    },
+    {
+     "id": "code:zebra::zebra_pw_head_RB_INIT",
+     "file": "zebra/zebra_pw.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Ma53a1dab",
+   "label": "zebra:lib",
+   "size": 10,
+   "anchors": [
+    {
+     "id": "code:zebra::zebra_vrf_indent_cli_write",
+     "file": "zebra/zebra_cli.c"
+    },
+    {
+     "id": "code:zebra::lib_vrf_mpls_fec_nexthop_resolution_cli_write",
+     "file": "zebra/zebra_cli.c"
+    },
+    {
+     "id": "code:zebra::lib_vrf_zebra_filter_nht_cli_write",
+     "file": "zebra/zebra_cli.c"
+    },
+    {
+     "id": "code:zebra::lib_vrf_zebra_filter_protocol_cli_write",
+     "file": "zebra/zebra_cli.c"
+    },
+    {
+     "id": "code:zebra::lib_vrf_zebra_ipv6_resolve_via_default_cli_write",
+     "file": "zebra/zebra_cli.c"
+    },
+    {
+     "id": "code:zebra::lib_vrf_zebra_ipv6_router_id_cli_write",
+     "file": "zebra/zebra_cli.c"
+    },
+    {
+     "id": "code:zebra::lib_vrf_zebra_l3vni_id_cli_write",
+     "file": "zebra/zebra_cli.c"
+    },
+    {
+     "id": "code:zebra::lib_vrf_zebra_netns_table_range_cli_write",
+     "file": "zebra/zebra_cli.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M310102fb",
+   "label": "zebra:zebra",
+   "size": 9,
+   "anchors": [
+    {
+     "id": "code:zebra::show_evpn_access_vlan_magic",
+     "file": "zebra/zebra_vty.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_acc_vl_show_entry_detail",
+     "file": "zebra/zebra_evpn_mh.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_acc_vl_json_fill",
+     "file": "zebra/zebra_evpn_mh.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_acc_vl_show_entry",
+     "file": "zebra/zebra_evpn_mh.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_acc_vl_show_hash",
+     "file": "zebra/zebra_evpn_mh.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_acc_vl_show_vid",
+     "file": "zebra/zebra_evpn_mh.c"
+    },
+    {
+     "id": "code:zebra::show_evpn_access_vlan",
+     "file": "zebra/zebra_vty_clippy.c"
+    },
+    {
+     "id": "code:zebra::zebra_evpn_acc_vl_show",
+     "file": "zebra/zebra_evpn_mh.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mbb221a0f",
+   "label": "zebra:lib",
+   "size": 8,
+   "anchors": [
+    {
+     "id": "code:zebra::link_param_cmd_unset",
+     "file": null
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_available_bandwidth_destroy",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_delay_destroy",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_delay_variation_destroy",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_metric_destroy",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_packet_loss_destroy",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_residual_bandwidth_destroy",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_utilized_bandwidth_destroy",
+     "file": "zebra/zebra_nb_config.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M671c4009",
+   "label": "zebra:zebra",
+   "size": 7,
+   "anchors": [
+    {
+     "id": "code:zebra::zebra_import_kernel_table_xpath",
+     "file": "zebra/zebra_cli.c"
+    },
+    {
+     "id": "code:zebra::ip_zebra_import_table_distance_magic",
+     "file": "zebra/zebra_cli.c"
+    },
+    {
+     "id": "code:zebra::ipv6_zebra_import_table_distance_magic",
+     "file": "zebra/zebra_cli.c"
+    },
+    {
+     "id": "code:zebra::no_ip_zebra_import_table_magic",
+     "file": "zebra/zebra_cli.c"
+    },
+    {
+     "id": "code:zebra::ip_zebra_import_table_distance",
+     "file": "zebra/zebra_cli_clippy.c"
+    },
+    {
+     "id": "code:zebra::ipv6_zebra_import_table_distance",
+     "file": "zebra/zebra_cli_clippy.c"
+    },
+    {
+     "id": "code:zebra::no_ip_zebra_import_table",
+     "file": "zebra/zebra_cli_clippy.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M0f151d26",
+   "label": "zebra:lib",
+   "size": 7,
+   "anchors": [
+    {
+     "id": "code:zebra::table_manager_range",
+     "file": "zebra/table_manager.c"
+    },
+    {
+     "id": "code:zebra::table_range_validate",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_vrf_zebra_netns_table_range_create",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_vrf_zebra_netns_table_range_end_modify",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_vrf_zebra_netns_table_range_start_modify",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_vrf_zebra_netns_table_range_destroy",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::table_range_add",
+     "file": null
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M91b44ac9",
+   "label": "zebra:hook",
+   "size": 6,
+   "anchors": [
+    {
+     "id": "code:zebra::zebra_mlag_module_init",
+     "file": "zebra/zebra_mlag_private.c"
+    },
+    {
+     "id": "code:zebra::_hook_typecheck_zebra_mlag_private_cleanup_data",
+     "file": null
+    },
+    {
+     "id": "code:zebra::_hook_typecheck_zebra_mlag_private_close_channel",
+     "file": null
+    },
+    {
+     "id": "code:zebra::_hook_typecheck_zebra_mlag_private_monitor_state",
+     "file": null
+    },
+    {
+     "id": "code:zebra::_hook_typecheck_zebra_mlag_private_open_channel",
+     "file": null
+    },
+    {
+     "id": "code:zebra::_hook_typecheck_zebra_mlag_private_write_data",
+     "file": null
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Md7f46b4f",
+   "label": "zebra:pref64",
+   "size": 6,
+   "anchors": [
+    {
+     "id": "code:zebra::pref64_cmp",
+     "file": "zebra/rtadv.c"
+    },
+    {
+     "id": "code:zebra::pref64_advs_const_find_gteq",
+     "file": "zebra/rtadv.c"
+    },
+    {
+     "id": "code:zebra::pref64_advs_const_find_lt",
+     "file": "zebra/rtadv.c"
+    },
+    {
+     "id": "code:zebra::pref64_advs_add",
+     "file": "zebra/rtadv.c"
+    },
+    {
+     "id": "code:zebra::pref64_advs_find_gteq",
+     "file": "zebra/rtadv.c"
+    },
+    {
+     "id": "code:zebra::pref64_advs_find_lt",
+     "file": "zebra/rtadv.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M234c1383",
+   "label": "zebra:evpn",
+   "size": 5,
+   "anchors": [
+    {
+     "id": "code:zebra::evpn_accept_bgp_seq_magic",
+     "file": "zebra/zebra_vty.c"
+    },
+    {
+     "id": "code:zebra::no_evpn_accept_bgp_seq_magic",
+     "file": "zebra/zebra_vty.c"
+    },
+    {
+     "id": "code:zebra::zebra_vxlan_set_accept_bgp_seq",
+     "file": null
+    },
+    {
+     "id": "code:zebra::evpn_accept_bgp_seq",
+     "file": "zebra/zebra_vty_clippy.c"
+    },
+    {
+     "id": "code:zebra::no_evpn_accept_bgp_seq",
+     "file": "zebra/zebra_vty_clippy.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mc45fffa8",
+   "label": "zebra:zebra",
+   "size": 5,
+   "anchors": [
+    {
+     "id": "code:zebra::zebra_pbr_show_ipset_entry_walkcb",
+     "file": "zebra/zebra_pbr.c"
+    },
+    {
+     "id": "code:zebra::hook_call_zebra_pbr_ipset_entry_get_stat",
+     "file": null
+    },
+    {
+     "id": "code:zebra::zebra_pbr_display_icmp",
+     "file": "zebra/zebra_pbr.c"
+    },
+    {
+     "id": "code:zebra::zebra_pbr_display_port",
+     "file": "zebra/zebra_pbr.c"
+    },
+    {
+     "id": "code:zebra::zebra_pbr_prefix2str",
+     "file": "zebra/zebra_pbr.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Me89a1c94",
+   "label": "zebra:lib",
+   "size": 5,
+   "anchors": [
+    {
+     "id": "code:zebra::link_param_cmd_set_uint32",
+     "file": null
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_delay_modify",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_delay_variation_modify",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_metric_modify",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_link_params_packet_loss_modify",
+     "file": "zebra/zebra_nb_config.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M07cb66e3",
+   "label": "zebra:pref64",
+   "size": 5,
+   "anchors": [
+    {
+     "id": "code:zebra::pref64_advs_const_find",
+     "file": "zebra/rtadv.c"
+    },
+    {
+     "id": "code:zebra::pref64_advs_find",
+     "file": "zebra/rtadv.c"
+    },
+    {
+     "id": "code:zebra::rtadv_pref64_set",
+     "file": "zebra/rtadv.c"
+    },
+    {
+     "id": "code:zebra::lib_interface_zebra_ipv6_router_advertisements_pref64_pref64_prefix_create",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::pref64_advs_member",
+     "file": "zebra/rtadv.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M5d1331e1",
+   "label": "zebra:dplane",
+   "size": 4,
+   "anchors": [
+    {
+     "id": "code:zebra::dplane_intf_extra_list_const_next",
+     "file": null
+    },
+    {
+     "id": "code:zebra::dplane_intf_extra_list_next",
+     "file": "zebra/zebra_dplane.c"
+    },
+    {
+     "id": "code:zebra::dplane_ctx_intf_extra_next",
+     "file": "zebra/zebra_dplane.c"
+    },
+    {
+     "id": "code:zebra::dplane_intf_extra_list_next_safe",
+     "file": "zebra/zebra_dplane.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mb4e151b7",
+   "label": "zebra:zebra",
+   "size": 4,
+   "anchors": [
+    {
+     "id": "code:zebra::zebra_pbr_show_iptable_unit",
+     "file": "zebra/zebra_pbr.c"
+    },
+    {
+     "id": "code:zebra::hook_call_zebra_pbr_iptable_get_stat",
+     "file": null
+    },
+    {
+     "id": "code:zebra::zebra_pbr_show_iptable_walkcb",
+     "file": "zebra/zebra_pbr.c"
+    },
+    {
+     "id": "code:zebra::zebra_pbr_tcpflags_snprintf",
+     "file": null
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M981276f3",
+   "label": "zebra:zserv",
+   "size": 4,
+   "anchors": [
+    {
+     "id": "code:zebra::zserv_client_create",
+     "file": "zebra/zserv.c"
+    },
+    {
+     "id": "code:zebra::hook_call_zserv_client_connect",
+     "file": null
+    },
+    {
+     "id": "code:zebra::zserv_accept",
+     "file": "zebra/zserv.c"
+    },
+    {
+     "id": "code:zebra::zserv_client_list_add_tail",
+     "file": "zebra/zserv.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M0bcc5dc1",
+   "label": "zebra:rtadv",
+   "size": 4,
+   "anchors": [
+    {
+     "id": "code:zebra::lib_interface_zebra_ipv6_router_advertisements_dnssl_dnssl_domain_create",
+     "file": "zebra/zebra_nb_config.c"
+    },
+    {
+     "id": "code:zebra::rtadv_dnssl_set",
+     "file": "zebra/rtadv.c"
+    },
+    {
+     "id": "code:zebra::rtadv_dnssl_encode",
+     "file": null
+    },
+    {
+     "id": "code:zebra::rtadv_dnssl_new",
+     "file": "zebra/rtadv.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M221b9839",
+   "label": "zebra:zebra",
+   "size": 4,
+   "anchors": [
+    {
+     "id": "code:zebra::zebra_route_map_mark_update",
+     "file": "zebra/zebra_routemap.c"
+    },
+    {
+     "id": "code:zebra::zebra_route_map_add",
+     "file": "zebra/zebra_routemap.c"
+    },
+    {
+     "id": "code:zebra::zebra_route_map_delete",
+     "file": "zebra/zebra_routemap.c"
+    },
+    {
+     "id": "code:zebra::zebra_route_map_event",
+     "file": "zebra/zebra_routemap.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mcd6940af",
+   "label": "zebra:host",
+   "size": 4,
+   "anchors": [
+    {
+     "id": "code:zebra::rb_host_count",
+     "file": "zebra/zebra_vxlan.c"
+    },
+    {
+     "id": "code:zebra::zl3vni_print_nh",
+     "file": "zebra/zebra_vxlan.c"
+    },
+    {
+     "id": "code:zebra::host_rb_tree_entry_RB_MIN",
+     "file": "zebra/zebra_evpn_base.h"
+    },
+    {
+     "id": "code:zebra::host_rb_tree_entry_RB_NEXT",
+     "file": "zebra/zebra_evpn_base.h"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  }
+ ]
+}

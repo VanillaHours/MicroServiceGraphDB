@@ -1,0 +1,518 @@
+{
+ "scope": {
+  "file": "lib/zclient.c",
+  "function": "zclient_send_message",
+  "line_span": [
+   381,
+   404
+  ],
+  "params": [
+   {
+    "name": "zclient",
+    "type": "struct zclient *"
+   }
+  ]
+ },
+ "tool_ver": "p5-slice/1.0.0+clang18",
+ "cfg": {
+  "entry": 0,
+  "exit": 1,
+  "n_blocks": 8,
+  "n_edges": 11,
+  "blocks": [
+   {
+    "id": 0,
+    "tag": "entry",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 383,
+      "spell": "zclient -> sock < 0",
+      "defs": [],
+      "uses": [
+       "zclient"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      3,
+      "then"
+     ],
+     [
+      2,
+      "no-else"
+     ]
+    ],
+    "pred": []
+   },
+   {
+    "id": 1,
+    "tag": "exit",
+    "stmts": [],
+    "succ": [],
+    "pred": [
+     [
+      3,
+      "return"
+     ],
+     [
+      5,
+      "return"
+     ],
+     [
+      6,
+      "return"
+     ],
+     [
+      7,
+      "return"
+     ],
+     [
+      4,
+      "return"
+     ]
+    ]
+   },
+   {
+    "id": 2,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 385,
+      "spell": "buffer_write ( zclient -> wb , zclient -> sock , STREAM_DATA ( zclient -> obuf ) , stream_get_endp ( zclient -> obuf ) )",
+      "defs": [],
+      "uses": [
+       "zclient"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      5,
+      "case"
+     ],
+     [
+      5,
+      "fallthrough"
+     ],
+     [
+      6,
+      "case"
+     ],
+     [
+      7,
+      "case"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 3,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "RETURN_STMT",
+      "line": 384,
+      "spell": "return ZCLIENT_SEND_FAILURE",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 4,
+    "tag": "switch-merge",
+    "stmts": [
+     {
+      "kind": "RETURN_STMT",
+      "line": 403,
+      "spell": "return ZCLIENT_SEND_SUCCESS",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": []
+   },
+   {
+    "id": 5,
+    "tag": "case",
+    "stmts": [
+     {
+      "kind": "CASE_STMT",
+      "line": 388,
+      "spell": "case BUFFER_ERROR : flog_err ( EC_LIB_ZAPI_SOCKET , \"%s: buffer_write failed to zclient fd %d, closing\" , __func__ , zclient -> sock )",
+      "defs": [],
+      "uses": [
+       "_xrefdata",
+       "_xref",
+       "zclient"
+      ]
+     },
+     {
+      "kind": "RETURN_STMT",
+      "line": 392,
+      "spell": "return zclient_failed ( zclient )",
+      "defs": [],
+      "uses": [
+       "zclient"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      2,
+      "case"
+     ],
+     [
+      2,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 6,
+    "tag": "case",
+    "stmts": [
+     {
+      "kind": "CASE_STMT",
+      "line": 393,
+      "spell": "case BUFFER_EMPTY : event_cancel ( & zclient -> t_write )",
+      "defs": [],
+      "uses": [
+       "zclient"
+      ]
+     },
+     {
+      "kind": "RETURN_STMT",
+      "line": 395,
+      "spell": "return ZCLIENT_SEND_SUCCESS",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      2,
+      "case"
+     ]
+    ]
+   },
+   {
+    "id": 7,
+    "tag": "case",
+    "stmts": [
+     {
+      "kind": "CASE_STMT",
+      "line": 396,
+      "spell": "case BUFFER_PENDING : event_add_write ( zclient -> master , zclient_flush_data , zclient , zclient -> sock , & zclient -> t_write )",
+      "defs": [],
+      "uses": [
+       "_xref",
+       "zclient"
+      ]
+     },
+     {
+      "kind": "RETURN_STMT",
+      "line": 399,
+      "spell": "return ZCLIENT_SEND_BUFFERED",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      2,
+      "case"
+     ]
+    ]
+   }
+  ],
+  "edges": [
+   {
+    "from": 0,
+    "to": 3,
+    "kind": "then"
+   },
+   {
+    "from": 3,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 0,
+    "to": 2,
+    "kind": "no-else"
+   },
+   {
+    "from": 2,
+    "to": 5,
+    "kind": "case"
+   },
+   {
+    "from": 2,
+    "to": 5,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 5,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 2,
+    "to": 6,
+    "kind": "case"
+   },
+   {
+    "from": 6,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 2,
+    "to": 7,
+    "kind": "case"
+   },
+   {
+    "from": 7,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 4,
+    "to": 1,
+    "kind": "return"
+   }
+  ]
+ },
+ "dfg": {
+  "defs": [
+   {
+    "id": "d0",
+    "var": "zclient",
+    "block": 0,
+    "stmt": -1,
+    "line": 381,
+    "kind": "param",
+    "type": "struct zclient *"
+   }
+  ],
+  "chains": [
+   {
+    "use": "zclient",
+    "block": 0,
+    "line": 383,
+    "stmt": "zclient -> sock < 0",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "zclient",
+    "block": 2,
+    "line": 385,
+    "stmt": "buffer_write ( zclient -> wb , zclient -> sock , STREAM_DATA ( zclient -> obuf )",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "_xrefdata",
+    "block": 5,
+    "line": 388,
+    "stmt": "case BUFFER_ERROR : flog_err ( EC_LIB_ZAPI_SOCKET , \"%s: buffer_write failed to ",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 5,
+    "line": 388,
+    "stmt": "case BUFFER_ERROR : flog_err ( EC_LIB_ZAPI_SOCKET , \"%s: buffer_write failed to ",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zclient",
+    "block": 5,
+    "line": 388,
+    "stmt": "case BUFFER_ERROR : flog_err ( EC_LIB_ZAPI_SOCKET , \"%s: buffer_write failed to ",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "zclient",
+    "block": 5,
+    "line": 392,
+    "stmt": "return zclient_failed ( zclient )",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "zclient",
+    "block": 6,
+    "line": 393,
+    "stmt": "case BUFFER_EMPTY : event_cancel ( & zclient -> t_write )",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "_xref",
+    "block": 7,
+    "line": 396,
+    "stmt": "case BUFFER_PENDING : event_add_write ( zclient -> master , zclient_flush_data ,",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zclient",
+    "block": 7,
+    "line": 396,
+    "stmt": "case BUFFER_PENDING : event_add_write ( zclient -> master , zclient_flush_data ,",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   }
+  ],
+  "n_chains": 9,
+  "undef_uses": [
+   {
+    "use": "_xrefdata",
+    "block": 5,
+    "line": 388,
+    "stmt": "case BUFFER_ERROR : flog_err ( EC_LIB_ZAPI_SOCKET , \"%s: buffer_write failed to ",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 5,
+    "line": 388,
+    "stmt": "case BUFFER_ERROR : flog_err ( EC_LIB_ZAPI_SOCKET , \"%s: buffer_write failed to ",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 7,
+    "line": 396,
+    "stmt": "case BUFFER_PENDING : event_add_write ( zclient -> master , zclient_flush_data ,",
+    "defs": [],
+    "n_defs": 0
+   }
+  ]
+ },
+ "liveness": {
+  "live_in": {
+   "0": [
+    "_xref",
+    "_xrefdata",
+    "zclient"
+   ],
+   "1": [],
+   "2": [
+    "_xref",
+    "_xrefdata",
+    "zclient"
+   ],
+   "3": [],
+   "4": [],
+   "5": [
+    "_xref",
+    "_xrefdata",
+    "zclient"
+   ],
+   "6": [
+    "zclient"
+   ],
+   "7": [
+    "_xref",
+    "zclient"
+   ]
+  },
+  "live_out": {
+   "0": [
+    "_xref",
+    "_xrefdata",
+    "zclient"
+   ],
+   "1": [],
+   "2": [
+    "_xref",
+    "_xrefdata",
+    "zclient"
+   ],
+   "3": [],
+   "4": [],
+   "5": [],
+   "6": [],
+   "7": []
+  },
+  "params_live_at_entry": [
+   "zclient"
+  ]
+ },
+ "meta": {
+  "compute_ms": 171.9,
+  "unreachable_stmts_skipped": 0,
+  "cache_key": "33ee3f3faa5fad070fb210884ae96f312241d418db33a346aab3452bf342a390"
+ },
+ "cache": {
+  "hit": false,
+  "key": "33ee3f3faa5fad070fb210884ae96f312241d418db33a346aab3452bf342a390",
+  "path": "/home/z/my-project/poc/facts/p5/cache/slices/33ee3f3faa5fad070fb210884ae96f312241d418db33a346aab3452bf342a390.json",
+  "tool_ver": "p5-slice/1.0.0+clang18"
+ }
+}

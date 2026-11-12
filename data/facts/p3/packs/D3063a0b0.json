@@ -1,0 +1,1691 @@
+{
+ "id": "D3063a0b0",
+ "label": "bgpd [41z/65y]",
+ "level": "L1",
+ "services": [
+  "svc:bgpd"
+ ],
+ "functionality": [
+  "bgpd is a route client: publishes 27 message types toward the ZAPI bus (all_vni, default_gw, subnet, svi_macip...) and handles 30 notifications from it",
+  "northbound contracts: 65 YANG paths across 1 module (frr-bgp-route-map(65))"
+ ],
+ "roles": [
+  "zapi-client",
+  "zapi-publisher"
+ ],
+ "yang_modules": {
+  "frr-bgp-route-map": 65
+ },
+ "zapi_msgs": [
+  "zapi:ZEBRA_ADVERTISE_ALL_VNI",
+  "zapi:ZEBRA_ADVERTISE_DEFAULT_GW",
+  "zapi:ZEBRA_ADVERTISE_SUBNET",
+  "zapi:ZEBRA_ADVERTISE_SVI_MACIP",
+  "zapi:ZEBRA_DUPLICATE_ADDR_DETECTION",
+  "zapi:ZEBRA_EVPN_REMOTE_NH_ADD",
+  "zapi:ZEBRA_EVPN_REMOTE_NH_DEL",
+  "zapi:ZEBRA_FEC_UPDATE",
+  "zapi:ZEBRA_INTERFACE_NBR_ADDRESS_ADD",
+  "zapi:ZEBRA_INTERFACE_NBR_ADDRESS_DELETE",
+  "zapi:ZEBRA_IPSET_CREATE",
+  "zapi:ZEBRA_IPSET_DESTROY",
+  "zapi:ZEBRA_IPSET_ENTRY_ADD",
+  "zapi:ZEBRA_IPSET_ENTRY_DELETE",
+  "zapi:ZEBRA_IPSET_ENTRY_NOTIFY_OWNER",
+  "zapi:ZEBRA_IPSET_NOTIFY_OWNER",
+  "zapi:ZEBRA_IPTABLE_ADD",
+  "zapi:ZEBRA_IPTABLE_DELETE",
+  "zapi:ZEBRA_IPTABLE_NOTIFY_OWNER",
+  "zapi:ZEBRA_IP_PREFIX_ROUTE_ADD",
+  "zapi:ZEBRA_IP_PREFIX_ROUTE_DEL",
+  "zapi:ZEBRA_L3VNI_ADD",
+  "zapi:ZEBRA_L3VNI_DEL",
+  "zapi:ZEBRA_LOCAL_ES_ADD",
+  "zapi:ZEBRA_LOCAL_ES_DEL",
+  "zapi:ZEBRA_LOCAL_ES_EVI_ADD",
+  "zapi:ZEBRA_LOCAL_ES_EVI_DEL",
+  "zapi:ZEBRA_MACIP_ADD",
+  "zapi:ZEBRA_MACIP_DEL",
+  "zapi:ZEBRA_REMOTE_ES_VTEP_ADD",
+  "zapi:ZEBRA_REMOTE_ES_VTEP_DEL",
+  "zapi:ZEBRA_REMOTE_MACIP_ADD",
+  "zapi:ZEBRA_REMOTE_MACIP_DEL",
+  "zapi:ZEBRA_REMOTE_VTEP_ADD",
+  "zapi:ZEBRA_REMOTE_VTEP_DEL",
+  "zapi:ZEBRA_RULE_ADD",
+  "zapi:ZEBRA_RULE_DELETE",
+  "zapi:ZEBRA_RULE_NOTIFY_OWNER",
+  "zapi:ZEBRA_VNI_ADD",
+  "zapi:ZEBRA_VNI_DEL",
+  "zapi:ZEBRA_VXLAN_FLOOD_CONTROL"
+ ],
+ "boundary_edges": [
+  {
+   "to": "D4b2a9ab8",
+   "rels": {
+    "handles": 23,
+    "publishes": 12
+   }
+  },
+  {
+   "to": "Ded29f1c0",
+   "rels": {
+    "publishes": 5,
+    "handles": 6
+   }
+  },
+  {
+   "to": "Dc32724de",
+   "rels": {
+    "handles": 4
+   }
+  }
+ ],
+ "children": [
+  "C3063a0b0"
+ ],
+ "findings": {
+  "dropped_on_wire": [],
+  "orphan_handlers": [
+   "zapi:ZEBRA_IPSET_ENTRY_NOTIFY_OWNER",
+   "zapi:ZEBRA_IPSET_NOTIFY_OWNER",
+   "zapi:ZEBRA_IPTABLE_NOTIFY_OWNER",
+   "zapi:ZEBRA_IP_PREFIX_ROUTE_ADD",
+   "zapi:ZEBRA_IP_PREFIX_ROUTE_DEL",
+   "zapi:ZEBRA_MACIP_ADD",
+   "zapi:ZEBRA_MACIP_DEL"
+  ],
+  "dead_wiring": [],
+  "cross_svc_flows": [
+   {
+    "msg": "zapi:ZEBRA_ADVERTISE_ALL_VNI",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_ADVERTISE_DEFAULT_GW",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_ADVERTISE_SUBNET",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_ADVERTISE_SVI_MACIP",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_DUPLICATE_ADDR_DETECTION",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_EVPN_REMOTE_NH_ADD",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_EVPN_REMOTE_NH_DEL",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_FEC_UPDATE",
+    "from": "svc:zebra",
+    "to": "svc:bgpd"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_NBR_ADDRESS_ADD",
+    "from": "svc:zebra",
+    "to": "svc:bgpd"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_NBR_ADDRESS_DELETE",
+    "from": "svc:zebra",
+    "to": "svc:bgpd"
+   },
+   {
+    "msg": "zapi:ZEBRA_IPSET_CREATE",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_IPSET_DESTROY",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_IPSET_ENTRY_ADD",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_IPSET_ENTRY_DELETE",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_IPTABLE_ADD",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_IPTABLE_DELETE",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_L3VNI_ADD",
+    "from": "svc:zebra",
+    "to": "svc:bgpd"
+   },
+   {
+    "msg": "zapi:ZEBRA_L3VNI_DEL",
+    "from": "svc:zebra",
+    "to": "svc:bgpd"
+   },
+   {
+    "msg": "zapi:ZEBRA_LOCAL_ES_ADD",
+    "from": "svc:zebra",
+    "to": "svc:bgpd"
+   },
+   {
+    "msg": "zapi:ZEBRA_LOCAL_ES_DEL",
+    "from": "svc:zebra",
+    "to": "svc:bgpd"
+   },
+   {
+    "msg": "zapi:ZEBRA_LOCAL_ES_EVI_ADD",
+    "from": "svc:zebra",
+    "to": "svc:bgpd"
+   },
+   {
+    "msg": "zapi:ZEBRA_LOCAL_ES_EVI_DEL",
+    "from": "svc:zebra",
+    "to": "svc:bgpd"
+   },
+   {
+    "msg": "zapi:ZEBRA_REMOTE_ES_VTEP_ADD",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_REMOTE_ES_VTEP_DEL",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_REMOTE_MACIP_ADD",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_REMOTE_MACIP_DEL",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_REMOTE_VTEP_ADD",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_REMOTE_VTEP_DEL",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_RULE_ADD",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_RULE_DELETE",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_RULE_NOTIFY_OWNER",
+    "from": "svc:zebra",
+    "to": "svc:bgpd"
+   },
+   {
+    "msg": "zapi:ZEBRA_VNI_ADD",
+    "from": "svc:zebra",
+    "to": "svc:bgpd"
+   },
+   {
+    "msg": "zapi:ZEBRA_VNI_DEL",
+    "from": "svc:zebra",
+    "to": "svc:bgpd"
+   },
+   {
+    "msg": "zapi:ZEBRA_VXLAN_FLOOD_CONTROL",
+    "from": "svc:bgpd",
+    "to": "svc:zebra"
+   }
+  ]
+ },
+ "modules": [
+  {
+   "id": "Medef0552",
+   "label": "bgpd:unlinked",
+   "size": 3161,
+   "anchors": [],
+   "tags": [],
+   "note": "no intra-service call edges observed",
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M05216fef",
+   "label": "bgpd:bgp",
+   "size": 697,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_dest_get_prefix",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::bgp_dest_get_bgp_path_info",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::bgp_route_next",
+     "file": "bgpd/bgp_table.h"
+    },
+    {
+     "id": "code:bgpd::bgp_dest_unlock_node",
+     "file": "bgpd/bgp_table.c"
+    },
+    {
+     "id": "code:bgpd::bgp_table_top",
+     "file": "bgpd/bgp_table.h"
+    },
+    {
+     "id": "code:bgpd::bgp_update",
+     "file": "bgpd/bgp_route.c"
+    },
+    {
+     "id": "code:bgpd::bgp_dest_get_bgp_table_info",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::bgp_process",
+     "file": "bgpd/bgp_route.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M5fbc08dc",
+   "label": "bgpd:peer",
+   "size": 607,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_debug_neighbor_events",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::peer_established",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::peer_set_last_reset",
+     "file": "bgpd/bgpd.h"
+    },
+    {
+     "id": "code:bgpd::peer_delete",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::peer_notify_config_change",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::bgp_notify_send",
+     "file": "bgpd/bgp_packet.c"
+    },
+    {
+     "id": "code:bgpd::bgp_peer_get_connection_direction_string",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::bgp_accept",
+     "file": "bgpd/bgp_network.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M8a2078aa",
+   "label": "bgpd:bgp",
+   "size": 556,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_attr_get_ecommunity",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::bgp_attr_intern",
+     "file": "bgpd/bgp_attr.c"
+    },
+    {
+     "id": "code:bgpd::bgp_attr_flush",
+     "file": "bgpd/bgp_attr.c"
+    },
+    {
+     "id": "code:bgpd::bgp_attr_parse",
+     "file": "bgpd/bgp_attr.c"
+    },
+    {
+     "id": "code:bgpd::bgp_attr_unintern_sub",
+     "file": "bgpd/bgp_attr.c"
+    },
+    {
+     "id": "code:bgpd::subgroup_announce_check",
+     "file": "bgpd/bgp_route.c"
+    },
+    {
+     "id": "code:bgpd::ecommunity_free",
+     "file": "bgpd/bgp_ecommunity.c"
+    },
+    {
+     "id": "code:bgpd::rfapiBgpInfoFilteredImportVPN",
+     "file": "bgpd/rfapi/rfapi_import.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M0db7f269",
+   "label": "bgpd:bgp",
+   "size": 530,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_get_evpn",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::bgp_lookup_by_vrf_id",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::bgp_evpn_local_vni_add",
+     "file": "bgpd/bgp_evpn.c"
+    },
+    {
+     "id": "code:bgpd::bgp_show_ethernet_vpn",
+     "file": "bgpd/bgp_evpn_vty.c"
+    },
+    {
+     "id": "code:bgpd::bgp_evpn_es_find",
+     "file": "bgpd/bgp_evpn_mh.c"
+    },
+    {
+     "id": "code:bgpd::bgp_config_write",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::bgp_evpn_local_es_evi_add",
+     "file": "bgpd/bgp_evpn_mh.c"
+    },
+    {
+     "id": "code:bgpd::ecommunity_ecom2str",
+     "file": "bgpd/bgp_ecommunity.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M177e2382",
+   "label": "bgpd:peer",
+   "size": 331,
+   "anchors": [
+    {
+     "id": "code:bgpd::peer_and_group_lookup_vty",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::bgp_node_afi",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::bgp_node_safi",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::bgp_vty_return",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::peer_af_flag_unset_vty",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::peer_flag_set_vty",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::peer_flag_unset_vty",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::peer_af_flag_set_vty",
+     "file": "bgpd/bgp_vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M96bf08bc",
+   "label": "bgpd:bgp",
+   "size": 308,
+   "anchors": [
+    {
+     "id": "code:bgpd::as_list_list_prev",
+     "file": "bgpd/bgp_aspath.h"
+    },
+    {
+     "id": "code:bgpd::bgp_ac_neighbor",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::bgp_adv_fifo_next",
+     "file": "bgpd/bgp_advertise.h"
+    },
+    {
+     "id": "code:bgpd::bgp_adv_fifo_prev",
+     "file": "bgpd/bgp_advertise.h"
+    },
+    {
+     "id": "code:bgpd::bgp_advertise_attr_fifo_next",
+     "file": "bgpd/bgp_advertise.h"
+    },
+    {
+     "id": "code:bgpd::bgp_advertise_attr_fifo_prev",
+     "file": "bgpd/bgp_advertise.h"
+    },
+    {
+     "id": "code:bgpd::bgp_advertise_attr_hash_alloc",
+     "file": "bgpd/bgp_advertise.c"
+    },
+    {
+     "id": "code:bgpd::bgp_clearing_hash_next",
+     "file": "bgpd/bgpd.c"
+    }
+   ],
+   "tags": [],
+   "note": "misc (<4-func call fragments)",
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M68866613",
+   "label": "bgpd:bgp",
+   "size": 306,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_get_default",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::vpn_leak_postchange",
+     "file": "bgpd/bgp_mplsvpn.h"
+    },
+    {
+     "id": "code:bgpd::bgp_delete",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::vpn_leak_prechange",
+     "file": "bgpd/bgp_mplsvpn.h"
+    },
+    {
+     "id": "code:bgpd::bgp_lookup_by_name",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::bgp_zebra_srv6_sid_notify",
+     "file": "bgpd/bgp_zebra.c"
+    },
+    {
+     "id": "code:bgpd::rfapi_vty_show_nve_summary",
+     "file": "bgpd/rfapi/rfapi_vty.c"
+    },
+    {
+     "id": "code:bgpd::vpn_leak_postchange_all",
+     "file": "bgpd/bgp_mplsvpn.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M3d1effc0",
+   "label": "bgpd:aspath",
+   "size": 190,
+   "anchors": [
+    {
+     "id": "code:bgpd::aspath_free",
+     "file": "bgpd/bgp_aspath.c"
+    },
+    {
+     "id": "code:bgpd::aspath_str_update",
+     "file": "bgpd/bgp_aspath.c"
+    },
+    {
+     "id": "code:bgpd::aspath_count_hops_internal",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::aspath_dup",
+     "file": "bgpd/bgp_aspath.c"
+    },
+    {
+     "id": "code:bgpd::as_path",
+     "file": "bgpd/bgp_filter.c"
+    },
+    {
+     "id": "code:bgpd::aspath_reconcile_as4",
+     "file": "bgpd/bgp_aspath.c"
+    },
+    {
+     "id": "code:bgpd::assegment_new",
+     "file": "bgpd/bgp_aspath.c"
+    },
+    {
+     "id": "code:bgpd::bgp_attr_finish",
+     "file": "bgpd/bgp_attr.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mdbb8a808",
+   "label": "bgpd:rfapi",
+   "size": 173,
+   "anchors": [
+    {
+     "id": "code:bgpd::register_add",
+     "file": "bgpd/rfapi/rfapi_vty.c"
+    },
+    {
+     "id": "code:bgpd::rfapiStream2Vty",
+     "file": "bgpd/rfapi/rfapi_vty.c"
+    },
+    {
+     "id": "code:bgpd::clear_vnc_prefix",
+     "file": "bgpd/rfapi/rfapi_vty.c"
+    },
+    {
+     "id": "code:bgpd::print_cleared_stats",
+     "file": "bgpd/rfapi/rfapi_vty.c"
+    },
+    {
+     "id": "code:bgpd::parse_deleter_tokens",
+     "file": "bgpd/rfapi/rfapi_vty.c"
+    },
+    {
+     "id": "code:bgpd::rfapi_print_tunneltype_option",
+     "file": "bgpd/rfapi/rfapi_encap_tlv.c"
+    },
+    {
+     "id": "code:bgpd::process_pending_node",
+     "file": "bgpd/rfapi/rfapi_rib.c"
+    },
+    {
+     "id": "code:bgpd::rfapi_register",
+     "file": "bgpd/rfapi/rfapi.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M11f2a3ce",
+   "label": "bgpd:bgp",
+   "size": 152,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_init",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::bgp_exit",
+     "file": "bgpd/bgp_main.c"
+    },
+    {
+     "id": "code:bgpd::bgp_debug_list_free",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::bgp_lp_release",
+     "file": "bgpd/bgp_labelpool.c"
+    },
+    {
+     "id": "code:bgpd::bgp_maxmed_update",
+     "file": "bgpd/bgp_fsm.c"
+    },
+    {
+     "id": "code:bgpd::bgp_lp_get",
+     "file": "bgpd/bgp_labelpool.c"
+    },
+    {
+     "id": "code:bgpd::bgp_mplsvpn_nh_label_bind_register_local_label",
+     "file": "bgpd/bgp_mplsvpn.c"
+    },
+    {
+     "id": "code:bgpd::rfapi_init",
+     "file": "bgpd/rfapi/rfapi.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M1b1024e6",
+   "label": "bgpd:vnc",
+   "size": 134,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_rfapi_is_vnc_configured",
+     "file": "bgpd/rfapi/bgp_rfapi_cfg.c"
+    },
+    {
+     "id": "code:bgpd::vnc_redistribute_postchange",
+     "file": "bgpd/rfapi/bgp_rfapi_cfg.c"
+    },
+    {
+     "id": "code:bgpd::vnc_redistribute_prechange",
+     "file": "bgpd/rfapi/bgp_rfapi_cfg.c"
+    },
+    {
+     "id": "code:bgpd::set_ecom_list",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::bgp_rfapi_delete_named_nve_group",
+     "file": "bgpd/rfapi/bgp_rfapi_cfg.c"
+    },
+    {
+     "id": "code:bgpd::vnc_nve_group_rt_both",
+     "file": "bgpd/rfapi/bgp_rfapi_cfg.c"
+    },
+    {
+     "id": "code:bgpd::vnc_vrf_policy_rt_both",
+     "file": "bgpd/rfapi/bgp_rfapi_cfg.c"
+    },
+    {
+     "id": "code:bgpd::vnc_direct_bgp_reexport",
+     "file": "bgpd/rfapi/vnc_export_bgp.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M388e7fc0",
+   "label": "bgpd:bgp",
+   "size": 124,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_ls_cleanup",
+     "file": "bgpd/bgp_ls.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_attr_free",
+     "file": "bgpd/bgp_ls_nlri.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_originate_bgp_node",
+     "file": "bgpd/bgp_ls.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_protocol_is_ospf",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::bgp_ls_update",
+     "file": "bgpd/bgp_ls.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_attr_alloc",
+     "file": "bgpd/bgp_ls_nlri.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_refresh_bgp_link_endx_attrs",
+     "file": "bgpd/bgp_ls.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_upsert_bgp_link_srv6_endx_sid",
+     "file": "bgpd/bgp_ls.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M794d62eb",
+   "label": "bgpd:bgp",
+   "size": 113,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_create",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::bgp_free",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::bgp_nexthop_cache_first",
+     "file": "bgpd/bgp_nexthop.h"
+    },
+    {
+     "id": "code:bgpd::bgp_nexthop_cache_next",
+     "file": "bgpd/bgp_nexthop.h"
+    },
+    {
+     "id": "code:bgpd::bnc_find",
+     "file": "bgpd/bgp_nexthop.c"
+    },
+    {
+     "id": "code:bgpd::bgp_table_unlock",
+     "file": "bgpd/bgp_table.c"
+    },
+    {
+     "id": "code:bgpd::show_ip_bgp_nexthop_table",
+     "file": "bgpd/bgp_nexthop.c"
+    },
+    {
+     "id": "code:bgpd::bgp_fs_local_install_interface",
+     "file": "bgpd/bgp_flowspec_vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M9f7a4904",
+   "label": "bgpd:bgp",
+   "size": 82,
+   "anchors": [
+    {
+     "id": "code:bgpd::get_afi_safi_str",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::bgp_vty_find_and_parse_afi_safi_bgp",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::peer_lookup_in_view",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::bgp_show",
+     "file": "bgpd/bgp_route.c"
+    },
+    {
+     "id": "code:bgpd::bgp_do_deferred_path_selection",
+     "file": "bgpd/bgp_route.c"
+    },
+    {
+     "id": "code:bgpd::bgp_gr_check_path_select",
+     "file": "bgpd/bgp_fsm.c"
+    },
+    {
+     "id": "code:bgpd::bgp_gr_supported_for_afi_safi",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::bgp_process_gr_deferral_complete",
+     "file": "bgpd/bgp_route.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mf821a5db",
+   "label": "bgpd:bgp",
+   "size": 56,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_ls_parse_attr",
+     "file": "bgpd/bgp_ls_nlri.c"
+    },
+    {
+     "id": "code:bgpd::stream_get_tlv_hdr",
+     "file": "bgpd/bgp_ls_nlri.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_decode_node_descriptor",
+     "file": "bgpd/bgp_ls_nlri.c"
+    },
+    {
+     "id": "code:bgpd::parse_endx_sub_tlvs",
+     "file": "bgpd/bgp_ls_nlri.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_decode_link_nlri",
+     "file": "bgpd/bgp_ls_nlri.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_decode_nlri",
+     "file": "bgpd/bgp_ls_nlri.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_decode_prefix_nlri",
+     "file": "bgpd/bgp_ls_nlri.c"
+    },
+    {
+     "id": "code:bgpd::stream_skip_tlv",
+     "file": "bgpd/bgp_ls_nlri.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M8a05a0cb",
+   "label": "bgpd:bgp",
+   "size": 54,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_adj_out_set_subgroup",
+     "file": "bgpd/bgp_updgrp_adv.c"
+    },
+    {
+     "id": "code:bgpd::bgp_fibupd_safi",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::bgp_master_init",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::main",
+     "file": "bgpd/bgp_btoa.c"
+    },
+    {
+     "id": "code:bgpd::bgp_adj_out_unset_subgroup",
+     "file": "bgpd/bgp_updgrp_adv.c"
+    },
+    {
+     "id": "code:bgpd::bgp_option_check",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::bgp_option_norib_set_runtime",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::bgp_option_norib_unset_runtime",
+     "file": "bgpd/bgpd.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M8ab55cef",
+   "label": "bgpd:bgp",
+   "size": 47,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_pbr_policyroute_add_to_zebra_unit",
+     "file": "bgpd/bgp_pbr.c"
+    },
+    {
+     "id": "code:bgpd::bgp_pbr_flush_entry",
+     "file": "bgpd/bgp_pbr.c"
+    },
+    {
+     "id": "code:bgpd::bgp_pbr_handle_entry",
+     "file": "bgpd/bgp_pbr.c"
+    },
+    {
+     "id": "code:bgpd::bgp_pbr_policyroute_add_to_zebra_recursive",
+     "file": "bgpd/bgp_pbr.c"
+    },
+    {
+     "id": "code:bgpd::bgp_pbr_policyroute_remove_from_zebra_recursive",
+     "file": "bgpd/bgp_pbr.c"
+    },
+    {
+     "id": "code:bgpd::bgp_pbr_policyroute_remove_from_zebra_unit",
+     "file": "bgpd/bgp_pbr.c"
+    },
+    {
+     "id": "code:bgpd::bgp_send_pbr_iptable",
+     "file": "bgpd/bgp_zebra.c"
+    },
+    {
+     "id": "code:bgpd::bgp_send_pbr_rule_action",
+     "file": "bgpd/bgp_zebra.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mc787a838",
+   "label": "bgpd:bgp",
+   "size": 36,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_redist_add",
+     "file": "bgpd/bgp_zebra.c"
+    },
+    {
+     "id": "code:bgpd::bgp_redistribute_set",
+     "file": "bgpd/bgp_zebra.c"
+    },
+    {
+     "id": "code:bgpd::bgp_redistribute_metric_set",
+     "file": "bgpd/bgp_zebra.c"
+    },
+    {
+     "id": "code:bgpd::bgp_redistribute_rmap_set",
+     "file": "bgpd/bgp_zebra.c"
+    },
+    {
+     "id": "code:bgpd::bgp_redistribute_unset",
+     "file": "bgpd/bgp_zebra.c"
+    },
+    {
+     "id": "code:bgpd::bgp_redistribute_ipv6_table_magic",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::_bgp_redistribute_unset",
+     "file": "bgpd/bgp_zebra.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_distribute_bgp_fabric_magic",
+     "file": "bgpd/bgp_vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mbd4ef484",
+   "label": "bgpd:lib",
+   "size": 29,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_route_match_add",
+     "file": "bgpd/bgp_routemap_nb_config.c"
+    },
+    {
+     "id": "code:bgpd::lib_route_map_entry_match_condition_rmap_match_condition_alias_modify",
+     "file": "bgpd/bgp_routemap_nb_config.c"
+    },
+    {
+     "id": "code:bgpd::lib_route_map_entry_match_condition_rmap_match_condition_aspath_count_modify",
+     "file": "bgpd/bgp_routemap_nb_config.c"
+    },
+    {
+     "id": "code:bgpd::lib_route_map_entry_match_condition_rmap_match_condition_comm_list_finish",
+     "file": "bgpd/bgp_routemap_nb_config.c"
+    },
+    {
+     "id": "code:bgpd::lib_route_map_entry_match_condition_rmap_match_condition_community_limit_modify",
+     "file": "bgpd/bgp_routemap_nb_config.c"
+    },
+    {
+     "id": "code:bgpd::lib_route_map_entry_match_condition_rmap_match_condition_evpn_default_route_create",
+     "file": "bgpd/bgp_routemap_nb_config.c"
+    },
+    {
+     "id": "code:bgpd::lib_route_map_entry_match_condition_rmap_match_condition_evpn_route_type_modify",
+     "file": "bgpd/bgp_routemap_nb_config.c"
+    },
+    {
+     "id": "code:bgpd::lib_route_map_entry_match_condition_rmap_match_condition_evpn_vni_modify",
+     "file": "bgpd/bgp_routemap_nb_config.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M0ceb82ce",
+   "label": "bgpd:subtlv",
+   "size": 22,
+   "anchors": [
+    {
+     "id": "code:bgpd::rfapi_encap_tlv_to_un_option",
+     "file": "bgpd/rfapi/rfapi_encap_tlv.c"
+    },
+    {
+     "id": "code:bgpd::subtlv_decode_remote_endpoint",
+     "file": "bgpd/bgp_encap_tlv.c"
+    },
+    {
+     "id": "code:bgpd::tlv_to_bgp_encap_type_gre",
+     "file": "bgpd/bgp_encap_tlv.c"
+    },
+    {
+     "id": "code:bgpd::tlv_to_bgp_encap_type_l2tpv3overip",
+     "file": "bgpd/bgp_encap_tlv.c"
+    },
+    {
+     "id": "code:bgpd::tlv_to_bgp_encap_type_ip_in_ip",
+     "file": "bgpd/bgp_encap_tlv.c"
+    },
+    {
+     "id": "code:bgpd::subtlv_decode_color",
+     "file": "bgpd/bgp_encap_tlv.c"
+    },
+    {
+     "id": "code:bgpd::subtlv_decode_ipsec_ta",
+     "file": "bgpd/bgp_encap_tlv.c"
+    },
+    {
+     "id": "code:bgpd::subtlv_decode_proto_type",
+     "file": "bgpd/bgp_encap_tlv.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Md7980e4b",
+   "label": "bgpd:subtlv",
+   "size": 21,
+   "anchors": [
+    {
+     "id": "code:bgpd::rfapi_tunneltype_option_to_tlv",
+     "file": "bgpd/rfapi/rfapi_encap_tlv.c"
+    },
+    {
+     "id": "code:bgpd::bgp_encap_type_gre_to_tlv",
+     "file": "bgpd/bgp_encap_tlv.c"
+    },
+    {
+     "id": "code:bgpd::bgp_encap_type_l2tpv3overip_to_tlv",
+     "file": "bgpd/bgp_encap_tlv.c"
+    },
+    {
+     "id": "code:bgpd::bgp_encap_type_ip_in_ip_to_tlv",
+     "file": "bgpd/bgp_encap_tlv.c"
+    },
+    {
+     "id": "code:bgpd::subtlv_encode_color",
+     "file": "bgpd/bgp_encap_tlv.c"
+    },
+    {
+     "id": "code:bgpd::subtlv_encode_ipsec_ta",
+     "file": "bgpd/bgp_encap_tlv.c"
+    },
+    {
+     "id": "code:bgpd::subtlv_encode_proto_type",
+     "file": "bgpd/bgp_encap_tlv.c"
+    },
+    {
+     "id": "code:bgpd::subtlv_encode_remote_endpoint",
+     "file": "bgpd/bgp_encap_tlv.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Maf1da382",
+   "label": "bgpd:bgp",
+   "size": 19,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_evpn_path_nh_link",
+     "file": "bgpd/bgp_evpn_mh.c"
+    },
+    {
+     "id": "code:bgpd::bgp_evpn_nh_zebra_update",
+     "file": "bgpd/bgp_evpn_mh.c"
+    },
+    {
+     "id": "code:bgpd::bgp_evpn_path_nh_unlink",
+     "file": "bgpd/bgp_evpn_mh.c"
+    },
+    {
+     "id": "code:bgpd::bgp_evpn_nh_clear_ref_pi",
+     "file": "bgpd/bgp_evpn_mh.c"
+    },
+    {
+     "id": "code:bgpd::bgp_evpn_nh_update_ref_pi",
+     "file": "bgpd/bgp_evpn_mh.c"
+    },
+    {
+     "id": "code:bgpd::bgp_evpn_nh_add",
+     "file": "bgpd/bgp_evpn_mh.c"
+    },
+    {
+     "id": "code:bgpd::bgp_evpn_nh_del",
+     "file": "bgpd/bgp_evpn_mh.c"
+    },
+    {
+     "id": "code:bgpd::bgp_evpn_nh_flush_entry",
+     "file": "bgpd/bgp_evpn_mh.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mac1658a2",
+   "label": "bgpd:debug",
+   "size": 16,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_debug_list_add_entry",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::bgp_debug_list_has_entry",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::debug_bgp_aggregate_prefix_magic",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::debug_bgp_bestpath_prefix_magic",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::debug_bgp_update_direct_peer_magic",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::debug_bgp_update_prefix_afi_safi_magic",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::debug_bgp_update_prefix_magic",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::debug_bgp_zebra_prefix_magic",
+     "file": "bgpd/bgp_debug.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M7307d654",
+   "label": "bgpd:no",
+   "size": 14,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_debug_list_remove_entry",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::no_debug_bgp_aggregate_prefix_magic",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::no_debug_bgp_bestpath_prefix_magic",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::no_debug_bgp_update_prefix_afi_safi_magic",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::no_debug_bgp_update_prefix_magic",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::no_debug_bgp_zebra_prefix_magic",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::no_debug_bgp_aggregate_prefix",
+     "file": "bgpd/bgp_debug_clippy.c"
+    },
+    {
+     "id": "code:bgpd::no_debug_bgp_bestpath_prefix",
+     "file": "bgpd/bgp_debug_clippy.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M11642e27",
+   "label": "bgpd:bgp",
+   "size": 13,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_initiate_graceful_shut_unshut",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::bgp_clear_star_soft_in",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::bgp_default_local_preference",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::bgp_global_graceful_shutdown_config_vty",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::bgp_global_graceful_shutdown_deconfig_vty",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::bgp_graceful_shutdown",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::no_bgp_default_local_preference",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::no_bgp_graceful_shutdown",
+     "file": "bgpd/bgp_vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mfc5222b2",
+   "label": "bgpd:bgp",
+   "size": 11,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_ls_encode_nlri",
+     "file": "bgpd/bgp_ls_nlri.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_encode_node_descriptor",
+     "file": "bgpd/bgp_ls_nlri.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_encode_link_nlri",
+     "file": "bgpd/bgp_ls_nlri.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_encode_prefix_nlri",
+     "file": "bgpd/bgp_ls_nlri.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_nlri_validate",
+     "file": "bgpd/bgp_ls_nlri.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_encode_node_nlri",
+     "file": "bgpd/bgp_ls_nlri.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_encode_srv6_sid_nlri",
+     "file": "bgpd/bgp_ls_nlri.c"
+    },
+    {
+     "id": "code:bgpd::bgp_ls_encode_link_descriptor",
+     "file": "bgpd/bgp_ls_nlri.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M9f44f613",
+   "label": "bgpd:show",
+   "size": 8,
+   "anchors": [
+    {
+     "id": "code:bgpd::show_bgp_memory",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::attr_count",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::attr_show_all",
+     "file": "bgpd/bgp_attr.c"
+    },
+    {
+     "id": "code:bgpd::show_ip_bgp_attr_info_magic",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::aspath_count",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::attr_unknown_count",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::community_count",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::show_ip_bgp_attr_info",
+     "file": "bgpd/bgp_vty_clippy.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M69358855",
+   "label": "bgpd:no",
+   "size": 8,
+   "anchors": [
+    {
+     "id": "code:bgpd::lcommunity_list_unset_vty",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::no_lcommunity_list_all",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::no_lcommunity_list_expanded",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::no_lcommunity_list_name_expanded",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::no_lcommunity_list_name_expanded_all",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::no_lcommunity_list_name_standard",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::no_lcommunity_list_name_standard_all",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::no_lcommunity_list_standard",
+     "file": "bgpd/bgp_vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M4af66cc4",
+   "label": "bgpd:bgp",
+   "size": 6,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_config_write_debug",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::bgp_debug_list_conf_print",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::bgp_debug_list_print",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::bgp_debug_print_evpn_prefix",
+     "file": "bgpd/bgp_debug.c"
+    },
+    {
+     "id": "code:bgpd::hook_call_bgp_hook_config_write_debug",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::show_debugging_bgp",
+     "file": "bgpd/bgp_debug.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mba6650cb",
+   "label": "bgpd:bgp",
+   "size": 6,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_clearing_hash_const_find",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::bgp_clearing_hash_add",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::bgp_clearing_hash_find",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::peer_clearing_hash_cmp",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::peer_clearing_hashfn",
+     "file": null
+    },
+    {
+     "id": "code:bgpd::bgp_clearing_batch_check_peer",
+     "file": "bgpd/bgpd.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M33c41b85",
+   "label": "bgpd:bgp",
+   "size": 5,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_evpn_flood_control_change",
+     "file": "bgpd/bgp_evpn.c"
+    },
+    {
+     "id": "code:bgpd::bgp_evpn_flood_control_magic",
+     "file": "bgpd/bgp_evpn_vty.c"
+    },
+    {
+     "id": "code:bgpd::bgp_evpn_flood_control_vni_magic",
+     "file": "bgpd/bgp_evpn_vty.c"
+    },
+    {
+     "id": "code:bgpd::bgp_evpn_flood_control",
+     "file": "bgpd/bgp_evpn_vty_clippy.c"
+    },
+    {
+     "id": "code:bgpd::bgp_evpn_flood_control_vni",
+     "file": "bgpd/bgp_evpn_vty_clippy.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M899ebaee",
+   "label": "bgpd:bgp",
+   "size": 5,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_router_id_magic",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::bgp_router_id_static_set",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::no_bgp_router_id_magic",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::bgp_router_id",
+     "file": "bgpd/bgp_vty_clippy.c"
+    },
+    {
+     "id": "code:bgpd::no_bgp_router_id",
+     "file": "bgpd/bgp_vty_clippy.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M7536ef38",
+   "label": "bgpd:peer",
+   "size": 5,
+   "anchors": [
+    {
+     "id": "code:bgpd::peer_interface_vty",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::neighbor_interface",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::no_neighbor_interface",
+     "file": "bgpd/bgp_vty.c"
+    },
+    {
+     "id": "code:bgpd::peer_interface_set",
+     "file": "bgpd/bgpd.c"
+    },
+    {
+     "id": "code:bgpd::peer_interface_unset",
+     "file": "bgpd/bgpd.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Me5c37f11",
+   "label": "bgpd:update",
+   "size": 4,
+   "anchors": [
+    {
+     "id": "code:bgpd::subgroup_announce_all",
+     "file": "bgpd/bgp_updgrp_adv.c"
+    },
+    {
+     "id": "code:bgpd::bgp_announce_peer",
+     "file": "bgpd/bgp_updgrp.h"
+    },
+    {
+     "id": "code:bgpd::update_group_announce_rrc_walkcb",
+     "file": "bgpd/bgp_updgrp_adv.c"
+    },
+    {
+     "id": "code:bgpd::update_group_announce_walkcb",
+     "file": "bgpd/bgp_updgrp_adv.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M1860e923",
+   "label": "bgpd:printfrr",
+   "size": 4,
+   "anchors": [
+    {
+     "id": "code:bgpd::printfrr_prd_asnotation",
+     "file": "bgpd/bgp_rd.c"
+    },
+    {
+     "id": "code:bgpd::printfrr_prd",
+     "file": "bgpd/bgp_rd.c"
+    },
+    {
+     "id": "code:bgpd::printfrr_prd_dot",
+     "file": "bgpd/bgp_rd.c"
+    },
+    {
+     "id": "code:bgpd::printfrr_prd_dotplus",
+     "file": "bgpd/bgp_rd.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Ma1abce82",
+   "label": "bgpd:bgp",
+   "size": 3,
+   "anchors": [
+    {
+     "id": "code:bgpd::bgp_label_per_nexthop_cache_find",
+     "file": "bgpd/bgp_labelpool.h"
+    },
+    {
+     "id": "code:bgpd::bgp_label_per_nexthop_cache_const_find",
+     "file": "bgpd/bgp_labelpool.h"
+    },
+    {
+     "id": "code:bgpd::bgp_label_per_nexthop_find",
+     "file": "bgpd/bgp_labelpool.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  }
+ ]
+}

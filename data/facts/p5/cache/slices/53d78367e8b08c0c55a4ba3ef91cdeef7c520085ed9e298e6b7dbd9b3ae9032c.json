@@ -1,0 +1,1422 @@
+{
+ "scope": {
+  "file": "bgpd/bgp_zebra.c",
+  "function": "bgp_zebra_announce_table",
+  "line_span": [
+   1746,
+   1783
+  ],
+  "params": [
+   {
+    "name": "bgp",
+    "type": "struct bgp *"
+   },
+   {
+    "name": "afi",
+    "type": "afi_t"
+   },
+   {
+    "name": "safi",
+    "type": "safi_t"
+   }
+  ]
+ },
+ "tool_ver": "p5-slice/1.0.0+clang18",
+ "cfg": {
+  "entry": 0,
+  "exit": 1,
+  "n_blocks": 18,
+  "n_edges": 23,
+  "blocks": [
+   {
+    "id": 0,
+    "tag": "entry",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 1748,
+      "spell": "struct bgp_dest * dest ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 1749,
+      "spell": "struct bgp_table * table ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 1750,
+      "spell": "struct bgp_path_info * pi ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "UNARY_OPERATOR",
+      "line": 1755,
+      "spell": "! bgp_install_info_to_zebra ( bgp )",
+      "defs": [],
+      "uses": [
+       "bgp"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      3,
+      "then"
+     ],
+     [
+      2,
+      "no-else"
+     ]
+    ],
+    "pred": []
+   },
+   {
+    "id": 1,
+    "tag": "exit",
+    "stmts": [],
+    "succ": [],
+    "pred": [
+     [
+      3,
+      "return"
+     ],
+     [
+      5,
+      "return"
+     ],
+     [
+      7,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 2,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 1758,
+      "spell": "table = bgp -> rib [ afi ] [ safi ]",
+      "defs": [
+       [
+        "table",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "bgp",
+       "afi",
+       "safi"
+      ]
+     },
+     {
+      "kind": "UNARY_OPERATOR",
+      "line": 1759,
+      "spell": "! table",
+      "defs": [],
+      "uses": [
+       "table"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      5,
+      "then"
+     ],
+     [
+      4,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 3,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "RETURN_STMT",
+      "line": 1756,
+      "spell": "return",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 4,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 1762,
+      "spell": "dest = bgp_table_top ( table )",
+      "defs": [
+       [
+        "dest",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "table"
+      ]
+     },
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 1762,
+      "spell": "dest",
+      "defs": [],
+      "uses": [
+       "dest"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      6,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      2,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 5,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "RETURN_STMT",
+      "line": 1760,
+      "spell": "return",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      2,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 6,
+    "tag": "for-head",
+    "stmts": [],
+    "succ": [
+     [
+      7,
+      "exit-false"
+     ],
+     [
+      8,
+      "loop-true"
+     ]
+    ],
+    "pred": [
+     [
+      4,
+      "next"
+     ],
+     [
+      9,
+      "latch"
+     ]
+    ]
+   },
+   {
+    "id": 7,
+    "tag": "for-exit",
+    "stmts": [],
+    "succ": [
+     [
+      1,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      6,
+      "exit-false"
+     ]
+    ]
+   },
+   {
+    "id": 8,
+    "tag": "for-body",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 1763,
+      "spell": "pi = bgp_dest_get_bgp_path_info ( dest )",
+      "defs": [
+       [
+        "pi",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "dest"
+      ]
+     },
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 1763,
+      "spell": "pi",
+      "defs": [],
+      "uses": [
+       "pi"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      10,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      6,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 9,
+    "tag": "for-incr",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 1762,
+      "spell": "dest = bgp_route_next ( dest )",
+      "defs": [
+       [
+        "dest",
+        "assign"
+       ]
+      ],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      6,
+      "latch"
+     ]
+    ],
+    "pred": [
+     [
+      11,
+      "to-incr"
+     ]
+    ]
+   },
+   {
+    "id": 10,
+    "tag": "for-head",
+    "stmts": [],
+    "succ": [
+     [
+      11,
+      "exit-false"
+     ],
+     [
+      12,
+      "loop-true"
+     ]
+    ],
+    "pred": [
+     [
+      8,
+      "next"
+     ],
+     [
+      13,
+      "latch"
+     ]
+    ]
+   },
+   {
+    "id": 11,
+    "tag": "for-exit",
+    "stmts": [],
+    "succ": [
+     [
+      9,
+      "to-incr"
+     ]
+    ],
+    "pred": [
+     [
+      10,
+      "exit-false"
+     ]
+    ]
+   },
+   {
+    "id": 12,
+    "tag": "for-body",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 1764,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "pi"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      15,
+      "then"
+     ],
+     [
+      14,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      10,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 13,
+    "tag": "for-incr",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 1763,
+      "spell": "pi = pi -> next",
+      "defs": [
+       [
+        "pi",
+        "assign"
+       ]
+      ],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      10,
+      "latch"
+     ]
+    ],
+    "pred": [
+     [
+      14,
+      "to-incr"
+     ]
+    ]
+   },
+   {
+    "id": 14,
+    "tag": "if-merge",
+    "stmts": [],
+    "succ": [
+     [
+      13,
+      "to-incr"
+     ]
+    ],
+    "pred": [
+     [
+      16,
+      "fallthrough"
+     ],
+     [
+      12,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 15,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 1766,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 1768,
+      "spell": "bgp -> table_map [ afi ] [ safi ] . name",
+      "defs": [],
+      "uses": [
+       "bgp",
+       "afi",
+       "safi"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      17,
+      "then"
+     ],
+     [
+      16,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      12,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 16,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 1781,
+      "spell": "bgp_zebra_route_install ( dest , pi , bgp , is_add , NULL , false )",
+      "defs": [],
+      "uses": [
+       "dest",
+       "pi",
+       "bgp",
+       "is_add"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      14,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      17,
+      "fallthrough"
+     ],
+     [
+      15,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 17,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 1769,
+      "spell": "struct attr local_attr ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 1770,
+      "spell": "struct bgp_path_info local_info = * pi ;",
+      "defs": [],
+      "uses": [
+       "pi"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 1772,
+      "spell": "bgp_attr_dup_into ( & local_attr , pi -> attr )",
+      "defs": [],
+      "uses": [
+       "local_attr",
+       "pi"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 1774,
+      "spell": "local_info . attr = & local_attr",
+      "defs": [
+       [
+        "local_info.attr",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "local_attr",
+       "local_info"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 1776,
+      "spell": "is_add = bgp_table_map_apply ( bgp -> table_map [ afi ] [ safi ] . map , bgp_dest_get_prefix ( dest ) , & local_info )",
+      "defs": [
+       [
+        "is_add",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "bgp",
+       "afi",
+       "safi",
+       "dest",
+       "local_info"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      16,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      15,
+      "then"
+     ]
+    ]
+   }
+  ],
+  "edges": [
+   {
+    "from": 0,
+    "to": 3,
+    "kind": "then"
+   },
+   {
+    "from": 3,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 0,
+    "to": 2,
+    "kind": "no-else"
+   },
+   {
+    "from": 2,
+    "to": 5,
+    "kind": "then"
+   },
+   {
+    "from": 5,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 2,
+    "to": 4,
+    "kind": "no-else"
+   },
+   {
+    "from": 4,
+    "to": 6,
+    "kind": "next"
+   },
+   {
+    "from": 6,
+    "to": 7,
+    "kind": "exit-false"
+   },
+   {
+    "from": 6,
+    "to": 8,
+    "kind": "loop-true"
+   },
+   {
+    "from": 8,
+    "to": 10,
+    "kind": "next"
+   },
+   {
+    "from": 10,
+    "to": 11,
+    "kind": "exit-false"
+   },
+   {
+    "from": 10,
+    "to": 12,
+    "kind": "loop-true"
+   },
+   {
+    "from": 12,
+    "to": 15,
+    "kind": "then"
+   },
+   {
+    "from": 15,
+    "to": 17,
+    "kind": "then"
+   },
+   {
+    "from": 17,
+    "to": 16,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 15,
+    "to": 16,
+    "kind": "no-else"
+   },
+   {
+    "from": 16,
+    "to": 14,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 12,
+    "to": 14,
+    "kind": "no-else"
+   },
+   {
+    "from": 14,
+    "to": 13,
+    "kind": "to-incr"
+   },
+   {
+    "from": 13,
+    "to": 10,
+    "kind": "latch"
+   },
+   {
+    "from": 11,
+    "to": 9,
+    "kind": "to-incr"
+   },
+   {
+    "from": 9,
+    "to": 6,
+    "kind": "latch"
+   },
+   {
+    "from": 7,
+    "to": 1,
+    "kind": "fallthrough"
+   }
+  ]
+ },
+ "dfg": {
+  "defs": [
+   {
+    "id": "d7",
+    "var": "bgp",
+    "block": 0,
+    "stmt": -1,
+    "line": 1746,
+    "kind": "param",
+    "type": "struct bgp *"
+   },
+   {
+    "id": "d8",
+    "var": "afi",
+    "block": 0,
+    "stmt": -1,
+    "line": 1746,
+    "kind": "param",
+    "type": "afi_t"
+   },
+   {
+    "id": "d9",
+    "var": "safi",
+    "block": 0,
+    "stmt": -1,
+    "line": 1746,
+    "kind": "param",
+    "type": "safi_t"
+   },
+   {
+    "id": "d0",
+    "var": "table",
+    "block": 2,
+    "stmt": 0,
+    "line": 1758,
+    "kind": "assign"
+   },
+   {
+    "id": "d1",
+    "var": "dest",
+    "block": 4,
+    "stmt": 0,
+    "line": 1762,
+    "kind": "assign"
+   },
+   {
+    "id": "d2",
+    "var": "pi",
+    "block": 8,
+    "stmt": 0,
+    "line": 1763,
+    "kind": "assign"
+   },
+   {
+    "id": "d3",
+    "var": "dest",
+    "block": 9,
+    "stmt": 0,
+    "line": 1762,
+    "kind": "assign"
+   },
+   {
+    "id": "d4",
+    "var": "pi",
+    "block": 13,
+    "stmt": 0,
+    "line": 1763,
+    "kind": "assign"
+   },
+   {
+    "id": "d5",
+    "var": "local_info.attr",
+    "block": 17,
+    "stmt": 3,
+    "line": 1774,
+    "kind": "assign"
+   },
+   {
+    "id": "d6",
+    "var": "is_add",
+    "block": 17,
+    "stmt": 4,
+    "line": 1776,
+    "kind": "assign"
+   }
+  ],
+  "chains": [
+   {
+    "use": "bgp",
+    "block": 0,
+    "line": 1755,
+    "stmt": "! bgp_install_info_to_zebra ( bgp )",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "bgp",
+    "block": 2,
+    "line": 1758,
+    "stmt": "table = bgp -> rib [ afi ] [ safi ]",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "afi",
+    "block": 2,
+    "line": 1758,
+    "stmt": "table = bgp -> rib [ afi ] [ safi ]",
+    "defs": [
+     "d8"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "safi",
+    "block": 2,
+    "line": 1758,
+    "stmt": "table = bgp -> rib [ afi ] [ safi ]",
+    "defs": [
+     "d9"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "table",
+    "block": 2,
+    "line": 1759,
+    "stmt": "! table",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "table",
+    "block": 4,
+    "line": 1762,
+    "stmt": "dest = bgp_table_top ( table )",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "dest",
+    "block": 4,
+    "line": 1762,
+    "stmt": "dest",
+    "defs": [
+     "d1"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "dest",
+    "block": 8,
+    "line": 1763,
+    "stmt": "pi = bgp_dest_get_bgp_path_info ( dest )",
+    "defs": [
+     "d3",
+     "d1"
+    ],
+    "n_defs": 2
+   },
+   {
+    "use": "pi",
+    "block": 8,
+    "line": 1763,
+    "stmt": "pi",
+    "defs": [
+     "d2"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "pi",
+    "block": 12,
+    "line": 1764,
+    "stmt": "",
+    "defs": [
+     "d2",
+     "d4"
+    ],
+    "n_defs": 2
+   },
+   {
+    "use": "bgp",
+    "block": 15,
+    "line": 1768,
+    "stmt": "bgp -> table_map [ afi ] [ safi ] . name",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "afi",
+    "block": 15,
+    "line": 1768,
+    "stmt": "bgp -> table_map [ afi ] [ safi ] . name",
+    "defs": [
+     "d8"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "safi",
+    "block": 15,
+    "line": 1768,
+    "stmt": "bgp -> table_map [ afi ] [ safi ] . name",
+    "defs": [
+     "d9"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "dest",
+    "block": 16,
+    "line": 1781,
+    "stmt": "bgp_zebra_route_install ( dest , pi , bgp , is_add , NULL , false )",
+    "defs": [
+     "d3",
+     "d1"
+    ],
+    "n_defs": 2
+   },
+   {
+    "use": "pi",
+    "block": 16,
+    "line": 1781,
+    "stmt": "bgp_zebra_route_install ( dest , pi , bgp , is_add , NULL , false )",
+    "defs": [
+     "d2",
+     "d4"
+    ],
+    "n_defs": 2
+   },
+   {
+    "use": "bgp",
+    "block": 16,
+    "line": 1781,
+    "stmt": "bgp_zebra_route_install ( dest , pi , bgp , is_add , NULL , false )",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "is_add",
+    "block": 16,
+    "line": 1781,
+    "stmt": "bgp_zebra_route_install ( dest , pi , bgp , is_add , NULL , false )",
+    "defs": [
+     "d6"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "pi",
+    "block": 17,
+    "line": 1770,
+    "stmt": "struct bgp_path_info local_info = * pi ;",
+    "defs": [
+     "d2",
+     "d4"
+    ],
+    "n_defs": 2
+   },
+   {
+    "use": "local_attr",
+    "block": 17,
+    "line": 1772,
+    "stmt": "bgp_attr_dup_into ( & local_attr , pi -> attr )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "pi",
+    "block": 17,
+    "line": 1772,
+    "stmt": "bgp_attr_dup_into ( & local_attr , pi -> attr )",
+    "defs": [
+     "d2",
+     "d4"
+    ],
+    "n_defs": 2
+   },
+   {
+    "use": "local_attr",
+    "block": 17,
+    "line": 1774,
+    "stmt": "local_info . attr = & local_attr",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "local_info",
+    "block": 17,
+    "line": 1774,
+    "stmt": "local_info . attr = & local_attr",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bgp",
+    "block": 17,
+    "line": 1776,
+    "stmt": "is_add = bgp_table_map_apply ( bgp -> table_map [ afi ] [ safi ] . map , bgp_des",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "afi",
+    "block": 17,
+    "line": 1776,
+    "stmt": "is_add = bgp_table_map_apply ( bgp -> table_map [ afi ] [ safi ] . map , bgp_des",
+    "defs": [
+     "d8"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "safi",
+    "block": 17,
+    "line": 1776,
+    "stmt": "is_add = bgp_table_map_apply ( bgp -> table_map [ afi ] [ safi ] . map , bgp_des",
+    "defs": [
+     "d9"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "dest",
+    "block": 17,
+    "line": 1776,
+    "stmt": "is_add = bgp_table_map_apply ( bgp -> table_map [ afi ] [ safi ] . map , bgp_des",
+    "defs": [
+     "d3",
+     "d1"
+    ],
+    "n_defs": 2
+   },
+   {
+    "use": "local_info",
+    "block": 17,
+    "line": 1776,
+    "stmt": "is_add = bgp_table_map_apply ( bgp -> table_map [ afi ] [ safi ] . map , bgp_des",
+    "defs": [],
+    "n_defs": 0
+   }
+  ],
+  "n_chains": 27,
+  "undef_uses": [
+   {
+    "use": "local_attr",
+    "block": 17,
+    "line": 1772,
+    "stmt": "bgp_attr_dup_into ( & local_attr , pi -> attr )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "local_attr",
+    "block": 17,
+    "line": 1774,
+    "stmt": "local_info . attr = & local_attr",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "local_info",
+    "block": 17,
+    "line": 1774,
+    "stmt": "local_info . attr = & local_attr",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "local_info",
+    "block": 17,
+    "line": 1776,
+    "stmt": "is_add = bgp_table_map_apply ( bgp -> table_map [ afi ] [ safi ] . map , bgp_des",
+    "defs": [],
+    "n_defs": 0
+   }
+  ]
+ },
+ "liveness": {
+  "live_in": {
+   "0": [
+    "afi",
+    "bgp",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi"
+   ],
+   "1": [],
+   "2": [
+    "afi",
+    "bgp",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi"
+   ],
+   "3": [],
+   "4": [
+    "afi",
+    "bgp",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi",
+    "table"
+   ],
+   "5": [],
+   "6": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi"
+   ],
+   "7": [],
+   "8": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi"
+   ],
+   "9": [
+    "afi",
+    "bgp",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi"
+   ],
+   "10": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "pi",
+    "safi"
+   ],
+   "11": [
+    "afi",
+    "bgp",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi"
+   ],
+   "12": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "pi",
+    "safi"
+   ],
+   "13": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi"
+   ],
+   "14": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi"
+   ],
+   "15": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "pi",
+    "safi"
+   ],
+   "16": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "pi",
+    "safi"
+   ],
+   "17": [
+    "afi",
+    "bgp",
+    "dest",
+    "local_attr",
+    "local_info",
+    "pi",
+    "safi"
+   ]
+  },
+  "live_out": {
+   "0": [
+    "afi",
+    "bgp",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi"
+   ],
+   "1": [],
+   "2": [
+    "afi",
+    "bgp",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi",
+    "table"
+   ],
+   "3": [],
+   "4": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi"
+   ],
+   "5": [],
+   "6": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi"
+   ],
+   "7": [],
+   "8": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "pi",
+    "safi"
+   ],
+   "9": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi"
+   ],
+   "10": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "pi",
+    "safi"
+   ],
+   "11": [
+    "afi",
+    "bgp",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi"
+   ],
+   "12": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "pi",
+    "safi"
+   ],
+   "13": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "pi",
+    "safi"
+   ],
+   "14": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi"
+   ],
+   "15": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "pi",
+    "safi"
+   ],
+   "16": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "safi"
+   ],
+   "17": [
+    "afi",
+    "bgp",
+    "dest",
+    "is_add",
+    "local_attr",
+    "local_info",
+    "pi",
+    "safi"
+   ]
+  },
+  "params_live_at_entry": [
+   "afi",
+   "bgp",
+   "safi"
+  ]
+ },
+ "meta": {
+  "compute_ms": 563.7,
+  "unreachable_stmts_skipped": 0,
+  "cache_key": "53d78367e8b08c0c55a4ba3ef91cdeef7c520085ed9e298e6b7dbd9b3ae9032c"
+ },
+ "cache": {
+  "hit": false,
+  "key": "53d78367e8b08c0c55a4ba3ef91cdeef7c520085ed9e298e6b7dbd9b3ae9032c",
+  "path": "/home/z/my-project/poc/facts/p5/cache/slices/53d78367e8b08c0c55a4ba3ef91cdeef7c520085ed9e298e6b7dbd9b3ae9032c.json",
+  "tool_ver": "p5-slice/1.0.0+clang18"
+ }
+}

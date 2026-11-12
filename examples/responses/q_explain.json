@@ -1,0 +1,181 @@
+{
+ "ok": true,
+ "question": "explain code:zebra::zread_route_add",
+ "intent": "explain",
+ "routed": {
+  "intent": "explain",
+  "confidence": 1.0,
+  "scores": {
+   "slice": 0,
+   "callers": 0,
+   "impact": 0,
+   "path": 0,
+   "docs": 0,
+   "explain": 3
+  },
+  "rules_fired": [
+   [
+    "explain",
+    "explain"
+   ]
+  ]
+ },
+ "entities": [
+  {
+   "mention": "zebra",
+   "kind": "svc",
+   "ids": [
+    "svc:zebra"
+   ],
+   "n_ids": 1
+  },
+  {
+   "mention": "zread_route_add",
+   "kind": "code",
+   "ids": [
+    "code:zebra::zread_route_add"
+   ],
+   "n_ids": 1
+  }
+ ],
+ "meta": {
+  "latency_ms": 0.19,
+  "cache_hit": false,
+  "fingerprint": "db5d33a41bf1d576",
+  "cache_key": "2d9b2dec5feec82de9af36ec9e6b04becef80a9ba3d821fdb4a0b6d149e812de"
+ },
+ "answer": {
+  "intent": "explain",
+  "target": "code:zebra::zread_route_add",
+  "node": {
+   "kind": "function",
+   "label": "zread_route_add",
+   "service": "svc:zebra"
+  },
+  "clusters": [
+   {
+    "id": "M749027f4",
+    "level": "L3",
+    "label": "zebra:rib"
+   }
+  ],
+  "domain": "D4b2a9ab8",
+  "relations": {
+   "calls": {
+    "count": 15,
+    "peers": [
+     {
+      "dir": "out",
+      "peer": "code:lib::zapi_route_decode",
+      "evidence": [
+       "DECLARED:code"
+      ],
+      "src_ref": "zebra/zapi_msg.c:2162"
+     },
+     {
+      "dir": "out",
+      "peer": "code:zebra::zapi_read_nexthops",
+      "evidence": [
+       "DECLARED:code"
+      ],
+      "src_ref": "zebra/zapi_msg.c:2207"
+     },
+     {
+      "dir": "out",
+      "peer": "code:zebra::zebra_rib_route_entry_new",
+      "evidence": [
+       "DECLARED:code"
+      ],
+      "src_ref": "zebra/zapi_msg.c:2177"
+     },
+     {
+      "dir": "out",
+      "peer": "code:lib::zebra_route_string",
+      "evidence": [
+       "DECLARED:code"
+      ],
+      "src_ref": "zebra/zapi_msg.c:2185"
+     },
+     {
+      "dir": "out",
+      "peer": "code:zebra::zebra_nhg_backup_free",
+      "evidence": [
+       "DECLARED:code"
+      ],
+      "src_ref": "zebra/zapi_msg.c:2213"
+     },
+     {
+      "dir": "out",
+      "peer": "code:zebra::zebra_nhe_copy",
+      "evidence": [
+       "DECLARED:code"
+      ],
+      "src_ref": "zebra/zapi_msg.c:2263"
+     },
+     {
+      "dir": "out",
+      "peer": "code:zebra::rib_add_multipath_nhe",
+      "evidence": [
+       "DECLARED:code"
+      ],
+      "src_ref": "zebra/zapi_msg.c:2265"
+     },
+     {
+      "dir": "out",
+      "peer": "code:lib::zlog_ref",
+      "evidence": [
+       "DECLARED:code"
+      ],
+      "src_ref": "zebra/zapi_msg.c:2185"
+     },
+     {
+      "dir": "out",
+      "peer": "code:lib::nexthop_group_delete",
+      "evidence": [
+       "DECLARED:code"
+      ],
+      "src_ref": "zebra/zapi_msg.c:2212"
+     },
+     {
+      "dir": "out",
+      "peer": "code:zebra::zebra_nhe_init",
+      "evidence": [
+       "DECLARED:code"
+      ],
+      "src_ref": "zebra/zapi_msg.c:2260"
+     },
+     {
+      "dir": "out",
+      "peer": "code:zebra::zvrf_id",
+      "evidence": [
+       "DECLARED:code"
+      ],
+      "src_ref": "zebra/zapi_msg.c:2169"
+     },
+     {
+      "dir": "out",
+      "peer": "code:zebra::zvrf_name",
+      "evidence": [
+       "DECLARED:code"
+      ],
+      "src_ref": "zebra/zapi_msg.c:2185"
+     }
+    ]
+   },
+   "handles": {
+    "count": 1,
+    "peers": [
+     {
+      "dir": "out",
+      "peer": "zapi:ZEBRA_ROUTE_ADD",
+      "evidence": [
+       "DECLARED:wiring"
+      ],
+      "src_ref": "zebra/zapi_msg.c:4139"
+     }
+    ]
+   }
+  }
+ },
+ "text": "code:zebra::zread_route_add  kind=function service=svc:zebra\n  clusters: M749027f4(L3)\n  domain pack: D4b2a9ab8\n  calls (15)\n    out code:lib::zapi_route_decode  [DECLARED:code] zebra/zapi_msg.c:2162\n    out code:zebra::zapi_read_nexthops  [DECLARED:code] zebra/zapi_msg.c:2207\n    out code:zebra::zebra_rib_route_entry_new  [DECLARED:code] zebra/zapi_msg.c:2177\n    out code:lib::zebra_route_string  [DECLARED:code] zebra/zapi_msg.c:2185\n  handles (1)\n    out zapi:ZEBRA_ROUTE_ADD  [DECLARED:wiring] zebra/zapi_msg.c:4139"
+}

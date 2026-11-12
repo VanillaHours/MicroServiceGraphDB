@@ -1,0 +1,129 @@
+{
+ "ok": true,
+ "question": "who handles ZEBRA_ROUTE_ADD",
+ "intent": "callers",
+ "routed": {
+  "intent": "callers",
+  "confidence": 1.0,
+  "scores": {
+   "slice": 0,
+   "callers": 3,
+   "impact": 0,
+   "path": 0,
+   "docs": 0,
+   "explain": 0
+  },
+  "rules_fired": [
+   [
+    "callers",
+    "who handles"
+   ]
+  ]
+ },
+ "entities": [
+  {
+   "mention": "ZEBRA_ROUTE_ADD",
+   "kind": "zapi",
+   "ids": [
+    "zapi:ZEBRA_ROUTE_ADD"
+   ],
+   "n_ids": 1
+  }
+ ],
+ "meta": {
+  "latency_ms": 0.19,
+  "cache_hit": false,
+  "fingerprint": "db5d33a41bf1d576",
+  "cache_key": "67bb146bd5a8eb0d8711794613077719b76a1c019a06f1b1f3d285cfb80db048"
+ },
+ "answer": {
+  "intent": "callers",
+  "target": "zapi:ZEBRA_ROUTE_ADD",
+  "mode": "zapi",
+  "senders": [
+   {
+    "node": "svc:lib",
+    "service": "svc:lib",
+    "src_ref": "fusion:send-grep"
+   },
+   {
+    "node": "svc:ospfd",
+    "service": "svc:ospfd",
+    "src_ref": "fusion:send-grep"
+   },
+   {
+    "node": "svc:bgpd",
+    "service": "svc:bgpd",
+    "src_ref": "fusion:send-grep"
+   }
+  ],
+  "handlers": [
+   {
+    "node": "svc:zebra",
+    "service": "svc:zebra",
+    "src_ref": "zebra/zapi_msg.c:4133"
+   },
+   {
+    "node": "code:zebra::zread_route_add",
+    "service": "svc:zebra",
+    "src_ref": "zebra/zapi_msg.c:4139"
+   }
+  ],
+  "sender_services": [
+   "svc:bgpd",
+   "svc:lib",
+   "svc:ospfd"
+  ],
+  "handler_services": [
+   "svc:zebra"
+  ],
+  "evidence": [
+   {
+    "rel": "publishes",
+    "dir": "in",
+    "peer": "svc:lib",
+    "evidence": [
+     "DECLARED:wiring"
+    ],
+    "src_ref": "fusion:send-grep"
+   },
+   {
+    "rel": "publishes",
+    "dir": "in",
+    "peer": "svc:ospfd",
+    "evidence": [
+     "DECLARED:wiring"
+    ],
+    "src_ref": "fusion:send-grep"
+   },
+   {
+    "rel": "publishes",
+    "dir": "in",
+    "peer": "svc:bgpd",
+    "evidence": [
+     "DECLARED:wiring"
+    ],
+    "src_ref": "fusion:send-grep"
+   },
+   {
+    "rel": "handles",
+    "dir": "in",
+    "peer": "svc:zebra",
+    "evidence": [
+     "DECLARED:wiring"
+    ],
+    "src_ref": "zebra/zapi_msg.c:4133"
+   },
+   {
+    "rel": "handles",
+    "dir": "in",
+    "peer": "code:zebra::zread_route_add",
+    "evidence": [
+     "DECLARED:wiring"
+    ],
+    "src_ref": "zebra/zapi_msg.c:4139"
+   }
+  ]
+ },
+ "text": "callers of zapi:ZEBRA_ROUTE_ADD  (mode: zapi)\n  senders (3):\n    svc:lib  [svc:lib]  @fusion:send-grep\n    svc:ospfd  [svc:ospfd]  @fusion:send-grep\n    svc:bgpd  [svc:bgpd]  @fusion:send-grep\n  handlers (2):\n    svc:zebra  [svc:zebra]  @zebra/zapi_msg.c:4133\n    code:zebra::zread_route_add  [svc:zebra]  @zebra/zapi_msg.c:4139\n  sender_services: svc:bgpd, svc:lib, svc:ospfd\n  handler_services: svc:zebra\n  evidence items: 5"
+}

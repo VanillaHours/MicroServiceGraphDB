@@ -1,0 +1,30 @@
+{
+ "status": "ok",
+ "uptime_s": 0.1,
+ "kb": {
+  "nodes": 30229,
+  "edges_fused": 54246,
+  "edges_raw": 82477,
+  "clusters": 203,
+  "packs": [
+   "D1737981e.json",
+   "D3063a0b0.json",
+   "D4b2a9ab8.json",
+   "Dc32724de.json",
+   "Ded29f1c0.json"
+  ],
+  "okf_pages": 14,
+  "fingerprint": "db5d33a41bf1d576",
+  "load_ms": 572.6
+ },
+ "slice_engine": {
+  "parses": 0,
+  "computes": 0,
+  "hits": 0
+ },
+ "query_cache": {
+  "hits": 0,
+  "misses": 0,
+  "entries": 0
+ }
+}

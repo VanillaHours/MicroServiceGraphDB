@@ -1,0 +1,265 @@
+{
+ "tarball": "frr-10.7.1.orig.tar.xz (Debian pool, = upstream tag frr-10.7.1)",
+ "sha256": "b8fd6590f0f53ccd661e8c3e3a0d997f9014b62c8ed03a42e51e93291373ae52",
+ "total_c_files": 829,
+ "total_loc_code_files": 1371970,
+ "yang_files": 58,
+ "yang_lines": 28021,
+ "nb_cb_touching_files": [
+  "bgpd/bgp_routemap_nb.h",
+  "bgpd/bgp_routemap_nb_config.c",
+  "lib/affinitymap_northbound.c",
+  "lib/distribute.c",
+  "lib/distribute.h",
+  "lib/filter_nb.c",
+  "lib/host_nb.c",
+  "lib/if.c",
+  "lib/keychain_nb.c",
+  "lib/log_nb.c",
+  "lib/mgmt_be_client.c",
+  "lib/northbound.c",
+  "lib/northbound.h",
+  "lib/routemap.h",
+  "lib/routemap_northbound.c",
+  "lib/routing_nb.h",
+  "lib/routing_nb_config.c",
+  "lib/vrf.c",
+  "ospfd/ospf_routemap_nb.h",
+  "ospfd/ospf_routemap_nb_config.c",
+  "staticd/static_nb.h",
+  "staticd/static_nb_config.c",
+  "zebra/zebra_nb.h",
+  "zebra/zebra_nb_config.c",
+  "zebra/zebra_nb_rpcs.c",
+  "zebra/zebra_nb_state.c",
+  "zebra/zebra_routemap_nb.h",
+  "zebra/zebra_routemap_nb_config.c"
+ ],
+ "slice_defun": {
+  "lib": 115,
+  "ospfd": 197,
+  "bgpd": 603,
+  "zebra": 109,
+  "staticd": 3
+ },
+ "slice_zclient_handler_assignments": {
+  "lib": 26,
+  "ospfd": 0,
+  "bgpd": 0,
+  "zebra": 2,
+  "staticd": 0
+ },
+ "zclient_send_calls_unique": 21,
+ "zclient_send_top": [
+  [
+   "status",
+   98
+  ],
+  [
+   "message",
+   61
+  ],
+  [
+   "localsid",
+   10
+  ],
+  [
+   "reg_requests",
+   7
+  ],
+  [
+   "interface_radv_req",
+   7
+  ],
+  [
+   "rnh",
+   6
+  ],
+  [
+   "dereg_requests",
+   5
+  ],
+  [
+   "hello",
+   5
+  ],
+  [
+   "vrf_label",
+   4
+  ],
+  [
+   "router_id_update",
+   4
+  ],
+  [
+   "opaque",
+   4
+  ],
+  [
+   "neigh_discovery_req",
+   4
+  ]
+ ],
+ "ext_top": [
+  [
+   ".conf",
+   2717
+  ],
+  [
+   ".ref",
+   1317
+  ],
+  [
+   ".py",
+   1168
+  ],
+  [
+   ".json",
+   1116
+  ],
+  [
+   ".c",
+   829
+  ],
+  [
+   ".po",
+   797
+  ],
+  [
+   ".h",
+   667
+  ],
+  [
+   ".plo",
+   232
+  ],
+  [
+   ".rst",
+   184
+  ],
+  [
+   "(none)",
+   179
+  ],
+  [
+   ".txt",
+   93
+  ],
+  [
+   ".cfg",
+   69
+  ],
+  [
+   ".sh",
+   66
+  ],
+  [
+   ".cocci",
+   62
+  ],
+  [
+   ".yang",
+   58
+  ]
+ ],
+ "loc_top": [
+  [
+   "tests",
+   398721
+  ],
+  [
+   "bgpd",
+   228029
+  ],
+  [
+   "lib",
+   139130
+  ],
+  [
+   "zebra",
+   133105
+  ],
+  [
+   "pimd",
+   80820
+  ],
+  [
+   "ospfd",
+   76899
+  ],
+  [
+   "isisd",
+   60084
+  ],
+  [
+   "ospf6d",
+   39009
+  ],
+  [
+   "pceplib",
+   25829
+  ],
+  [
+   "ldpd",
+   25420
+  ],
+  [
+   "bfdd",
+   17302
+  ],
+  [
+   "pathd",
+   16860
+  ]
+ ],
+ "c_top": [
+  [
+   "lib",
+   144
+  ],
+  [
+   "zebra",
+   91
+  ],
+  [
+   "bgpd",
+   86
+  ],
+  [
+   "tests",
+   66
+  ],
+  [
+   "pimd",
+   65
+  ],
+  [
+   "pceplib",
+   49
+  ],
+  [
+   "isisd",
+   42
+  ],
+  [
+   "ospfd",
+   41
+  ],
+  [
+   "ldpd",
+   30
+  ],
+  [
+   "ospf6d",
+   26
+  ],
+  [
+   "eigrpd",
+   25
+  ],
+  [
+   "nhrpd",
+   19
+  ]
+ ]
+}

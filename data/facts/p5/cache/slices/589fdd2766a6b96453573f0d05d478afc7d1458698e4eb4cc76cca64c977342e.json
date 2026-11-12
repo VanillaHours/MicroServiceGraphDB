@@ -1,0 +1,1182 @@
+{
+ "scope": {
+  "file": "ospfd/ospf_zebra.c",
+  "function": "ospf_zebra_delete_discard",
+  "line_span": [
+   407,
+   431
+  ],
+  "params": [
+   {
+    "name": "ospf",
+    "type": "struct ospf *"
+   },
+   {
+    "name": "p",
+    "type": "struct prefix_ipv4 *"
+   }
+  ]
+ },
+ "tool_ver": "p5-slice/1.0.0+clang18",
+ "cfg": {
+  "entry": 0,
+  "exit": 1,
+  "n_blocks": 14,
+  "n_edges": 18,
+  "blocks": [
+   {
+    "id": 0,
+    "tag": "entry",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 409,
+      "spell": "struct zapi_route api ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 411,
+      "spell": "ospf -> gr_info . restart_in_progress",
+      "defs": [],
+      "uses": [
+       "ospf"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      3,
+      "then"
+     ],
+     [
+      2,
+      "no-else"
+     ]
+    ],
+    "pred": []
+   },
+   {
+    "id": 1,
+    "tag": "exit",
+    "stmts": [],
+    "succ": [],
+    "pred": [
+     [
+      4,
+      "return"
+     ],
+     [
+      9,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 2,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 418,
+      "spell": "zapi_route_init ( & api )",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 419,
+      "spell": "api . vrf_id = ospf -> vrf_id",
+      "defs": [
+       [
+        "api.vrf_id",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "ospf",
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 420,
+      "spell": "api . type = ZEBRA_ROUTE_OSPF",
+      "defs": [
+       [
+        "api.type",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 421,
+      "spell": "api . instance = ospf -> instance",
+      "defs": [
+       [
+        "api.instance",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "ospf",
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 422,
+      "spell": "api . safi = SAFI_UNICAST",
+      "defs": [
+       [
+        "api.safi",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 423,
+      "spell": "memcpy ( & api . prefix , p , sizeof ( * p ) )",
+      "defs": [],
+      "uses": [
+       "api",
+       "p"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 424,
+      "spell": "zapi_route_set_blackhole ( & api , BLACKHOLE_NULL )",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 426,
+      "spell": "zclient_route_send ( ZEBRA_ROUTE_DELETE , ospf_zclient , & api )",
+      "defs": [],
+      "uses": [
+       "ospf_zclient",
+       "api"
+      ]
+     },
+     {
+      "kind": "PAREN_EXPR",
+      "line": 428,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "term_debug_ospf_zebra"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      10,
+      "then"
+     ],
+     [
+      9,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 3,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "PAREN_EXPR",
+      "line": 412,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "term_debug_ospf_gr"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      5,
+      "then"
+     ],
+     [
+      4,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 4,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "RETURN_STMT",
+      "line": 415,
+      "spell": "return",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      8,
+      "fallthrough"
+     ],
+     [
+      3,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 5,
+    "tag": "then",
+    "stmts": [],
+    "succ": [
+     [
+      6,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      3,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 6,
+    "tag": "do-body",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 413,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 413,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xrefdata"
+      ]
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 413,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 413,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref",
+       "p",
+       "ospf"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      7,
+      "cond"
+     ]
+    ],
+    "pred": [
+     [
+      5,
+      "next"
+     ],
+     [
+      7,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 7,
+    "tag": "do-cond",
+    "stmts": [
+     {
+      "kind": "INTEGER_LITERAL",
+      "line": 413,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      6,
+      "loop-true"
+     ],
+     [
+      8,
+      "exit-false"
+     ]
+    ],
+    "pred": [
+     [
+      6,
+      "cond"
+     ]
+    ]
+   },
+   {
+    "id": 8,
+    "tag": "do-exit",
+    "stmts": [],
+    "succ": [
+     [
+      4,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      7,
+      "exit-false"
+     ]
+    ]
+   },
+   {
+    "id": 9,
+    "tag": "if-merge",
+    "stmts": [],
+    "succ": [
+     [
+      1,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      13,
+      "fallthrough"
+     ],
+     [
+      2,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 10,
+    "tag": "then",
+    "stmts": [],
+    "succ": [
+     [
+      11,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      2,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 11,
+    "tag": "do-body",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 429,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 429,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xrefdata"
+      ]
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 429,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 429,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref",
+       "p",
+       "ospf"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      12,
+      "cond"
+     ]
+    ],
+    "pred": [
+     [
+      10,
+      "next"
+     ],
+     [
+      12,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 12,
+    "tag": "do-cond",
+    "stmts": [
+     {
+      "kind": "INTEGER_LITERAL",
+      "line": 429,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      11,
+      "loop-true"
+     ],
+     [
+      13,
+      "exit-false"
+     ]
+    ],
+    "pred": [
+     [
+      11,
+      "cond"
+     ]
+    ]
+   },
+   {
+    "id": 13,
+    "tag": "do-exit",
+    "stmts": [],
+    "succ": [
+     [
+      9,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      12,
+      "exit-false"
+     ]
+    ]
+   }
+  ],
+  "edges": [
+   {
+    "from": 0,
+    "to": 3,
+    "kind": "then"
+   },
+   {
+    "from": 3,
+    "to": 5,
+    "kind": "then"
+   },
+   {
+    "from": 5,
+    "to": 6,
+    "kind": "next"
+   },
+   {
+    "from": 6,
+    "to": 7,
+    "kind": "cond"
+   },
+   {
+    "from": 7,
+    "to": 6,
+    "kind": "loop-true"
+   },
+   {
+    "from": 7,
+    "to": 8,
+    "kind": "exit-false"
+   },
+   {
+    "from": 8,
+    "to": 4,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 3,
+    "to": 4,
+    "kind": "no-else"
+   },
+   {
+    "from": 4,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 0,
+    "to": 2,
+    "kind": "no-else"
+   },
+   {
+    "from": 2,
+    "to": 10,
+    "kind": "then"
+   },
+   {
+    "from": 10,
+    "to": 11,
+    "kind": "next"
+   },
+   {
+    "from": 11,
+    "to": 12,
+    "kind": "cond"
+   },
+   {
+    "from": 12,
+    "to": 11,
+    "kind": "loop-true"
+   },
+   {
+    "from": 12,
+    "to": 13,
+    "kind": "exit-false"
+   },
+   {
+    "from": 13,
+    "to": 9,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 2,
+    "to": 9,
+    "kind": "no-else"
+   },
+   {
+    "from": 9,
+    "to": 1,
+    "kind": "fallthrough"
+   }
+  ]
+ },
+ "dfg": {
+  "defs": [
+   {
+    "id": "d4",
+    "var": "ospf",
+    "block": 0,
+    "stmt": -1,
+    "line": 407,
+    "kind": "param",
+    "type": "struct ospf *"
+   },
+   {
+    "id": "d5",
+    "var": "p",
+    "block": 0,
+    "stmt": -1,
+    "line": 407,
+    "kind": "param",
+    "type": "struct prefix_ipv4 *"
+   },
+   {
+    "id": "d0",
+    "var": "api.vrf_id",
+    "block": 2,
+    "stmt": 1,
+    "line": 419,
+    "kind": "assign"
+   },
+   {
+    "id": "d1",
+    "var": "api.type",
+    "block": 2,
+    "stmt": 2,
+    "line": 420,
+    "kind": "assign"
+   },
+   {
+    "id": "d2",
+    "var": "api.instance",
+    "block": 2,
+    "stmt": 3,
+    "line": 421,
+    "kind": "assign"
+   },
+   {
+    "id": "d3",
+    "var": "api.safi",
+    "block": 2,
+    "stmt": 4,
+    "line": 422,
+    "kind": "assign"
+   }
+  ],
+  "chains": [
+   {
+    "use": "ospf",
+    "block": 0,
+    "line": 411,
+    "stmt": "ospf -> gr_info . restart_in_progress",
+    "defs": [
+     "d4"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 418,
+    "stmt": "zapi_route_init ( & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ospf",
+    "block": 2,
+    "line": 419,
+    "stmt": "api . vrf_id = ospf -> vrf_id",
+    "defs": [
+     "d4"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 419,
+    "stmt": "api . vrf_id = ospf -> vrf_id",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 420,
+    "stmt": "api . type = ZEBRA_ROUTE_OSPF",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ospf",
+    "block": 2,
+    "line": 421,
+    "stmt": "api . instance = ospf -> instance",
+    "defs": [
+     "d4"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 421,
+    "stmt": "api . instance = ospf -> instance",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 422,
+    "stmt": "api . safi = SAFI_UNICAST",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 423,
+    "stmt": "memcpy ( & api . prefix , p , sizeof ( * p ) )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "p",
+    "block": 2,
+    "line": 423,
+    "stmt": "memcpy ( & api . prefix , p , sizeof ( * p ) )",
+    "defs": [
+     "d5"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 424,
+    "stmt": "zapi_route_set_blackhole ( & api , BLACKHOLE_NULL )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ospf_zclient",
+    "block": 2,
+    "line": 426,
+    "stmt": "zclient_route_send ( ZEBRA_ROUTE_DELETE , ospf_zclient , & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 426,
+    "stmt": "zclient_route_send ( ZEBRA_ROUTE_DELETE , ospf_zclient , & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "term_debug_ospf_zebra",
+    "block": 2,
+    "line": 428,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "term_debug_ospf_gr",
+    "block": 3,
+    "line": 412,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 6,
+    "line": 413,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 6,
+    "line": 413,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 6,
+    "line": 413,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "p",
+    "block": 6,
+    "line": 413,
+    "stmt": "",
+    "defs": [
+     "d5"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "ospf",
+    "block": 6,
+    "line": 413,
+    "stmt": "",
+    "defs": [
+     "d4"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "_xrefdata",
+    "block": 11,
+    "line": 429,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 11,
+    "line": 429,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 11,
+    "line": 429,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "p",
+    "block": 11,
+    "line": 429,
+    "stmt": "",
+    "defs": [
+     "d5"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "ospf",
+    "block": 11,
+    "line": 429,
+    "stmt": "",
+    "defs": [
+     "d4"
+    ],
+    "n_defs": 1
+   }
+  ],
+  "n_chains": 25,
+  "undef_uses": [
+   {
+    "use": "api",
+    "block": 2,
+    "line": 418,
+    "stmt": "zapi_route_init ( & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 419,
+    "stmt": "api . vrf_id = ospf -> vrf_id",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 420,
+    "stmt": "api . type = ZEBRA_ROUTE_OSPF",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 421,
+    "stmt": "api . instance = ospf -> instance",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 422,
+    "stmt": "api . safi = SAFI_UNICAST",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 423,
+    "stmt": "memcpy ( & api . prefix , p , sizeof ( * p ) )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 424,
+    "stmt": "zapi_route_set_blackhole ( & api , BLACKHOLE_NULL )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ospf_zclient",
+    "block": 2,
+    "line": 426,
+    "stmt": "zclient_route_send ( ZEBRA_ROUTE_DELETE , ospf_zclient , & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 2,
+    "line": 426,
+    "stmt": "zclient_route_send ( ZEBRA_ROUTE_DELETE , ospf_zclient , & api )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "term_debug_ospf_zebra",
+    "block": 2,
+    "line": 428,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "term_debug_ospf_gr",
+    "block": 3,
+    "line": 412,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 6,
+    "line": 413,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 6,
+    "line": 413,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 6,
+    "line": 413,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 11,
+    "line": 429,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 11,
+    "line": 429,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 11,
+    "line": 429,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   }
+  ]
+ },
+ "liveness": {
+  "live_in": {
+   "0": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "term_debug_ospf_gr",
+    "term_debug_ospf_zebra"
+   ],
+   "1": [],
+   "2": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "term_debug_ospf_zebra"
+   ],
+   "3": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p",
+    "term_debug_ospf_gr"
+   ],
+   "4": [],
+   "5": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "6": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "7": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "8": [],
+   "9": [],
+   "10": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "11": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "12": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "13": []
+  },
+  "live_out": {
+   "0": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "ospf",
+    "ospf_zclient",
+    "p",
+    "term_debug_ospf_gr",
+    "term_debug_ospf_zebra"
+   ],
+   "1": [],
+   "2": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "3": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "4": [],
+   "5": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "6": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "7": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "8": [],
+   "9": [],
+   "10": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "11": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "12": [
+    "_xref",
+    "_xrefdata",
+    "ospf",
+    "p"
+   ],
+   "13": []
+  },
+  "params_live_at_entry": [
+   "ospf",
+   "p"
+  ]
+ },
+ "meta": {
+  "compute_ms": 257.1,
+  "unreachable_stmts_skipped": 0,
+  "cache_key": "589fdd2766a6b96453573f0d05d478afc7d1458698e4eb4cc76cca64c977342e"
+ },
+ "cache": {
+  "hit": false,
+  "key": "589fdd2766a6b96453573f0d05d478afc7d1458698e4eb4cc76cca64c977342e",
+  "path": "/home/z/my-project/poc/facts/p5/cache/slices/589fdd2766a6b96453573f0d05d478afc7d1458698e4eb4cc76cca64c977342e.json",
+  "tool_ver": "p5-slice/1.0.0+clang18"
+ }
+}

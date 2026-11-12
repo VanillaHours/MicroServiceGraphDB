@@ -1,0 +1,393 @@
+{
+ "atoms": [
+  {
+   "id": "a3dd9765",
+   "refs": [
+    {
+     "k": "N",
+     "r": "svc:staticd"
+    },
+    {
+     "k": "C",
+     "r": "Dc32724de"
+    }
+   ],
+   "tpl": "svc:staticd is a service in the fused graph; its functional domain is Dc32724de."
+  },
+  {
+   "id": "ab23686d",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.handled"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_NEIGH_ADDED"
+    }
+   ],
+   "tpl": "It handles 8 notification/event types from the bus (ZEBRA_INTERFACE_ADDRESS_ADD, ZEBRA_INTERFACE_ADDRESS_DELETE, ZEBRA_NEIGH_ADDED, ...)."
+  },
+  {
+   "id": "a33ba0cd",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.yang.total"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.nb_tables"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.yang.frr-staticd"
+    }
+   ],
+   "tpl": "Northbound contracts: frr-staticd(27) \u2014 27 YANG paths across 27 NB handler tables."
+  },
+  {
+   "id": "a405a038",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.roles"
+    }
+   ],
+   "tpl": "Measured roles: zapi-client."
+  },
+  {
+   "id": "aca36653",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M4fc85874"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M4fc85874.size"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_vty.c"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_routes.c"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_bfd.c"
+    }
+   ],
+   "tpl": "staticd:static \u2014 77 functions; anchors: debug_staticd_magic (staticd/static_vty.c), static_add_route (staticd/static_routes.c), static_next_hop_bfd_profile (staticd/static_bfd.c), static_nexthop_list_prev (staticd/static_routes.h)."
+  },
+  {
+   "id": "a59c6cd4",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M9cc473a4"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M9cc473a4.size"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_routes.h"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_routes.c"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_bfd.c"
+    }
+   ],
+   "tpl": "staticd:static \u2014 34 functions; anchors: static_nexthop_list_first (staticd/static_routes.h), static_nexthop_list_next (staticd/static_routes.h), static_path_list_first (staticd/static_routes.h), static_path_list_next (staticd/static_routes.h)."
+  },
+  {
+   "id": "af0c0af4",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M9b01cc7b"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M9b01cc7b.size"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_nb_config.c"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_routes.c"
+    }
+   ],
+   "tpl": "staticd:static \u2014 31 functions; anchors: static_nexthop_move_path (staticd/static_nb_config.c), static_del_path (staticd/static_routes.c), static_delete_nexthop (staticd/static_routes.c), ecmp_path_list_validate (staticd/static_nb_config.c)."
+  },
+  {
+   "id": "af757fbb",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M71861180"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M71861180.size"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_zebra.c"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_nb_config.c"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_srv6.c"
+    }
+   ],
+   "tpl": "staticd:static \u2014 28 functions; anchors: static_zebra_srv6_sid_uninstall (staticd/static_zebra.c), static_zebra_release_srv6_sid (staticd/static_zebra.c), static_zebra_request_srv6_sid (staticd/static_zebra.c), static_zebra_process_srv6_locator_internal (staticd/static_zebra.c)."
+  },
+  {
+   "id": "a9505b72",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M6b0e6125"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M6b0e6125.size"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_srv6.c"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_routes.c"
+    }
+   ],
+   "tpl": "staticd:static \u2014 25 functions; anchors: static_srv6_neigh_add (staticd/static_srv6.c), static_ifp_srv6_sids_update (staticd/static_srv6.c), static_srv6_neigh_lookup (staticd/static_srv6.c), static_srv6_neigh_table_find (staticd/static_srv6.c)."
+  },
+  {
+   "id": "a94871d6",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Mb7dec354"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.Mb7dec354.size"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_main.c"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_srv6.c"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_zebra.c"
+    }
+   ],
+   "tpl": "staticd:static \u2014 23 functions; anchors: main (staticd/static_main.c), static_srv6_neigh_cache_cleanup (staticd/static_srv6.c), static_srv6_neigh_cache_init (staticd/static_srv6.c), static_zebra_init (staticd/static_zebra.c)."
+  },
+  {
+   "id": "a6907c1f",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M87eb3a08"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M87eb3a08.size"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_vrf.h"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_bfd.c"
+    },
+    {
+     "k": "P",
+     "r": "staticd/static_vty.c"
+    }
+   ],
+   "tpl": "staticd:static \u2014 22 functions; anchors: svrf_name_head_RB_MIN (staticd/static_vrf.h), svrf_name_head_RB_NEXT (staticd/static_vrf.h), static_bfd_show (staticd/static_bfd.c), show_static_routes_magic (staticd/static_vty.c)."
+  },
+  {
+   "id": "ac771529",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.bridge.total"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.bridge.lib:nb"
+    }
+   ],
+   "tpl": "450 intra-service `calls` edges reach other service partitions; densest target lib:nb (125 calls)."
+  },
+  {
+   "id": "aa78803b",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.orphan.n"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "3 handled messages have no in-slice sender (orphan handlers)."
+  }
+ ],
+ "claims": "yes",
+ "okf_level": "L3-daemon",
+ "page_id": "daemons/staticd.md",
+ "row_atoms": [
+  {
+   "id": "a7cde9e4",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+  },
+  {
+   "id": "a3c80449",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+  },
+  {
+   "id": "ad5cb70d",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_NEIGH_ADDED"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_NEIGH_ADDED"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_NEIGH_ADDED"
+  },
+  {
+   "id": "a5d777b7",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_NEIGH_REMOVED"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_NEIGH_REMOVED"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_NEIGH_REMOVED"
+  },
+  {
+   "id": "a0d48a96",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ROUTE_NOTIFY_OWNER"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_ROUTE_NOTIFY_OWNER"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ROUTE_NOTIFY_OWNER"
+  },
+  {
+   "id": "a9d064b3",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_SRV6_LOCATOR_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_SRV6_LOCATOR_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_SRV6_LOCATOR_ADD"
+  },
+  {
+   "id": "a27f544b",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_SRV6_LOCATOR_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_SRV6_LOCATOR_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_SRV6_LOCATOR_DELETE"
+  },
+  {
+   "id": "afc69c81",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_SRV6_SID_NOTIFY"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_SRV6_SID_NOTIFY"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_SRV6_SID_NOTIFY"
+  }
+ ],
+ "sources": [
+  "p3/profiles.jsonl",
+  "p3/backbone.json",
+  "p3/clusters.jsonl",
+  "p2/findings.json"
+ ]
+}

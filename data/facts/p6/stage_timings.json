@@ -1,0 +1,51 @@
+{
+ "measured_today_2026-11-12": {
+  "P2_fusion_fuse.py": {
+   "wall_s": 3.9,
+   "max_rss_gb": 0.25
+  },
+  "P3_cluster.py": {
+   "wall_s": 5.6,
+   "max_rss_gb": 0.14
+  },
+  "P3_profile.py": {
+   "wall_s": 0.8,
+   "max_rss_gb": 0.16
+  },
+  "P4_publish_run_p4.py": {
+   "wall_s": 0.4,
+   "max_rss_gb": 0.09
+  },
+  "P5_kbmap_load_ms": {
+   "median_ms": 656.1,
+   "runs_ms": [
+    576.4,
+    656.1,
+    668.6
+   ]
+  }
+ },
+ "recorded_at_phase_close": {
+  "P0_build": {
+   "wall_min": "10-25 (2 cores)",
+   "source": "p0/BUILD-P0.md"
+  },
+  "P1_extract": {
+   "wall_s": 510,
+   "note": "~8.5 min / 356 TUs",
+   "source": "p1/P1-REPORT.md"
+  }
+ },
+ "determinism_check": {
+  "files_compared": 63,
+  "byte_identical_after_reruns": 59,
+  "volatile": [
+   "p2/facts.duckdb (duckdb page layout)",
+   "p2/graph.json (meta.run_id = mtime-derived)",
+   "p2/fusion_summary.json (run_id)",
+   "p4/okf-bundle/manifest.json (hashes graph.json bytes)"
+  ],
+  "content_equality": "30,229 nodes + 54,246 edges deep-equal (python dict compare)",
+  "restored": "originals restored byte-exact; all tests green post-restore (22/22, 9/9, 69/69)"
+ }
+}

@@ -1,0 +1,372 @@
+{
+ "ok": true,
+ "question": "what is the impact of yang:frr-bgp-route-map:ipv4-address",
+ "intent": "impact",
+ "routed": {
+  "intent": "impact",
+  "confidence": 0.6,
+  "scores": {
+   "slice": 0,
+   "callers": 0,
+   "impact": 3,
+   "path": 0,
+   "docs": 0,
+   "explain": 2
+  },
+  "rules_fired": [
+   [
+    "impact",
+    "impact"
+   ],
+   [
+    "explain",
+    "what is"
+   ]
+  ]
+ },
+ "entities": [
+  {
+   "mention": "frr-bgp-route-map",
+   "kind": "yang-module",
+   "ids": [
+    "yang:frr-bgp-route-map:aggregator",
+    "yang:frr-bgp-route-map:aggregator/aggregator-address",
+    "yang:frr-bgp-route-map:aggregator/aggregator-asn",
+    "yang:frr-bgp-route-map:aigp-metric",
+    "yang:frr-bgp-route-map:alias",
+    "yang:frr-bgp-route-map:as-path-count",
+    "yang:frr-bgp-route-map:atomic-aggregate",
+    "yang:frr-bgp-route-map:comm-list"
+   ],
+   "n_ids": 8
+  },
+  {
+   "mention": "ipv4-address",
+   "kind": "yang",
+   "ids": [
+    "yang:frr-bgp-route-map:ipv4-address"
+   ],
+   "n_ids": 1
+  }
+ ],
+ "meta": {
+  "latency_ms": 552.4,
+  "cache_hit": false,
+  "fingerprint": "db5d33a41bf1d576",
+  "cache_key": "e61512bf239f383bf5f791c8c89523d6ada4f0953f5187ade61228a813d22403"
+ },
+ "answer": {
+  "intent": "impact",
+  "target": "yang:frr-bgp-route-map:ipv4-address",
+  "mode": "yang-leaf",
+  "family_size": 1,
+  "nb_entries": [
+   "nb:bgpd:frr-route-map:lib/route-map/entry/match-condition/rmap-match-condition/frr-bgp-route-map:ipv4-address",
+   "nb:bgpd:frr-route-map:lib/route-map/entry/set-action/rmap-set-action/frr-bgp-route-map:ipv4-address"
+  ],
+  "callbacks": [
+   "code:bgpd::lib_route_map_entry_match_condition_rmap_match_condition_ipv4_address_destroy",
+   "code:bgpd::lib_route_map_entry_match_condition_rmap_match_condition_ipv4_address_modify",
+   "code:bgpd::lib_route_map_entry_set_action_rmap_set_action_ipv4_address_modify",
+   "code:bgpd::lib_route_map_entry_set_action_rmap_set_action_ipv4_address_destroy"
+  ],
+  "daemons": [
+   "svc:bgpd"
+  ],
+  "zapi_side_effects": {
+   "zapi:ZEBRA_INTERFACE_ADD": [
+    "svc:lib",
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_GET_LABEL_CHUNK": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_ROUTE_NOTIFY_OWNER": [
+    "svc:bgpd",
+    "svc:staticd"
+   ],
+   "zapi:ZEBRA_RULE_NOTIFY_OWNER": [
+    "svc:bgpd"
+   ],
+   "zapi:ZEBRA_VNI_DEL": [
+    "svc:bgpd"
+   ],
+   "zapi:ZEBRA_IPMR_ROUTE_STATS": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_SRV6_MANAGER_GET_LOCATOR": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_SRV6_MANAGER_GET_SRV6_SID": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_SRV6_MANAGER_RELEASE_SRV6_SID": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_GET_TABLE_CHUNK": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_INTERFACE_DELETE": [
+    "svc:lib",
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_L3VNI_ADD": [
+    "svc:bgpd"
+   ],
+   "zapi:ZEBRA_EVPN_REMOTE_NH_DEL": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_EVPN_REMOTE_NH_ADD": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_REMOTE_VTEP_DEL": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_REMOTE_VTEP_ADD": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_IPSET_CREATE": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_IPSET_DESTROY": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_ADVERTISE_SUBNET": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_VXLAN_FLOOD_CONTROL": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_NEIGH_GET": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_NEXTHOP_UPDATE": [
+    "svc:lib"
+   ],
+   "zapi:ZEBRA_LOCAL_ES_ADD": [
+    "svc:bgpd"
+   ],
+   "zapi:ZEBRA_SRV6_MANAGER_RELEASE_LOCATOR_CHUNK": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_TABLE_MANAGER_CONNECT": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_RELEASE_TABLE_CHUNK": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_NHG_NOTIFY_OWNER": [],
+   "zapi:ZEBRA_REMOTE_ES_VTEP_DEL": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_REMOTE_ES_VTEP_ADD": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_SRV6_MANAGER_GET_LOCATOR_CHUNK": [
+    "svc:bgpd",
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_IPTABLE_DELETE": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_IPTABLE_ADD": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_RELEASE_LABEL_CHUNK": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_VNI_ADD": [
+    "svc:bgpd"
+   ],
+   "zapi:ZEBRA_BFD_DEST_REPLAY": [
+    "svc:lib",
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_LOCAL_ES_DEL": [
+    "svc:bgpd"
+   ],
+   "zapi:ZEBRA_DUPLICATE_ADDR_DETECTION": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_RULE_DELETE": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_RULE_ADD": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_ADVERTISE_DEFAULT_GW": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_IPSET_ENTRY_DELETE": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_IPSET_ENTRY_ADD": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_GRE_GET": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_SR_POLICY_NOTIFY_STATUS": [],
+   "zapi:ZEBRA_L3VNI_DEL": [
+    "svc:bgpd"
+   ],
+   "zapi:ZEBRA_LOCAL_ES_EVI_DEL": [
+    "svc:bgpd"
+   ],
+   "zapi:ZEBRA_LOCAL_ES_EVI_ADD": [
+    "svc:bgpd"
+   ],
+   "zapi:ZEBRA_REMOTE_MACIP_DEL": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_REMOTE_MACIP_ADD": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_INTERFACE_LINK_PARAMS": [
+    "svc:ospfd"
+   ],
+   "zapi:ZEBRA_VRF_LABEL": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_INTERFACE_DISABLE_RADV": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_INTERFACE_ENABLE_RADV": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_HELLO": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_NEIGH_DISCOVER": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_NEIGH_REGISTER": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_NEIGH_UNREGISTER": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_PW_STATUS_UPDATE": [],
+   "zapi:ZEBRA_MLAG_CLIENT_REGISTER": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_OPAQUE_REGISTER": [],
+   "zapi:ZEBRA_INTERFACE_SET_MASTER": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_ADVERTISE_ALL_VNI": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_ADVERTISE_SVI_MACIP": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_MLAG_FORWARD_MSG": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_INTERFACE_SET_ARP": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_OPAQUE_UNREGISTER": [],
+   "zapi:ZEBRA_INTERFACE_SET_PROTODOWN": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_ERROR": [
+    "svc:lib"
+   ],
+   "zapi:ZEBRA_ROUTER_ID_UPDATE": [
+    "svc:bgpd",
+    "svc:ospfd"
+   ],
+   "zapi:ZEBRA_NEXTHOP_LOOKUP": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_FEC_UPDATE": [
+    "svc:bgpd"
+   ],
+   "zapi:ZEBRA_VRF_DELETE": [
+    "svc:lib"
+   ],
+   "zapi:ZEBRA_CAPABILITIES": [
+    "svc:lib"
+   ],
+   "zapi:ZEBRA_OPAQUE_NOTIFY": [],
+   "zapi:ZEBRA_LABEL_MANAGER_CONNECT": [
+    "svc:zebra"
+   ],
+   "zapi:ZEBRA_CLIENT_CLOSE_NOTIFY": [
+    "svc:ospfd"
+   ],
+   "zapi:ZEBRA_OPAQUE_MESSAGE": [
+    "svc:bgpd",
+    "svc:ospfd"
+   ],
+   "zapi:ZEBRA_SRV6_LOCATOR_ADD": [
+    "svc:bgpd",
+    "svc:staticd"
+   ],
+   "zapi:ZEBRA_SRV6_LOCATOR_DELETE": [
+    "svc:bgpd",
+    "svc:staticd"
+   ],
+   "zapi:ZEBRA_GRE_UPDATE": [],
+   "zapi:ZEBRA_VRF_ADD": [
+    "svc:lib"
+   ],
+   "zapi:ZEBRA_MLAG_CLIENT_UNREGISTER": [
+    "svc:zebra"
+   ]
+  },
+  "memoized": false,
+  "evidence": [
+   {
+    "rel": "implements",
+    "peer": "nb:bgpd:frr-route-map:lib/route-map/entry/match-condition/rmap-match-condition/frr-bgp-route-map:ipv4-address",
+    "evidence": [
+     "DECLARED:contract"
+    ],
+    "src_ref": "fusion:nb-yang-join"
+   },
+   {
+    "rel": "implements",
+    "peer": "nb:bgpd:frr-route-map:lib/route-map/entry/set-action/rmap-set-action/frr-bgp-route-map:ipv4-address",
+    "evidence": [
+     "DECLARED:contract"
+    ],
+    "src_ref": "fusion:nb-yang-join"
+   },
+   {
+    "rel": "handles",
+    "peer": "code:bgpd::lib_route_map_entry_match_condition_rmap_match_condition_ipv4_address_destroy",
+    "evidence": [
+     "DECLARED:wiring"
+    ],
+    "src_ref": "bgpd/bgp_routemap_nb.c:217"
+   },
+   {
+    "rel": "handles",
+    "peer": "code:bgpd::lib_route_map_entry_match_condition_rmap_match_condition_ipv4_address_modify",
+    "evidence": [
+     "DECLARED:wiring"
+    ],
+    "src_ref": "bgpd/bgp_routemap_nb.c:217"
+   },
+   {
+    "rel": "handles",
+    "peer": "code:bgpd::lib_route_map_entry_set_action_rmap_set_action_ipv4_address_modify",
+    "evidence": [
+     "DECLARED:wiring"
+    ],
+    "src_ref": "bgpd/bgp_routemap_nb.c:266"
+   },
+   {
+    "rel": "handles",
+    "peer": "code:bgpd::lib_route_map_entry_set_action_rmap_set_action_ipv4_address_destroy",
+    "evidence": [
+     "DECLARED:wiring"
+    ],
+    "src_ref": "bgpd/bgp_routemap_nb.c:266"
+   }
+  ]
+ },
+ "text": "impact of yang:frr-bgp-route-map:ipv4-address  (mode: yang-leaf)\n  daemons: svc:bgpd\n  callbacks: 4  e.g. code:bgpd::lib_route_map_entry_match_condition_rmap_match_condition_ipv4_address_destroy, code:bgpd::lib_route_map_entry_match_condition_rmap_match_condition_ipv4_address_modify, code:bgpd::lib_route_map_entry_set_action_rmap_set_action_ipv4_address_modify, code:bgpd::lib_route_map_entry_set_action_rmap_set_action_ipv4_address_destroy\n  zapi side effects:\n    zapi:ZEBRA_INTERFACE_ADD -> handled by svc:lib, svc:zebra\n    zapi:ZEBRA_GET_LABEL_CHUNK -> handled by svc:zebra\n    zapi:ZEBRA_ROUTE_NOTIFY_OWNER -> handled by svc:bgpd, svc:staticd\n    zapi:ZEBRA_RULE_NOTIFY_OWNER -> handled by svc:bgpd\n    zapi:ZEBRA_VNI_DEL -> handled by svc:bgpd\n    zapi:ZEBRA_IPMR_ROUTE_STATS -> handled by svc:zebra\n  evidence items: 6"
+}

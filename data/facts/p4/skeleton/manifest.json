@@ -1,0 +1,76 @@
+{
+ "pages": {
+  "adrs/ADR-0001-zapi-ipc": {
+   "atoms": 5,
+   "okf_level": "ADR",
+   "page_id": "adrs/ADR-0001-zapi-ipc.md"
+  },
+  "adrs/ADR-0002-yang-mgmt": {
+   "atoms": 5,
+   "okf_level": "ADR",
+   "page_id": "adrs/ADR-0002-yang-mgmt.md"
+  },
+  "adrs/ADR-0003-zebra-kernel": {
+   "atoms": 5,
+   "okf_level": "ADR",
+   "page_id": "adrs/ADR-0003-zebra-kernel.md"
+  },
+  "clusters/D1737981e": {
+   "atoms": 52,
+   "okf_level": "L2-cluster",
+   "page_id": "clusters/D1737981e.md"
+  },
+  "clusters/D3063a0b0": {
+   "atoms": 58,
+   "okf_level": "L2-cluster",
+   "page_id": "clusters/D3063a0b0.md"
+  },
+  "clusters/D4b2a9ab8": {
+   "atoms": 66,
+   "okf_level": "L2-cluster",
+   "page_id": "clusters/D4b2a9ab8.md"
+  },
+  "clusters/Dc32724de": {
+   "atoms": 35,
+   "okf_level": "L2-cluster",
+   "page_id": "clusters/Dc32724de.md"
+  },
+  "clusters/Ded29f1c0": {
+   "atoms": 43,
+   "okf_level": "L2-cluster",
+   "page_id": "clusters/Ded29f1c0.md"
+  },
+  "daemons/bgpd": {
+   "atoms": 39,
+   "okf_level": "L3-daemon",
+   "page_id": "daemons/bgpd.md"
+  },
+  "daemons/lib": {
+   "atoms": 37,
+   "okf_level": "L3-daemon",
+   "page_id": "daemons/lib.md"
+  },
+  "daemons/ospfd": {
+   "atoms": 30,
+   "okf_level": "L3-daemon",
+   "page_id": "daemons/ospfd.md"
+  },
+  "daemons/staticd": {
+   "atoms": 21,
+   "okf_level": "L3-daemon",
+   "page_id": "daemons/staticd.md"
+  },
+  "daemons/zebra": {
+   "atoms": 39,
+   "okf_level": "L3-daemon",
+   "page_id": "daemons/zebra.md"
+  },
+  "index": {
+   "atoms": 19,
+   "okf_level": "L0-index",
+   "page_id": "index.md"
+  }
+ },
+ "stats_file": "stats.json",
+ "total_atoms": 454
+}

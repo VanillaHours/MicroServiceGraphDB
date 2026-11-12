@@ -1,0 +1,1917 @@
+{
+ "phase": "P6",
+ "n": 103,
+ "dropped": [
+  {
+   "candidate": "dispatch ZEBRA_VRF_LABEL_ADD",
+   "reason": "not in source dispatch table"
+  },
+  {
+   "candidate": "callers of vrf_id_head_RB_NEXT",
+   "reason": "only 0 verified call sites"
+  },
+  {
+   "candidate": "callers of typed_rb_find",
+   "reason": "only 0 verified call sites"
+  },
+  {
+   "candidate": "callers of qobj_reg",
+   "reason": "only 0 verified call sites"
+  },
+  {
+   "candidate": "callers of nhg_connected_tree_first",
+   "reason": "only 1 verified call sites"
+  },
+  {
+   "candidate": "callers of iana_afi2str",
+   "reason": "only 0 verified call sites"
+  },
+  {
+   "candidate": "callers of iana_safi2str",
+   "reason": "only 0 verified call sites"
+  },
+  {
+   "candidate": "callers of qobj_unreg",
+   "reason": "only 0 verified call sites"
+  },
+  {
+   "candidate": "senders of ZEBRA_FEC_UPDATE",
+   "reason": "not in dispatch table"
+  },
+  {
+   "candidate": "senders of ZEBRA_INTERFACE_UP",
+   "reason": "not in dispatch table"
+  },
+  {
+   "candidate": "path svc:ospfd->svc:zebra",
+   "reason": "doc phrase not found: doc/user/ospfd.rst 'must acquire interface information from zebra'"
+  },
+  {
+   "candidate": "path svc:staticd->svc:zebra",
+   "reason": "doc phrase not found: doc/user/staticd.rst 'static'"
+  },
+  {
+   "candidate": "impact ZEBRA_INTERFACE_UP",
+   "reason": "not in dispatch"
+  },
+  {
+   "candidate": "impact ZEBRA_VRF_ADD",
+   "reason": "not in dispatch"
+  },
+  {
+   "candidate": "what are the responsibilities of staticd?",
+   "reason": "doc keyword 'static' not in doc/user/staticd.rst"
+  }
+ ],
+ "ground_truth_rule": "every expected key verified against pinned source (token at file:line or dispatch/signature regex) or doc (normalized phrase grep); KB used for candidate enumeration only",
+ "questions": [
+  {
+   "qid": "G001",
+   "question": "who handles ZEBRA_ROUTE_ADD?",
+   "intent": "callers",
+   "expected": {
+    "handlers": [
+     "code:zebra::zread_route_add"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ],
+    "gt_complete": true
+   },
+   "ground_truth": "source",
+   "provenance": "zebra/zapi_msg.c zserv_handlers[ZEBRA_ROUTE_ADD] = zread_route_add (source-extracted)"
+  },
+  {
+   "qid": "G002",
+   "question": "who handles ZEBRA_INTERFACE_ADD?",
+   "intent": "callers",
+   "expected": {
+    "handlers": [
+     "code:zebra::zread_interface_add"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ],
+    "gt_complete": true
+   },
+   "ground_truth": "source",
+   "provenance": "zebra/zapi_msg.c zserv_handlers[ZEBRA_INTERFACE_ADD] = zread_interface_add (source-extracted)"
+  },
+  {
+   "qid": "G003",
+   "question": "who handles ZEBRA_INTERFACE_DELETE?",
+   "intent": "callers",
+   "expected": {
+    "handlers": [
+     "code:zebra::zread_interface_delete"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ],
+    "gt_complete": true
+   },
+   "ground_truth": "source",
+   "provenance": "zebra/zapi_msg.c zserv_handlers[ZEBRA_INTERFACE_DELETE] = zread_interface_delete (source-extracted)"
+  },
+  {
+   "qid": "G004",
+   "question": "who handles ZEBRA_REDISTRIBUTE_ADD?",
+   "intent": "callers",
+   "expected": {
+    "handlers": [
+     "code:zebra::zebra_redistribute_add"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ],
+    "gt_complete": true
+   },
+   "ground_truth": "source",
+   "provenance": "zebra/zapi_msg.c zserv_handlers[ZEBRA_REDISTRIBUTE_ADD] = zebra_redistribute_add (source-extracted)"
+  },
+  {
+   "qid": "G005",
+   "question": "who handles ZEBRA_REDISTRIBUTE_DELETE?",
+   "intent": "callers",
+   "expected": {
+    "handlers": [
+     "code:zebra::zebra_redistribute_delete"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ],
+    "gt_complete": true
+   },
+   "ground_truth": "source",
+   "provenance": "zebra/zapi_msg.c zserv_handlers[ZEBRA_REDISTRIBUTE_DELETE] = zebra_redistribute_delete (source-extracted)"
+  },
+  {
+   "qid": "G006",
+   "question": "who handles ZEBRA_NEXTHOP_REGISTER?",
+   "intent": "callers",
+   "expected": {
+    "handlers": [
+     "code:zebra::zread_rnh_register"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ],
+    "gt_complete": true
+   },
+   "ground_truth": "source",
+   "provenance": "zebra/zapi_msg.c zserv_handlers[ZEBRA_NEXTHOP_REGISTER] = zread_rnh_register (source-extracted)"
+  },
+  {
+   "qid": "G007",
+   "question": "who handles ZEBRA_SRV6_MANAGER_GET_LOCATOR?",
+   "intent": "callers",
+   "expected": {
+    "handlers": [
+     "code:zebra::zread_srv6_manager_request"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ],
+    "gt_complete": true
+   },
+   "ground_truth": "source",
+   "provenance": "zebra/zapi_msg.c zserv_handlers[ZEBRA_SRV6_MANAGER_GET_LOCATOR] = zread_srv6_manager_request (source-extracted)"
+  },
+  {
+   "qid": "G008",
+   "question": "who handles ZEBRA_MPLS_LABELS_ADD?",
+   "intent": "callers",
+   "expected": {
+    "handlers": [
+     "code:zebra::zread_mpls_labels_add"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ],
+    "gt_complete": true
+   },
+   "ground_truth": "source",
+   "provenance": "zebra/zapi_msg.c zserv_handlers[ZEBRA_MPLS_LABELS_ADD] = zread_mpls_labels_add (source-extracted)"
+  },
+  {
+   "qid": "G009",
+   "question": "who handles ZEBRA_ROUTE_DELETE?",
+   "intent": "callers",
+   "expected": {
+    "handlers": [
+     "code:zebra::zread_route_del"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ],
+    "gt_complete": true
+   },
+   "ground_truth": "source",
+   "provenance": "zebra/zapi_msg.c zserv_handlers[ZEBRA_ROUTE_DELETE] = zread_route_del (source-extracted)"
+  },
+  {
+   "qid": "G010",
+   "question": "who handles ZEBRA_ROUTER_ID_ADD?",
+   "intent": "callers",
+   "expected": {
+    "handlers": [
+     "code:zebra::zread_router_id_add"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ],
+    "gt_complete": true
+   },
+   "ground_truth": "source",
+   "provenance": "zebra/zapi_msg.c zserv_handlers[ZEBRA_ROUTER_ID_ADD] = zread_router_id_add (source-extracted)"
+  },
+  {
+   "qid": "G011",
+   "question": "who handles ZEBRA_INTERFACE_SET_PROTODOWN?",
+   "intent": "callers",
+   "expected": {
+    "handlers": [
+     "code:zebra::zread_interface_set_protodown"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ],
+    "gt_complete": true
+   },
+   "ground_truth": "source",
+   "provenance": "zebra/zapi_msg.c zserv_handlers[ZEBRA_INTERFACE_SET_PROTODOWN] = zread_interface_set_protodown (source-extracted)"
+  },
+  {
+   "qid": "G012",
+   "question": "who handles ZEBRA_NEXTHOP_UNREGISTER?",
+   "intent": "callers",
+   "expected": {
+    "handlers": [
+     "code:zebra::zread_rnh_unregister"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ],
+    "gt_complete": true
+   },
+   "ground_truth": "source",
+   "provenance": "zebra/zapi_msg.c zserv_handlers[ZEBRA_NEXTHOP_UNREGISTER] = zread_rnh_unregister (source-extracted)"
+  },
+  {
+   "qid": "G013",
+   "question": "who handles ZEBRA_MPLS_LABELS_DELETE?",
+   "intent": "callers",
+   "expected": {
+    "handlers": [
+     "code:zebra::zread_mpls_labels_delete"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ],
+    "gt_complete": true
+   },
+   "ground_truth": "source",
+   "provenance": "zebra/zapi_msg.c zserv_handlers[ZEBRA_MPLS_LABELS_DELETE] = zread_mpls_labels_delete (source-extracted)"
+  },
+  {
+   "qid": "G014",
+   "question": "who calls apply_mask_ipv4?",
+   "intent": "callers",
+   "expected": {
+    "callers": [
+     "code:bgpd::bgp_connected_add",
+     "code:lib::apply_classful_mask_ipv4",
+     "code:lib::apply_mask",
+     "code:lib::yang_str2ipv4p",
+     "code:ospfd::get_ext_prefix_sid",
+     "code:ospfd::ospf_area_range_add",
+     "code:ospfd::ospf_area_range_lookup_next",
+     "code:ospfd::ospf_ase_calculate_route",
+     "code:ospfd::ospf_ase_incremental_update",
+     "code:ospfd::ospf_ase_register_external_lsa",
+     "code:ospfd::ospf_ase_unregister_external_lsa",
+     "code:ospfd::ospf_get_if_params",
+     "code:ospfd::ospf_intra_add_router",
+     "code:ospfd::ospf_intra_add_stub",
+     "code:ospfd::ospf_intra_add_transit",
+     "code:ospfd::ospf_update_network_route",
+     "code:ospfd::ospf_update_router_route",
+     "code:ospfd::process_summary_lsa",
+     "code:ospfd::process_transit_summary_lsa",
+     "code:ospfd::show_lsa_summary"
+    ],
+    "gt_complete": false,
+    "note": "verified call-site subset"
+   },
+   "ground_truth": "source",
+   "provenance": "ospfd/ospf_route.c:428; lib/prefix.c:895; lib/prefix.c:1283; lib/yang_wrappers.c:884"
+  },
+  {
+   "qid": "G015",
+   "question": "who calls event_timer_remain_second?",
+   "intent": "callers",
+   "expected": {
+    "callers": [
+     "code:bgpd::bgp_adjust_routeadv",
+     "code:bgpd::bgp_config_end",
+     "code:bgpd::bgp_show_neighbor_graceful_restart_time",
+     "code:bgpd::bgp_show_peer",
+     "code:bgpd::bgp_show_peer_gr_extra_info",
+     "code:bgpd::bgp_show_peer_gr_info_afi_safi",
+     "code:bgpd::bgp_show_summary_advertisement_delay",
+     "code:bgpd::print_bgp_vrfs",
+     "code:bgpd::rfapiMonitorEthTimerRestart",
+     "code:bgpd::rfapiMonitorTimerRestart",
+     "code:bgpd::rfapiPrintBi",
+     "code:bgpd::rfapiPrintRemoteRegBi",
+     "code:bgpd::rfapiShowVncQueries",
+     "code:bgpd::route_vty_out_detail",
+     "code:bgpd::show_bgp_router_magic",
+     "code:bgpd::show_bgp_vrfs_detail_common",
+     "code:lib::event_timer_to_hhmmss",
+     "code:ospfd::ospf_show_gr_helper_details",
+     "code:zebra::show_zebra",
+     "code:zebra::zebra_show_stale_client_detail"
+    ],
+    "gt_complete": false,
+    "note": "verified call-site subset"
+   },
+   "ground_truth": "source",
+   "provenance": "bgpd/bgp_route.c:13587; bgpd/bgp_vty.c:15357; bgpd/bgp_vty.c:22768; bgpd/rfapi/rfapi_vty.c:907"
+  },
+  {
+   "qid": "G016",
+   "question": "who calls skiplist_free?",
+   "intent": "callers",
+   "expected": {
+    "callers": [
+     "code:bgpd::_rfapiRibExpireTimer",
+     "code:bgpd::bgp_lp_finish",
+     "code:bgpd::bgp_rfapi_destroy",
+     "code:bgpd::print_cleared_stats",
+     "code:bgpd::process_pending_node",
+     "code:bgpd::rfapiApRelease",
+     "code:bgpd::rfapiDeleteRemotePrefixes",
+     "code:bgpd::rfapiImportTableFlush",
+     "code:bgpd::rfapiMonitorDelHd",
+     "code:bgpd::rfapiMonitorExtraFlush",
+     "code:bgpd::rfapiMonitorExtraPrune",
+     "code:bgpd::rfapiMonitorItNodeChanged",
+     "code:bgpd::rfapiNhlAddNodeRoutes",
+     "code:bgpd::rfapiRibClear",
+     "code:bgpd::rfapiRibUpdatePendingNode",
+     "code:bgpd::rfapiWithdrawTimerEncap",
+     "code:bgpd::vnc_import_bgp_exterior_add_route_interior",
+     "code:bgpd::vnc_import_bgp_exterior_del_route",
+     "code:bgpd::vnc_import_bgp_exterior_del_route_interior",
+     "code:lib::skiplist_test"
+    ],
+    "gt_complete": false,
+    "note": "verified call-site subset"
+   },
+   "ground_truth": "source",
+   "provenance": "bgpd/rfapi/rfapi_import.c:904; bgpd/rfapi/rfapi_import.c:4304; bgpd/rfapi/rfapi_ap.c:113; bgpd/rfapi/rfapi_rib.c:982"
+  },
+  {
+   "qid": "G017",
+   "question": "who calls bgp_recalculate_all_bestpaths?",
+   "intent": "callers",
+   "expected": {
+    "callers": [
+     "code:bgpd::bgp_addpath_set_peer_type",
+     "code:bgpd::bgp_always_compare_med",
+     "code:bgpd::bgp_bestpath_aigp_magic",
+     "code:bgpd::bgp_bestpath_aspath_confed",
+     "code:bgpd::bgp_bestpath_aspath_ignore",
+     "code:bgpd::bgp_bestpath_aspath_multipath_relax",
+     "code:bgpd::bgp_bestpath_compare_router_id",
+     "code:bgpd::bgp_bestpath_med",
+     "code:bgpd::bgp_bestpath_peer_type_multipath_relax",
+     "code:bgpd::bgp_bestpath_use_imported_attrs_magic",
+     "code:bgpd::bgp_deterministic_med",
+     "code:bgpd::bgp_maxpaths_config_vty",
+     "code:bgpd::no_bgp_always_compare_med",
+     "code:bgpd::no_bgp_bestpath_aspath_confed",
+     "code:bgpd::no_bgp_bestpath_aspath_ignore",
+     "code:bgpd::no_bgp_bestpath_aspath_multipath_relax",
+     "code:bgpd::no_bgp_bestpath_compare_router_id",
+     "code:bgpd::no_bgp_bestpath_med",
+     "code:bgpd::no_bgp_bestpath_peer_type_multipath_relax",
+     "code:bgpd::no_bgp_deterministic_med"
+    ],
+    "gt_complete": false,
+    "note": "verified call-site subset"
+   },
+   "ground_truth": "source",
+   "provenance": "bgpd/bgp_vty.c:3142; bgpd/bgp_vty.c:3357; bgpd/bgp_vty.c:4452; bgpd/bgp_vty.c:4572"
+  },
+  {
+   "qid": "G018",
+   "question": "who calls peer_af_flag_set_vty?",
+   "intent": "callers",
+   "expected": {
+    "callers": [
+     "code:bgpd::neighbor_addpath_paths_limit_magic",
+     "code:bgpd::neighbor_as_override",
+     "code:bgpd::neighbor_attr_unchanged",
+     "code:bgpd::neighbor_capability_orf_prefix",
+     "code:bgpd::neighbor_disable_addpath_rx",
+     "code:bgpd::neighbor_ecommunity_rpki_magic",
+     "code:bgpd::neighbor_encap_srv6_magic",
+     "code:bgpd::neighbor_encapsulation_srv6_or_mpls_magic",
+     "code:bgpd::neighbor_nexthop_local_unchanged",
+     "code:bgpd::neighbor_nexthop_self",
+     "code:bgpd::neighbor_nexthop_self_force",
+     "code:bgpd::neighbor_remove_private_as",
+     "code:bgpd::neighbor_remove_private_as_all",
+     "code:bgpd::neighbor_remove_private_as_all_replace_as",
+     "code:bgpd::neighbor_remove_private_as_replace_as",
+     "code:bgpd::neighbor_route_reflector_client",
+     "code:bgpd::neighbor_route_server_client",
+     "code:bgpd::neighbor_send_community",
+     "code:bgpd::neighbor_send_community_type",
+     "code:bgpd::neighbor_soft_reconfiguration"
+    ],
+    "gt_complete": false,
+    "note": "verified call-site subset"
+   },
+   "ground_truth": "source",
+   "provenance": "bgpd/bgp_vty.c:7155; bgpd/bgp_vty.c:7344; bgpd/bgp_vty.c:7478; bgpd/bgp_vty.c:10117"
+  },
+  {
+   "qid": "G019",
+   "question": "who calls ospf_external_info_find_lsa?",
+   "intent": "callers",
+   "expected": {
+    "callers": [
+     "code:ospfd::ospf_abr_translate_nssa",
+     "code:ospfd::ospf_abr_translate_nssa_range",
+     "code:ospfd::ospf_aggr_handle_advertise_change",
+     "code:ospfd::ospf_aggr_handle_external_info",
+     "code:ospfd::ospf_distribute_list_update_timer",
+     "code:ospfd::ospf_external_lsa_default_routemap_apply",
+     "code:ospfd::ospf_external_lsa_default_routemap_timer",
+     "code:ospfd::ospf_external_lsa_flush",
+     "code:ospfd::ospf_external_lsa_refresh_default",
+     "code:ospfd::ospf_external_lsa_refresh_type",
+     "code:ospfd::ospf_external_lsa_rid_change",
+     "code:ospfd::ospf_handle_aggregated_exnl_rt",
+     "code:ospfd::ospf_handle_exnl_rt_after_aggr_del",
+     "code:ospfd::ospf_handle_external_aggr_update",
+     "code:ospfd::ospf_lsa_flush_area",
+     "code:ospfd::ospf_originate_summary_lsa",
+     "code:ospfd::ospf_redistribute_withdraw",
+     "code:ospfd::ospf_translated_nssa_refresh",
+     "code:ospfd::ospf_zebra_read_route",
+     "code:ospfd::update_redistributed"
+    ],
+    "gt_complete": false,
+    "note": "verified call-site subset"
+   },
+   "ground_truth": "source",
+   "provenance": "ospfd/ospf_zebra.c:1710; ospfd/ospf_zebra.c:557; ospfd/ospf_lsa.c:2668; ospfd/ospf_lsa.c:2712"
+  },
+  {
+   "qid": "G020",
+   "question": "who calls ospf_get_if_params?",
+   "intent": "callers",
+   "expected": {
+    "callers": [
+     "code:ospfd::ip_ospf_area",
+     "code:ospfd::ip_ospf_authentication",
+     "code:ospfd::ip_ospf_authentication_args",
+     "code:ospfd::ip_ospf_authentication_key",
+     "code:ospfd::ip_ospf_capability_opaque_magic",
+     "code:ospfd::ip_ospf_cost",
+     "code:ospfd::ip_ospf_hello_interval",
+     "code:ospfd::ip_ospf_message_digest_key",
+     "code:ospfd::ip_ospf_mtu_ignore",
+     "code:ospfd::ip_ospf_neighbor_filter_magic",
+     "code:ospfd::ip_ospf_passive",
+     "code:ospfd::ip_ospf_prefix_suppression_magic",
+     "code:ospfd::ip_ospf_priority",
+     "code:ospfd::ip_ospf_retransmit_interval",
+     "code:ospfd::ip_ospf_retransmit_window_magic",
+     "code:ospfd::ip_ospf_transmit_delay",
+     "code:ospfd::no_ip_ospf_mtu_ignore",
+     "code:ospfd::ospf_network_lsa_new",
+     "code:ospfd::ospf_passive_interface_addr",
+     "code:ospfd::ospf_vty_dead_interval_set"
+    ],
+    "gt_complete": false,
+    "note": "verified call-site subset"
+   },
+   "ground_truth": "source",
+   "provenance": "ospfd/ospf_vty.c:455; ospfd/ospf_vty.c:9916; ospfd/ospf_vty.c:9950; ospfd/ospf_vty.c:7627"
+  },
+  {
+   "qid": "G021",
+   "question": "who calls zebra_vrf_table?",
+   "intent": "callers",
+   "expected": {
+    "callers": [
+     "code:zebra::connected_remove_kernel_for_connected",
+     "code:zebra::do_show_ip_route",
+     "code:zebra::dplane_ctx_pw_init",
+     "code:zebra::fec_change_update_lsp",
+     "code:zebra::ip_protocol_rm_add",
+     "code:zebra::ip_protocol_rm_del",
+     "code:zebra::mpls_ftn_uninstall_all",
+     "code:zebra::nexthop_active",
+     "code:zebra::nhlfe_nexthop_active_ipv4",
+     "code:zebra::nhlfe_nexthop_active_ipv6",
+     "code:zebra::rib_match",
+     "code:zebra::rib_tables_iter_next",
+     "code:zebra::show_route_detail_magic",
+     "code:zebra::show_route_summary_magic",
+     "code:zebra::show_route_zebra_dump_magic",
+     "code:zebra::zebra_mpls_ftn_uninstall",
+     "code:zebra::zebra_mpls_zapi_labels_process",
+     "code:zebra::zebra_redistribute",
+     "code:zebra::zebra_redistribute_default",
+     "code:zebra::zebra_vrf_lookup_table_with_table_id"
+    ],
+    "gt_complete": false,
+    "note": "verified call-site subset"
+   },
+   "ground_truth": "source",
+   "provenance": "zebra/zebra_mpls.c:649; zebra/zebra_mpls.c:429; zebra/zebra_mpls.c:3438; zebra/zebra_nhg.c:2454"
+  },
+  {
+   "qid": "G022",
+   "question": "who calls bgp_dest_has_bgp_path_info_data?",
+   "intent": "callers",
+   "expected": {
+    "callers": [
+     "code:bgpd::bgp_address_family_distance_delete",
+     "code:bgpd::bgp_afi_node_get",
+     "code:bgpd::bgp_safi_node_lookup",
+     "code:bgpd::bgp_static_add",
+     "code:bgpd::bgp_static_delete",
+     "code:bgpd::bgp_static_redo_import_check",
+     "code:bgpd::bgp_static_set",
+     "code:bgpd::bgp_table_stats_rn",
+     "code:bgpd::delete_global_ead_evi_routes",
+     "code:bgpd::evpn_show_route_rd_all_prefix",
+     "code:bgpd::evpn_show_route_rd_macip",
+     "code:bgpd::evpn_show_route_rd_prefix",
+     "code:bgpd::evpn_show_route_vni_macip",
+     "code:bgpd::evpn_show_route_vni_multicast",
+     "code:bgpd::print_bgp_vrfs",
+     "code:bgpd::print_bgp_vrfs_detail_network_lines",
+     "code:bgpd::rfapiBgpTableFilteredImport",
+     "code:bgpd::subgroup_default_originate",
+     "code:bgpd::vnc_direct_bgp_rh_vpn_enable",
+     "code:bgpd::vnc_import_bgp_redist_disable"
+    ],
+    "gt_complete": false,
+    "note": "verified call-site subset"
+   },
+   "ground_truth": "source",
+   "provenance": "bgpd/bgp_evpn_vty.c:2978; bgpd/bgp_evpn_vty.c:3047; bgpd/bgp_route.c:9114; bgpd/bgp_vty.c:12774"
+  },
+  {
+   "qid": "G023",
+   "question": "who calls bgp_capability_send?",
+   "intent": "callers",
+   "expected": {
+    "callers": [
+     "code:bgpd::bgp_graceful_restart_disable",
+     "code:bgpd::bgp_graceful_restart_notification_magic",
+     "code:bgpd::bgp_graceful_restart_restart_time",
+     "code:bgpd::bgp_llgr_stalepath_time",
+     "code:bgpd::bgp_vty_capability_send_dynamic_peer_group",
+     "code:bgpd::neighbor_addpath_paths_limit_magic",
+     "code:bgpd::neighbor_capability_fqdn_magic",
+     "code:bgpd::neighbor_capability_link_local_magic",
+     "code:bgpd::neighbor_capability_orf_prefix",
+     "code:bgpd::neighbor_capability_software_version_magic",
+     "code:bgpd::neighbor_role_magic",
+     "code:bgpd::neighbor_role_strict_magic",
+     "code:bgpd::no_bgp_graceful_restart_restart_time",
+     "code:bgpd::no_bgp_llgr_stalepath_time",
+     "code:bgpd::no_neighbor_addpath_paths_limit_magic",
+     "code:bgpd::no_neighbor_capability_orf_prefix",
+     "code:bgpd::no_neighbor_role_magic",
+     "code:bgpd::non_peergroup_deactivate_af",
+     "code:bgpd::peer_activate_af",
+     "code:bgpd::peer_clear_capabilities"
+    ],
+    "gt_complete": false,
+    "note": "verified call-site subset"
+   },
+   "ground_truth": "source",
+   "provenance": "bgpd/bgp_vty.c:3600; bgpd/bgp_vty.c:6735; bgpd/bgp_vty.c:10151; bgpd/bgp_vty.c:3816"
+  },
+  {
+   "qid": "G024",
+   "question": "who calls lcommunity_free?",
+   "intent": "callers",
+   "expected": {
+    "callers": [
+     "code:bgpd::bgp_aggr_lcommunity_remove",
+     "code:bgpd::bgp_aggregate_delete",
+     "code:bgpd::bgp_aggregate_install",
+     "code:bgpd::bgp_attr_flush",
+     "code:bgpd::bgp_community_alias_magic",
+     "code:bgpd::bgp_compute_aggregate_lcommunity_val",
+     "code:bgpd::bgp_free_aggregate_info",
+     "code:bgpd::bgp_path_info_mpath_aggregate_update",
+     "code:bgpd::bgp_remove_lcomm_from_aggregate_hash",
+     "code:bgpd::bgp_remove_lcommunity_from_aggregate",
+     "code:bgpd::bgp_show_lcommunity",
+     "code:bgpd::community_entry_free",
+     "code:bgpd::lcommunity_hash_free",
+     "code:bgpd::lcommunity_intern",
+     "code:bgpd::lcommunity_list_unset",
+     "code:bgpd::lcommunity_unintern",
+     "code:bgpd::route_set_lcommunity",
+     "code:bgpd::route_set_lcommunity_delete",
+     "code:bgpd::route_set_lcommunity_free",
+     "code:bgpd::show_bgp_l2vpn_evpn_com"
+    ],
+    "gt_complete": false,
+    "note": "verified call-site subset"
+   },
+   "ground_truth": "source",
+   "provenance": "bgpd/bgp_lcommunity.c:264; bgpd/bgp_route.c:10718; bgpd/bgp_lcommunity.c:612; bgpd/bgp_route.c:10117"
+  },
+  {
+   "qid": "G025",
+   "question": "who calls aspath_dup?",
+   "intent": "callers",
+   "expected": {
+    "callers": [
+     "code:bgpd::aspath_reconcile_as4",
+     "code:bgpd::aspath_replace_all_asn",
+     "code:bgpd::aspath_replace_private_asns",
+     "code:bgpd::aspath_replace_regex_asn",
+     "code:bgpd::aspath_replace_specific_asn",
+     "code:bgpd::bgp_add_route_to_aggregate",
+     "code:bgpd::bgp_aggr_aspath_hash_alloc",
+     "code:bgpd::bgp_aggr_aspath_prepare",
+     "code:bgpd::bgp_aggregate_route",
+     "code:bgpd::bgp_attr_aspath_check",
+     "code:bgpd::bgp_packet_attribute",
+     "code:bgpd::bgp_path_info_mpath_aggregate_update",
+     "code:bgpd::bgp_peer_as_override",
+     "code:bgpd::bgp_remove_route_from_aggregate",
+     "code:bgpd::route_set_aspath_exclude",
+     "code:bgpd::route_set_aspath_prepend",
+     "code:bgpd::route_set_aspath_replace",
+     "code:bgpd::subgroup_announce_check",
+     "code:bgpd::update_evpn_type5_route_entry",
+     "code:bgpd::vpn_leak_to_vrf_update_onevrf"
+    ],
+    "gt_complete": false,
+    "note": "verified call-site subset"
+   },
+   "ground_truth": "source",
+   "provenance": "bgpd/bgp_route.c:9990; bgpd/bgp_routemap.c:2784; bgpd/bgp_route.c:2282; bgpd/bgp_route.c:2994"
+  },
+  {
+   "qid": "G026",
+   "question": "who calls dump_lsa_key?",
+   "intent": "callers",
+   "expected": {
+    "callers": [
+     "code:ospfd::ospf_gr_check_lsdb_consistency",
+     "code:ospfd::ospf_lsa_install"
+    ],
+    "gt_complete": false,
+    "note": "verified call-site subset"
+   },
+   "ground_truth": "source",
+   "provenance": "ospfd/ospf_lsa.c:3184; ospfd/ospf_gr.c:384"
+  },
+  {
+   "qid": "G027",
+   "question": "who calls is_zero_mac?",
+   "intent": "callers",
+   "expected": {
+    "callers": [
+     "code:bgpd::bgp_config_write_evpn_info",
+     "code:bgpd::bgp_debug_zebra_nh",
+     "code:bgpd::bgp_evpn_advertise_pip_ip_mac_magic",
+     "code:bgpd::bgp_evpn_local_l3vni_add",
+     "code:bgpd::bgp_evpn_local_l3vni_del",
+     "code:bgpd::bgp_evpn_nh_zebra_update",
+     "code:bgpd::build_evpn_type5_route_extcomm",
+     "code:bgpd::process_type5_route",
+     "code:lib::str2prefix_eth",
+     "code:zebra::is_mac_vni_mcast_group",
+     "code:zebra::kernel_read_macfdb",
+     "code:zebra::lib_interface_zebra_evpn_mh_type_3_system_mac_modify",
+     "code:zebra::netlink_neigh_update_ctx",
+     "code:zebra::svd_remote_nh_add",
+     "code:zebra::zebra_evpn_if_es_print",
+     "code:zebra::zebra_evpn_local_es_update",
+     "code:zebra::zebra_neigh_macfdb_update",
+     "code:zebra::zl3vni_remote_nh_add",
+     "code:zebra::zl3vni_send_add_to_client"
+    ],
+    "gt_complete": false,
+    "note": "verified call-site subset"
+   },
+   "ground_truth": "source",
+   "provenance": "bgpd/bgp_evpn_vty.c:4705; zebra/zebra_nb_config.c:2431; zebra/zebra_vxlan.c:2402; zebra/zebra_evpn_mh.c:2676"
+  },
+  {
+   "qid": "G028",
+   "question": "who calls is_evpn_prefix_ipaddr_v4?",
+   "intent": "callers",
+   "expected": {
+    "callers": [
+     "code:bgpd::bgp_config_write_network_evpn",
+     "code:bgpd::bgp_debug_print_evpn_prefix",
+     "code:bgpd::bgp_debug_rdpfxpath2str",
+     "code:bgpd::bgp_evpn_encode_prefix",
+     "code:bgpd::bgp_evpn_is_macip_path",
+     "code:bgpd::bgp_evpn_is_macip_with_l3vni",
+     "code:bgpd::bgp_evpn_route2json",
+     "code:bgpd::bgp_static_set",
+     "code:bgpd::bgp_zebra_send_remote_macip",
+     "code:bgpd::install_evpn_route_entry_in_vrf",
+     "code:bgpd::install_uninstall_route_in_vrfs",
+     "code:bgpd::install_uninstall_routes_for_vrf",
+     "code:bgpd::route_set_evpn_gateway_ip",
+     "code:bgpd::uninstall_evpn_route_entry_in_vrf",
+     "code:lib::evpn_type5_prefix_match",
+     "code:lib::prefixevpn_macip2str",
+     "code:zebra::host_rb_entry_compare"
+    ],
+    "gt_complete": false,
+    "note": "verified call-site subset"
+   },
+   "ground_truth": "source",
+   "provenance": "bgpd/bgp_route.c:18838; lib/prefix.c:1017; bgpd/bgp_debug.c:2990; bgpd/bgp_evpn_mh.c:1831"
+  },
+  {
+   "qid": "G029",
+   "question": "who calls stream_set_getp?",
+   "intent": "callers",
+   "expected": {
+    "callers": [
+     "code:bgpd::bgp_attr_ls",
+     "code:bgpd::bgp_attr_malformed",
+     "code:bgpd::bgp_attr_parse",
+     "code:bgpd::bgp_capability_parse",
+     "code:bgpd::bgp_nlri_parse_ls",
+     "code:bgpd::bgp_write",
+     "code:bgpd::bgp_write_notify",
+     "code:bgpd::peek_for_as4_capability",
+     "code:lib::zclient_read",
+     "code:ospfd::ospf_packet_db_desc_dump",
+     "code:ospfd::ospf_packet_dump",
+     "code:ospfd::ospf_packet_ls_ack_dump",
+     "code:ospfd::ospf_packet_ls_req_dump",
+     "code:ospfd::ospf_packet_ls_upd_dump",
+     "code:ospfd::ospf_write",
+     "code:zebra::dispatch_opq_messages",
+     "code:zebra::zserv_handle_commands",
+     "code:zebra::zserv_read",
+     "code:zebra::zserv_write"
+    ],
+    "gt_complete": false,
+    "note": "verified call-site subset"
+   },
+   "ground_truth": "source",
+   "provenance": "bgpd/bgp_attr.c:1896; bgpd/bgp_attr.c:4575; bgpd/bgp_packet.c:781; ospfd/ospf_dump.c:517"
+  },
+  {
+   "qid": "G030",
+   "question": "list the senders of ZEBRA_REDISTRIBUTE_ADD",
+   "intent": "callers",
+   "expected": {
+    "handlers": [
+     "code:zebra::zebra_redistribute_add"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ],
+    "gt_complete": true
+   },
+   "ground_truth": "source",
+   "provenance": "zebra/zapi_msg.c zserv_handlers[ZEBRA_REDISTRIBUTE_ADD] = zebra_redistribute_add"
+  },
+  {
+   "qid": "G031",
+   "question": "how does bgpd talk to zebra?",
+   "intent": "path",
+   "expected": {
+    "src": "svc:bgpd",
+    "dst": "svc:zebra",
+    "max_hops": 6,
+    "min_evidence_per_hop": 1,
+    "via": "zapi:ZEBRA_ROUTE_ADD"
+   },
+   "ground_truth": "doc+source",
+   "provenance": "doc/user/bgp.rst -Z quote + verified send/dispatch lines"
+  },
+  {
+   "qid": "G032",
+   "question": "path from svc:zebra to svc:bgpd",
+   "intent": "path",
+   "expected": {
+    "src": "svc:zebra",
+    "dst": "svc:bgpd",
+    "max_hops": 6,
+    "min_evidence_per_hop": 1
+   },
+   "ground_truth": "graph",
+   "provenance": "both endpoints exist in the fused graph (KB census); graded on existence+endpoints+evidence, not a specific route"
+  },
+  {
+   "qid": "G033",
+   "question": "path from svc:bgpd to svc:ospfd",
+   "intent": "path",
+   "expected": {
+    "src": "svc:bgpd",
+    "dst": "svc:ospfd",
+    "max_hops": 6,
+    "min_evidence_per_hop": 1
+   },
+   "ground_truth": "graph",
+   "provenance": "both endpoints exist in the fused graph (KB census); graded on existence+endpoints+evidence, not a specific route"
+  },
+  {
+   "qid": "G034",
+   "question": "path from svc:ospfd to svc:staticd",
+   "intent": "path",
+   "expected": {
+    "src": "svc:ospfd",
+    "dst": "svc:staticd",
+    "max_hops": 6,
+    "min_evidence_per_hop": 1
+   },
+   "ground_truth": "graph",
+   "provenance": "both endpoints exist in the fused graph (KB census); graded on existence+endpoints+evidence, not a specific route"
+  },
+  {
+   "qid": "G035",
+   "question": "path from svc:lib to svc:zebra",
+   "intent": "path",
+   "expected": {
+    "src": "svc:lib",
+    "dst": "svc:zebra",
+    "max_hops": 6,
+    "min_evidence_per_hop": 1
+   },
+   "ground_truth": "graph",
+   "provenance": "both endpoints exist in the fused graph (KB census); graded on existence+endpoints+evidence, not a specific route"
+  },
+  {
+   "qid": "G036",
+   "question": "path from svc:bgpd to svc:staticd",
+   "intent": "path",
+   "expected": {
+    "src": "svc:bgpd",
+    "dst": "svc:staticd",
+    "max_hops": 6,
+    "min_evidence_per_hop": 1
+   },
+   "ground_truth": "graph",
+   "provenance": "both endpoints exist in the fused graph (KB census); graded on existence+endpoints+evidence, not a specific route"
+  },
+  {
+   "qid": "G037",
+   "question": "path from svc:lib to svc:bgpd",
+   "intent": "path",
+   "expected": {
+    "src": "svc:lib",
+    "dst": "svc:bgpd",
+    "max_hops": 6,
+    "min_evidence_per_hop": 1
+   },
+   "ground_truth": "graph",
+   "provenance": "both endpoints exist in the fused graph (KB census); graded on existence+endpoints+evidence, not a specific route"
+  },
+  {
+   "qid": "G038",
+   "question": "path from svc:staticd to svc:ospfd",
+   "intent": "path",
+   "expected": {
+    "src": "svc:staticd",
+    "dst": "svc:ospfd",
+    "max_hops": 6,
+    "min_evidence_per_hop": 1
+   },
+   "ground_truth": "graph",
+   "provenance": "both endpoints exist in the fused graph (KB census); graded on existence+endpoints+evidence, not a specific route"
+  },
+  {
+   "qid": "G039",
+   "question": "path from svc:zebra to svc:ospfd",
+   "intent": "path",
+   "expected": {
+    "src": "svc:zebra",
+    "dst": "svc:ospfd",
+    "max_hops": 6,
+    "min_evidence_per_hop": 1
+   },
+   "ground_truth": "graph",
+   "provenance": "both endpoints exist in the fused graph (KB census); graded on existence+endpoints+evidence, not a specific route"
+  },
+  {
+   "qid": "G040",
+   "question": "path from svc:zebra to svc:staticd",
+   "intent": "path",
+   "expected": {
+    "src": "svc:zebra",
+    "dst": "svc:staticd",
+    "max_hops": 6,
+    "min_evidence_per_hop": 1
+   },
+   "ground_truth": "graph",
+   "provenance": "both endpoints exist in the fused graph (KB census); graded on existence+endpoints+evidence, not a specific route"
+  },
+  {
+   "qid": "G041",
+   "question": "path from svc:lib to svc:staticd",
+   "intent": "path",
+   "expected": {
+    "src": "svc:lib",
+    "dst": "svc:staticd",
+    "max_hops": 6,
+    "min_evidence_per_hop": 1
+   },
+   "ground_truth": "graph",
+   "provenance": "both endpoints exist in the fused graph (KB census); graded on existence+endpoints+evidence, not a specific route"
+  },
+  {
+   "qid": "G042",
+   "question": "path from svc:ospfd to svc:bgpd",
+   "intent": "path",
+   "expected": {
+    "src": "svc:ospfd",
+    "dst": "svc:bgpd",
+    "max_hops": 6,
+    "min_evidence_per_hop": 1
+   },
+   "ground_truth": "graph",
+   "provenance": "both endpoints exist in the fused graph (KB census); graded on existence+endpoints+evidence, not a specific route"
+  },
+  {
+   "qid": "G043",
+   "question": "path from svc:zebra to svc:lib",
+   "intent": "path",
+   "expected": {
+    "src": "svc:zebra",
+    "dst": "svc:lib",
+    "max_hops": 6,
+    "min_evidence_per_hop": 1
+   },
+   "ground_truth": "graph",
+   "provenance": "both endpoints exist in the fused graph (KB census); graded on existence+endpoints+evidence, not a specific route"
+  },
+  {
+   "qid": "G044",
+   "question": "path from svc:bgpd to svc:no_such_daemon",
+   "intent": "path",
+   "expected": {
+    "refuse": true
+   },
+   "ground_truth": "graph",
+   "provenance": "dst does not exist; router must clarify, not hallucinate"
+  },
+  {
+   "qid": "G045",
+   "question": "path from svc:bgpd to svc:bgpd",
+   "intent": "path",
+   "expected": {
+    "refuse": true
+   },
+   "ground_truth": "graph",
+   "provenance": "degenerate same-endpoint path must be clarified"
+  },
+  {
+   "qid": "G046",
+   "question": "what is the impact of yang:frr-bgp-route-map:local-preference?",
+   "intent": "impact",
+   "expected": {
+    "daemons": [
+     "svc:bgpd"
+    ],
+    "callbacks_at_least": [
+     "lib_route_map_entry_match_condition_rmap_match_condition_local_preference_modify"
+    ],
+    "zapi_side_effects_at_least": 3
+   },
+   "ground_truth": "source",
+   "provenance": "NB callback lib_route_map_entry_match_condition_rmap_match_condition_local_preference_modify verified at bgpd/bgp_routemap_nb.c:28; 3 side-effect handlers confirmed in dispatch table"
+  },
+  {
+   "qid": "G047",
+   "question": "what is the impact of yang:frr-bgp-route-map:alias?",
+   "intent": "impact",
+   "expected": {
+    "daemons": [
+     "svc:bgpd"
+    ],
+    "callbacks_at_least": [
+     "lib_route_map_entry_match_condition_rmap_match_condition_alias_modify"
+    ],
+    "zapi_side_effects_at_least": 3
+   },
+   "ground_truth": "source",
+   "provenance": "NB callback lib_route_map_entry_match_condition_rmap_match_condition_alias_modify verified at bgpd/bgp_routemap_nb.c:35; 3 side-effect handlers confirmed in dispatch table"
+  },
+  {
+   "qid": "G048",
+   "question": "what is the impact of yang:frr-bgp-route-map:route-distinguisher?",
+   "intent": "impact",
+   "expected": {
+    "daemons": [
+     "svc:bgpd"
+    ],
+    "callbacks_at_least": [
+     "lib_route_map_entry_match_condition_rmap_match_condition_route_distinguisher_destroy"
+    ],
+    "zapi_side_effects_at_least": 3
+   },
+   "ground_truth": "source",
+   "provenance": "NB callback lib_route_map_entry_match_condition_rmap_match_condition_route_distinguisher_destroy verified at bgpd/bgp_routemap_nb.c:168; 3 side-effect handlers confirmed in dispatch table"
+  },
+  {
+   "qid": "G049",
+   "question": "what is the impact of yang:frr-bgp-route-map:extcommunity-none?",
+   "intent": "impact",
+   "expected": {
+    "daemons": [
+     "svc:bgpd"
+    ],
+    "callbacks_at_least": [
+     "lib_route_map_entry_set_action_rmap_set_action_extcommunity_none_modify"
+    ],
+    "zapi_side_effects_at_least": 3
+   },
+   "ground_truth": "source",
+   "provenance": "NB callback lib_route_map_entry_set_action_rmap_set_action_extcommunity_none_modify verified at bgpd/bgp_routemap_nb.c:433; 3 side-effect handlers confirmed in dispatch table"
+  },
+  {
+   "qid": "G050",
+   "question": "what is the impact of yang:frr-bgp-route-map:originator-id?",
+   "intent": "impact",
+   "expected": {
+    "daemons": [
+     "svc:bgpd"
+    ],
+    "callbacks_at_least": [
+     "lib_route_map_entry_set_action_rmap_set_action_originator_id_destroy"
+    ],
+    "zapi_side_effects_at_least": 3
+   },
+   "ground_truth": "source",
+   "provenance": "NB callback lib_route_map_entry_set_action_rmap_set_action_originator_id_destroy verified at bgpd/bgp_routemap_nb.c:322; 3 side-effect handlers confirmed in dispatch table"
+  },
+  {
+   "qid": "G051",
+   "question": "what is the impact of yang:frr-filter:lib/access-list/name?",
+   "intent": "impact",
+   "expected": {
+    "daemons": [
+     "svc:lib"
+    ],
+    "callbacks_at_least": [
+     "lib_access_list_create"
+    ],
+    "zapi_side_effects_at_least": 3
+   },
+   "ground_truth": "source",
+   "provenance": "NB callback lib_access_list_create verified at lib/filter_nb.c:1962; 3 side-effect handlers confirmed in dispatch table"
+  },
+  {
+   "qid": "G052",
+   "question": "what is the impact of yang:frr-filter:lib/access-list/entry/ipv6-prefix?",
+   "intent": "impact",
+   "expected": {
+    "daemons": [
+     "svc:lib"
+    ],
+    "callbacks_at_least": [
+     "lib_access_list_entry_ipv4_prefix_destroy"
+    ],
+    "zapi_side_effects_at_least": 3
+   },
+   "ground_truth": "source",
+   "provenance": "NB callback lib_access_list_entry_ipv4_prefix_destroy verified at lib/filter_nb.c:2073; 3 side-effect handlers confirmed in dispatch table"
+  },
+  {
+   "qid": "G053",
+   "question": "what is the impact of yang:frr-filter:lib/access-list/entry/ipv6-destination-host?",
+   "intent": "impact",
+   "expected": {
+    "daemons": [
+     "svc:lib"
+    ],
+    "callbacks_at_least": [
+     "lib_access_list_entry_ipv6_destination_host_modify"
+    ],
+    "zapi_side_effects_at_least": 3
+   },
+   "ground_truth": "source",
+   "provenance": "NB callback lib_access_list_entry_ipv6_destination_host_modify verified at lib/filter_nb.c:2120; 3 side-effect handlers confirmed in dispatch table"
+  },
+  {
+   "qid": "G054",
+   "question": "what is the impact of yang:frr-filter:lib/access-list/entry/ipv6-destination-network/address?",
+   "intent": "impact",
+   "expected": {
+    "daemons": [
+     "svc:lib"
+    ],
+    "callbacks_at_least": [
+     "lib_access_list_entry_ipv6_destination_network_address_modify"
+    ],
+    "zapi_side_effects_at_least": 3
+   },
+   "ground_truth": "source",
+   "provenance": "NB callback lib_access_list_entry_ipv6_destination_network_address_modify verified at lib/filter_nb.c:2134; 3 side-effect handlers confirmed in dispatch table"
+  },
+  {
+   "qid": "G055",
+   "question": "what is the impact of yang:frr-filter:lib/prefix-list/entry/ipv4-prefix?",
+   "intent": "impact",
+   "expected": {
+    "daemons": [
+     "svc:lib"
+    ],
+    "callbacks_at_least": [
+     "lib_prefix_list_entry_ipv4_prefix_modify"
+    ],
+    "zapi_side_effects_at_least": 3
+   },
+   "ground_truth": "source",
+   "provenance": "NB callback lib_prefix_list_entry_ipv4_prefix_modify verified at lib/filter_nb.c:2198; 3 side-effect handlers confirmed in dispatch table"
+  },
+  {
+   "qid": "G056",
+   "question": "what happens if ZEBRA_INTERFACE_ADD changes?",
+   "intent": "impact",
+   "expected": {
+    "handlers": [
+     "code:zebra::zread_interface_add"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ]
+   },
+   "ground_truth": "source",
+   "provenance": "dispatch table zserv_handlers[ZEBRA_INTERFACE_ADD]; senders graded verified-precision"
+  },
+  {
+   "qid": "G057",
+   "question": "what happens if ZEBRA_ROUTE_ADD changes?",
+   "intent": "impact",
+   "expected": {
+    "handlers": [
+     "code:zebra::zread_route_add"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ]
+   },
+   "ground_truth": "source",
+   "provenance": "dispatch table zserv_handlers[ZEBRA_ROUTE_ADD]; senders graded verified-precision"
+  },
+  {
+   "qid": "G058",
+   "question": "what happens if ZEBRA_REDISTRIBUTE_ADD changes?",
+   "intent": "impact",
+   "expected": {
+    "handlers": [
+     "code:zebra::zebra_redistribute_add"
+    ],
+    "handler_services": [
+     "svc:zebra"
+    ]
+   },
+   "ground_truth": "source",
+   "provenance": "dispatch table zserv_handlers[ZEBRA_REDISTRIBUTE_ADD]; senders graded verified-precision"
+  },
+  {
+   "qid": "G059",
+   "question": "who is affected if apply_mask_ipv4 is removed?",
+   "intent": "impact",
+   "expected": {
+    "daemons": [
+     "bgpd",
+     "lib",
+     "ospfd"
+    ],
+    "callers_at_least": [
+     "code:bgpd::bgp_connected_add",
+     "code:lib::apply_classful_mask_ipv4",
+     "code:lib::apply_mask",
+     "code:lib::yang_str2ipv4p",
+     "code:ospfd::get_ext_prefix_sid",
+     "code:ospfd::ospf_area_range_add",
+     "code:ospfd::ospf_area_range_lookup_next",
+     "code:ospfd::ospf_ase_calculate_route",
+     "code:ospfd::ospf_ase_incremental_update",
+     "code:ospfd::ospf_ase_register_external_lsa",
+     "code:ospfd::ospf_ase_unregister_external_lsa",
+     "code:ospfd::ospf_get_if_params",
+     "code:ospfd::ospf_intra_add_router",
+     "code:ospfd::ospf_intra_add_stub",
+     "code:ospfd::ospf_intra_add_transit",
+     "code:ospfd::ospf_update_network_route",
+     "code:ospfd::ospf_update_router_route",
+     "code:ospfd::process_summary_lsa",
+     "code:ospfd::process_transit_summary_lsa",
+     "code:ospfd::show_lsa_summary"
+    ]
+   },
+   "ground_truth": "source",
+   "provenance": "20 verified call sites of apply_mask_ipv4"
+  },
+  {
+   "qid": "G060",
+   "question": "who is affected if event_timer_remain_second is removed?",
+   "intent": "impact",
+   "expected": {
+    "daemons": [
+     "bgpd",
+     "lib",
+     "ospfd",
+     "zebra"
+    ],
+    "callers_at_least": [
+     "code:bgpd::bgp_adjust_routeadv",
+     "code:bgpd::bgp_config_end",
+     "code:bgpd::bgp_show_neighbor_graceful_restart_time",
+     "code:bgpd::bgp_show_peer",
+     "code:bgpd::bgp_show_peer_gr_extra_info",
+     "code:bgpd::bgp_show_peer_gr_info_afi_safi",
+     "code:bgpd::bgp_show_summary_advertisement_delay",
+     "code:bgpd::print_bgp_vrfs",
+     "code:bgpd::rfapiMonitorEthTimerRestart",
+     "code:bgpd::rfapiMonitorTimerRestart",
+     "code:bgpd::rfapiPrintBi",
+     "code:bgpd::rfapiPrintRemoteRegBi",
+     "code:bgpd::rfapiShowVncQueries",
+     "code:bgpd::route_vty_out_detail",
+     "code:bgpd::show_bgp_router_magic",
+     "code:bgpd::show_bgp_vrfs_detail_common",
+     "code:lib::event_timer_to_hhmmss",
+     "code:ospfd::ospf_show_gr_helper_details",
+     "code:zebra::show_zebra",
+     "code:zebra::zebra_show_stale_client_detail"
+    ]
+   },
+   "ground_truth": "source",
+   "provenance": "20 verified call sites of event_timer_remain_second"
+  },
+  {
+   "qid": "G061",
+   "question": "who is affected if skiplist_free is removed?",
+   "intent": "impact",
+   "expected": {
+    "daemons": [
+     "bgpd",
+     "lib"
+    ],
+    "callers_at_least": [
+     "code:bgpd::_rfapiRibExpireTimer",
+     "code:bgpd::bgp_lp_finish",
+     "code:bgpd::bgp_rfapi_destroy",
+     "code:bgpd::print_cleared_stats",
+     "code:bgpd::process_pending_node",
+     "code:bgpd::rfapiApRelease",
+     "code:bgpd::rfapiDeleteRemotePrefixes",
+     "code:bgpd::rfapiImportTableFlush",
+     "code:bgpd::rfapiMonitorDelHd",
+     "code:bgpd::rfapiMonitorExtraFlush",
+     "code:bgpd::rfapiMonitorExtraPrune",
+     "code:bgpd::rfapiMonitorItNodeChanged",
+     "code:bgpd::rfapiNhlAddNodeRoutes",
+     "code:bgpd::rfapiRibClear",
+     "code:bgpd::rfapiRibUpdatePendingNode",
+     "code:bgpd::rfapiWithdrawTimerEncap",
+     "code:bgpd::vnc_import_bgp_exterior_add_route_interior",
+     "code:bgpd::vnc_import_bgp_exterior_del_route",
+     "code:bgpd::vnc_import_bgp_exterior_del_route_interior",
+     "code:lib::skiplist_test"
+    ]
+   },
+   "ground_truth": "source",
+   "provenance": "20 verified call sites of skiplist_free"
+  },
+  {
+   "qid": "G062",
+   "question": "who is affected if bgp_recalculate_all_bestpaths is removed?",
+   "intent": "impact",
+   "expected": {
+    "daemons": [
+     "bgpd"
+    ],
+    "callers_at_least": [
+     "code:bgpd::bgp_addpath_set_peer_type",
+     "code:bgpd::bgp_always_compare_med",
+     "code:bgpd::bgp_bestpath_aigp_magic",
+     "code:bgpd::bgp_bestpath_aspath_confed",
+     "code:bgpd::bgp_bestpath_aspath_ignore",
+     "code:bgpd::bgp_bestpath_aspath_multipath_relax",
+     "code:bgpd::bgp_bestpath_compare_router_id",
+     "code:bgpd::bgp_bestpath_med",
+     "code:bgpd::bgp_bestpath_peer_type_multipath_relax",
+     "code:bgpd::bgp_bestpath_use_imported_attrs_magic",
+     "code:bgpd::bgp_deterministic_med",
+     "code:bgpd::bgp_maxpaths_config_vty",
+     "code:bgpd::no_bgp_always_compare_med",
+     "code:bgpd::no_bgp_bestpath_aspath_confed",
+     "code:bgpd::no_bgp_bestpath_aspath_ignore",
+     "code:bgpd::no_bgp_bestpath_aspath_multipath_relax",
+     "code:bgpd::no_bgp_bestpath_compare_router_id",
+     "code:bgpd::no_bgp_bestpath_med",
+     "code:bgpd::no_bgp_bestpath_peer_type_multipath_relax",
+     "code:bgpd::no_bgp_deterministic_med"
+    ]
+   },
+   "ground_truth": "source",
+   "provenance": "20 verified call sites of bgp_recalculate_all_bestpaths"
+  },
+  {
+   "qid": "G063",
+   "question": "who is affected if peer_af_flag_set_vty is removed?",
+   "intent": "impact",
+   "expected": {
+    "daemons": [
+     "bgpd"
+    ],
+    "callers_at_least": [
+     "code:bgpd::neighbor_addpath_paths_limit_magic",
+     "code:bgpd::neighbor_as_override",
+     "code:bgpd::neighbor_attr_unchanged",
+     "code:bgpd::neighbor_capability_orf_prefix",
+     "code:bgpd::neighbor_disable_addpath_rx",
+     "code:bgpd::neighbor_ecommunity_rpki_magic",
+     "code:bgpd::neighbor_encap_srv6_magic",
+     "code:bgpd::neighbor_encapsulation_srv6_or_mpls_magic",
+     "code:bgpd::neighbor_nexthop_local_unchanged",
+     "code:bgpd::neighbor_nexthop_self",
+     "code:bgpd::neighbor_nexthop_self_force",
+     "code:bgpd::neighbor_remove_private_as",
+     "code:bgpd::neighbor_remove_private_as_all",
+     "code:bgpd::neighbor_remove_private_as_all_replace_as",
+     "code:bgpd::neighbor_remove_private_as_replace_as",
+     "code:bgpd::neighbor_route_reflector_client",
+     "code:bgpd::neighbor_route_server_client",
+     "code:bgpd::neighbor_send_community",
+     "code:bgpd::neighbor_send_community_type",
+     "code:bgpd::neighbor_soft_reconfiguration"
+    ]
+   },
+   "ground_truth": "source",
+   "provenance": "20 verified call sites of peer_af_flag_set_vty"
+  },
+  {
+   "qid": "G064",
+   "question": "explain zapi:ZEBRA_ROUTE_ADD",
+   "intent": "explain",
+   "expected": {
+    "kind": "message",
+    "relations_includes": [
+     "handles",
+     "publishes"
+    ]
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G065",
+   "question": "explain svc:zebra",
+   "intent": "explain",
+   "expected": {
+    "kind": "daemon",
+    "relations_includes": [
+     "handles"
+    ]
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G066",
+   "question": "explain svc:bgpd",
+   "intent": "explain",
+   "expected": {
+    "kind": "daemon",
+    "relations_includes": [
+     "publishes"
+    ]
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G067",
+   "question": "explain code:zebra::zread_route_add",
+   "intent": "explain",
+   "expected": {
+    "kind": "function",
+    "service": "zebra"
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G068",
+   "question": "explain code:bgpd::bgp_zebra_announce_actual",
+   "intent": "explain",
+   "expected": {
+    "kind": "function",
+    "service": "bgpd"
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G069",
+   "question": "explain code:lib::zclient_route_send",
+   "intent": "explain",
+   "expected": {
+    "kind": "function",
+    "service": "lib"
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G070",
+   "question": "explain yang:frr-bgp-route-map:ipv4-address",
+   "intent": "explain",
+   "expected": {
+    "kind": "yang-node"
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G071",
+   "question": "explain zapi:ZEBRA_INTERFACE_ADD",
+   "intent": "explain",
+   "expected": {
+    "kind": "message"
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G072",
+   "question": "explain code:zebra::zserv_handle_commands",
+   "intent": "explain",
+   "expected": {
+    "kind": "function",
+    "service": "zebra"
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G073",
+   "question": "explain svc:ospfd",
+   "intent": "explain",
+   "expected": {
+    "kind": "daemon"
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G074",
+   "question": "explain svc:staticd",
+   "intent": "explain",
+   "expected": {
+    "kind": "daemon"
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G075",
+   "question": "explain svc:lib",
+   "intent": "explain",
+   "expected": {
+    "kind": "daemon"
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G076",
+   "question": "explain code:ospfd::ospf_zebra_add",
+   "intent": "explain",
+   "expected": {
+    "kind": "function",
+    "service": "ospfd"
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G077",
+   "question": "explain code:staticd::static_zebra_route_add",
+   "intent": "explain",
+   "expected": {
+    "kind": "function",
+    "service": "staticd"
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G078",
+   "question": "explain zapi:ZEBRA_VRF_ADD",
+   "intent": "explain",
+   "expected": {
+    "kind": "message"
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G079",
+   "question": "explain code:zebra::zread_interface_add",
+   "intent": "explain",
+   "expected": {
+    "kind": "function",
+    "service": "zebra"
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G080",
+   "question": "explain zapi:ZEBRA_INTERFACE_DELETE",
+   "intent": "explain",
+   "expected": {
+    "kind": "message"
+   },
+   "ground_truth": "graph+source",
+   "provenance": "KB census + kind from schema v0.1.0; code nodes' defining file re-verified against source"
+  },
+  {
+   "qid": "G081",
+   "question": "what are the responsibilities of zebra?",
+   "intent": "docs",
+   "expected": {
+    "service": "svc:zebra",
+    "doc_keywords": [
+     "kernel"
+    ],
+    "doc": "doc/user/zebra.rst"
+   },
+   "ground_truth": "doc",
+   "provenance": "doc/user/zebra.rst contains ['kernel']; expected OKF daemon page + P3 pack"
+  },
+  {
+   "qid": "G082",
+   "question": "what are the responsibilities of bgpd?",
+   "intent": "docs",
+   "expected": {
+    "service": "svc:bgpd",
+    "doc_keywords": [
+     "bgp"
+    ],
+    "doc": "doc/user/bgp.rst"
+   },
+   "ground_truth": "doc",
+   "provenance": "doc/user/bgp.rst contains ['bgp']; expected OKF daemon page + P3 pack"
+  },
+  {
+   "qid": "G083",
+   "question": "what are the responsibilities of ospfd?",
+   "intent": "docs",
+   "expected": {
+    "service": "svc:ospfd",
+    "doc_keywords": [
+     "ospf"
+    ],
+    "doc": "doc/user/ospfd.rst"
+   },
+   "ground_truth": "doc",
+   "provenance": "doc/user/ospfd.rst contains ['ospf']; expected OKF daemon page + P3 pack"
+  },
+  {
+   "qid": "G084",
+   "question": "why do routes go through zebra?",
+   "intent": "docs",
+   "expected": {
+    "service": "svc:zebra",
+    "doc_keywords": [
+     "zebra"
+    ],
+    "doc": "doc/user/ospfd.rst"
+   },
+   "ground_truth": "doc",
+   "provenance": "doc/user/ospfd.rst contains ['zebra']; expected OKF daemon page + P3 pack"
+  },
+  {
+   "qid": "G085",
+   "question": "where is configuration data stored?",
+   "intent": "docs",
+   "expected": {
+    "service": "svc:lib",
+    "doc_keywords": [
+     "yang"
+    ],
+    "doc": "doc/user/mgmtd.rst"
+   },
+   "ground_truth": "doc",
+   "provenance": "doc/user/mgmtd.rst contains ['yang']; expected OKF daemon page + P3 pack"
+  },
+  {
+   "qid": "G086",
+   "question": "documentation for bgpd",
+   "intent": "docs",
+   "expected": {
+    "service": "svc:bgpd",
+    "doc_keywords": [
+     "bgp"
+    ],
+    "doc": "doc/user/bgp.rst"
+   },
+   "ground_truth": "doc",
+   "provenance": "doc/user/bgp.rst contains ['bgp']; expected OKF daemon page + P3 pack"
+  },
+  {
+   "qid": "G087",
+   "question": "documentation for zebra",
+   "intent": "docs",
+   "expected": {
+    "service": "svc:zebra",
+    "doc_keywords": [
+     "zebra"
+    ],
+    "doc": "doc/user/zebra.rst"
+   },
+   "ground_truth": "doc",
+   "provenance": "doc/user/zebra.rst contains ['zebra']; expected OKF daemon page + P3 pack"
+  },
+  {
+   "qid": "G088",
+   "question": "give me an overview of the ospfd cluster",
+   "intent": "docs",
+   "expected": {
+    "service": "svc:ospfd",
+    "doc_keywords": [
+     "ospf"
+    ],
+    "doc": "doc/user/ospfd.rst"
+   },
+   "ground_truth": "doc",
+   "provenance": "doc/user/ospfd.rst contains ['ospf']; expected OKF daemon page + P3 pack"
+  },
+  {
+   "qid": "G089",
+   "question": "what is the architecture of the zebra daemon?",
+   "intent": "docs",
+   "expected": {
+    "service": "svc:zebra",
+    "doc_keywords": [
+     "zebra"
+    ],
+    "doc": "doc/user/zebra.rst"
+   },
+   "ground_truth": "doc",
+   "provenance": "doc/user/zebra.rst contains ['zebra']; expected OKF daemon page + P3 pack"
+  },
+  {
+   "qid": "G090",
+   "question": "who owns the frr-bgp-route-map model?",
+   "intent": "docs",
+   "expected": {
+    "service": "svc:bgpd",
+    "doc_keywords": [
+     "bgp"
+    ],
+    "doc": "yang/frr-bgp-route-map.yang"
+   },
+   "ground_truth": "doc",
+   "provenance": "yang/frr-bgp-route-map.yang contains ['bgp']; expected OKF daemon page + P3 pack"
+  },
+  {
+   "qid": "G091",
+   "question": "why does ospfd need zebra?",
+   "intent": "docs",
+   "expected": {
+    "service": "svc:ospfd",
+    "doc_keywords": [
+     "zebra"
+    ],
+    "doc": "doc/user/ospfd.rst"
+   },
+   "ground_truth": "doc",
+   "provenance": "doc/user/ospfd.rst contains ['zebra']; expected OKF daemon page + P3 pack"
+  },
+  {
+   "qid": "G092",
+   "question": "what does mgmtd do with YANG?",
+   "intent": "docs",
+   "expected": {
+    "service": "svc:lib",
+    "doc_keywords": [
+     "yang"
+    ],
+    "doc": "doc/user/mgmtd.rst"
+   },
+   "ground_truth": "doc",
+   "provenance": "doc/user/mgmtd.rst contains ['yang']; expected OKF daemon page + P3 pack"
+  },
+  {
+   "qid": "G093",
+   "question": "summarize the design of zapi ipc",
+   "intent": "docs",
+   "expected": {
+    "service": "svc:zebra",
+    "doc_keywords": [
+     "zebra"
+    ],
+    "doc": "doc/user/zebra.rst"
+   },
+   "ground_truth": "doc",
+   "provenance": "doc/user/zebra.rst contains ['zebra']; expected OKF daemon page + P3 pack"
+  },
+  {
+   "qid": "G094",
+   "question": "slice zread_route_add in zebra/zapi_msg.c",
+   "intent": "slice",
+   "expected": {
+    "file": "zebra/zapi_msg.c",
+    "function": "zread_route_add",
+    "params": [
+     "client",
+     "hdr",
+     "msg",
+     "zvrf"
+    ],
+    "min_blocks": 4,
+    "min_chains": 1
+   },
+   "ground_truth": "source",
+   "provenance": "signature of zread_route_add parsed from zebra/zapi_msg.c (source)"
+  },
+  {
+   "qid": "G095",
+   "question": "slice bgp_zebra_announce_table in bgpd/bgp_zebra.c",
+   "intent": "slice",
+   "expected": {
+    "file": "bgpd/bgp_zebra.c",
+    "function": "bgp_zebra_announce_table",
+    "params": [
+     "bgp",
+     "afi",
+     "safi"
+    ],
+    "min_blocks": 4,
+    "min_chains": 1
+   },
+   "ground_truth": "source",
+   "provenance": "signature of bgp_zebra_announce_table parsed from bgpd/bgp_zebra.c (source)"
+  },
+  {
+   "qid": "G096",
+   "question": "slice ospf_zebra_add in ospfd/ospf_zebra.c",
+   "intent": "slice",
+   "expected": {
+    "file": "ospfd/ospf_zebra.c",
+    "function": "ospf_zebra_add",
+    "params": [
+     "ospf",
+     "p",
+     "or"
+    ],
+    "min_blocks": 4,
+    "min_chains": 1
+   },
+   "ground_truth": "source",
+   "provenance": "signature of ospf_zebra_add parsed from ospfd/ospf_zebra.c (source)"
+  },
+  {
+   "qid": "G097",
+   "question": "slice static_zebra_route_add in staticd/static_zebra.c",
+   "intent": "slice",
+   "expected": {
+    "file": "staticd/static_zebra.c",
+    "function": "static_zebra_route_add",
+    "params": [
+     "pn",
+     "install"
+    ],
+    "min_blocks": 4,
+    "min_chains": 1
+   },
+   "ground_truth": "source",
+   "provenance": "signature of static_zebra_route_add parsed from staticd/static_zebra.c (source)"
+  },
+  {
+   "qid": "G098",
+   "question": "slice zserv_handle_commands in zebra/zapi_msg.c",
+   "intent": "slice",
+   "expected": {
+    "file": "zebra/zapi_msg.c",
+    "function": "zserv_handle_commands",
+    "params": [
+     "client",
+     "fifo"
+    ],
+    "min_blocks": 4,
+    "min_chains": 1
+   },
+   "ground_truth": "source",
+   "provenance": "signature of zserv_handle_commands parsed from zebra/zapi_msg.c (source)"
+  },
+  {
+   "qid": "G099",
+   "question": "slice zclient_route_send in lib/zclient.c",
+   "intent": "slice",
+   "expected": {
+    "file": "lib/zclient.c",
+    "function": "zclient_route_send",
+    "params": [
+     "cmd",
+     "zclient",
+     "api"
+    ],
+    "min_blocks": 4,
+    "min_chains": 1
+   },
+   "ground_truth": "source",
+   "provenance": "signature of zclient_route_send parsed from lib/zclient.c (source)"
+  },
+  {
+   "qid": "G100",
+   "question": "slice bgp_zebra_announce_default in bgpd/bgp_zebra.c",
+   "intent": "slice",
+   "expected": {
+    "file": "bgpd/bgp_zebra.c",
+    "function": "bgp_zebra_announce_default",
+    "params": [
+     "bgp",
+     "nh",
+     "afi",
+     "table_id",
+     "announce"
+    ],
+    "min_blocks": 4,
+    "min_chains": 1
+   },
+   "ground_truth": "source",
+   "provenance": "signature of bgp_zebra_announce_default parsed from bgpd/bgp_zebra.c (source)"
+  },
+  {
+   "qid": "G101",
+   "question": "slice ospf_zebra_delete_discard in ospfd/ospf_zebra.c",
+   "intent": "slice",
+   "expected": {
+    "file": "ospfd/ospf_zebra.c",
+    "function": "ospf_zebra_delete_discard",
+    "params": [
+     "ospf",
+     "p"
+    ],
+    "min_blocks": 4,
+    "min_chains": 1
+   },
+   "ground_truth": "source",
+   "provenance": "signature of ospf_zebra_delete_discard parsed from ospfd/ospf_zebra.c (source)"
+  },
+  {
+   "qid": "G102",
+   "question": "slice zread_route_add in zebra/zapi_msg.c",
+   "intent": "slice",
+   "expected": {
+    "file": "zebra/zapi_msg.c",
+    "function": "zread_route_add",
+    "params": [
+     "client",
+     "hdr",
+     "msg",
+     "zvrf"
+    ],
+    "min_blocks": 4,
+    "min_chains": 1
+   },
+   "ground_truth": "source",
+   "provenance": "signature of zread_route_add parsed from zebra/zapi_msg.c (source)"
+  },
+  {
+   "qid": "G103",
+   "question": "slice zclient_send_message in lib/zclient.c",
+   "intent": "slice",
+   "expected": {
+    "file": "lib/zclient.c",
+    "function": "zclient_send_message",
+    "params": [
+     "zclient"
+    ],
+    "min_blocks": 4,
+    "min_chains": 1
+   },
+   "ground_truth": "source",
+   "provenance": "signature of zclient_send_message parsed from lib/zclient.c (source)"
+  }
+ ]
+}

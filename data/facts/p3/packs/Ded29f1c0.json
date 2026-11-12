@@ -1,0 +1,1232 @@
+{
+ "id": "Ded29f1c0",
+ "label": "ospfd [15z/1y]",
+ "level": "L1",
+ "services": [
+  "svc:ospfd"
+ ],
+ "functionality": [
+  "ospfd is a route client: publishes 7 message types toward the ZAPI bus (capabilities, add, default_add, default_delete...) and handles 8 notifications from it",
+  "northbound contracts: 1 YANG paths across 1 module (frr-ospf-route-map(1))"
+ ],
+ "roles": [
+  "zapi-client",
+  "zapi-publisher"
+ ],
+ "yang_modules": {
+  "frr-ospf-route-map": 1
+ },
+ "zapi_msgs": [
+  "zapi:ZEBRA_CLIENT_CAPABILITIES",
+  "zapi:ZEBRA_CLIENT_CLOSE_NOTIFY",
+  "zapi:ZEBRA_INTERFACE_ADDRESS_ADD",
+  "zapi:ZEBRA_INTERFACE_ADDRESS_DELETE",
+  "zapi:ZEBRA_INTERFACE_LINK_PARAMS",
+  "zapi:ZEBRA_OPAQUE_MESSAGE",
+  "zapi:ZEBRA_REDISTRIBUTE_ADD",
+  "zapi:ZEBRA_REDISTRIBUTE_DEFAULT_ADD",
+  "zapi:ZEBRA_REDISTRIBUTE_DEFAULT_DELETE",
+  "zapi:ZEBRA_REDISTRIBUTE_DELETE",
+  "zapi:ZEBRA_REDISTRIBUTE_ROUTE_ADD",
+  "zapi:ZEBRA_REDISTRIBUTE_ROUTE_DEL",
+  "zapi:ZEBRA_ROUTER_ID_UPDATE",
+  "zapi:ZEBRA_ROUTE_ADD",
+  "zapi:ZEBRA_ROUTE_DELETE"
+ ],
+ "boundary_edges": [
+  {
+   "to": "D4b2a9ab8",
+   "rels": {
+    "handles": 7,
+    "publishes": 7
+   }
+  },
+  {
+   "to": "D3063a0b0",
+   "rels": {
+    "publishes": 5,
+    "handles": 6
+   }
+  },
+  {
+   "to": "D1737981e",
+   "rels": {
+    "publishes": 4
+   }
+  },
+  {
+   "to": "Dc32724de",
+   "rels": {
+    "handles": 2
+   }
+  }
+ ],
+ "children": [
+  "Ced29f1c0"
+ ],
+ "findings": {
+  "dropped_on_wire": [],
+  "orphan_handlers": [],
+  "dead_wiring": [],
+  "cross_svc_flows": [
+   {
+    "msg": "zapi:ZEBRA_CLIENT_CAPABILITIES",
+    "from": "svc:ospfd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_CLIENT_CLOSE_NOTIFY",
+    "from": "svc:zebra",
+    "to": "svc:ospfd"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_ADDRESS_ADD",
+    "from": "svc:zebra",
+    "to": "svc:ospfd"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_ADDRESS_DELETE",
+    "from": "svc:zebra",
+    "to": "svc:ospfd"
+   },
+   {
+    "msg": "zapi:ZEBRA_INTERFACE_LINK_PARAMS",
+    "from": "svc:zebra",
+    "to": "svc:ospfd"
+   },
+   {
+    "msg": "zapi:ZEBRA_OPAQUE_MESSAGE",
+    "from": "svc:lib",
+    "to": "svc:ospfd"
+   },
+   {
+    "msg": "zapi:ZEBRA_REDISTRIBUTE_ADD",
+    "from": "svc:ospfd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_REDISTRIBUTE_DEFAULT_ADD",
+    "from": "svc:ospfd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_REDISTRIBUTE_DEFAULT_DELETE",
+    "from": "svc:ospfd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_REDISTRIBUTE_DELETE",
+    "from": "svc:ospfd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_REDISTRIBUTE_ROUTE_ADD",
+    "from": "svc:zebra",
+    "to": "svc:ospfd"
+   },
+   {
+    "msg": "zapi:ZEBRA_REDISTRIBUTE_ROUTE_DEL",
+    "from": "svc:zebra",
+    "to": "svc:ospfd"
+   },
+   {
+    "msg": "zapi:ZEBRA_ROUTER_ID_UPDATE",
+    "from": "svc:zebra",
+    "to": "svc:ospfd"
+   },
+   {
+    "msg": "zapi:ZEBRA_ROUTE_ADD",
+    "from": "svc:ospfd",
+    "to": "svc:zebra"
+   },
+   {
+    "msg": "zapi:ZEBRA_ROUTE_DELETE",
+    "from": "svc:ospfd",
+    "to": "svc:zebra"
+   }
+  ]
+ },
+ "modules": [
+  {
+   "id": "Mb7c3d1fd",
+   "label": "ospfd:unlinked",
+   "size": 1012,
+   "anchors": [],
+   "tags": [],
+   "note": "no intra-service call edges observed",
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M90387781",
+   "label": "ospfd:ospf",
+   "size": 212,
+   "anchors": [
+    {
+     "id": "code:ospfd::ospf_lsa_install",
+     "file": "ospfd/ospf_lsa.c"
+    },
+    {
+     "id": "code:ospfd::ospf_lsa_unlock",
+     "file": "ospfd/ospf_lsa.c"
+    },
+    {
+     "id": "code:ospfd::ospf_flood_through_area",
+     "file": "ospfd/ospf_flood.c"
+    },
+    {
+     "id": "code:ospfd::ospf_lsa_header_dump",
+     "file": "ospfd/ospf_dump_api.c"
+    },
+    {
+     "id": "code:ospfd::get_age",
+     "file": "ospfd/ospf_lsa.c"
+    },
+    {
+     "id": "code:ospfd::ospf_ls_upd",
+     "file": "ospfd/ospf_packet.c"
+    },
+    {
+     "id": "code:ospfd::ospf_lsa_flush_area",
+     "file": "ospfd/ospf_flood.c"
+    },
+    {
+     "id": "code:ospfd::ospf_opaque_lsa_flush_schedule",
+     "file": "ospfd/ospf_opaque.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M38cd72c7",
+   "label": "ospfd:ospf",
+   "size": 154,
+   "anchors": [
+    {
+     "id": "code:ospfd::ospf_get_name",
+     "file": "ospfd/ospfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_show_vrf_name",
+     "file": "ospfd/ospf_vty.c"
+    },
+    {
+     "id": "code:ospfd::show_ip_ospf_neighbor_detail_sub",
+     "file": "ospfd/ospf_vty.c"
+    },
+    {
+     "id": "code:ospfd::ospf_lookup_instance",
+     "file": "ospfd/ospfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_lsa_list_first",
+     "file": "ospfd/ospf_flood.h"
+    },
+    {
+     "id": "code:ospfd::ospf_ls_retransmit_add",
+     "file": "ospfd/ospf_flood.c"
+    },
+    {
+     "id": "code:ospfd::ospf_db_desc_send",
+     "file": "ospfd/ospf_packet.c"
+    },
+    {
+     "id": "code:ospfd::ospf_ls_req_send",
+     "file": "ospfd/ospf_packet.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mbed952fb",
+   "label": "ospfd:ospf",
+   "size": 136,
+   "anchors": [
+    {
+     "id": "code:ospfd::get_metric",
+     "file": null
+    },
+    {
+     "id": "code:ospfd::ospf_route_free",
+     "file": "ospfd/ospf_route.c"
+    },
+    {
+     "id": "code:ospfd::ospf_ase_calculate_route",
+     "file": "ospfd/ospf_ase.c"
+    },
+    {
+     "id": "code:ospfd::ospf_spf_calculate_schedule_worker",
+     "file": "ospfd/ospf_spf.c"
+    },
+    {
+     "id": "code:ospfd::ospf_abr_task",
+     "file": "ospfd/ospf_abr.c"
+    },
+    {
+     "id": "code:ospfd::ospf_route_copy_nexthops",
+     "file": "ospfd/ospf_route.c"
+    },
+    {
+     "id": "code:ospfd::ospf_abr_announce_network",
+     "file": "ospfd/ospf_abr.c"
+    },
+    {
+     "id": "code:ospfd::ospf_update_router_route",
+     "file": "ospfd/ospf_ia.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M62a211d6",
+   "label": "ospfd:ospf",
+   "size": 121,
+   "anchors": [
+    {
+     "id": "code:ospfd::ospf_if_update_params",
+     "file": "ospfd/ospf_interface.c"
+    },
+    {
+     "id": "code:ospfd::ospf_get_if_params",
+     "file": "ospfd/ospf_interface.c"
+    },
+    {
+     "id": "code:ospfd::ospf_free_if_params",
+     "file": "ospfd/ospf_interface.c"
+    },
+    {
+     "id": "code:ospfd::ospf_lookup_if_params",
+     "file": "ospfd/ospf_interface.c"
+    },
+    {
+     "id": "code:ospfd::ospf_if_recalculate_output_cost",
+     "file": "ospfd/ospf_interface.c"
+    },
+    {
+     "id": "code:ospfd::add_ospf_interface",
+     "file": "ospfd/ospfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_if_new",
+     "file": "ospfd/ospf_interface.c"
+    },
+    {
+     "id": "code:ospfd::ip_ospf_message_digest_key",
+     "file": "ospfd/ospf_vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M89381b56",
+   "label": "ospfd:ospf",
+   "size": 116,
+   "anchors": [
+    {
+     "id": "code:ospfd::ospf_finish_final",
+     "file": "ospfd/ospfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_if_down",
+     "file": "ospfd/ospf_interface.c"
+    },
+    {
+     "id": "code:ospfd::ospf_if_free",
+     "file": "ospfd/ospf_interface.c"
+    },
+    {
+     "id": "code:ospfd::ospf_router_id_update",
+     "file": "ospfd/ospfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_new_alloc",
+     "file": "ospfd/ospfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_process_refresh_data",
+     "file": "ospfd/ospfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_lsdb_delete_all",
+     "file": "ospfd/ospf_lsdb.c"
+    },
+    {
+     "id": "code:ospfd::ospf_new",
+     "file": "ospfd/ospfd.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M2af12f08",
+   "label": "ospfd:ospf",
+   "size": 112,
+   "anchors": [
+    {
+     "id": "code:ospfd::ospf_router_info_update_sr",
+     "file": "ospfd/ospf_ri.c"
+    },
+    {
+     "id": "code:ospfd::ospf_sr_start",
+     "file": "ospfd/ospf_sr.c"
+    },
+    {
+     "id": "code:ospfd::update_sr_blocks",
+     "file": "ospfd/ospf_sr.c"
+    },
+    {
+     "id": "code:ospfd::ospf_ext_link_update_adj_sid",
+     "file": "ospfd/ospf_ext.c"
+    },
+    {
+     "id": "code:ospfd::ospf_zebra_delete_prefix_sid",
+     "file": "ospfd/ospf_zebra.c"
+    },
+    {
+     "id": "code:ospfd::compute_prefix_nhlfe",
+     "file": "ospfd/ospf_sr.c"
+    },
+    {
+     "id": "code:ospfd::ospf_opaque_term",
+     "file": "ospfd/ospf_opaque.c"
+    },
+    {
+     "id": "code:ospfd::update_ext_link_sid",
+     "file": "ospfd/ospf_sr.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M9e2457c9",
+   "label": "ospfd:ospf",
+   "size": 107,
+   "anchors": [
+    {
+     "id": "code:ospfd::str2area_id",
+     "file": null
+    },
+    {
+     "id": "code:ospfd::ospf_area_get",
+     "file": "ospfd/ospfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_schedule_abr_task",
+     "file": "ospfd/ospf_abr.c"
+    },
+    {
+     "id": "code:ospfd::ospf_area_lookup_by_area_id",
+     "file": "ospfd/ospfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_area_display_format_set",
+     "file": null
+    },
+    {
+     "id": "code:ospfd::ospf_area_check_free",
+     "file": "ospfd/ospfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_area_nssa_magic",
+     "file": "ospfd/ospf_vty.c"
+    },
+    {
+     "id": "code:ospfd::no_ospf_area_nssa_magic",
+     "file": "ospfd/ospf_vty.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M03ee9eb0",
+   "label": "ospfd:ospf",
+   "size": 101,
+   "anchors": [
+    {
+     "id": "code:ospfd::ospf_lookup_by_vrf_id",
+     "file": "ospfd/ospfd.c"
+    },
+    {
+     "id": "code:ospfd::msg_free",
+     "file": "ospfd/ospf_api.c"
+    },
+    {
+     "id": "code:ospfd::msg_new",
+     "file": "ospfd/ospf_api.c"
+    },
+    {
+     "id": "code:ospfd::ospf_apiserver_send_msg",
+     "file": "ospfd/ospf_apiserver.c"
+    },
+    {
+     "id": "code:ospfd::ospf_lookup_by_inst_name",
+     "file": "ospfd/ospfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_apiserver_send_reply",
+     "file": "ospfd/ospf_apiserver.c"
+    },
+    {
+     "id": "code:ospfd::ospf_apiserver_handle_msg",
+     "file": "ospfd/ospf_apiserver.c"
+    },
+    {
+     "id": "code:ospfd::ospf_apiserver_handle_originate_request",
+     "file": "ospfd/ospf_apiserver.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M28664eb2",
+   "label": "ospfd:ospf",
+   "size": 101,
+   "anchors": [
+    {
+     "id": "code:ospfd::ospf_external_aggregator_timer_set",
+     "file": null
+    },
+    {
+     "id": "code:ospfd::ospf_lsa_list_prev",
+     "file": "ospfd/ospf_flood.h"
+    },
+    {
+     "id": "code:ospfd::ospf_spf_print",
+     "file": "ospfd/ospf_spf.c"
+    },
+    {
+     "id": "code:ospfd::ospf_timers_spf_set",
+     "file": "ospfd/ospf_vty.c"
+    },
+    {
+     "id": "code:ospfd::show_debugging_ospf_common",
+     "file": "ospfd/ospf_dump.c"
+    },
+    {
+     "id": "code:ospfd::debug_ospf_bfd",
+     "file": "ospfd/ospf_dump_clippy.c"
+    },
+    {
+     "id": "code:ospfd::debug_ospf_bfd_magic",
+     "file": "ospfd/ospf_dump.c"
+    },
+    {
+     "id": "code:ospfd::debug_ospf_client_api",
+     "file": "ospfd/ospf_dump_clippy.c"
+    }
+   ],
+   "tags": [],
+   "note": "misc (<4-func call fragments)",
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M21fd366a",
+   "label": "ospfd:ospf",
+   "size": 100,
+   "anchors": [
+    {
+     "id": "code:ospfd::ospf_if_name_string",
+     "file": null
+    },
+    {
+     "id": "code:ospfd::ospf_read_helper",
+     "file": "ospfd/ospf_packet.c"
+    },
+    {
+     "id": "code:ospfd::ospf_dr_election",
+     "file": "ospfd/ospf_ism.c"
+    },
+    {
+     "id": "code:ospfd::ospf_verify_header",
+     "file": "ospfd/ospf_packet.c"
+    },
+    {
+     "id": "code:ospfd::ospf_nbr_lookup_by_addr",
+     "file": "ospfd/ospf_neighbor.c"
+    },
+    {
+     "id": "code:ospfd::ospf_write",
+     "file": "ospfd/ospf_packet.c"
+    },
+    {
+     "id": "code:ospfd::ospf_if_set_multicast",
+     "file": "ospfd/ospf_interface.c"
+    },
+    {
+     "id": "code:ospfd::ospf_nbr_lookup",
+     "file": "ospfd/ospf_neighbor.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M2b687c44",
+   "label": "ospfd:ospf",
+   "size": 91,
+   "anchors": [
+    {
+     "id": "code:ospfd::ospf_external_info_find_lsa",
+     "file": "ospfd/ospf_asbr.c"
+    },
+    {
+     "id": "code:ospfd::ospf_zebra_read_route",
+     "file": "ospfd/ospf_zebra.c"
+    },
+    {
+     "id": "code:ospfd::ospf_redistribute_check",
+     "file": "ospfd/ospf_zebra.c"
+    },
+    {
+     "id": "code:ospfd::ospf_external_lsa_refresh",
+     "file": "ospfd/ospf_lsa.c"
+    },
+    {
+     "id": "code:ospfd::ospf_external_lsa_originate",
+     "file": "ospfd/ospf_lsa.c"
+    },
+    {
+     "id": "code:ospfd::ospf_redistribute_default_set",
+     "file": "ospfd/ospf_zebra.c"
+    },
+    {
+     "id": "code:ospfd::ospf_vrf_id_to_name",
+     "file": "ospfd/ospfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_external_lsa_flush",
+     "file": "ospfd/ospf_lsa.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M27c27e13",
+   "label": "ospfd:ospf",
+   "size": 85,
+   "anchors": [
+    {
+     "id": "code:ospfd::ospf_spf_calculate",
+     "file": "ospfd/ospf_spf.c"
+    },
+    {
+     "id": "code:ospfd::ospf_ti_lfa_generate_inner_label_stack",
+     "file": "ospfd/ospf_ti_lfa.c"
+    },
+    {
+     "id": "code:ospfd::ospf_ti_lfa_generate_q_spaces",
+     "file": "ospfd/ospf_ti_lfa.c"
+    },
+    {
+     "id": "code:ospfd::ospf_spf_vertex_find",
+     "file": "ospfd/ospf_spf.c"
+    },
+    {
+     "id": "code:ospfd::ospf_ti_lfa_generate_label_stack",
+     "file": "ospfd/ospf_ti_lfa.c"
+    },
+    {
+     "id": "code:ospfd::ospf_spf_next",
+     "file": "ospfd/ospf_spf.c"
+    },
+    {
+     "id": "code:ospfd::ospf_nexthop_calculation",
+     "file": "ospfd/ospf_spf.c"
+    },
+    {
+     "id": "code:ospfd::ospf_ti_lfa_generate_p_space",
+     "file": "ospfd/ospf_ti_lfa.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M6d735b77",
+   "label": "ospfd:ospf",
+   "size": 84,
+   "anchors": [
+    {
+     "id": "code:ospfd::__builtin_constant_p",
+     "file": null
+    },
+    {
+     "id": "code:ospfd::ospf_mpls_te_show_link_subtlv",
+     "file": "ospfd/ospf_te.c"
+    },
+    {
+     "id": "code:ospfd::show_mpls_te_link_sub",
+     "file": "ospfd/ospf_te.c"
+    },
+    {
+     "id": "code:ospfd::ospf_te_export",
+     "file": "ospfd/ospf_te.c"
+    },
+    {
+     "id": "code:ospfd::show_vty_unknown_tlv",
+     "file": "ospfd/ospf_ri.c"
+    },
+    {
+     "id": "code:ospfd::show_vty_pce_info",
+     "file": "ospfd/ospf_ri.c"
+    },
+    {
+     "id": "code:ospfd::build_tlv_header",
+     "file": "ospfd/ospf_ri.c"
+    },
+    {
+     "id": "code:ospfd::ospf_router_info_show_info",
+     "file": "ospfd/ospf_ri.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M493e9884",
+   "label": "ospfd:ospf",
+   "size": 59,
+   "anchors": [
+    {
+     "id": "code:ospfd::main",
+     "file": "ospfd/ospf_main.c"
+    },
+    {
+     "id": "code:ospfd::ospf_router_info_schedule",
+     "file": "ospfd/ospf_ri.c"
+    },
+    {
+     "id": "code:ospfd::ospf_opaque_init",
+     "file": "ospfd/ospf_opaque.c"
+    },
+    {
+     "id": "code:ospfd::ospf_register_opaque_functab",
+     "file": "ospfd/ospf_opaque.c"
+    },
+    {
+     "id": "code:ospfd::initialize_params",
+     "file": "ospfd/ospf_ri.c"
+    },
+    {
+     "id": "code:ospfd::ospf_ri_enabled",
+     "file": "ospfd/ospf_ri.c"
+    },
+    {
+     "id": "code:ospfd::ospf_apiserver_init",
+     "file": "ospfd/ospf_apiserver.c"
+    },
+    {
+     "id": "code:ospfd::ospf_mpls_te_init",
+     "file": "ospfd/ospf_te.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M91e48105",
+   "label": "ospfd:ospf",
+   "size": 53,
+   "anchors": [
+    {
+     "id": "code:ospfd::ospf_interface_bfd_apply",
+     "file": "ospfd/ospf_bfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_nbr_new",
+     "file": "ospfd/ospf_neighbor.c"
+    },
+    {
+     "id": "code:ospfd::ospf_nbr_nbma_lookup",
+     "file": "ospfd/ospfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_neighbor_bfd_apply",
+     "file": "ospfd/ospf_bfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_interface_disable_bfd",
+     "file": "ospfd/ospf_bfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_interface_enable_bfd",
+     "file": "ospfd/ospf_bfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_nbr_nbma_add",
+     "file": "ospfd/ospfd.c"
+    },
+    {
+     "id": "code:ospfd::ospf_nbr_nbma_set",
+     "file": "ospfd/ospfd.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Me289c4ec",
+   "label": "ospfd:ospf",
+   "size": 43,
+   "anchors": [
+    {
+     "id": "code:ospfd::update_linkparams",
+     "file": "ospfd/ospf_te.c"
+    },
+    {
+     "id": "code:ospfd::ospf_mpls_te_lsa_schedule",
+     "file": "ospfd/ospf_te.c"
+    },
+    {
+     "id": "code:ospfd::lookup_linkparams_by_ifp",
+     "file": "ospfd/ospf_te.c"
+    },
+    {
+     "id": "code:ospfd::initialize_linkparams",
+     "file": "ospfd/ospf_te.c"
+    },
+    {
+     "id": "code:ospfd::ospf_mpls_te_ism_change",
+     "file": "ospfd/ospf_te.c"
+    },
+    {
+     "id": "code:ospfd::ospf_mpls_te_new_if",
+     "file": "ospfd/ospf_te.c"
+    },
+    {
+     "id": "code:ospfd::ospf_mpls_te_nsm_change",
+     "file": "ospfd/ospf_te.c"
+    },
+    {
+     "id": "code:ospfd::ospf_mpls_te_update_if",
+     "file": "ospfd/ospf_te.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mbf53aa82",
+   "label": "ospfd:config",
+   "size": 25,
+   "anchors": [
+    {
+     "id": "code:ospfd::ospf_config_write_one",
+     "file": "ospfd/ospf_vty.c"
+    },
+    {
+     "id": "code:ospfd::config_write_interface_one",
+     "file": "ospfd/ospf_vty.c"
+    },
+    {
+     "id": "code:ospfd::area_id2str",
+     "file": null
+    },
+    {
+     "id": "code:ospfd::config_write_virtual_link",
+     "file": "ospfd/ospf_vty.c"
+    },
+    {
+     "id": "code:ospfd::config_write_ospf_area",
+     "file": "ospfd/ospf_vty.c"
+    },
+    {
+     "id": "code:ospfd::interface_config_auth_str",
+     "file": null
+    },
+    {
+     "id": "code:ospfd::ospf_opaque_config_write_if",
+     "file": "ospfd/ospf_opaque.c"
+    },
+    {
+     "id": "code:ospfd::ospf_opaque_config_write_router",
+     "file": "ospfd/ospf_opaque.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M3f425e72",
+   "label": "ospfd:ospf",
+   "size": 13,
+   "anchors": [
+    {
+     "id": "code:ospfd::ospf_asbr_external_aggregator_set",
+     "file": "ospfd/ospf_asbr.c"
+    },
+    {
+     "id": "code:ospfd::ospf_asbr_external_rt_no_advertise",
+     "file": "ospfd/ospf_asbr.c"
+    },
+    {
+     "id": "code:ospfd::is_valid_summary_addr",
+     "file": null
+    },
+    {
+     "id": "code:ospfd::ospf_external_aggr_timer",
+     "file": "ospfd/ospf_asbr.c"
+    },
+    {
+     "id": "code:ospfd::no_ospf_external_route_aggregation",
+     "file": "ospfd/ospf_vty.c"
+    },
+    {
+     "id": "code:ospfd::no_ospf_external_route_aggregation_no_adrvertise",
+     "file": "ospfd/ospf_vty.c"
+    },
+    {
+     "id": "code:ospfd::ospf_asbr_external_aggregator_unset",
+     "file": "ospfd/ospf_asbr.c"
+    },
+    {
+     "id": "code:ospfd::ospf_asbr_external_rt_advertise",
+     "file": "ospfd/ospf_asbr.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M473b7235",
+   "label": "ospfd:lsa",
+   "size": 13,
+   "anchors": [
+    {
+     "id": "code:ospfd::router_lsa_link_set",
+     "file": "ospfd/ospf_lsa.c"
+    },
+    {
+     "id": "code:ospfd::link_info_set",
+     "file": "ospfd/ospf_lsa.c"
+    },
+    {
+     "id": "code:ospfd::lsa_link_broadcast_set",
+     "file": "ospfd/ospf_lsa.c"
+    },
+    {
+     "id": "code:ospfd::lsa_link_ptop_set",
+     "file": "ospfd/ospf_lsa.c"
+    },
+    {
+     "id": "code:ospfd::lsa_link_virtuallink_set",
+     "file": "ospfd/ospf_lsa.c"
+    },
+    {
+     "id": "code:ospfd::ospf_link_cost",
+     "file": null
+    },
+    {
+     "id": "code:ospfd::lsa_link_ptomp_set",
+     "file": "ospfd/ospf_lsa.c"
+    },
+    {
+     "id": "code:ospfd::ospf_nbr_lookup_ptop",
+     "file": "ospfd/ospf_lsa.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M92ec5b9d",
+   "label": "ospfd:vertex",
+   "size": 8,
+   "anchors": [
+    {
+     "id": "code:ospfd::vertex_cmp",
+     "file": null
+    },
+    {
+     "id": "code:ospfd::vertex_pqueue_member",
+     "file": "ospfd/ospf_spf.c"
+    },
+    {
+     "id": "code:ospfd::vertex_pqueue_const_find_gteq",
+     "file": "ospfd/ospf_spf.c"
+    },
+    {
+     "id": "code:ospfd::vertex_pqueue_const_next",
+     "file": null
+    },
+    {
+     "id": "code:ospfd::vertex_pqueue__cmp",
+     "file": "ospfd/ospf_spf.c"
+    },
+    {
+     "id": "code:ospfd::vertex_pqueue__cmp_uq",
+     "file": "ospfd/ospf_spf.c"
+    },
+    {
+     "id": "code:ospfd::vertex_pqueue_find_gteq",
+     "file": "ospfd/ospf_spf.c"
+    },
+    {
+     "id": "code:ospfd::vertex_pqueue_next",
+     "file": "ospfd/ospf_spf.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mcf464450",
+   "label": "ospfd:show",
+   "size": 6,
+   "anchors": [
+    {
+     "id": "code:ospfd::show_sr_node",
+     "file": "ospfd/ospf_sr.c"
+    },
+    {
+     "id": "code:ospfd::show_sr_prefix",
+     "file": "ospfd/ospf_sr.c"
+    },
+    {
+     "id": "code:ospfd::sr_op2str",
+     "file": null
+    },
+    {
+     "id": "code:ospfd::show_ip_opsf_srdb",
+     "file": "ospfd/ospf_sr.c"
+    },
+    {
+     "id": "code:ospfd::show_json_srdb",
+     "file": "ospfd/ospf_sr.c"
+    },
+    {
+     "id": "code:ospfd::show_vty_srdb",
+     "file": "ospfd/ospf_sr.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mc86b940d",
+   "label": "ospfd:ospf",
+   "size": 5,
+   "anchors": [
+    {
+     "id": "code:ospfd::no_ospf_gr_helper_enable_lsacheck_magic",
+     "file": "ospfd/ospf_vty.c"
+    },
+    {
+     "id": "code:ospfd::ospf_gr_helper_enable_lsacheck_magic",
+     "file": "ospfd/ospf_vty.c"
+    },
+    {
+     "id": "code:ospfd::ospf_gr_helper_lsa_check_set",
+     "file": null
+    },
+    {
+     "id": "code:ospfd::no_ospf_gr_helper_enable_lsacheck",
+     "file": "ospfd/ospf_vty_clippy.c"
+    },
+    {
+     "id": "code:ospfd::ospf_gr_helper_enable_lsacheck",
+     "file": "ospfd/ospf_vty_clippy.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M2f947b1f",
+   "label": "ospfd:ospf",
+   "size": 5,
+   "anchors": [
+    {
+     "id": "code:ospfd::no_ospf_gr_helper_planned_only_magic",
+     "file": "ospfd/ospf_vty.c"
+    },
+    {
+     "id": "code:ospfd::ospf_gr_helper_planned_only_magic",
+     "file": "ospfd/ospf_vty.c"
+    },
+    {
+     "id": "code:ospfd::ospf_gr_helper_set_supported_planned_only_restart",
+     "file": null
+    },
+    {
+     "id": "code:ospfd::no_ospf_gr_helper_planned_only",
+     "file": "ospfd/ospf_vty_clippy.c"
+    },
+    {
+     "id": "code:ospfd::ospf_gr_helper_planned_only",
+     "file": "ospfd/ospf_vty_clippy.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M2686ff36",
+   "label": "ospfd:ospf",
+   "size": 5,
+   "anchors": [
+    {
+     "id": "code:ospfd::no_ospf_gr_helper_supported_grace_time_magic",
+     "file": "ospfd/ospf_vty.c"
+    },
+    {
+     "id": "code:ospfd::ospf_gr_helper_supported_grace_time_magic",
+     "file": "ospfd/ospf_vty.c"
+    },
+    {
+     "id": "code:ospfd::ospf_gr_helper_supported_gracetime_set",
+     "file": null
+    },
+    {
+     "id": "code:ospfd::no_ospf_gr_helper_supported_grace_time",
+     "file": "ospfd/ospf_vty_clippy.c"
+    },
+    {
+     "id": "code:ospfd::ospf_gr_helper_supported_grace_time",
+     "file": "ospfd/ospf_vty_clippy.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M36f87242",
+   "label": "ospfd:ospf",
+   "size": 5,
+   "anchors": [
+    {
+     "id": "code:ospfd::no_ospf_mpls_ldp_sync_holddown_magic",
+     "file": "ospfd/ospf_ldp_sync.c"
+    },
+    {
+     "id": "code:ospfd::ospf_if_set_ldp_sync_holddown",
+     "file": "ospfd/ospf_ldp_sync.c"
+    },
+    {
+     "id": "code:ospfd::ospf_mpls_ldp_sync_holddown_magic",
+     "file": "ospfd/ospf_ldp_sync.c"
+    },
+    {
+     "id": "code:ospfd::no_ospf_mpls_ldp_sync_holddown",
+     "file": "ospfd/ospf_ldp_sync_clippy.c"
+    },
+    {
+     "id": "code:ospfd::ospf_mpls_ldp_sync_holddown",
+     "file": "ospfd/ospf_ldp_sync_clippy.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Mf2ef1b91",
+   "label": "ospfd:debug",
+   "size": 4,
+   "anchors": [
+    {
+     "id": "code:ospfd::debug_ospf_lsa_magic",
+     "file": "ospfd/ospf_dump.c"
+    },
+    {
+     "id": "code:ospfd::debug_ospf_lsa",
+     "file": "ospfd/ospf_dump_clippy.c"
+    },
+    {
+     "id": "code:ospfd::debug_ospf_lsa_common",
+     "file": "ospfd/ospf_dump.c"
+    },
+    {
+     "id": "code:ospfd::no_debug_ospf_lsa_common",
+     "file": "ospfd/ospf_dump.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "Md2a8e4fe",
+   "label": "ospfd:debug",
+   "size": 4,
+   "anchors": [
+    {
+     "id": "code:ospfd::debug_ospf_nsm_magic",
+     "file": "ospfd/ospf_dump.c"
+    },
+    {
+     "id": "code:ospfd::debug_ospf_nsm",
+     "file": "ospfd/ospf_dump_clippy.c"
+    },
+    {
+     "id": "code:ospfd::debug_ospf_nsm_common",
+     "file": "ospfd/ospf_dump.c"
+    },
+    {
+     "id": "code:ospfd::no_debug_ospf_nsm_common",
+     "file": "ospfd/ospf_dump.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  },
+  {
+   "id": "M164b9495",
+   "label": "ospfd:debug",
+   "size": 4,
+   "anchors": [
+    {
+     "id": "code:ospfd::debug_ospf_zebra_magic",
+     "file": "ospfd/ospf_dump.c"
+    },
+    {
+     "id": "code:ospfd::debug_ospf_zebra",
+     "file": "ospfd/ospf_dump_clippy.c"
+    },
+    {
+     "id": "code:ospfd::debug_ospf_zebra_common",
+     "file": "ospfd/ospf_dump.c"
+    },
+    {
+     "id": "code:ospfd::no_debug_ospf_zebra_common",
+     "file": "ospfd/ospf_dump.c"
+    }
+   ],
+   "tags": [],
+   "note": null,
+   "zapi_msgs_touched": []
+  }
+ ]
+}

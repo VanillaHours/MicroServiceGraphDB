@@ -1,0 +1,25 @@
+{
+  "checked": 20,
+  "passed": 20,
+  "gate": "PASS"
+}
+  PASS nb_handles   nb:staticd:frr-routing:routing/control-plane-protocols/control-p @ staticd/static_nb.c:164
+  PASS call(macro)  code:zebra::dplane_check_shutdown_status -calls-> code:zebra::zn @ zebra/zebra_dplane.c:8065
+  PASS zapi_handles svc:staticd -handles-> ZEBRA_NEIGH_REMOVED via static_zebra_proc @ staticd/static_zebra.c:1592
+  PASS call(window) code:zebra::dplane_check_shutdown_status -calls-> code:lib::_eve @ zebra/zebra_dplane.c:8088
+  PASS call(macro)  code:zebra::dplane_check_shutdown_status -calls-> code:lib::zlog @ zebra/zebra_dplane.c:8062
+  PASS zapi_handles svc:bgpd -handles-> ZEBRA_VNI_DEL via bgp_zebra_process_local_vn @ bgpd/bgp_zebra.c:4477
+  PASS nb_handles   nb:bgpd:frr-route-map:lib/route-map/entry/match-condition/rmap-m @ bgpd/bgp_routemap_nb.c:189
+  PASS publishes    code:zebra::zsend_assign_table_chunk_response -publishes-> ZEBRA @ zebra/zapi_msg.c:1180
+  PASS call         code:zebra::dplane_check_shutdown_status -calls-> code:zebra::zn @ zebra/zebra_dplane.c:8066
+  PASS nb_handles   nb:staticd:frr-routing:routing/control-plane-protocols/control-p @ staticd/static_nb.c:164
+  PASS call(window) code:zebra::dplane_check_shutdown_status -calls-> code:lib::_eve @ zebra/zebra_dplane.c:8078
+  PASS publishes    code:zebra::zsend_table_manager_connect_response -publishes-> ZE @ zebra/zapi_msg.c:1200
+  PASS call(macro)  code:zebra::dplane_check_shutdown_status -calls-> code:zebra::zn @ zebra/zebra_dplane.c:8065
+  PASS build        build:staticd/static_nb.c @ staticd/static_nb.c
+  PASS nb_handles   nb:bgpd:frr-route-map:lib/route-map/entry/match-condition/rmap-m @ bgpd/bgp_routemap_nb.c:189
+  PASS nb_handles   nb:bgpd:frr-route-map:lib/route-map/entry/match-condition/rmap-m @ bgpd/bgp_routemap_nb.c:189
+  PASS yang         yang:frr-zebra:zebra/state/ip-forwarding @ yang/frr-zebra.yang:3222
+  PASS zapi_handles svc:bgpd -handles-> ZEBRA_IPTABLE_NOTIFY_OWNER via iptable_notif @ bgpd/bgp_zebra.c:4477
+  PASS publishes    code:lib::tm_table_manager_connect -publishes-> ZEBRA_TABLE_MANA @ lib/zclient.c:3972
+  PASS yang         yang:frr-zebra:zebra/ipv6-router-advertisements/max-rtr-adv-inte @ yang/frr-zebra.yang:2478

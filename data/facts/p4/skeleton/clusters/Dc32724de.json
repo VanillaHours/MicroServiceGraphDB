@@ -1,0 +1,526 @@
+{
+ "atoms": [
+  {
+   "id": "abb9f41f",
+   "refs": [
+    {
+     "k": "N",
+     "r": "svc:staticd"
+    },
+    {
+     "k": "C",
+     "r": "Dc32724de"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.members"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.members.svc"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.members.zapi"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.members.yang"
+    }
+   ],
+   "tpl": "svc:staticd forms functional domain Dc32724de: 34 backbone members (1 service, 6 ZAPI message, 27 YANG path nodes)."
+  },
+  {
+   "id": "ab23686d",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.handled"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_NEIGH_ADDED"
+    }
+   ],
+   "tpl": "It handles 8 notification/event types from the bus (ZEBRA_INTERFACE_ADDRESS_ADD, ZEBRA_INTERFACE_ADDRESS_DELETE, ZEBRA_NEIGH_ADDED, ...)."
+  },
+  {
+   "id": "a33ba0cd",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.yang.total"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.nb_tables"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.yang.frr-staticd"
+    }
+   ],
+   "tpl": "Northbound contracts: frr-staticd(27) \u2014 27 YANG paths across 27 NB handler tables."
+  },
+  {
+   "id": "a405a038",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.roles"
+    }
+   ],
+   "tpl": "Measured roles: zapi-client."
+  },
+  {
+   "id": "aa5aeb07",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Cc32724de"
+    }
+   ],
+   "tpl": "The domain contains P3 L2 service area Cc32724de (staticd:frr-staticd)."
+  },
+  {
+   "id": "a52f040e",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.boundary.total"
+    }
+   ],
+   "tpl": "9 cross-domain edge bindings point outside the domain."
+  },
+  {
+   "id": "a8638b50",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.flows.out"
+    },
+    {
+     "k": "F",
+     "r": "zapi.cross_svc_flows"
+    }
+   ],
+   "tpl": "0 verified cross-service ZAPI flows originate from svc:staticd."
+  },
+  {
+   "id": "a5b4d8e0",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.orphan.n"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "3 handled messages currently have no in-slice sender (orphan handlers)."
+  },
+  {
+   "id": "a70c3b66",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.modules.n"
+    },
+    {
+     "k": "C",
+     "r": "M4fc85874"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M4fc85874.size"
+    }
+   ],
+   "tpl": "19 code modules; largest is staticd:static with 77 functions."
+  },
+  {
+   "id": "a7ae3e73",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M197bbcdc"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M197bbcdc.size"
+    }
+   ],
+   "tpl": "Bucket staticd:unlinked holds 249 functions without intra-service call edges (pointer-dispatched callbacks and CLI handlers)."
+  },
+  {
+   "id": "ab3d3bd7",
+   "refs": [
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.bridge.total"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.bridge.lib:nb"
+    }
+   ],
+   "tpl": "450 intra-service `calls` edges leave for other service partitions; densest target lib:nb (125 calls)."
+  }
+ ],
+ "claims": "yes",
+ "okf_level": "L2-cluster",
+ "page_id": "clusters/Dc32724de.md",
+ "row_atoms": [
+  {
+   "id": "a7cde9e4",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_ADDRESS_ADD"
+  },
+  {
+   "id": "a3c80449",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_INTERFACE_ADDRESS_DELETE"
+  },
+  {
+   "id": "ad5cb70d",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_NEIGH_ADDED"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_NEIGH_ADDED"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_NEIGH_ADDED"
+  },
+  {
+   "id": "a5d777b7",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_NEIGH_REMOVED"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_NEIGH_REMOVED"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_NEIGH_REMOVED"
+  },
+  {
+   "id": "a0d48a96",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_ROUTE_NOTIFY_OWNER"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_ROUTE_NOTIFY_OWNER"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_ROUTE_NOTIFY_OWNER"
+  },
+  {
+   "id": "a9d064b3",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_SRV6_LOCATOR_ADD"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_SRV6_LOCATOR_ADD"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_SRV6_LOCATOR_ADD"
+  },
+  {
+   "id": "a27f544b",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_SRV6_LOCATOR_DELETE"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_SRV6_LOCATOR_DELETE"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_SRV6_LOCATOR_DELETE"
+  },
+  {
+   "id": "afc69c81",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_SRV6_SID_NOTIFY"
+    },
+    {
+     "k": "E",
+     "r": "svc:staticd|handles|zapi:ZEBRA_SRV6_SID_NOTIFY"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_SRV6_SID_NOTIFY"
+  },
+  {
+   "id": "a20b96ce",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D3063a0b0"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.boundary.D3063a0b0.handles"
+    }
+   ],
+   "tpl": "handles \u00d74 \u2192 D3063a0b0"
+  },
+  {
+   "id": "a82215f1",
+   "refs": [
+    {
+     "k": "C",
+     "r": "D4b2a9ab8"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.boundary.D4b2a9ab8.publishes"
+    }
+   ],
+   "tpl": "publishes \u00d73 \u2192 D4b2a9ab8"
+  },
+  {
+   "id": "a0d9e104",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Ded29f1c0"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.boundary.Ded29f1c0.handles"
+    }
+   ],
+   "tpl": "handles \u00d72 \u2192 Ded29f1c0"
+  },
+  {
+   "id": "ae53453f",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_NEIGH_ADDED"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_NEIGH_ADDED"
+  },
+  {
+   "id": "a233bc9f",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_NEIGH_REMOVED"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_NEIGH_REMOVED"
+  },
+  {
+   "id": "a58d2644",
+   "refs": [
+    {
+     "k": "N",
+     "r": "zapi:ZEBRA_SRV6_SID_NOTIFY"
+    },
+    {
+     "k": "F",
+     "r": "zapi.orphan_handlers_no_sender_in_slice"
+    }
+   ],
+   "tpl": "zapi:ZEBRA_SRV6_SID_NOTIFY"
+  },
+  {
+   "id": "ac88a882",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M4fc85874"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M4fc85874.size"
+    }
+   ],
+   "tpl": "staticd:static \u2014 77 functions"
+  },
+  {
+   "id": "a6b32e5e",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M9cc473a4"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M9cc473a4.size"
+    }
+   ],
+   "tpl": "staticd:static \u2014 34 functions"
+  },
+  {
+   "id": "acd01692",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M9b01cc7b"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M9b01cc7b.size"
+    }
+   ],
+   "tpl": "staticd:static \u2014 31 functions"
+  },
+  {
+   "id": "a05125cf",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M71861180"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M71861180.size"
+    }
+   ],
+   "tpl": "staticd:static \u2014 28 functions"
+  },
+  {
+   "id": "af3184f4",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M6b0e6125"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M6b0e6125.size"
+    }
+   ],
+   "tpl": "staticd:static \u2014 25 functions"
+  },
+  {
+   "id": "aad42bda",
+   "refs": [
+    {
+     "k": "C",
+     "r": "Mb7dec354"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.Mb7dec354.size"
+    }
+   ],
+   "tpl": "staticd:static \u2014 23 functions"
+  },
+  {
+   "id": "a7c5a0d8",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M87eb3a08"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M87eb3a08.size"
+    }
+   ],
+   "tpl": "staticd:static \u2014 22 functions"
+  },
+  {
+   "id": "a45f77d0",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M858fa78e"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M858fa78e.size"
+    }
+   ],
+   "tpl": "staticd:ip \u2014 17 functions"
+  },
+  {
+   "id": "aeca7583",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M840258e6"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M840258e6.size"
+    }
+   ],
+   "tpl": "staticd:static \u2014 15 functions"
+  },
+  {
+   "id": "a7aefefc",
+   "refs": [
+    {
+     "k": "C",
+     "r": "M3b48bc3a"
+    },
+    {
+     "k": "S",
+     "r": "pack.Dc32724de.mod.M3b48bc3a.size"
+    }
+   ],
+   "tpl": "staticd:static \u2014 6 functions"
+  }
+ ],
+ "sources": [
+  "p3/packs/Dc32724de.json",
+  "p3/profiles.jsonl",
+  "p3/backbone.json",
+  "p3/clusters.jsonl",
+  "p2/findings.json"
+ ]
+}

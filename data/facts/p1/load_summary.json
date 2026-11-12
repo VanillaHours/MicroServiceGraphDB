@@ -1,0 +1,90 @@
+{
+  "node_files": [
+    "nodes.jsonl",
+    "yang_nodes.jsonl",
+    "build_nodes.jsonl"
+  ],
+  "edge_files": [
+    "edges.jsonl",
+    "yang_edges.jsonl",
+    "build_edges.jsonl"
+  ],
+  "edges_referential_drop": 1387,
+  "db_nodes": 30092,
+  "db_edges": 81750,
+  "edges_by_plane_tag": [
+    [
+      "build",
+      "BUILD",
+      356
+    ],
+    [
+      "code",
+      "DECLARED",
+      78482
+    ],
+    [
+      "contract",
+      "DECLARED",
+      1396
+    ],
+    [
+      "wiring",
+      "DECLARED",
+      1516
+    ]
+  ],
+  "code_nodes_by_dir": [
+    [
+      "bgpd",
+      8407
+    ],
+    [
+      "lib",
+      8259
+    ],
+    [
+      "zebra",
+      6945
+    ],
+    [
+      "ospfd",
+      3009
+    ],
+    [
+      "staticd",
+      579
+    ],
+    [
+      "fpm",
+      6
+    ]
+  ],
+  "coverage_ledger": [
+    [
+      "clang-facts",
+      "code",
+      105687,
+      "108ea39e01f0f58f"
+    ],
+    [
+      "clang-facts",
+      "wiring",
+      2099,
+      "108ea39e01f0f58f"
+    ],
+    [
+      "pyang",
+      "contract",
+      3339,
+      "04e92d947d9c239a"
+    ],
+    [
+      "build-mapper",
+      "build",
+      717,
+      "2020181a69e30caa"
+    ]
+  ],
+  "db_path": "/home/z/my-project/poc/facts/facts.duckdb"
+}

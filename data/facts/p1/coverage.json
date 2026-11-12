@@ -1,0 +1,53 @@
+{
+  "runtime_s": 512.1,
+  "tus_total": 356,
+  "slice_dirs": [
+    "bgpd",
+    "lib",
+    "ospfd",
+    "staticd",
+    "zebra"
+  ],
+  "coverage": {
+    "decl": {
+      "nodes": 769948
+    },
+    "nb_reg": {
+      "nodes": 1030,
+      "edges": 2612
+    },
+    "type": {
+      "nodes": 29732,
+      "edges": 92
+    },
+    "zapi_reg": {
+      "edges": 236
+    },
+    "call": {
+      "edges": 187060,
+      "nodes": 25155
+    }
+  },
+  "detail": {
+    "decl": {
+      "collisions": 25482
+    },
+    "nb_reg": {
+      "tables": 1058,
+      "cb_list_missing": 184,
+      "cb_unresolved": 12
+    },
+    "zapi_reg": {
+      "tables": 10
+    },
+    "call": {
+      "external": 58142,
+      "unresolved_ptr": 1149
+    },
+    "type": {
+      "publishes": 92
+    }
+  },
+  "nodes_total": 27788,
+  "edges_total": 190000
+}

@@ -1,0 +1,4763 @@
+{
+ "ok": true,
+ "scope": {
+  "file": "zebra/zapi_msg.c",
+  "function": "zread_route_add",
+  "line_span": [
+   2148,
+   2299
+  ],
+  "params": [
+   {
+    "name": "client",
+    "type": "struct zserv *"
+   },
+   {
+    "name": "hdr",
+    "type": "struct zmsghdr *"
+   },
+   {
+    "name": "msg",
+    "type": "struct stream *"
+   },
+   {
+    "name": "zvrf",
+    "type": "struct zebra_vrf *"
+   }
+  ]
+ },
+ "tool_ver": "p5-slice/1.0.0+clang18",
+ "cfg": {
+  "entry": 0,
+  "exit": 1,
+  "n_blocks": 51,
+  "n_edges": 72,
+  "blocks": [
+   {
+    "id": 0,
+    "tag": "entry",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 2150,
+      "spell": "struct stream * s ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2151,
+      "spell": "struct zapi_route api ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2152,
+      "spell": "afi_t afi ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2153,
+      "spell": "struct prefix_ipv6 * src_p = NULL ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2154,
+      "spell": "struct route_entry * re ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2155,
+      "spell": "struct nexthop_group * ng = NULL ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2156,
+      "spell": "struct nhg_backup_info * bnhg = NULL ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2157,
+      "spell": "int ret ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2158,
+      "spell": "vrf_id_t vrf_id ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2159,
+      "spell": "struct nhg_hash_entry nhe = { 0 } , * n = NULL ;",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2161,
+      "spell": "s = msg",
+      "defs": [
+       [
+        "s",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "msg"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2162,
+      "spell": "zapi_route_decode ( s , & api ) < 0",
+      "defs": [],
+      "uses": [
+       "s",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      3,
+      "then"
+     ],
+     [
+      2,
+      "no-else"
+     ]
+    ],
+    "pred": []
+   },
+   {
+    "id": 1,
+    "tag": "exit",
+    "stmts": [],
+    "succ": [],
+    "pred": [
+     [
+      4,
+      "return"
+     ],
+     [
+      18,
+      "return"
+     ],
+     [
+      27,
+      "return"
+     ],
+     [
+      34,
+      "return"
+     ],
+     [
+      41,
+      "return"
+     ],
+     [
+      48,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 2,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2169,
+      "spell": "vrf_id = zvrf_id ( zvrf )",
+      "defs": [
+       [
+        "vrf_id",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "zvrf"
+      ]
+     },
+     {
+      "kind": "PAREN_EXPR",
+      "line": 2171,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "zebra_debug_packet"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      10,
+      "then"
+     ],
+     [
+      9,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 3,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "PAREN_EXPR",
+      "line": 2163,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "zebra_debug_packet"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      5,
+      "then"
+     ],
+     [
+      4,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      0,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 4,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "RETURN_STMT",
+      "line": 2166,
+      "spell": "return",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      8,
+      "fallthrough"
+     ],
+     [
+      3,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 5,
+    "tag": "then",
+    "stmts": [],
+    "succ": [
+     [
+      6,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      3,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 6,
+    "tag": "do-body",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 2164,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2164,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xrefdata"
+      ]
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2164,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 2164,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      7,
+      "cond"
+     ]
+    ],
+    "pred": [
+     [
+      5,
+      "next"
+     ],
+     [
+      7,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 7,
+    "tag": "do-cond",
+    "stmts": [
+     {
+      "kind": "INTEGER_LITERAL",
+      "line": 2164,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      6,
+      "loop-true"
+     ],
+     [
+      8,
+      "exit-false"
+     ]
+    ],
+    "pred": [
+     [
+      6,
+      "cond"
+     ]
+    ]
+   },
+   {
+    "id": 8,
+    "tag": "do-exit",
+    "stmts": [],
+    "succ": [
+     [
+      4,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      7,
+      "exit-false"
+     ]
+    ]
+   },
+   {
+    "id": 9,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2177,
+      "spell": "re = zebra_rib_route_entry_new ( vrf_id , api . type , api . instance , api . flags , api . nhgid , api . tableid ? api . tableid : zvrf -> ",
+      "defs": [
+       [
+        "re",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "vrf_id",
+       "api",
+       "zvrf"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2182,
+      "spell": "! CHECK_FLAG ( api . message , ZAPI_MESSAGE_NHG ) && ( ! CHECK_FLAG ( api . message , ZAPI_MESSAGE_NEXTHOP ) || api . nexthop_num == 0 )",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      15,
+      "then"
+     ],
+     [
+      14,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      13,
+      "fallthrough"
+     ],
+     [
+      2,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 10,
+    "tag": "then",
+    "stmts": [],
+    "succ": [
+     [
+      11,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      2,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 11,
+    "tag": "do-body",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 2172,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2172,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xrefdata"
+      ]
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2172,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 2172,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref",
+       "zvrf",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      12,
+      "cond"
+     ]
+    ],
+    "pred": [
+     [
+      10,
+      "next"
+     ],
+     [
+      12,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 12,
+    "tag": "do-cond",
+    "stmts": [
+     {
+      "kind": "INTEGER_LITERAL",
+      "line": 2172,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      11,
+      "loop-true"
+     ],
+     [
+      13,
+      "exit-false"
+     ]
+    ],
+    "pred": [
+     [
+      11,
+      "cond"
+     ]
+    ]
+   },
+   {
+    "id": 13,
+    "tag": "do-exit",
+    "stmts": [],
+    "succ": [
+     [
+      9,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      12,
+      "exit-false"
+     ]
+    ]
+   },
+   {
+    "id": 14,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2195,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      20,
+      "then"
+     ],
+     [
+      19,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      9,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 15,
+    "tag": "then",
+    "stmts": [],
+    "succ": [
+     [
+      16,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      9,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 16,
+    "tag": "do-body",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 2185,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2185,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xrefdata"
+      ]
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2185,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 2185,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref",
+       "zvrf",
+       "api",
+       "client"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      17,
+      "cond"
+     ]
+    ],
+    "pred": [
+     [
+      15,
+      "next"
+     ],
+     [
+      17,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 17,
+    "tag": "do-cond",
+    "stmts": [
+     {
+      "kind": "INTEGER_LITERAL",
+      "line": 2185,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      16,
+      "loop-true"
+     ],
+     [
+      18,
+      "exit-false"
+     ]
+    ],
+    "pred": [
+     [
+      16,
+      "cond"
+     ]
+    ]
+   },
+   {
+    "id": 18,
+    "tag": "do-exit",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 2190,
+      "spell": "zebra_rib_route_entry_free ( re )",
+      "defs": [],
+      "uses": [
+       "re"
+      ]
+     },
+     {
+      "kind": "RETURN_STMT",
+      "line": 2191,
+      "spell": "return",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      17,
+      "exit-false"
+     ]
+    ]
+   },
+   {
+    "id": 19,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2203,
+      "spell": "! re -> nhe_id && ( ! zapi_read_nexthops ( client , & api . prefix , api . nexthops , api . flags , api . message , api . nexthop_num , api ",
+      "defs": [],
+      "uses": [
+       "re",
+       "client",
+       "api",
+       "ng",
+       "bnhg"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      27,
+      "then"
+     ],
+     [
+      26,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      21,
+      "fallthrough"
+     ],
+     [
+      14,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 20,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2197,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "zebra_debug_packet",
+       "zebra_debug_event"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      22,
+      "then"
+     ],
+     [
+      21,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      14,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 21,
+    "tag": "if-merge",
+    "stmts": [],
+    "succ": [
+     [
+      19,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      25,
+      "fallthrough"
+     ],
+     [
+      20,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 22,
+    "tag": "then",
+    "stmts": [],
+    "succ": [
+     [
+      23,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      20,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 23,
+    "tag": "do-body",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 2198,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2198,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xrefdata"
+      ]
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2198,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 2198,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref",
+       "client",
+       "api",
+       "zvrf"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      24,
+      "cond"
+     ]
+    ],
+    "pred": [
+     [
+      22,
+      "next"
+     ],
+     [
+      24,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 24,
+    "tag": "do-cond",
+    "stmts": [
+     {
+      "kind": "INTEGER_LITERAL",
+      "line": 2198,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      23,
+      "loop-true"
+     ],
+     [
+      25,
+      "exit-false"
+     ]
+    ],
+    "pred": [
+     [
+      23,
+      "cond"
+     ]
+    ]
+   },
+   {
+    "id": 25,
+    "tag": "do-exit",
+    "stmts": [],
+    "succ": [
+     [
+      21,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      24,
+      "exit-false"
+     ]
+    ]
+   },
+   {
+    "id": 26,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "PAREN_EXPR",
+      "line": 2218,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      29,
+      "then"
+     ],
+     [
+      28,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      19,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 27,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 2212,
+      "spell": "nexthop_group_delete ( & ng )",
+      "defs": [],
+      "uses": [
+       "ng"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 2213,
+      "spell": "zebra_nhg_backup_free ( & bnhg )",
+      "defs": [],
+      "uses": [
+       "bnhg"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 2214,
+      "spell": "zebra_rib_route_entry_free ( re )",
+      "defs": [],
+      "uses": [
+       "re"
+      ]
+     },
+     {
+      "kind": "RETURN_STMT",
+      "line": 2215,
+      "spell": "return",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      19,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 28,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2226,
+      "spell": "afi = family2afi ( api . prefix . family )",
+      "defs": [
+       [
+        "afi",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2227,
+      "spell": "afi != AFI_IP6 && CHECK_FLAG ( api . message , ZAPI_MESSAGE_SRCPFX )",
+      "defs": [],
+      "uses": [
+       "afi",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      31,
+      "then"
+     ],
+     [
+      30,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      29,
+      "fallthrough"
+     ],
+     [
+      26,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 29,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2219,
+      "spell": "re -> opaque = XMALLOC ( MTYPE_RE_OPAQUE , sizeof ( struct re_opaque ) + api . opaque . length )",
+      "defs": [
+       [
+        "re->opaque",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "MTYPE_RE_OPAQUE",
+       "api",
+       "re"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2222,
+      "spell": "re -> opaque -> length = api . opaque . length",
+      "defs": [
+       [
+        "opaque->length",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api",
+       "re"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 2223,
+      "spell": "memcpy ( re -> opaque -> data , api . opaque . data , re -> opaque -> length )",
+      "defs": [],
+      "uses": [
+       "re",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      28,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      26,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 30,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "PAREN_EXPR",
+      "line": 2236,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      36,
+      "then"
+     ],
+     [
+      35,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      28,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 31,
+    "tag": "then",
+    "stmts": [],
+    "succ": [
+     [
+      32,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      28,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 32,
+    "tag": "do-body",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 2228,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2228,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xrefdata"
+      ]
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2228,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 2228,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      33,
+      "cond"
+     ]
+    ],
+    "pred": [
+     [
+      31,
+      "next"
+     ],
+     [
+      33,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 33,
+    "tag": "do-cond",
+    "stmts": [
+     {
+      "kind": "INTEGER_LITERAL",
+      "line": 2228,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      32,
+      "loop-true"
+     ],
+     [
+      34,
+      "exit-false"
+     ]
+    ],
+    "pred": [
+     [
+      32,
+      "cond"
+     ]
+    ]
+   },
+   {
+    "id": 34,
+    "tag": "do-exit",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 2231,
+      "spell": "nexthop_group_delete ( & ng )",
+      "defs": [],
+      "uses": [
+       "ng"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 2232,
+      "spell": "zebra_nhg_backup_free ( & bnhg )",
+      "defs": [],
+      "uses": [
+       "bnhg"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 2233,
+      "spell": "zebra_rib_route_entry_free ( re )",
+      "defs": [],
+      "uses": [
+       "re"
+      ]
+     },
+     {
+      "kind": "RETURN_STMT",
+      "line": 2234,
+      "spell": "return",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      33,
+      "exit-false"
+     ]
+    ]
+   },
+   {
+    "id": 35,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2239,
+      "spell": "api . safi != SAFI_UNICAST && api . safi != SAFI_MULTICAST",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      38,
+      "then"
+     ],
+     [
+      37,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      36,
+      "fallthrough"
+     ],
+     [
+      30,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 36,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2237,
+      "spell": "src_p = & api . src_prefix",
+      "defs": [
+       [
+        "src_p",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      35,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      30,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 37,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "UNARY_OPERATOR",
+      "line": 2259,
+      "spell": "! re -> nhe_id",
+      "defs": [],
+      "uses": [
+       "re"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      43,
+      "then"
+     ],
+     [
+      42,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      35,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 38,
+    "tag": "then",
+    "stmts": [],
+    "succ": [
+     [
+      39,
+      "next"
+     ]
+    ],
+    "pred": [
+     [
+      35,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 39,
+    "tag": "do-body",
+    "stmts": [
+     {
+      "kind": "DECL_STMT",
+      "line": 2240,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2240,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xrefdata"
+      ]
+     },
+     {
+      "kind": "DECL_STMT",
+      "line": 2240,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 2240,
+      "spell": "",
+      "defs": [],
+      "uses": [
+       "_xref",
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      40,
+      "cond"
+     ]
+    ],
+    "pred": [
+     [
+      38,
+      "next"
+     ],
+     [
+      40,
+      "loop-true"
+     ]
+    ]
+   },
+   {
+    "id": 40,
+    "tag": "do-cond",
+    "stmts": [
+     {
+      "kind": "INTEGER_LITERAL",
+      "line": 2240,
+      "spell": "",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      39,
+      "loop-true"
+     ],
+     [
+      41,
+      "exit-false"
+     ]
+    ],
+    "pred": [
+     [
+      39,
+      "cond"
+     ]
+    ]
+   },
+   {
+    "id": 41,
+    "tag": "do-exit",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 2243,
+      "spell": "nexthop_group_delete ( & ng )",
+      "defs": [],
+      "uses": [
+       "ng"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 2244,
+      "spell": "zebra_nhg_backup_free ( & bnhg )",
+      "defs": [],
+      "uses": [
+       "bnhg"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 2245,
+      "spell": "zebra_rib_route_entry_free ( re )",
+      "defs": [],
+      "uses": [
+       "re"
+      ]
+     },
+     {
+      "kind": "RETURN_STMT",
+      "line": 2246,
+      "spell": "return",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      1,
+      "return"
+     ]
+    ],
+    "pred": [
+     [
+      40,
+      "exit-false"
+     ]
+    ]
+   },
+   {
+    "id": 42,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2265,
+      "spell": "ret = rib_add_multipath_nhe ( afi , api . safi , & api . prefix , src_p , re , n , false , true )",
+      "defs": [
+       [
+        "ret",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "afi",
+       "api",
+       "src_p",
+       "re",
+       "n"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2271,
+      "spell": "ret == - 1",
+      "defs": [],
+      "uses": [
+       "ret"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      45,
+      "then"
+     ],
+     [
+      44,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      43,
+      "fallthrough"
+     ],
+     [
+      37,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 43,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 2260,
+      "spell": "zebra_nhe_init ( & nhe , afi , ng -> nexthop )",
+      "defs": [],
+      "uses": [
+       "nhe",
+       "afi",
+       "ng"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2261,
+      "spell": "nhe . nhg . nexthop = ng -> nexthop",
+      "defs": [
+       [
+        "nhe.nhg.nexthop",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "ng",
+       "nhe"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2262,
+      "spell": "nhe . backup_info = bnhg",
+      "defs": [
+       [
+        "nhe.backup_info",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "bnhg",
+       "nhe"
+      ]
+     },
+     {
+      "kind": "BINARY_OPERATOR",
+      "line": 2263,
+      "spell": "n = zebra_nhe_copy ( & nhe , 0 )",
+      "defs": [
+       [
+        "n",
+        "assign"
+       ]
+      ],
+      "uses": [
+       "nhe"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      42,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      37,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 44,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 2280,
+      "spell": "nexthop_group_delete ( & ng )",
+      "defs": [],
+      "uses": [
+       "ng"
+      ]
+     },
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 2281,
+      "spell": "bnhg",
+      "defs": [],
+      "uses": [
+       "bnhg"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      47,
+      "then"
+     ],
+     [
+      46,
+      "no-else"
+     ]
+    ],
+    "pred": [
+     [
+      45,
+      "fallthrough"
+     ],
+     [
+      42,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 45,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "UNARY_OPERATOR",
+      "line": 2272,
+      "spell": "client -> error_cnt ++",
+      "defs": [
+       [
+        "client->error_cnt",
+        "incdec"
+       ]
+      ],
+      "uses": [
+       "client"
+      ]
+     },
+     {
+      "kind": "CALL_EXPR",
+      "line": 2273,
+      "spell": "zebra_rib_route_entry_free ( re )",
+      "defs": [],
+      "uses": [
+       "re"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      44,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      42,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 46,
+    "tag": "if-merge",
+    "stmts": [
+     {
+      "kind": "UNEXPOSED_EXPR",
+      "line": 2285,
+      "spell": "api . prefix . family",
+      "defs": [],
+      "uses": [
+       "api"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      49,
+      "case"
+     ],
+     [
+      49,
+      "fallthrough"
+     ],
+     [
+      50,
+      "case"
+     ]
+    ],
+    "pred": [
+     [
+      47,
+      "fallthrough"
+     ],
+     [
+      44,
+      "no-else"
+     ]
+    ]
+   },
+   {
+    "id": 47,
+    "tag": "then",
+    "stmts": [
+     {
+      "kind": "CALL_EXPR",
+      "line": 2282,
+      "spell": "zebra_nhg_backup_free ( & bnhg )",
+      "defs": [],
+      "uses": [
+       "bnhg"
+      ]
+     }
+    ],
+    "succ": [
+     [
+      46,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      44,
+      "then"
+     ]
+    ]
+   },
+   {
+    "id": 48,
+    "tag": "switch-merge",
+    "stmts": [],
+    "succ": [
+     [
+      1,
+      "fallthrough"
+     ]
+    ],
+    "pred": [
+     [
+      49,
+      "break"
+     ],
+     [
+      50,
+      "break"
+     ]
+    ]
+   },
+   {
+    "id": 49,
+    "tag": "case",
+    "stmts": [
+     {
+      "kind": "CASE_STMT",
+      "line": 2286,
+      "spell": "case AF_INET : if ( ret == 0 ) client -> v4_route_add_cnt ++ ; else if ( ret == 1 ) client -> v4_route_upd8_cnt ++",
+      "defs": [
+       [
+        "client->v4_route_add_cnt",
+        "incdec"
+       ],
+       [
+        "client->v4_route_upd8_cnt",
+        "incdec"
+       ]
+      ],
+      "uses": [
+       "ret",
+       "client"
+      ]
+     },
+     {
+      "kind": "BREAK_STMT",
+      "line": 2291,
+      "spell": "break",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      48,
+      "break"
+     ]
+    ],
+    "pred": [
+     [
+      46,
+      "case"
+     ],
+     [
+      46,
+      "fallthrough"
+     ]
+    ]
+   },
+   {
+    "id": 50,
+    "tag": "case",
+    "stmts": [
+     {
+      "kind": "CASE_STMT",
+      "line": 2292,
+      "spell": "case AF_INET6 : if ( ret == 0 ) client -> v6_route_add_cnt ++ ; else if ( ret == 1 ) client -> v6_route_upd8_cnt ++",
+      "defs": [
+       [
+        "client->v6_route_add_cnt",
+        "incdec"
+       ],
+       [
+        "client->v6_route_upd8_cnt",
+        "incdec"
+       ]
+      ],
+      "uses": [
+       "ret",
+       "client"
+      ]
+     },
+     {
+      "kind": "BREAK_STMT",
+      "line": 2297,
+      "spell": "break",
+      "defs": [],
+      "uses": []
+     }
+    ],
+    "succ": [
+     [
+      48,
+      "break"
+     ]
+    ],
+    "pred": [
+     [
+      46,
+      "case"
+     ]
+    ]
+   }
+  ],
+  "edges": [
+   {
+    "from": 0,
+    "to": 3,
+    "kind": "then"
+   },
+   {
+    "from": 3,
+    "to": 5,
+    "kind": "then"
+   },
+   {
+    "from": 5,
+    "to": 6,
+    "kind": "next"
+   },
+   {
+    "from": 6,
+    "to": 7,
+    "kind": "cond"
+   },
+   {
+    "from": 7,
+    "to": 6,
+    "kind": "loop-true"
+   },
+   {
+    "from": 7,
+    "to": 8,
+    "kind": "exit-false"
+   },
+   {
+    "from": 8,
+    "to": 4,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 3,
+    "to": 4,
+    "kind": "no-else"
+   },
+   {
+    "from": 4,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 0,
+    "to": 2,
+    "kind": "no-else"
+   },
+   {
+    "from": 2,
+    "to": 10,
+    "kind": "then"
+   },
+   {
+    "from": 10,
+    "to": 11,
+    "kind": "next"
+   },
+   {
+    "from": 11,
+    "to": 12,
+    "kind": "cond"
+   },
+   {
+    "from": 12,
+    "to": 11,
+    "kind": "loop-true"
+   },
+   {
+    "from": 12,
+    "to": 13,
+    "kind": "exit-false"
+   },
+   {
+    "from": 13,
+    "to": 9,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 2,
+    "to": 9,
+    "kind": "no-else"
+   },
+   {
+    "from": 9,
+    "to": 15,
+    "kind": "then"
+   },
+   {
+    "from": 15,
+    "to": 16,
+    "kind": "next"
+   },
+   {
+    "from": 16,
+    "to": 17,
+    "kind": "cond"
+   },
+   {
+    "from": 17,
+    "to": 16,
+    "kind": "loop-true"
+   },
+   {
+    "from": 17,
+    "to": 18,
+    "kind": "exit-false"
+   },
+   {
+    "from": 18,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 9,
+    "to": 14,
+    "kind": "no-else"
+   },
+   {
+    "from": 14,
+    "to": 20,
+    "kind": "then"
+   },
+   {
+    "from": 20,
+    "to": 22,
+    "kind": "then"
+   },
+   {
+    "from": 22,
+    "to": 23,
+    "kind": "next"
+   },
+   {
+    "from": 23,
+    "to": 24,
+    "kind": "cond"
+   },
+   {
+    "from": 24,
+    "to": 23,
+    "kind": "loop-true"
+   },
+   {
+    "from": 24,
+    "to": 25,
+    "kind": "exit-false"
+   },
+   {
+    "from": 25,
+    "to": 21,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 20,
+    "to": 21,
+    "kind": "no-else"
+   },
+   {
+    "from": 21,
+    "to": 19,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 14,
+    "to": 19,
+    "kind": "no-else"
+   },
+   {
+    "from": 19,
+    "to": 27,
+    "kind": "then"
+   },
+   {
+    "from": 27,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 19,
+    "to": 26,
+    "kind": "no-else"
+   },
+   {
+    "from": 26,
+    "to": 29,
+    "kind": "then"
+   },
+   {
+    "from": 29,
+    "to": 28,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 26,
+    "to": 28,
+    "kind": "no-else"
+   },
+   {
+    "from": 28,
+    "to": 31,
+    "kind": "then"
+   },
+   {
+    "from": 31,
+    "to": 32,
+    "kind": "next"
+   },
+   {
+    "from": 32,
+    "to": 33,
+    "kind": "cond"
+   },
+   {
+    "from": 33,
+    "to": 32,
+    "kind": "loop-true"
+   },
+   {
+    "from": 33,
+    "to": 34,
+    "kind": "exit-false"
+   },
+   {
+    "from": 34,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 28,
+    "to": 30,
+    "kind": "no-else"
+   },
+   {
+    "from": 30,
+    "to": 36,
+    "kind": "then"
+   },
+   {
+    "from": 36,
+    "to": 35,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 30,
+    "to": 35,
+    "kind": "no-else"
+   },
+   {
+    "from": 35,
+    "to": 38,
+    "kind": "then"
+   },
+   {
+    "from": 38,
+    "to": 39,
+    "kind": "next"
+   },
+   {
+    "from": 39,
+    "to": 40,
+    "kind": "cond"
+   },
+   {
+    "from": 40,
+    "to": 39,
+    "kind": "loop-true"
+   },
+   {
+    "from": 40,
+    "to": 41,
+    "kind": "exit-false"
+   },
+   {
+    "from": 41,
+    "to": 1,
+    "kind": "return"
+   },
+   {
+    "from": 35,
+    "to": 37,
+    "kind": "no-else"
+   },
+   {
+    "from": 37,
+    "to": 43,
+    "kind": "then"
+   },
+   {
+    "from": 43,
+    "to": 42,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 37,
+    "to": 42,
+    "kind": "no-else"
+   },
+   {
+    "from": 42,
+    "to": 45,
+    "kind": "then"
+   },
+   {
+    "from": 45,
+    "to": 44,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 42,
+    "to": 44,
+    "kind": "no-else"
+   },
+   {
+    "from": 44,
+    "to": 47,
+    "kind": "then"
+   },
+   {
+    "from": 47,
+    "to": 46,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 44,
+    "to": 46,
+    "kind": "no-else"
+   },
+   {
+    "from": 46,
+    "to": 49,
+    "kind": "case"
+   },
+   {
+    "from": 46,
+    "to": 49,
+    "kind": "fallthrough"
+   },
+   {
+    "from": 49,
+    "to": 48,
+    "kind": "break"
+   },
+   {
+    "from": 46,
+    "to": 50,
+    "kind": "case"
+   },
+   {
+    "from": 50,
+    "to": 48,
+    "kind": "break"
+   },
+   {
+    "from": 48,
+    "to": 1,
+    "kind": "fallthrough"
+   }
+  ]
+ },
+ "dfg": {
+  "defs": [
+   {
+    "id": "d16",
+    "var": "client",
+    "block": 0,
+    "stmt": -1,
+    "line": 2148,
+    "kind": "param",
+    "type": "struct zserv *"
+   },
+   {
+    "id": "d17",
+    "var": "hdr",
+    "block": 0,
+    "stmt": -1,
+    "line": 2148,
+    "kind": "param",
+    "type": "struct zmsghdr *"
+   },
+   {
+    "id": "d18",
+    "var": "msg",
+    "block": 0,
+    "stmt": -1,
+    "line": 2148,
+    "kind": "param",
+    "type": "struct stream *"
+   },
+   {
+    "id": "d19",
+    "var": "zvrf",
+    "block": 0,
+    "stmt": -1,
+    "line": 2148,
+    "kind": "param",
+    "type": "struct zebra_vrf *"
+   },
+   {
+    "id": "d0",
+    "var": "s",
+    "block": 0,
+    "stmt": 10,
+    "line": 2161,
+    "kind": "assign"
+   },
+   {
+    "id": "d1",
+    "var": "vrf_id",
+    "block": 2,
+    "stmt": 0,
+    "line": 2169,
+    "kind": "assign"
+   },
+   {
+    "id": "d2",
+    "var": "re",
+    "block": 9,
+    "stmt": 0,
+    "line": 2177,
+    "kind": "assign"
+   },
+   {
+    "id": "d3",
+    "var": "afi",
+    "block": 28,
+    "stmt": 0,
+    "line": 2226,
+    "kind": "assign"
+   },
+   {
+    "id": "d4",
+    "var": "re->opaque",
+    "block": 29,
+    "stmt": 0,
+    "line": 2219,
+    "kind": "assign"
+   },
+   {
+    "id": "d5",
+    "var": "opaque->length",
+    "block": 29,
+    "stmt": 1,
+    "line": 2222,
+    "kind": "assign"
+   },
+   {
+    "id": "d6",
+    "var": "src_p",
+    "block": 36,
+    "stmt": 0,
+    "line": 2237,
+    "kind": "assign"
+   },
+   {
+    "id": "d7",
+    "var": "ret",
+    "block": 42,
+    "stmt": 0,
+    "line": 2265,
+    "kind": "assign"
+   },
+   {
+    "id": "d8",
+    "var": "nhe.nhg.nexthop",
+    "block": 43,
+    "stmt": 1,
+    "line": 2261,
+    "kind": "assign"
+   },
+   {
+    "id": "d9",
+    "var": "nhe.backup_info",
+    "block": 43,
+    "stmt": 2,
+    "line": 2262,
+    "kind": "assign"
+   },
+   {
+    "id": "d10",
+    "var": "n",
+    "block": 43,
+    "stmt": 3,
+    "line": 2263,
+    "kind": "assign"
+   },
+   {
+    "id": "d11",
+    "var": "client->error_cnt",
+    "block": 45,
+    "stmt": 0,
+    "line": 2272,
+    "kind": "incdec"
+   },
+   {
+    "id": "d12",
+    "var": "client->v4_route_add_cnt",
+    "block": 49,
+    "stmt": 0,
+    "line": 2286,
+    "kind": "incdec"
+   },
+   {
+    "id": "d13",
+    "var": "client->v4_route_upd8_cnt",
+    "block": 49,
+    "stmt": 0,
+    "line": 2286,
+    "kind": "incdec"
+   },
+   {
+    "id": "d14",
+    "var": "client->v6_route_add_cnt",
+    "block": 50,
+    "stmt": 0,
+    "line": 2292,
+    "kind": "incdec"
+   },
+   {
+    "id": "d15",
+    "var": "client->v6_route_upd8_cnt",
+    "block": 50,
+    "stmt": 0,
+    "line": 2292,
+    "kind": "incdec"
+   }
+  ],
+  "chains": [
+   {
+    "use": "msg",
+    "block": 0,
+    "line": 2161,
+    "stmt": "s = msg",
+    "defs": [
+     "d18"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "s",
+    "block": 0,
+    "line": 2162,
+    "stmt": "zapi_route_decode ( s , & api ) < 0",
+    "defs": [
+     "d0"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 0,
+    "line": 2162,
+    "stmt": "zapi_route_decode ( s , & api ) < 0",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zvrf",
+    "block": 2,
+    "line": 2169,
+    "stmt": "vrf_id = zvrf_id ( zvrf )",
+    "defs": [
+     "d19"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "zebra_debug_packet",
+    "block": 2,
+    "line": 2171,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zebra_debug_packet",
+    "block": 3,
+    "line": 2163,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 6,
+    "line": 2164,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 6,
+    "line": 2164,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 6,
+    "line": 2164,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "vrf_id",
+    "block": 9,
+    "line": 2177,
+    "stmt": "re = zebra_rib_route_entry_new ( vrf_id , api . type , api . instance , api . fl",
+    "defs": [
+     "d1"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 9,
+    "line": 2177,
+    "stmt": "re = zebra_rib_route_entry_new ( vrf_id , api . type , api . instance , api . fl",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zvrf",
+    "block": 9,
+    "line": 2177,
+    "stmt": "re = zebra_rib_route_entry_new ( vrf_id , api . type , api . instance , api . fl",
+    "defs": [
+     "d19"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 9,
+    "line": 2182,
+    "stmt": "! CHECK_FLAG ( api . message , ZAPI_MESSAGE_NHG ) && ( ! CHECK_FLAG ( api . mess",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 11,
+    "line": 2172,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 11,
+    "line": 2172,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 11,
+    "line": 2172,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zvrf",
+    "block": 11,
+    "line": 2172,
+    "stmt": "",
+    "defs": [
+     "d19"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 11,
+    "line": 2172,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 14,
+    "line": 2195,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 16,
+    "line": 2185,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 16,
+    "line": 2185,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 16,
+    "line": 2185,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zvrf",
+    "block": 16,
+    "line": 2185,
+    "stmt": "",
+    "defs": [
+     "d19"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 16,
+    "line": 2185,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "client",
+    "block": 16,
+    "line": 2185,
+    "stmt": "",
+    "defs": [
+     "d16"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "re",
+    "block": 18,
+    "line": 2190,
+    "stmt": "zebra_rib_route_entry_free ( re )",
+    "defs": [
+     "d2"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "re",
+    "block": 19,
+    "line": 2203,
+    "stmt": "! re -> nhe_id && ( ! zapi_read_nexthops ( client , & api . prefix , api . nexth",
+    "defs": [
+     "d2"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "client",
+    "block": 19,
+    "line": 2203,
+    "stmt": "! re -> nhe_id && ( ! zapi_read_nexthops ( client , & api . prefix , api . nexth",
+    "defs": [
+     "d16"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 19,
+    "line": 2203,
+    "stmt": "! re -> nhe_id && ( ! zapi_read_nexthops ( client , & api . prefix , api . nexth",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ng",
+    "block": 19,
+    "line": 2203,
+    "stmt": "! re -> nhe_id && ( ! zapi_read_nexthops ( client , & api . prefix , api . nexth",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bnhg",
+    "block": 19,
+    "line": 2203,
+    "stmt": "! re -> nhe_id && ( ! zapi_read_nexthops ( client , & api . prefix , api . nexth",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zebra_debug_packet",
+    "block": 20,
+    "line": 2197,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zebra_debug_event",
+    "block": 20,
+    "line": 2197,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 23,
+    "line": 2198,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 23,
+    "line": 2198,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 23,
+    "line": 2198,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "client",
+    "block": 23,
+    "line": 2198,
+    "stmt": "",
+    "defs": [
+     "d16"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 23,
+    "line": 2198,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zvrf",
+    "block": 23,
+    "line": 2198,
+    "stmt": "",
+    "defs": [
+     "d19"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 26,
+    "line": 2218,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ng",
+    "block": 27,
+    "line": 2212,
+    "stmt": "nexthop_group_delete ( & ng )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bnhg",
+    "block": 27,
+    "line": 2213,
+    "stmt": "zebra_nhg_backup_free ( & bnhg )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "re",
+    "block": 27,
+    "line": 2214,
+    "stmt": "zebra_rib_route_entry_free ( re )",
+    "defs": [
+     "d2"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 28,
+    "line": 2226,
+    "stmt": "afi = family2afi ( api . prefix . family )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "afi",
+    "block": 28,
+    "line": 2227,
+    "stmt": "afi != AFI_IP6 && CHECK_FLAG ( api . message , ZAPI_MESSAGE_SRCPFX )",
+    "defs": [
+     "d3"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 28,
+    "line": 2227,
+    "stmt": "afi != AFI_IP6 && CHECK_FLAG ( api . message , ZAPI_MESSAGE_SRCPFX )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "MTYPE_RE_OPAQUE",
+    "block": 29,
+    "line": 2219,
+    "stmt": "re -> opaque = XMALLOC ( MTYPE_RE_OPAQUE , sizeof ( struct re_opaque ) + api . o",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 29,
+    "line": 2219,
+    "stmt": "re -> opaque = XMALLOC ( MTYPE_RE_OPAQUE , sizeof ( struct re_opaque ) + api . o",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "re",
+    "block": 29,
+    "line": 2219,
+    "stmt": "re -> opaque = XMALLOC ( MTYPE_RE_OPAQUE , sizeof ( struct re_opaque ) + api . o",
+    "defs": [
+     "d2"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 29,
+    "line": 2222,
+    "stmt": "re -> opaque -> length = api . opaque . length",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "re",
+    "block": 29,
+    "line": 2222,
+    "stmt": "re -> opaque -> length = api . opaque . length",
+    "defs": [
+     "d2"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "re",
+    "block": 29,
+    "line": 2223,
+    "stmt": "memcpy ( re -> opaque -> data , api . opaque . data , re -> opaque -> length )",
+    "defs": [
+     "d2"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 29,
+    "line": 2223,
+    "stmt": "memcpy ( re -> opaque -> data , api . opaque . data , re -> opaque -> length )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 30,
+    "line": 2236,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 32,
+    "line": 2228,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 32,
+    "line": 2228,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 32,
+    "line": 2228,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ng",
+    "block": 34,
+    "line": 2231,
+    "stmt": "nexthop_group_delete ( & ng )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bnhg",
+    "block": 34,
+    "line": 2232,
+    "stmt": "zebra_nhg_backup_free ( & bnhg )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "re",
+    "block": 34,
+    "line": 2233,
+    "stmt": "zebra_rib_route_entry_free ( re )",
+    "defs": [
+     "d2"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 35,
+    "line": 2239,
+    "stmt": "api . safi != SAFI_UNICAST && api . safi != SAFI_MULTICAST",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 36,
+    "line": 2237,
+    "stmt": "src_p = & api . src_prefix",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "re",
+    "block": 37,
+    "line": 2259,
+    "stmt": "! re -> nhe_id",
+    "defs": [
+     "d2"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "_xrefdata",
+    "block": 39,
+    "line": 2240,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 39,
+    "line": 2240,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 39,
+    "line": 2240,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 39,
+    "line": 2240,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ng",
+    "block": 41,
+    "line": 2243,
+    "stmt": "nexthop_group_delete ( & ng )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bnhg",
+    "block": 41,
+    "line": 2244,
+    "stmt": "zebra_nhg_backup_free ( & bnhg )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "re",
+    "block": 41,
+    "line": 2245,
+    "stmt": "zebra_rib_route_entry_free ( re )",
+    "defs": [
+     "d2"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "afi",
+    "block": 42,
+    "line": 2265,
+    "stmt": "ret = rib_add_multipath_nhe ( afi , api . safi , & api . prefix , src_p , re , n",
+    "defs": [
+     "d3"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 42,
+    "line": 2265,
+    "stmt": "ret = rib_add_multipath_nhe ( afi , api . safi , & api . prefix , src_p , re , n",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "src_p",
+    "block": 42,
+    "line": 2265,
+    "stmt": "ret = rib_add_multipath_nhe ( afi , api . safi , & api . prefix , src_p , re , n",
+    "defs": [
+     "d6"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "re",
+    "block": 42,
+    "line": 2265,
+    "stmt": "ret = rib_add_multipath_nhe ( afi , api . safi , & api . prefix , src_p , re , n",
+    "defs": [
+     "d2"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "n",
+    "block": 42,
+    "line": 2265,
+    "stmt": "ret = rib_add_multipath_nhe ( afi , api . safi , & api . prefix , src_p , re , n",
+    "defs": [
+     "d10"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "ret",
+    "block": 42,
+    "line": 2271,
+    "stmt": "ret == - 1",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "nhe",
+    "block": 43,
+    "line": 2260,
+    "stmt": "zebra_nhe_init ( & nhe , afi , ng -> nexthop )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "afi",
+    "block": 43,
+    "line": 2260,
+    "stmt": "zebra_nhe_init ( & nhe , afi , ng -> nexthop )",
+    "defs": [
+     "d3"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "ng",
+    "block": 43,
+    "line": 2260,
+    "stmt": "zebra_nhe_init ( & nhe , afi , ng -> nexthop )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ng",
+    "block": 43,
+    "line": 2261,
+    "stmt": "nhe . nhg . nexthop = ng -> nexthop",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nhe",
+    "block": 43,
+    "line": 2261,
+    "stmt": "nhe . nhg . nexthop = ng -> nexthop",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bnhg",
+    "block": 43,
+    "line": 2262,
+    "stmt": "nhe . backup_info = bnhg",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nhe",
+    "block": 43,
+    "line": 2262,
+    "stmt": "nhe . backup_info = bnhg",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nhe",
+    "block": 43,
+    "line": 2263,
+    "stmt": "n = zebra_nhe_copy ( & nhe , 0 )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ng",
+    "block": 44,
+    "line": 2280,
+    "stmt": "nexthop_group_delete ( & ng )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bnhg",
+    "block": 44,
+    "line": 2281,
+    "stmt": "bnhg",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "client",
+    "block": 45,
+    "line": 2272,
+    "stmt": "client -> error_cnt ++",
+    "defs": [
+     "d16"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "re",
+    "block": 45,
+    "line": 2273,
+    "stmt": "zebra_rib_route_entry_free ( re )",
+    "defs": [
+     "d2"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "api",
+    "block": 46,
+    "line": 2285,
+    "stmt": "api . prefix . family",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bnhg",
+    "block": 47,
+    "line": 2282,
+    "stmt": "zebra_nhg_backup_free ( & bnhg )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ret",
+    "block": 49,
+    "line": 2286,
+    "stmt": "case AF_INET : if ( ret == 0 ) client -> v4_route_add_cnt ++ ; else if ( ret == ",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "client",
+    "block": 49,
+    "line": 2286,
+    "stmt": "case AF_INET : if ( ret == 0 ) client -> v4_route_add_cnt ++ ; else if ( ret == ",
+    "defs": [
+     "d16"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "ret",
+    "block": 50,
+    "line": 2292,
+    "stmt": "case AF_INET6 : if ( ret == 0 ) client -> v6_route_add_cnt ++ ; else if ( ret ==",
+    "defs": [
+     "d7"
+    ],
+    "n_defs": 1
+   },
+   {
+    "use": "client",
+    "block": 50,
+    "line": 2292,
+    "stmt": "case AF_INET6 : if ( ret == 0 ) client -> v6_route_add_cnt ++ ; else if ( ret ==",
+    "defs": [
+     "d16"
+    ],
+    "n_defs": 1
+   }
+  ],
+  "n_chains": 94,
+  "undef_uses": [
+   {
+    "use": "api",
+    "block": 0,
+    "line": 2162,
+    "stmt": "zapi_route_decode ( s , & api ) < 0",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zebra_debug_packet",
+    "block": 2,
+    "line": 2171,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zebra_debug_packet",
+    "block": 3,
+    "line": 2163,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 6,
+    "line": 2164,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 6,
+    "line": 2164,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 6,
+    "line": 2164,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 9,
+    "line": 2177,
+    "stmt": "re = zebra_rib_route_entry_new ( vrf_id , api . type , api . instance , api . fl",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 9,
+    "line": 2182,
+    "stmt": "! CHECK_FLAG ( api . message , ZAPI_MESSAGE_NHG ) && ( ! CHECK_FLAG ( api . mess",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 11,
+    "line": 2172,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 11,
+    "line": 2172,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 11,
+    "line": 2172,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 11,
+    "line": 2172,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 14,
+    "line": 2195,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 16,
+    "line": 2185,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 16,
+    "line": 2185,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 16,
+    "line": 2185,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 16,
+    "line": 2185,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 19,
+    "line": 2203,
+    "stmt": "! re -> nhe_id && ( ! zapi_read_nexthops ( client , & api . prefix , api . nexth",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ng",
+    "block": 19,
+    "line": 2203,
+    "stmt": "! re -> nhe_id && ( ! zapi_read_nexthops ( client , & api . prefix , api . nexth",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bnhg",
+    "block": 19,
+    "line": 2203,
+    "stmt": "! re -> nhe_id && ( ! zapi_read_nexthops ( client , & api . prefix , api . nexth",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zebra_debug_packet",
+    "block": 20,
+    "line": 2197,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "zebra_debug_event",
+    "block": 20,
+    "line": 2197,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 23,
+    "line": 2198,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 23,
+    "line": 2198,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 23,
+    "line": 2198,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 23,
+    "line": 2198,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 26,
+    "line": 2218,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ng",
+    "block": 27,
+    "line": 2212,
+    "stmt": "nexthop_group_delete ( & ng )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bnhg",
+    "block": 27,
+    "line": 2213,
+    "stmt": "zebra_nhg_backup_free ( & bnhg )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 28,
+    "line": 2226,
+    "stmt": "afi = family2afi ( api . prefix . family )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 28,
+    "line": 2227,
+    "stmt": "afi != AFI_IP6 && CHECK_FLAG ( api . message , ZAPI_MESSAGE_SRCPFX )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "MTYPE_RE_OPAQUE",
+    "block": 29,
+    "line": 2219,
+    "stmt": "re -> opaque = XMALLOC ( MTYPE_RE_OPAQUE , sizeof ( struct re_opaque ) + api . o",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 29,
+    "line": 2219,
+    "stmt": "re -> opaque = XMALLOC ( MTYPE_RE_OPAQUE , sizeof ( struct re_opaque ) + api . o",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 29,
+    "line": 2222,
+    "stmt": "re -> opaque -> length = api . opaque . length",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 29,
+    "line": 2223,
+    "stmt": "memcpy ( re -> opaque -> data , api . opaque . data , re -> opaque -> length )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 30,
+    "line": 2236,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 32,
+    "line": 2228,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 32,
+    "line": 2228,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 32,
+    "line": 2228,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ng",
+    "block": 34,
+    "line": 2231,
+    "stmt": "nexthop_group_delete ( & ng )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bnhg",
+    "block": 34,
+    "line": 2232,
+    "stmt": "zebra_nhg_backup_free ( & bnhg )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 35,
+    "line": 2239,
+    "stmt": "api . safi != SAFI_UNICAST && api . safi != SAFI_MULTICAST",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 36,
+    "line": 2237,
+    "stmt": "src_p = & api . src_prefix",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xrefdata",
+    "block": 39,
+    "line": 2240,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 39,
+    "line": 2240,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "_xref",
+    "block": 39,
+    "line": 2240,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 39,
+    "line": 2240,
+    "stmt": "",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ng",
+    "block": 41,
+    "line": 2243,
+    "stmt": "nexthop_group_delete ( & ng )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bnhg",
+    "block": 41,
+    "line": 2244,
+    "stmt": "zebra_nhg_backup_free ( & bnhg )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 42,
+    "line": 2265,
+    "stmt": "ret = rib_add_multipath_nhe ( afi , api . safi , & api . prefix , src_p , re , n",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nhe",
+    "block": 43,
+    "line": 2260,
+    "stmt": "zebra_nhe_init ( & nhe , afi , ng -> nexthop )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ng",
+    "block": 43,
+    "line": 2260,
+    "stmt": "zebra_nhe_init ( & nhe , afi , ng -> nexthop )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ng",
+    "block": 43,
+    "line": 2261,
+    "stmt": "nhe . nhg . nexthop = ng -> nexthop",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nhe",
+    "block": 43,
+    "line": 2261,
+    "stmt": "nhe . nhg . nexthop = ng -> nexthop",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bnhg",
+    "block": 43,
+    "line": 2262,
+    "stmt": "nhe . backup_info = bnhg",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nhe",
+    "block": 43,
+    "line": 2262,
+    "stmt": "nhe . backup_info = bnhg",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "nhe",
+    "block": 43,
+    "line": 2263,
+    "stmt": "n = zebra_nhe_copy ( & nhe , 0 )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "ng",
+    "block": 44,
+    "line": 2280,
+    "stmt": "nexthop_group_delete ( & ng )",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bnhg",
+    "block": 44,
+    "line": 2281,
+    "stmt": "bnhg",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "api",
+    "block": 46,
+    "line": 2285,
+    "stmt": "api . prefix . family",
+    "defs": [],
+    "n_defs": 0
+   },
+   {
+    "use": "bnhg",
+    "block": 47,
+    "line": 2282,
+    "stmt": "zebra_nhg_backup_free ( & bnhg )",
+    "defs": [],
+    "n_defs": 0
+   }
+  ]
+ },
+ "liveness": {
+  "live_in": {
+   "0": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "msg",
+    "n",
+    "ng",
+    "nhe",
+    "src_p",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "1": [],
+   "2": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "src_p",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "3": [
+    "_xref",
+    "_xrefdata",
+    "zebra_debug_packet"
+   ],
+   "4": [],
+   "5": [
+    "_xref",
+    "_xrefdata"
+   ],
+   "6": [
+    "_xref",
+    "_xrefdata"
+   ],
+   "7": [
+    "_xref",
+    "_xrefdata"
+   ],
+   "8": [],
+   "9": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "src_p",
+    "vrf_id",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "10": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "src_p",
+    "vrf_id",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "11": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "src_p",
+    "vrf_id",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "12": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "src_p",
+    "vrf_id",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "13": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "src_p",
+    "vrf_id",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "14": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "15": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "client",
+    "re",
+    "zvrf"
+   ],
+   "16": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "client",
+    "re",
+    "zvrf"
+   ],
+   "17": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "client",
+    "re",
+    "zvrf"
+   ],
+   "18": [
+    "re"
+   ],
+   "19": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "20": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "21": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "22": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p",
+    "zvrf"
+   ],
+   "23": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p",
+    "zvrf"
+   ],
+   "24": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p",
+    "zvrf"
+   ],
+   "25": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "26": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "27": [
+    "bnhg",
+    "ng",
+    "re"
+   ],
+   "28": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "29": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "30": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "31": [
+    "_xref",
+    "_xrefdata",
+    "bnhg",
+    "ng",
+    "re"
+   ],
+   "32": [
+    "_xref",
+    "_xrefdata",
+    "bnhg",
+    "ng",
+    "re"
+   ],
+   "33": [
+    "_xref",
+    "_xrefdata",
+    "bnhg",
+    "ng",
+    "re"
+   ],
+   "34": [
+    "bnhg",
+    "ng",
+    "re"
+   ],
+   "35": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "36": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re"
+   ],
+   "37": [
+    "afi",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "38": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "ng",
+    "re"
+   ],
+   "39": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "ng",
+    "re"
+   ],
+   "40": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "ng",
+    "re"
+   ],
+   "41": [
+    "bnhg",
+    "ng",
+    "re"
+   ],
+   "42": [
+    "afi",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "re",
+    "src_p"
+   ],
+   "43": [
+    "afi",
+    "api",
+    "bnhg",
+    "client",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "44": [
+    "api",
+    "bnhg",
+    "client",
+    "ng",
+    "ret"
+   ],
+   "45": [
+    "api",
+    "bnhg",
+    "client",
+    "ng",
+    "re",
+    "ret"
+   ],
+   "46": [
+    "api",
+    "client",
+    "ret"
+   ],
+   "47": [
+    "api",
+    "bnhg",
+    "client",
+    "ret"
+   ],
+   "48": [],
+   "49": [
+    "client",
+    "ret"
+   ],
+   "50": [
+    "client",
+    "ret"
+   ]
+  },
+  "live_out": {
+   "0": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "src_p",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "1": [],
+   "2": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "src_p",
+    "vrf_id",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "3": [
+    "_xref",
+    "_xrefdata"
+   ],
+   "4": [],
+   "5": [
+    "_xref",
+    "_xrefdata"
+   ],
+   "6": [
+    "_xref",
+    "_xrefdata"
+   ],
+   "7": [
+    "_xref",
+    "_xrefdata"
+   ],
+   "8": [],
+   "9": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "10": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "src_p",
+    "vrf_id",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "11": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "src_p",
+    "vrf_id",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "12": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "src_p",
+    "vrf_id",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "13": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "src_p",
+    "vrf_id",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "14": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p",
+    "zebra_debug_event",
+    "zebra_debug_packet",
+    "zvrf"
+   ],
+   "15": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "client",
+    "re",
+    "zvrf"
+   ],
+   "16": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "client",
+    "re",
+    "zvrf"
+   ],
+   "17": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "client",
+    "re",
+    "zvrf"
+   ],
+   "18": [],
+   "19": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "20": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p",
+    "zvrf"
+   ],
+   "21": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "22": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p",
+    "zvrf"
+   ],
+   "23": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p",
+    "zvrf"
+   ],
+   "24": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p",
+    "zvrf"
+   ],
+   "25": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "26": [
+    "MTYPE_RE_OPAQUE",
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "27": [],
+   "28": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "29": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "30": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "31": [
+    "_xref",
+    "_xrefdata",
+    "bnhg",
+    "ng",
+    "re"
+   ],
+   "32": [
+    "_xref",
+    "_xrefdata",
+    "bnhg",
+    "ng",
+    "re"
+   ],
+   "33": [
+    "_xref",
+    "_xrefdata",
+    "bnhg",
+    "ng",
+    "re"
+   ],
+   "34": [],
+   "35": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "36": [
+    "_xref",
+    "_xrefdata",
+    "afi",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "37": [
+    "afi",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "nhe",
+    "re",
+    "src_p"
+   ],
+   "38": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "ng",
+    "re"
+   ],
+   "39": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "ng",
+    "re"
+   ],
+   "40": [
+    "_xref",
+    "_xrefdata",
+    "api",
+    "bnhg",
+    "ng",
+    "re"
+   ],
+   "41": [],
+   "42": [
+    "api",
+    "bnhg",
+    "client",
+    "ng",
+    "re",
+    "ret"
+   ],
+   "43": [
+    "afi",
+    "api",
+    "bnhg",
+    "client",
+    "n",
+    "ng",
+    "re",
+    "src_p"
+   ],
+   "44": [
+    "api",
+    "bnhg",
+    "client",
+    "ret"
+   ],
+   "45": [
+    "api",
+    "bnhg",
+    "client",
+    "ng",
+    "ret"
+   ],
+   "46": [
+    "client",
+    "ret"
+   ],
+   "47": [
+    "api",
+    "client",
+    "ret"
+   ],
+   "48": [],
+   "49": [],
+   "50": []
+  },
+  "params_live_at_entry": [
+   "client",
+   "msg",
+   "zvrf"
+  ]
+ },
+ "cache": {
+  "hit": true,
+  "key": "0db56e6bde80b51dc6db247d82d52ad41b0ea328cac6366285f50f09f47767d9",
+  "path": "/home/z/my-project/download/MicroServiceGraphDB/data/facts/p5/cache/slices/0db56e6bde80b51dc6db247d82d52ad41b0ea328cac6366285f50f09f47767d9.json",
+  "tool_ver": "p5-slice/1.0.0+clang18"
+ },
+ "text": "slice zread_route_add  (zebra/zapi_msg.c:2148-2299)  tool=p5-slice/1.0.0+clang18  cache_hit=True\n  CFG: 51 blocks / 72 edges (entry 0 -> exit 1)  compute 495.8ms\n  DFG: 20 defs, 94 use-chains, 61 possibly-undef uses\n  params: client, hdr, msg, zvrf\n  blocks (tag, stmts):\n    B0 [entry]: 12 stmts  DECL@2150; DECL@2151; DECL@2152 ...\n    B1 [exit]: 0 stmts  \n    B2 [if-merge]: 2 stmts  BINARY_OPERATOR@2169; PAREN_EXPR@2171\n    B3 [then]: 1 stmts  PAREN_EXPR@2163\n    B4 [if-merge]: 1 stmts  RETURN@2166\n    B5 [then]: 0 stmts  \n    B6 [do-body]: 4 stmts  DECL@2164; DECL@2164; DECL@2164 ...\n    B7 [do-cond]: 1 stmts  INTEGER_LITERAL@2164\n    B8 [do-exit]: 0 stmts  \n    B9 [if-merge]: 2 stmts  BINARY_OPERATOR@2177; BINARY_OPERATOR@2182\n    B10 [then]: 0 stmts  \n    B11 [do-body]: 4 stmts  DECL@2172; DECL@2172; DECL@2172 ...\n    B12 [do-cond]: 1 stmts  INTEGER_LITERAL@2172\n    B13 [do-exit]: 0 stmts  \n    ... 37 more blocks\n  sample def-use chains:\n    msg @L2161  <- defs [d18]  |s = msg\n    s @L2162  <- defs [d0]  |zapi_route_decode ( s , & api ) < 0\n    zvrf @L2169  <- defs [d19]  |vrf_id = zvrf_id ( zvrf )\n    vrf_id @L2177  <- defs [d1]  |re = zebra_rib_route_entry_new ( vrf_id , api \n    zvrf @L2177  <- defs [d19]  |re = zebra_rib_route_entry_new ( vrf_id , api \n    zvrf @L2172  <- defs [d19]  |\n  possibly-undef uses: api@L2162, zebra_debug_packet@L2171, zebra_debug_packet@L2163, _xrefdata@L2164\n  params live at entry: client, msg, zvrf",
+ "meta": {
+  "latency_ms": 1.2,
+  "cache_hit": true,
+  "fingerprint": "db5d33a41bf1d576"
+ }
+}
