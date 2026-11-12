@@ -8,13 +8,13 @@ POC target: **FRR 10.7.1** (a real 30k-node C codebase) standing in for a
 **200-microservice estate** where services register with a framework and talk through
 its message bus — the layer that grep cannot see.
 
-![MicroServiceGraphDB architecture — Part 1: offline indexing of code, YANG and message planes (P0–P4); Part 2: online query resolution through the served KG engine (P5)](docs/img/kb-architecture.png)
+![MicroServiceGraphDB architecture — build once, serve forever: offline indexing P0–P4 ships the knowledge base; online serving P5–P6 answers in milliseconds from RAM](docs/img/architecture-visual.svg)
 
-*Indexing (top band): libclang + YANG extractors → message-plane fusion → Leiden clustering
-→ grounded OKF bundle, persisted as the shipped `data/facts/` KB. Query serving (bottom
-band): a 65-rule router classifies free text into 6 intents, answered from the in-RAM
-knowledge graph — every item carrying `src_ref` evidence — with on-demand libclang slices
-and 3-tier caching.*
+*Offline band: libclang + YANG extractors → message-plane fusion (426/426 northbound
+match) → Leiden clustering → grounded OKF bundle, shipped as the `data/facts/` KB.
+Online band: the KB loads in 572.6 ms; a 65-rule router classifies free text into
+6 intents answered from the in-RAM map — every item carrying `src_ref` evidence — with
+on-demand libclang slices and 3-tier caching. No LLM in either band.*
 
 ---
 
@@ -352,15 +352,14 @@ curl -s -X POST http://127.0.0.1:8915/slice \
 
 ## How a query becomes an answer
 
-Every response above is built in five deterministic stages — entity linking against
-typed indexes, the 65-rule router, intent backends over the fused graph + clusters +
-OKF bundle, and an evidence-carried JSON — with no LLM in the loop:
+One real request, end to end — `who handles ZEBRA_ROUTE_ADD` answered in 0.19 ms with
+5 evidence items, deterministic on replay, no LLM:
 
-![How the served KG engine answers a query: ask, understand, route, answer, respond — traced live on a real request](docs/img/answer-flow.png)
+![The journey of a query: curl → server :8915 → 65-rule router fires the callers rule → entity linking resolves zapi:ZEBRA_ROUTE_ADD → fused-graph walk finds the zebra handler at zebra/zapi_msg.c:4133 → evidence-carrying JSON in 0.19 ms](docs/img/query-journey.svg)
 
-The full visual walkthrough traces one real request stage by stage with code snippets,
-shows **six real queries** (one per intent) with the curl, the captured response and
-"what ran inside", and compares mechanism classes — where chunk-embedding RAG,
+The visual walkthrough opens the database itself (storage, cluster galaxy, OKF bundle),
+traces the request stage by stage, maps **seven routes** (6 intents + `/slice`) through
+the engine's stations, and compares mechanism classes — where chunk-embedding RAG,
 grep/agent loops, LLM graph-RAG and tree-sitter KG engines (graphify / gitnexus class)
 struggle on the framework layer, and why:
 **[docs/answer-flow.md](docs/answer-flow.md)**.
@@ -392,7 +391,7 @@ MicroServiceGraphDB/
 │   └── census/          FRR census (json + md + png)
 ├── docs/
 │   ├── POC-DESIGN.md    design contract, phase gates
-│   ├── answer-flow.md   how the KG answers a query (visual flow, trace gallery, comparison)
+│   ├── answer-flow.md   see-it-work page: storage, query journey, routing map, comparison
 │   ├── reports/         P0–P6 phase reports (P6 = eval + KPI book)
 │   └── img/             architecture + phase diagrams
 └── examples/responses/  raw JSON captured from the shipped KB (sources for the curls above)
@@ -400,7 +399,7 @@ MicroServiceGraphDB/
 
 ## Documentation
 
-- How a query is answered — visual flow, six-query trace gallery, engine-vs-RAG comparison: [`docs/answer-flow.md`](docs/answer-flow.md)
+- See it work — the database, the journey of a query, seven routes, engine-vs-RAG comparison: [`docs/answer-flow.md`](docs/answer-flow.md)
 - Design & phase gates: [`docs/POC-DESIGN.md`](docs/POC-DESIGN.md)
 - Evaluation method, P/R table, honesty notes: [`docs/reports/P6-REPORT.md`](docs/reports/P6-REPORT.md)
 - KPI book (indexing stages, storage, cache economics): `p6/kpis.json` + `docs/reports/P6-REPORT.md` §4
