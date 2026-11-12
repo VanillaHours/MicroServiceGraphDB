@@ -8,6 +8,14 @@ POC target: **FRR 10.7.1** (a real 30k-node C codebase) standing in for a
 **200-microservice estate** where services register with a framework and talk through
 its message bus — the layer that grep cannot see.
 
+![MicroServiceGraphDB architecture — Part 1: offline indexing of code, YANG and message planes (P0–P4); Part 2: online query resolution through the served KG engine (P5)](docs/img/kb-architecture.png)
+
+*Indexing (top band): libclang + YANG extractors → message-plane fusion → Leiden clustering
+→ grounded OKF bundle, persisted as the shipped `data/facts/` KB. Query serving (bottom
+band): a 65-rule router classifies free text into 6 intents, answered from the in-RAM
+knowledge graph — every item carrying `src_ref` evidence — with on-demand libclang slices
+and 3-tier caching.*
+
 ---
 
 ## Overview
