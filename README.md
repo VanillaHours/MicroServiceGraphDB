@@ -350,6 +350,21 @@ curl -s -X POST http://127.0.0.1:8915/slice \
  "liveness": {"params_live_at_entry": ["client", "msg", "zvrf"]}}
 ```
 
+## How a query becomes an answer
+
+Every response above is built in five deterministic stages — entity linking against
+typed indexes, the 65-rule router, intent backends over the fused graph + clusters +
+OKF bundle, and an evidence-carried JSON — with no LLM in the loop:
+
+![How the served KG engine answers a query: ask, understand, route, answer, respond — traced live on a real request](docs/img/answer-flow.png)
+
+The full visual walkthrough traces one real request stage by stage with code snippets,
+shows **six real queries** (one per intent) with the curl, the captured response and
+"what ran inside", and compares mechanism classes — where chunk-embedding RAG,
+grep/agent loops, LLM graph-RAG and tree-sitter KG engines (graphify / gitnexus class)
+struggle on the framework layer, and why:
+**[docs/answer-flow.md](docs/answer-flow.md)**.
+
 ## Pipeline (P0–P6)
 
 | Phase | What it does | Key artifact |
@@ -377,6 +392,7 @@ MicroServiceGraphDB/
 │   └── census/          FRR census (json + md + png)
 ├── docs/
 │   ├── POC-DESIGN.md    design contract, phase gates
+│   ├── answer-flow.md   how the KG answers a query (visual flow, trace gallery, comparison)
 │   ├── reports/         P0–P6 phase reports (P6 = eval + KPI book)
 │   └── img/             architecture + phase diagrams
 └── examples/responses/  raw JSON captured from the shipped KB (sources for the curls above)
@@ -384,6 +400,7 @@ MicroServiceGraphDB/
 
 ## Documentation
 
+- How a query is answered — visual flow, six-query trace gallery, engine-vs-RAG comparison: [`docs/answer-flow.md`](docs/answer-flow.md)
 - Design & phase gates: [`docs/POC-DESIGN.md`](docs/POC-DESIGN.md)
 - Evaluation method, P/R table, honesty notes: [`docs/reports/P6-REPORT.md`](docs/reports/P6-REPORT.md)
 - KPI book (indexing stages, storage, cache economics): `p6/kpis.json` + `docs/reports/P6-REPORT.md` §4
